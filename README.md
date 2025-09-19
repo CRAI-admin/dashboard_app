@@ -2,6 +2,8 @@
 
 This repository contains the Streamlit dashboard application for the Construction Risk AI platform.
 
+🚀 **CI/CD Pipeline Active** - Auto-deploys to dev on every push to main!
+
 ## 🏗️ Architecture
 
 - **Frontend**: Streamlit Python web application
