@@ -1,0 +1,92 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:837107980418:task-definition/cr-score-app-task:58",
+    "containerDefinitions": [
+        {
+            "name": "StreamlitContainer",
+            "image": "837107980418.dkr.ecr.us-east-1.amazonaws.com/cr-score-app:v1.1-container-fix",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 8501,
+                    "hostPort": 8501,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "COGNITO_REGION",
+                    "value": "us-east-1"
+                },
+                {
+                    "name": "COGNITO_USER_POOL_ID",
+                    "value": "us-east-1_QOIPBtGBG"
+                },
+                {
+                    "name": "COGNITO_CLIENT_ID",
+                    "value": "39i6589c3te3rli38htqdv2epr"
+                },
+                {
+                    "name": "COGNITO_CLIENT_SECRET",
+                    "value": "1bbgdaaf4qrnor5l2j4v4etm6fskbh9d29dh2vhp9h7kphdhqk5c"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/cr-score-app-task",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "cr-score-app-task",
+    "taskRoleArn": "arn:aws:iam::837107980418:role/StreamlitECSStack-StreamlitTaskDefTaskRole991011F5-pbo86guA7Una",
+    "executionRoleArn": "arn:aws:iam::837107980418:role/StreamlitECSStack-StreamlitTaskDefExecutionRole707F-J0D3rpkHqhps",
+    "networkMode": "awsvpc",
+    "revision": 58,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "2048",
+    "registeredAt": "2025-09-16T11:46:09.571000-04:00",
+    "registeredBy": "arn:aws:iam::837107980418:user/aws-aid-user"
+}

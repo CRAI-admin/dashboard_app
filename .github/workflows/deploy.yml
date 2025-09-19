@@ -1,0 +1,177 @@
+name: Deploy CR-AI Dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'streamlit_app_*.py'
+      - 'Dockerfile.streamlit'
+      - 'requirements_streamlit.txt'
+      - '.github/workflows/deploy.yml'
+  
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deploy to environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - prod
+      force_deploy:
+        description: 'Force new deployment (even without code changes)'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: cr-score-app
+  DEV_CLUSTER_NAME: StreamlitECSStack-DEV-StreamlitCluster
+  DEV_SERVICE_NAME: StreamlitECSStack-DEV-Service
+  PROD_CLUSTER_NAME: StreamlitECSStack-StreamlitClusterED254C56-NEFl9DXzdcci
+  PROD_SERVICE_NAME: StreamlitECSStack-StreamlitService4F1549C0-OyxFDtrF3qPR
+
+jobs:
+  deploy:
+    name: Deploy to ${{ github.event.inputs.environment || 'dev' }}
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: Set deployment target
+      id: target
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          ENVIRONMENT="${{ github.event.inputs.environment }}"
+        else
+          ENVIRONMENT="dev"
+        fi
+        echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
+        
+        if [ "$ENVIRONMENT" = "prod" ]; then
+          echo "cluster_name=${{ env.PROD_CLUSTER_NAME }}" >> $GITHUB_OUTPUT
+          echo "service_name=${{ env.PROD_SERVICE_NAME }}" >> $GITHUB_OUTPUT
+          echo "task_family=cr-score-app-task" >> $GITHUB_OUTPUT
+          echo "image_tag=prod-${{ github.sha }}" >> $GITHUB_OUTPUT
+        else
+          echo "cluster_name=${{ env.DEV_CLUSTER_NAME }}" >> $GITHUB_OUTPUT
+          echo "service_name=${{ env.DEV_SERVICE_NAME }}" >> $GITHUB_OUTPUT
+          echo "task_family=cr-score-app-task-dev" >> $GITHUB_OUTPUT
+          echo "image_tag=dev-${{ github.sha }}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Build Docker image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ steps.target.outputs.image_tag }}
+      run: |
+        echo "Building image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        docker build -f Dockerfile.streamlit -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        
+        # Also tag as latest for the environment
+        if [ "${{ steps.target.outputs.environment }}" = "prod" ]; then
+          docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
+        else
+          docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:dev
+        fi
+
+    - name: Push Docker image to ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ steps.target.outputs.image_tag }}
+      run: |
+        echo "Pushing image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        
+        if [ "${{ steps.target.outputs.environment }}" = "prod" ]; then
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+        else
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:dev
+        fi
+
+    - name: Get current task definition
+      id: task-def
+      env:
+        TASK_FAMILY: ${{ steps.target.outputs.task_family }}
+      run: |
+        TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition $TASK_FAMILY --query taskDefinition)
+        echo "Current task definition retrieved for family: $TASK_FAMILY"
+        echo "$TASK_DEFINITION" > task-definition.json
+
+    - name: Update task definition with new image
+      id: new-task-def
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ steps.target.outputs.image_tag }}
+      run: |
+        NEW_IMAGE_URI="$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        echo "Updating task definition with image: $NEW_IMAGE_URI"
+        
+        # Update the image URI in the task definition
+        jq --arg IMAGE "$NEW_IMAGE_URI" '.containerDefinitions[0].image = $IMAGE' task-definition.json > new-task-definition.json
+        
+        # Remove fields that aren't needed for registration
+        jq 'del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .placementConstraints, .compatibilities, .registeredAt, .registeredBy)' new-task-definition.json > final-task-definition.json
+        
+        echo "Updated task definition:"
+        cat final-task-definition.json
+
+    - name: Register new task definition
+      id: register-task-def
+      env:
+        TASK_FAMILY: ${{ steps.target.outputs.task_family }}
+      run: |
+        NEW_TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-task-definition.json --query 'taskDefinition.taskDefinitionArn' --output text)
+        echo "New task definition registered: $NEW_TASK_DEF_ARN"
+        echo "task_definition_arn=$NEW_TASK_DEF_ARN" >> $GITHUB_OUTPUT
+
+    - name: Update ECS service
+      env:
+        CLUSTER_NAME: ${{ steps.target.outputs.cluster_name }}
+        SERVICE_NAME: ${{ steps.target.outputs.service_name }}
+        TASK_DEF_ARN: ${{ steps.register-task-def.outputs.task_definition_arn }}
+      run: |
+        echo "Updating ECS service: $SERVICE_NAME in cluster: $CLUSTER_NAME"
+        aws ecs update-service \
+          --cluster $CLUSTER_NAME \
+          --service $SERVICE_NAME \
+          --task-definition $TASK_DEF_ARN \
+          --force-new-deployment
+
+    - name: Wait for deployment to complete
+      env:
+        CLUSTER_NAME: ${{ steps.target.outputs.cluster_name }}
+        SERVICE_NAME: ${{ steps.target.outputs.service_name }}
+      run: |
+        echo "Waiting for deployment to complete..."
+        aws ecs wait services-stable \
+          --cluster $CLUSTER_NAME \
+          --services $SERVICE_NAME \
+          --cli-read-timeout 600 \
+          --cli-connect-timeout 60
+
+    - name: Deployment success
+      env:
+        ENVIRONMENT: ${{ steps.target.outputs.environment }}
+      run: |
+        echo "🎉 Deployment to $ENVIRONMENT completed successfully!"
+        if [ "$ENVIRONMENT" = "dev" ]; then
+          echo "🔗 Dev URL: http://StreamlitECSStack-DEV-ALB-923328378.us-east-1.elb.amazonaws.com"
+        else
+          echo "🔗 Prod URL: https://dev.cr-ai-dashboard.com"
+        fi
