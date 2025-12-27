@@ -36,10 +36,55 @@ def main():
     """Main login page function"""
     st.title("Login")
     st.info("Please use the main dashboard URL to access the application.")
-    
-    # Redirect to main dashboard
-    st.markdown("""
-    <script>
-        window.location.href = 'https://haugland.cr-ai-dashboard.com/';
-    </script>
-    """, unsafe_allow_html=True)
+
+    # --- Reset Password Section ---
+    if 'reset_password' not in st.session_state:
+        st.session_state['reset_password'] = False
+
+    if st.session_state['reset_password']:
+        st.subheader("Reset Password")
+        email = st.text_input("Enter your email address")
+        if st.button("Send Reset Code"):
+            import boto3
+            client = boto3.client('cognito-idp', region_name=os.getenv('COGNITO_REGION', 'us-east-1'))
+            try:
+                client.forgot_password(
+                    ClientId=os.getenv('COGNITO_CLIENT_ID', ''),
+                    Username=email
+                )
+                st.success("A reset code has been sent to your email. Please check your inbox.")
+                st.session_state['reset_email'] = email
+                st.session_state['reset_code_sent'] = True
+            except Exception as e:
+                st.error(f"Error sending reset code: {e}")
+
+        if st.session_state.get('reset_code_sent', False):
+            code = st.text_input("Enter the code you received in your email")
+            new_password = st.text_input("Enter your new password", type="password")
+            if st.button("Confirm Reset"):
+                try:
+                    client = boto3.client('cognito-idp', region_name=os.getenv('COGNITO_REGION', 'us-east-1'))
+                    client.confirm_forgot_password(
+                        ClientId=os.getenv('COGNITO_CLIENT_ID', ''),
+                        Username=st.session_state['reset_email'],
+                        ConfirmationCode=code,
+                        Password=new_password
+                    )
+                    st.success("Your password has been reset. You can now log in with your new password.")
+                    st.session_state['reset_password'] = False
+                    st.session_state['reset_code_sent'] = False
+                except Exception as e:
+                    st.error(f"Error resetting password: {e}")
+        if st.button("Back to Login"):
+            st.session_state['reset_password'] = False
+            st.session_state['reset_code_sent'] = False
+    else:
+        # ...existing login form or redirect logic...
+        st.markdown("""
+        <script>
+            window.location.href = 'https://haugland.cr-ai-dashboard.com/';
+        </script>
+        """, unsafe_allow_html=True)
+        st.markdown("<div style='margin-top: 2em;'></div>", unsafe_allow_html=True)
+        if st.button("Reset Password"):
+            st.session_state['reset_password'] = True
