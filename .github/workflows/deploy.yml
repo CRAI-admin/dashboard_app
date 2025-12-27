@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'streamlit_app_*.py'
-      - 'Dockerfile.streamlit'
+  - 'Dockerfile'
       - 'requirements_streamlit.txt'
       - '.github/workflows/deploy.yml'
   
@@ -81,7 +81,7 @@ jobs:
         IMAGE_TAG: ${{ steps.target.outputs.image_tag }}
       run: |
         echo "Building image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-        docker build -f Dockerfile.streamlit -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+  docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         
         # Also tag as latest for the environment
         if [ "${{ steps.target.outputs.environment }}" = "prod" ]; then
