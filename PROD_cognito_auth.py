@@ -195,9 +195,16 @@ def main():
                 success, result = auth.authenticate(username, password)
                 if success:
                     st.success("Login successful! Redirecting to dashboard...")
+                    # Use meta refresh for redirect instead of JavaScript
+                    st.markdown("""
+                    <meta http-equiv="refresh" content="1;url=https://haugland.cr-ai-dashboard.com/" />
+                    """, unsafe_allow_html=True)
+                    # Also try JavaScript as backup
                     st.markdown("""
                     <script>
-                        window.location.href = 'https://haugland.cr-ai-dashboard.com/';
+                        setTimeout(function() {
+                            window.top.location.href = 'https://haugland.cr-ai-dashboard.com/';
+                        }, 1000);
                     </script>
                     """, unsafe_allow_html=True)
                 else:
