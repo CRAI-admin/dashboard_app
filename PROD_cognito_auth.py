@@ -194,17 +194,23 @@ def main():
                 auth = CognitoAuth()
                 success, result = auth.authenticate(username, password)
                 if success:
+                    # Extract access token from authentication result
+                    access_token = result['response']['AuthenticationResult']['AccessToken']
+                    
+                    # Build redirect URL with access token for dashboard authentication
+                    redirect_url = f"https://haugland.cr-ai-dashboard.com/?access_token={access_token}"
+                    
                     st.success("Login successful! Redirecting to dashboard...")
-                    # Use meta refresh for redirect instead of JavaScript
-                    st.markdown("""
-                    <meta http-equiv="refresh" content="1;url=https://haugland.cr-ai-dashboard.com/" />
+                    # Use meta refresh for redirect with access token
+                    st.markdown(f"""
+                    <meta http-equiv="refresh" content="1;url={redirect_url}" />
                     """, unsafe_allow_html=True)
                     # Also try JavaScript as backup
-                    st.markdown("""
+                    st.markdown(f"""
                     <script>
-                        setTimeout(function() {
-                            window.top.location.href = 'https://haugland.cr-ai-dashboard.com/';
-                        }, 1000);
+                        setTimeout(function() {{
+                            window.top.location.href = '{redirect_url}';
+                        }}, 1000);
                     </script>
                     """, unsafe_allow_html=True)
                 else:
