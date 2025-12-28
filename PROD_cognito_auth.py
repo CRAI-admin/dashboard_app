@@ -108,46 +108,71 @@ def main():
     if st.session_state['reset_password']:
         st.title("Reset Password")
         
-        email = st.text_input("Enter your email address")
+        st.markdown("""
+        <div style='background-color: #f0f9ff; border-left: 4px solid #3b82f6; padding: 1rem; margin-bottom: 1rem;'>
+            <strong>Password Requirements:</strong><br>
+            • Minimum 8 characters<br>
+            • At least one uppercase letter (A-Z)<br>
+            • At least one lowercase letter (a-z)<br>
+            • At least one number (0-9)
+        </div>
+        """, unsafe_allow_html=True)
         
-        if st.button("Send Reset Code", use_container_width=True):
-            if email:
-                try:
-                    client = boto3.client('cognito-idp', region_name=os.getenv('COGNITO_REGION', 'us-east-1'))
-                    client.forgot_password(
-                        ClientId=os.getenv('COGNITO_CLIENT_ID', '39i6589c3te3rli38htqdv2epr'),
-                        Username=email
-                    )
-                    st.success("A reset code has been sent to your email. Please check your inbox.")
-                    st.session_state['reset_email'] = email
-                    st.session_state['reset_code_sent'] = True
-                except Exception as e:
-                    st.error(f"Error sending reset code: {str(e)}")
-            else:
-                st.warning("Please enter your email address")
-
-        if st.session_state.get('reset_code_sent', False):
-            code = st.text_input("Enter the code you received in your email")
-            new_password = st.text_input("Enter your new password", type="password")
-            
-            if st.button("Confirm Reset", use_container_width=True):
-                if code and new_password:
+        username = st.text_input("Username", placeholder="Enter your username")
+        new_password = st.text_input("New Password", type="password", placeholder="Enter new password")
+        confirm_password = st.text_input("Confirm New Password", type="password", placeholder="Re-enter new password")
+        
+        if st.button("Reset Password", use_container_width=True):
+            if username and new_password and confirm_password:
+                # Validate passwords match
+                if new_password != confirm_password:
+                    st.error("Passwords do not match. Please try again.")
+                # Validate password requirements
+                elif len(new_password) < 8:
+                    st.error("Password must be at least 8 characters long.")
+                elif not any(c.isupper() for c in new_password):
+                    st.error("Password must contain at least one uppercase letter.")
+                elif not any(c.islower() for c in new_password):
+                    st.error("Password must contain at least one lowercase letter.")
+                elif not any(c.isdigit() for c in new_password):
+                    st.error("Password must contain at least one number.")
+                else:
                     try:
                         client = boto3.client('cognito-idp', region_name=os.getenv('COGNITO_REGION', 'us-east-1'))
-                        client.confirm_forgot_password(
-                            ClientId=os.getenv('COGNITO_CLIENT_ID', '39i6589c3te3rli38htqdv2epr'),
-                            Username=st.session_state['reset_email'],
-                            ConfirmationCode=code,
-                            Password=new_password
-                        )
-                        st.success("Your password has been reset successfully! Redirecting to login...")
-                        st.session_state['reset_password'] = False
-                        st.session_state['reset_code_sent'] = False
-                        st.rerun()
+                        
+                        # Try to set password for user in each pool
+                        password_reset_success = False
+                        auth = CognitoAuth()
+                        
+                        for pool in auth.user_pools:
+                            try:
+                                # Admin set user password (requires admin privileges)
+                                client.admin_set_user_password(
+                                    UserPoolId=pool['pool_id'],
+                                    Username=username,
+                                    Password=new_password,
+                                    Permanent=True
+                                )
+                                password_reset_success = True
+                                st.success(f"Password reset successfully for user '{username}'! You can now log in with your new password.")
+                                st.session_state['reset_password'] = False
+                                st.session_state['reset_code_sent'] = False
+                                st.rerun()
+                                break
+                            except client.exceptions.UserNotFoundException:
+                                # User not in this pool, try next one
+                                continue
+                            except Exception as e:
+                                # Try next pool
+                                continue
+                        
+                        if not password_reset_success:
+                            st.error(f"User '{username}' not found in any user pool. Please verify the username and try again.")
+                            
                     except Exception as e:
                         st.error(f"Error resetting password: {str(e)}")
-                else:
-                    st.warning("Please enter both the code and new password")
+            else:
+                st.warning("Please fill in all fields")
         
         st.markdown("<div style='margin-top: 1em;'></div>", unsafe_allow_html=True)
         if st.button("Back to Login"):
@@ -176,7 +201,7 @@ def main():
         # Display CR AI logo
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            st.image("static/cr_ai_logo.png", width=300)
+            st.image("static/cr_ai_logo.png", width=150)
         
         st.markdown("<div style='text-align: center; margin-bottom: 2em;'>", unsafe_allow_html=True)
         st.markdown("<h2 style='color: #4A5568;'>Login</h2>", unsafe_allow_html=True)
