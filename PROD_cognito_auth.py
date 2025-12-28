@@ -139,7 +139,7 @@ def main():
         # Display CR AI logo
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            st.image("static/cr_ai_logo.png", use_container_width=True)
+            st.image("static/cr_ai_logo.png", width=300)
         
         st.markdown("<div style='text-align: center; margin-bottom: 2em;'>", unsafe_allow_html=True)
         st.markdown("<h2 style='color: #4A5568;'>Login</h2>", unsafe_allow_html=True)
