@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first to leverage Docker layer caching
-COPY requirements_streamlit.txt .
+COPY PROD_requirements_streamlit.txt requirements_streamlit.txt
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements_streamlit.txt
@@ -20,6 +20,7 @@ RUN pip install --no-cache-dir -r requirements_streamlit.txt
 # Copy application code
 COPY *.py ./
 COPY cognito_auth.py ./
+COPY static/ ./static/
 
 # Create a non-root user for security
 RUN useradd --create-home --shell /bin/bash streamlit
@@ -40,4 +41,4 @@ ENV STREAMLIT_SERVER_HEADLESS=true
 ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 
 # Default command - can be overridden
-CMD ["streamlit", "run", "actual_streamlit_app_UPDATED.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["python", "-m", "streamlit", "run", "PROD_cognito_auth.py", "--server.port=8501", "--server.address=0.0.0.0"]
