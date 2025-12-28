@@ -8,19 +8,21 @@ import base64
 class CognitoAuth:
     def __init__(self):
         self.cognito_region = os.getenv('COGNITO_REGION', 'us-east-1')
-        # Define all user pools with their app client credentials
+        # Define all user pools with their app client credentials and redirect URLs
         self.user_pools = [
             {
                 'pool_id': 'us-east-1_QOIPBtGBG',
                 'client_id': '39i6589c3te3rli38htqdv2epr',
                 'client_secret': 'k00betnr4fl4v8lpsolpfhadi0iigjbsdgskbbhjcfdso3dphj6',
-                'name': 'cr-score-users'
+                'name': 'cr-score-users',
+                'redirect_url': 'https://haugland.cr-ai-dashboard.com'
             },
             {
                 'pool_id': 'us-east-1_mjY6yx0YY',
                 'client_id': '20mrscnb38mloeupht8rjnnshm',
                 'client_secret': '1jkmfc48dda36c9qeor04opsuvm7gr483c747ocg7e0onnm7k4ga',
-                'name': 'dev-dashboard-users'
+                'name': 'dev-dashboard-users',
+                'redirect_url': 'https://dev.cr-ai-dashboard.com'
             }
             # Note: CRAI_insurance_app pool (us-east-1_fX3dT8fMy) doesn't support USER_PASSWORD_AUTH
             # so it's excluded for now
@@ -58,8 +60,8 @@ class CognitoAuth:
                         'SECRET_HASH': secret_hash
                     }
                 )
-                # If successful, return immediately
-                return True, {'response': response, 'pool': pool['name']}
+                # If successful, return pool config and response
+                return True, {'response': response, 'pool': pool}
             except client.exceptions.NotAuthorizedException:
                 # Wrong credentials for this pool, try next one
                 continue
@@ -222,10 +224,15 @@ def main():
                     # Extract access token from authentication result
                     access_token = result['response']['AuthenticationResult']['AccessToken']
                     
-                    # Build redirect URL with access token for dashboard authentication
-                    redirect_url = f"https://haugland.cr-ai-dashboard.com/?access_token={access_token}"
+                    # Get the redirect URL from the authenticated pool
+                    pool_config = result['pool']
+                    base_redirect_url = pool_config['redirect_url']
                     
-                    st.success("Login successful! Redirecting to dashboard...")
+                    # Build redirect URL with access token for dashboard authentication
+                    redirect_url = f"{base_redirect_url}/?access_token={access_token}"
+                    
+                    pool_name = pool_config['name']
+                    st.success(f"Login successful! Redirecting to {pool_name} dashboard...")
                     # Use meta refresh for redirect with access token
                     st.markdown(f"""
                     <meta http-equiv="refresh" content="1;url={redirect_url}" />
