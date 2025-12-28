@@ -8,38 +8,70 @@ import base64
 class CognitoAuth:
     def __init__(self):
         self.cognito_region = os.getenv('COGNITO_REGION', 'us-east-1')
-        self.user_pool_id = os.getenv('COGNITO_USER_POOL_ID', 'us-east-1_QOIPBtGBG')
-        self.client_id = os.getenv('COGNITO_CLIENT_ID', '39i6589c3te3rli38htqdv2epr')
-        self.client_secret = os.getenv('COGNITO_CLIENT_SECRET', '1bbgdaaf4qrnor5l2j4v4etm6fskbh9d29dh2vhp9h7kphdhqk5c')
+        # Define all user pools with their app client credentials
+        self.user_pools = [
+            {
+                'pool_id': 'us-east-1_QOIPBtGBG',
+                'client_id': '39i6589c3te3rli38htqdv2epr',
+                'client_secret': 'k00betnr4fl4v8lpsolpfhadi0iigjbsdgskbbhjcfdso3dphj6',
+                'name': 'cr-score-users'
+            },
+            {
+                'pool_id': 'us-east-1_mjY6yx0YY',
+                'client_id': '20mrscnb38mloeupht8rjnnshm',
+                'client_secret': '1jkmfc48dda36c9qeor04opsuvm7gr483c747ocg7e0onnm7k4ga',
+                'name': 'dev-dashboard-users'
+            }
+            # Note: CRAI_insurance_app pool (us-east-1_fX3dT8fMy) doesn't support USER_PASSWORD_AUTH
+            # so it's excluded for now
+        ]
 
-    def get_secret_hash(self, username):
+    def get_secret_hash(self, username, client_id, client_secret):
         """Calculate SECRET_HASH for Cognito authentication"""
-        message = username + self.client_id
+        message = username + client_id
         dig = hmac.new(
-            self.client_secret.encode('utf-8'),
+            client_secret.encode('utf-8'),
             msg=message.encode('utf-8'),
             digestmod=hashlib.sha256
         ).digest()
         return base64.b64encode(dig).decode()
 
     def authenticate(self, username, password):
-        """Authenticate user with Cognito"""
-        try:
-            client = boto3.client('cognito-idp', region_name=self.cognito_region)
-            secret_hash = self.get_secret_hash(username)
-            
-            response = client.initiate_auth(
-                ClientId=self.client_id,
-                AuthFlow='USER_PASSWORD_AUTH',
-                AuthParameters={
-                    'USERNAME': username,
-                    'PASSWORD': password,
-                    'SECRET_HASH': secret_hash
-                }
-            )
-            return True, response
-        except Exception as e:
-            return False, str(e)
+        """Authenticate user with Cognito - try all user pools"""
+        client = boto3.client('cognito-idp', region_name=self.cognito_region)
+        
+        # Try each user pool
+        for pool in self.user_pools:
+            # Skip pools without client credentials configured
+            if not pool['client_id'] or not pool['client_secret']:
+                continue
+                
+            try:
+                secret_hash = self.get_secret_hash(username, pool['client_id'], pool['client_secret'])
+                
+                response = client.initiate_auth(
+                    ClientId=pool['client_id'],
+                    AuthFlow='USER_PASSWORD_AUTH',
+                    AuthParameters={
+                        'USERNAME': username,
+                        'PASSWORD': password,
+                        'SECRET_HASH': secret_hash
+                    }
+                )
+                # If successful, return immediately
+                return True, {'response': response, 'pool': pool['name']}
+            except client.exceptions.NotAuthorizedException:
+                # Wrong credentials for this pool, try next one
+                continue
+            except client.exceptions.UserNotFoundException:
+                # User doesn't exist in this pool, try next one
+                continue
+            except Exception as e:
+                # Other errors, try next pool
+                continue
+        
+        # If we get here, authentication failed in all pools
+        return False, "Invalid username or password"
 
     def verify_token(self, token):
         """Verify the access token - simplified version without JWT parsing"""
@@ -125,13 +157,18 @@ def main():
     
     else:
         # Main login page
-        # Center content and styling
+        # Styling without max-width constraint
         st.markdown("""
             <style>
             .main {
-                max-width: 400px;
-                margin: 0 auto;
                 padding-top: 2rem;
+            }
+            /* Remove scrollbars from internal containers */
+            [data-testid="stVerticalBlock"] {
+                overflow: visible !important;
+            }
+            section[data-testid="stSidebar"] {
+                display: none;
             }
             </style>
         """, unsafe_allow_html=True)
