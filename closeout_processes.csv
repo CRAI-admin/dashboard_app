@@ -1,0 +1,1401 @@
+projectId,region,projectManager,impact_category,process_name,score
+P-NE-001,Northeast,John Doe,BR Insurance,clientHandover,6.91
+P-NE-001,Northeast,John Doe,BR Insurance,finalDocumentation,31.62
+P-NE-001,Northeast,John Doe,BR Insurance,financialReconciliation,13.93
+P-NE-001,Northeast,John Doe,BR Insurance,punchlistCompletion,27.53
+P-NE-001,Northeast,John Doe,CA Insurance,clientHandover,5.87
+P-NE-001,Northeast,John Doe,CA Insurance,finalDocumentation,40.29
+P-NE-001,Northeast,John Doe,CA Insurance,financialReconciliation,5.71
+P-NE-001,Northeast,John Doe,CA Insurance,punchlistCompletion,15.46
+P-NE-001,Northeast,John Doe,Cost,clientHandover,7.48
+P-NE-001,Northeast,John Doe,Cost,finalDocumentation,33.46
+P-NE-001,Northeast,John Doe,Cost,financialReconciliation,39.69
+P-NE-001,Northeast,John Doe,Cost,punchlistCompletion,31.07
+P-NE-001,Northeast,John Doe,GL Insurance,clientHandover,28.8
+P-NE-001,Northeast,John Doe,GL Insurance,finalDocumentation,8.06
+P-NE-001,Northeast,John Doe,GL Insurance,financialReconciliation,33.0
+P-NE-001,Northeast,John Doe,GL Insurance,punchlistCompletion,14.95
+P-NE-001,Northeast,John Doe,Safety,clientHandover,18.18
+P-NE-001,Northeast,John Doe,Safety,finalDocumentation,15.35
+P-NE-001,Northeast,John Doe,Safety,financialReconciliation,8.43
+P-NE-001,Northeast,John Doe,Safety,punchlistCompletion,2.01
+P-NE-001,Northeast,John Doe,Schedule,clientHandover,9.26
+P-NE-001,Northeast,John Doe,Schedule,finalDocumentation,24.66
+P-NE-001,Northeast,John Doe,Schedule,financialReconciliation,11.18
+P-NE-001,Northeast,John Doe,Schedule,punchlistCompletion,1.93
+P-NE-001,Northeast,John Doe,WC Insurance,clientHandover,1.26
+P-NE-001,Northeast,John Doe,WC Insurance,finalDocumentation,9.82
+P-NE-001,Northeast,John Doe,WC Insurance,financialReconciliation,33.38
+P-NE-001,Northeast,John Doe,WC Insurance,punchlistCompletion,24.57
+P-SE-002,Southeast,Jane Smith,BR Insurance,clientHandover,8.12
+P-SE-002,Southeast,Jane Smith,BR Insurance,finalDocumentation,22.61
+P-SE-002,Southeast,Jane Smith,BR Insurance,financialReconciliation,13.59
+P-SE-002,Southeast,Jane Smith,BR Insurance,punchlistCompletion,13.4
+P-SE-002,Southeast,Jane Smith,CA Insurance,clientHandover,23.54
+P-SE-002,Southeast,Jane Smith,CA Insurance,finalDocumentation,10.88
+P-SE-002,Southeast,Jane Smith,CA Insurance,financialReconciliation,24.98
+P-SE-002,Southeast,Jane Smith,CA Insurance,punchlistCompletion,35.66
+P-SE-002,Southeast,Jane Smith,Cost,clientHandover,22.53
+P-SE-002,Southeast,Jane Smith,Cost,finalDocumentation,21.91
+P-SE-002,Southeast,Jane Smith,Cost,financialReconciliation,15.76
+P-SE-002,Southeast,Jane Smith,Cost,punchlistCompletion,38.95
+P-SE-002,Southeast,Jane Smith,GL Insurance,clientHandover,14.58
+P-SE-002,Southeast,Jane Smith,GL Insurance,finalDocumentation,31.18
+P-SE-002,Southeast,Jane Smith,GL Insurance,financialReconciliation,12.12
+P-SE-002,Southeast,Jane Smith,GL Insurance,punchlistCompletion,4.83
+P-SE-002,Southeast,Jane Smith,Safety,clientHandover,18.9
+P-SE-002,Southeast,Jane Smith,Safety,finalDocumentation,26.71
+P-SE-002,Southeast,Jane Smith,Safety,financialReconciliation,27.71
+P-SE-002,Southeast,Jane Smith,Safety,punchlistCompletion,20.17
+P-SE-002,Southeast,Jane Smith,Schedule,clientHandover,25.08
+P-SE-002,Southeast,Jane Smith,Schedule,finalDocumentation,28.97
+P-SE-002,Southeast,Jane Smith,Schedule,financialReconciliation,27.64
+P-SE-002,Southeast,Jane Smith,Schedule,punchlistCompletion,20.92
+P-SE-002,Southeast,Jane Smith,WC Insurance,clientHandover,11.01
+P-SE-002,Southeast,Jane Smith,WC Insurance,finalDocumentation,3.87
+P-SE-002,Southeast,Jane Smith,WC Insurance,financialReconciliation,4.64
+P-SE-002,Southeast,Jane Smith,WC Insurance,punchlistCompletion,9.38
+P-MW-003,Midwest,Mike Johnson,BR Insurance,clientHandover,11.87
+P-MW-003,Midwest,Mike Johnson,BR Insurance,finalDocumentation,38.58
+P-MW-003,Midwest,Mike Johnson,BR Insurance,financialReconciliation,12.6
+P-MW-003,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,20.35
+P-MW-003,Midwest,Mike Johnson,CA Insurance,clientHandover,40.91
+P-MW-003,Midwest,Mike Johnson,CA Insurance,finalDocumentation,27.45
+P-MW-003,Midwest,Mike Johnson,CA Insurance,financialReconciliation,28.38
+P-MW-003,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,15.51
+P-MW-003,Midwest,Mike Johnson,Cost,clientHandover,34.38
+P-MW-003,Midwest,Mike Johnson,Cost,finalDocumentation,46.58
+P-MW-003,Midwest,Mike Johnson,Cost,financialReconciliation,29.28
+P-MW-003,Midwest,Mike Johnson,Cost,punchlistCompletion,32.6
+P-MW-003,Midwest,Mike Johnson,GL Insurance,clientHandover,47.72
+P-MW-003,Midwest,Mike Johnson,GL Insurance,finalDocumentation,22.62
+P-MW-003,Midwest,Mike Johnson,GL Insurance,financialReconciliation,18.44
+P-MW-003,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,20.71
+P-MW-003,Midwest,Mike Johnson,Safety,clientHandover,2.22
+P-MW-003,Midwest,Mike Johnson,Safety,finalDocumentation,33.03
+P-MW-003,Midwest,Mike Johnson,Safety,financialReconciliation,9.7
+P-MW-003,Midwest,Mike Johnson,Safety,punchlistCompletion,30.49
+P-MW-003,Midwest,Mike Johnson,Schedule,clientHandover,16.18
+P-MW-003,Midwest,Mike Johnson,Schedule,finalDocumentation,7.85
+P-MW-003,Midwest,Mike Johnson,Schedule,financialReconciliation,7.54
+P-MW-003,Midwest,Mike Johnson,Schedule,punchlistCompletion,30.17
+P-MW-003,Midwest,Mike Johnson,WC Insurance,clientHandover,19.83
+P-MW-003,Midwest,Mike Johnson,WC Insurance,finalDocumentation,39.05
+P-MW-003,Midwest,Mike Johnson,WC Insurance,financialReconciliation,30.22
+P-MW-003,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,16.59
+P-WE-004,West,Alice Brown,BR Insurance,clientHandover,14.48
+P-WE-004,West,Alice Brown,BR Insurance,finalDocumentation,9.27
+P-WE-004,West,Alice Brown,BR Insurance,financialReconciliation,4.46
+P-WE-004,West,Alice Brown,BR Insurance,punchlistCompletion,20.87
+P-WE-004,West,Alice Brown,CA Insurance,clientHandover,9.96
+P-WE-004,West,Alice Brown,CA Insurance,finalDocumentation,16.43
+P-WE-004,West,Alice Brown,CA Insurance,financialReconciliation,30.78
+P-WE-004,West,Alice Brown,CA Insurance,punchlistCompletion,33.43
+P-WE-004,West,Alice Brown,Cost,clientHandover,23.59
+P-WE-004,West,Alice Brown,Cost,finalDocumentation,4.27
+P-WE-004,West,Alice Brown,Cost,financialReconciliation,4.95
+P-WE-004,West,Alice Brown,Cost,punchlistCompletion,2.7
+P-WE-004,West,Alice Brown,GL Insurance,clientHandover,34.57
+P-WE-004,West,Alice Brown,GL Insurance,finalDocumentation,39.85
+P-WE-004,West,Alice Brown,GL Insurance,financialReconciliation,38.87
+P-WE-004,West,Alice Brown,GL Insurance,punchlistCompletion,21.64
+P-WE-004,West,Alice Brown,Safety,clientHandover,11.69
+P-WE-004,West,Alice Brown,Safety,finalDocumentation,23.18
+P-WE-004,West,Alice Brown,Safety,financialReconciliation,2.78
+P-WE-004,West,Alice Brown,Safety,punchlistCompletion,12.82
+P-WE-004,West,Alice Brown,Schedule,clientHandover,16.29
+P-WE-004,West,Alice Brown,Schedule,finalDocumentation,12.98
+P-WE-004,West,Alice Brown,Schedule,financialReconciliation,30.93
+P-WE-004,West,Alice Brown,Schedule,punchlistCompletion,7.58
+P-WE-004,West,Alice Brown,WC Insurance,clientHandover,18.72
+P-WE-004,West,Alice Brown,WC Insurance,finalDocumentation,1.38
+P-WE-004,West,Alice Brown,WC Insurance,financialReconciliation,23.5
+P-WE-004,West,Alice Brown,WC Insurance,punchlistCompletion,24.78
+P-NE-005,Northeast,John Doe,BR Insurance,clientHandover,25.44
+P-NE-005,Northeast,John Doe,BR Insurance,finalDocumentation,41.12
+P-NE-005,Northeast,John Doe,BR Insurance,financialReconciliation,9.43
+P-NE-005,Northeast,John Doe,BR Insurance,punchlistCompletion,43.88
+P-NE-005,Northeast,John Doe,CA Insurance,clientHandover,14.14
+P-NE-005,Northeast,John Doe,CA Insurance,finalDocumentation,11.77
+P-NE-005,Northeast,John Doe,CA Insurance,financialReconciliation,39.63
+P-NE-005,Northeast,John Doe,CA Insurance,punchlistCompletion,39.42
+P-NE-005,Northeast,John Doe,Cost,clientHandover,17.11
+P-NE-005,Northeast,John Doe,Cost,finalDocumentation,22.94
+P-NE-005,Northeast,John Doe,Cost,financialReconciliation,35.36
+P-NE-005,Northeast,John Doe,Cost,punchlistCompletion,36.56
+P-NE-005,Northeast,John Doe,GL Insurance,clientHandover,51.16
+P-NE-005,Northeast,John Doe,GL Insurance,finalDocumentation,14.02
+P-NE-005,Northeast,John Doe,GL Insurance,financialReconciliation,14.78
+P-NE-005,Northeast,John Doe,GL Insurance,punchlistCompletion,26.97
+P-NE-005,Northeast,John Doe,Safety,clientHandover,24.21
+P-NE-005,Northeast,John Doe,Safety,finalDocumentation,33.5
+P-NE-005,Northeast,John Doe,Safety,financialReconciliation,34.15
+P-NE-005,Northeast,John Doe,Safety,punchlistCompletion,24.58
+P-NE-005,Northeast,John Doe,Schedule,clientHandover,39.82
+P-NE-005,Northeast,John Doe,Schedule,finalDocumentation,25.02
+P-NE-005,Northeast,John Doe,Schedule,financialReconciliation,41.51
+P-NE-005,Northeast,John Doe,Schedule,punchlistCompletion,12.15
+P-NE-005,Northeast,John Doe,WC Insurance,clientHandover,10.32
+P-NE-005,Northeast,John Doe,WC Insurance,finalDocumentation,43.15
+P-NE-005,Northeast,John Doe,WC Insurance,financialReconciliation,20.3
+P-NE-005,Northeast,John Doe,WC Insurance,punchlistCompletion,41.27
+P-SE-006,Southeast,Jane Smith,BR Insurance,clientHandover,30.88
+P-SE-006,Southeast,Jane Smith,BR Insurance,finalDocumentation,3.34
+P-SE-006,Southeast,Jane Smith,BR Insurance,financialReconciliation,8.56
+P-SE-006,Southeast,Jane Smith,BR Insurance,punchlistCompletion,21.83
+P-SE-006,Southeast,Jane Smith,CA Insurance,clientHandover,25.08
+P-SE-006,Southeast,Jane Smith,CA Insurance,finalDocumentation,31.95
+P-SE-006,Southeast,Jane Smith,CA Insurance,financialReconciliation,9.57
+P-SE-006,Southeast,Jane Smith,CA Insurance,punchlistCompletion,3.55
+P-SE-006,Southeast,Jane Smith,Cost,clientHandover,28.74
+P-SE-006,Southeast,Jane Smith,Cost,finalDocumentation,17.08
+P-SE-006,Southeast,Jane Smith,Cost,financialReconciliation,21.49
+P-SE-006,Southeast,Jane Smith,Cost,punchlistCompletion,9.05
+P-SE-006,Southeast,Jane Smith,GL Insurance,clientHandover,10.99
+P-SE-006,Southeast,Jane Smith,GL Insurance,finalDocumentation,19.52
+P-SE-006,Southeast,Jane Smith,GL Insurance,financialReconciliation,6.84
+P-SE-006,Southeast,Jane Smith,GL Insurance,punchlistCompletion,22.7
+P-SE-006,Southeast,Jane Smith,Safety,clientHandover,20.5
+P-SE-006,Southeast,Jane Smith,Safety,finalDocumentation,7.03
+P-SE-006,Southeast,Jane Smith,Safety,financialReconciliation,30.85
+P-SE-006,Southeast,Jane Smith,Safety,punchlistCompletion,10.35
+P-SE-006,Southeast,Jane Smith,Schedule,clientHandover,28.92
+P-SE-006,Southeast,Jane Smith,Schedule,finalDocumentation,16.21
+P-SE-006,Southeast,Jane Smith,Schedule,financialReconciliation,9.48
+P-SE-006,Southeast,Jane Smith,Schedule,punchlistCompletion,18.59
+P-SE-006,Southeast,Jane Smith,WC Insurance,clientHandover,8.71
+P-SE-006,Southeast,Jane Smith,WC Insurance,finalDocumentation,12.83
+P-SE-006,Southeast,Jane Smith,WC Insurance,financialReconciliation,9.05
+P-SE-006,Southeast,Jane Smith,WC Insurance,punchlistCompletion,21.59
+P-NE-007,Northeast,John Doe,BR Insurance,clientHandover,30.14
+P-NE-007,Northeast,John Doe,BR Insurance,finalDocumentation,26.61
+P-NE-007,Northeast,John Doe,BR Insurance,financialReconciliation,35.88
+P-NE-007,Northeast,John Doe,BR Insurance,punchlistCompletion,36.94
+P-NE-007,Northeast,John Doe,CA Insurance,clientHandover,56.45
+P-NE-007,Northeast,John Doe,CA Insurance,finalDocumentation,31.99
+P-NE-007,Northeast,John Doe,CA Insurance,financialReconciliation,39.73
+P-NE-007,Northeast,John Doe,CA Insurance,punchlistCompletion,58.93
+P-NE-007,Northeast,John Doe,Cost,clientHandover,31.62
+P-NE-007,Northeast,John Doe,Cost,finalDocumentation,42.91
+P-NE-007,Northeast,John Doe,Cost,financialReconciliation,56.3
+P-NE-007,Northeast,John Doe,Cost,punchlistCompletion,55.38
+P-NE-007,Northeast,John Doe,GL Insurance,clientHandover,30.94
+P-NE-007,Northeast,John Doe,GL Insurance,finalDocumentation,56.16
+P-NE-007,Northeast,John Doe,GL Insurance,financialReconciliation,66.37
+P-NE-007,Northeast,John Doe,GL Insurance,punchlistCompletion,53.93
+P-NE-007,Northeast,John Doe,Safety,clientHandover,34.68
+P-NE-007,Northeast,John Doe,Safety,finalDocumentation,19.88
+P-NE-007,Northeast,John Doe,Safety,financialReconciliation,32.94
+P-NE-007,Northeast,John Doe,Safety,punchlistCompletion,33.24
+P-NE-007,Northeast,John Doe,Schedule,clientHandover,40.84
+P-NE-007,Northeast,John Doe,Schedule,finalDocumentation,26.57
+P-NE-007,Northeast,John Doe,Schedule,financialReconciliation,55.42
+P-NE-007,Northeast,John Doe,Schedule,punchlistCompletion,23.29
+P-NE-007,Northeast,John Doe,WC Insurance,clientHandover,30.95
+P-NE-007,Northeast,John Doe,WC Insurance,finalDocumentation,37.1
+P-NE-007,Northeast,John Doe,WC Insurance,financialReconciliation,55.47
+P-NE-007,Northeast,John Doe,WC Insurance,punchlistCompletion,34.57
+P-SE-008,Southeast,Jane Smith,BR Insurance,clientHandover,12.87
+P-SE-008,Southeast,Jane Smith,BR Insurance,finalDocumentation,23.23
+P-SE-008,Southeast,Jane Smith,BR Insurance,financialReconciliation,7.19
+P-SE-008,Southeast,Jane Smith,BR Insurance,punchlistCompletion,29.74
+P-SE-008,Southeast,Jane Smith,CA Insurance,clientHandover,33.92
+P-SE-008,Southeast,Jane Smith,CA Insurance,finalDocumentation,42.75
+P-SE-008,Southeast,Jane Smith,CA Insurance,financialReconciliation,25.69
+P-SE-008,Southeast,Jane Smith,CA Insurance,punchlistCompletion,27.17
+P-SE-008,Southeast,Jane Smith,Cost,clientHandover,12.65
+P-SE-008,Southeast,Jane Smith,Cost,finalDocumentation,44.76
+P-SE-008,Southeast,Jane Smith,Cost,financialReconciliation,39.95
+P-SE-008,Southeast,Jane Smith,Cost,punchlistCompletion,43.05
+P-SE-008,Southeast,Jane Smith,GL Insurance,clientHandover,40.36
+P-SE-008,Southeast,Jane Smith,GL Insurance,finalDocumentation,24.16
+P-SE-008,Southeast,Jane Smith,GL Insurance,financialReconciliation,19.61
+P-SE-008,Southeast,Jane Smith,GL Insurance,punchlistCompletion,48.41
+P-SE-008,Southeast,Jane Smith,Safety,clientHandover,3.17
+P-SE-008,Southeast,Jane Smith,Safety,finalDocumentation,18.97
+P-SE-008,Southeast,Jane Smith,Safety,financialReconciliation,15.84
+P-SE-008,Southeast,Jane Smith,Safety,punchlistCompletion,8.91
+P-SE-008,Southeast,Jane Smith,Schedule,clientHandover,33.61
+P-SE-008,Southeast,Jane Smith,Schedule,finalDocumentation,22.46
+P-SE-008,Southeast,Jane Smith,Schedule,financialReconciliation,39.97
+P-SE-008,Southeast,Jane Smith,Schedule,punchlistCompletion,2.97
+P-SE-008,Southeast,Jane Smith,WC Insurance,clientHandover,42.82
+P-SE-008,Southeast,Jane Smith,WC Insurance,finalDocumentation,21.2
+P-SE-008,Southeast,Jane Smith,WC Insurance,financialReconciliation,41.29
+P-SE-008,Southeast,Jane Smith,WC Insurance,punchlistCompletion,19.92
+P-MW-009,Midwest,Mike Johnson,BR Insurance,clientHandover,28.83
+P-MW-009,Midwest,Mike Johnson,BR Insurance,finalDocumentation,21.17
+P-MW-009,Midwest,Mike Johnson,BR Insurance,financialReconciliation,22.55
+P-MW-009,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,41.65
+P-MW-009,Midwest,Mike Johnson,CA Insurance,clientHandover,46.07
+P-MW-009,Midwest,Mike Johnson,CA Insurance,finalDocumentation,42.87
+P-MW-009,Midwest,Mike Johnson,CA Insurance,financialReconciliation,28.65
+P-MW-009,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,28.0
+P-MW-009,Midwest,Mike Johnson,Cost,clientHandover,25.43
+P-MW-009,Midwest,Mike Johnson,Cost,finalDocumentation,24.3
+P-MW-009,Midwest,Mike Johnson,Cost,financialReconciliation,21.2
+P-MW-009,Midwest,Mike Johnson,Cost,punchlistCompletion,56.43
+P-MW-009,Midwest,Mike Johnson,GL Insurance,clientHandover,45.78
+P-MW-009,Midwest,Mike Johnson,GL Insurance,finalDocumentation,56.61
+P-MW-009,Midwest,Mike Johnson,GL Insurance,financialReconciliation,44.78
+P-MW-009,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,30.85
+P-MW-009,Midwest,Mike Johnson,Safety,clientHandover,14.8
+P-MW-009,Midwest,Mike Johnson,Safety,finalDocumentation,33.8
+P-MW-009,Midwest,Mike Johnson,Safety,financialReconciliation,19.41
+P-MW-009,Midwest,Mike Johnson,Safety,punchlistCompletion,37.01
+P-MW-009,Midwest,Mike Johnson,Schedule,clientHandover,46.11
+P-MW-009,Midwest,Mike Johnson,Schedule,finalDocumentation,14.29
+P-MW-009,Midwest,Mike Johnson,Schedule,financialReconciliation,32.11
+P-MW-009,Midwest,Mike Johnson,Schedule,punchlistCompletion,35.37
+P-MW-009,Midwest,Mike Johnson,WC Insurance,clientHandover,52.39
+P-MW-009,Midwest,Mike Johnson,WC Insurance,finalDocumentation,31.77
+P-MW-009,Midwest,Mike Johnson,WC Insurance,financialReconciliation,35.91
+P-MW-009,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,38.35
+P-WE-010,West,Alice Brown,BR Insurance,clientHandover,5.27
+P-WE-010,West,Alice Brown,BR Insurance,finalDocumentation,25.55
+P-WE-010,West,Alice Brown,BR Insurance,financialReconciliation,5.97
+P-WE-010,West,Alice Brown,BR Insurance,punchlistCompletion,35.74
+P-WE-010,West,Alice Brown,CA Insurance,clientHandover,25.19
+P-WE-010,West,Alice Brown,CA Insurance,finalDocumentation,5.28
+P-WE-010,West,Alice Brown,CA Insurance,financialReconciliation,11.89
+P-WE-010,West,Alice Brown,CA Insurance,punchlistCompletion,23.13
+P-WE-010,West,Alice Brown,Cost,clientHandover,40.33
+P-WE-010,West,Alice Brown,Cost,finalDocumentation,5.93
+P-WE-010,West,Alice Brown,Cost,financialReconciliation,13.61
+P-WE-010,West,Alice Brown,Cost,punchlistCompletion,11.53
+P-WE-010,West,Alice Brown,GL Insurance,clientHandover,45.49
+P-WE-010,West,Alice Brown,GL Insurance,finalDocumentation,39.35
+P-WE-010,West,Alice Brown,GL Insurance,financialReconciliation,30.47
+P-WE-010,West,Alice Brown,GL Insurance,punchlistCompletion,34.14
+P-WE-010,West,Alice Brown,Safety,clientHandover,6.36
+P-WE-010,West,Alice Brown,Safety,finalDocumentation,30.95
+P-WE-010,West,Alice Brown,Safety,financialReconciliation,13.56
+P-WE-010,West,Alice Brown,Safety,punchlistCompletion,30.9
+P-WE-010,West,Alice Brown,Schedule,clientHandover,36.86
+P-WE-010,West,Alice Brown,Schedule,finalDocumentation,3.61
+P-WE-010,West,Alice Brown,Schedule,financialReconciliation,36.94
+P-WE-010,West,Alice Brown,Schedule,punchlistCompletion,17.5
+P-WE-010,West,Alice Brown,WC Insurance,clientHandover,12.68
+P-WE-010,West,Alice Brown,WC Insurance,finalDocumentation,26.51
+P-WE-010,West,Alice Brown,WC Insurance,financialReconciliation,32.87
+P-WE-010,West,Alice Brown,WC Insurance,punchlistCompletion,1.31
+P-NE-011,Northeast,John Doe,BR Insurance,clientHandover,44.3
+P-NE-011,Northeast,John Doe,BR Insurance,finalDocumentation,57.16
+P-NE-011,Northeast,John Doe,BR Insurance,financialReconciliation,54.38
+P-NE-011,Northeast,John Doe,BR Insurance,punchlistCompletion,42.82
+P-NE-011,Northeast,John Doe,CA Insurance,clientHandover,59.96
+P-NE-011,Northeast,John Doe,CA Insurance,finalDocumentation,29.92
+P-NE-011,Northeast,John Doe,CA Insurance,financialReconciliation,36.33
+P-NE-011,Northeast,John Doe,CA Insurance,punchlistCompletion,29.1
+P-NE-011,Northeast,John Doe,Cost,clientHandover,29.69
+P-NE-011,Northeast,John Doe,Cost,finalDocumentation,45.54
+P-NE-011,Northeast,John Doe,Cost,financialReconciliation,59.84
+P-NE-011,Northeast,John Doe,Cost,punchlistCompletion,62.21
+P-NE-011,Northeast,John Doe,GL Insurance,clientHandover,51.07
+P-NE-011,Northeast,John Doe,GL Insurance,finalDocumentation,54.48
+P-NE-011,Northeast,John Doe,GL Insurance,financialReconciliation,58.65
+P-NE-011,Northeast,John Doe,GL Insurance,punchlistCompletion,39.48
+P-NE-011,Northeast,John Doe,Safety,clientHandover,48.84
+P-NE-011,Northeast,John Doe,Safety,finalDocumentation,34.94
+P-NE-011,Northeast,John Doe,Safety,financialReconciliation,18.14
+P-NE-011,Northeast,John Doe,Safety,punchlistCompletion,29.07
+P-NE-011,Northeast,John Doe,Schedule,clientHandover,30.56
+P-NE-011,Northeast,John Doe,Schedule,finalDocumentation,48.7
+P-NE-011,Northeast,John Doe,Schedule,financialReconciliation,45.37
+P-NE-011,Northeast,John Doe,Schedule,punchlistCompletion,28.14
+P-NE-011,Northeast,John Doe,WC Insurance,clientHandover,58.32
+P-NE-011,Northeast,John Doe,WC Insurance,finalDocumentation,40.11
+P-NE-011,Northeast,John Doe,WC Insurance,financialReconciliation,26.01
+P-NE-011,Northeast,John Doe,WC Insurance,punchlistCompletion,23.39
+P-SE-012,Southeast,Jane Smith,BR Insurance,clientHandover,10.61
+P-SE-012,Southeast,Jane Smith,BR Insurance,finalDocumentation,29.88
+P-SE-012,Southeast,Jane Smith,BR Insurance,financialReconciliation,30.19
+P-SE-012,Southeast,Jane Smith,BR Insurance,punchlistCompletion,32.11
+P-SE-012,Southeast,Jane Smith,CA Insurance,clientHandover,34.49
+P-SE-012,Southeast,Jane Smith,CA Insurance,finalDocumentation,31.71
+P-SE-012,Southeast,Jane Smith,CA Insurance,financialReconciliation,35.01
+P-SE-012,Southeast,Jane Smith,CA Insurance,punchlistCompletion,5.22
+P-SE-012,Southeast,Jane Smith,Cost,clientHandover,37.37
+P-SE-012,Southeast,Jane Smith,Cost,finalDocumentation,11.98
+P-SE-012,Southeast,Jane Smith,Cost,financialReconciliation,33.2
+P-SE-012,Southeast,Jane Smith,Cost,punchlistCompletion,6.11
+P-SE-012,Southeast,Jane Smith,GL Insurance,clientHandover,40.26
+P-SE-012,Southeast,Jane Smith,GL Insurance,finalDocumentation,39.58
+P-SE-012,Southeast,Jane Smith,GL Insurance,financialReconciliation,37.43
+P-SE-012,Southeast,Jane Smith,GL Insurance,punchlistCompletion,44.05
+P-SE-012,Southeast,Jane Smith,Safety,clientHandover,31.69
+P-SE-012,Southeast,Jane Smith,Safety,finalDocumentation,14.41
+P-SE-012,Southeast,Jane Smith,Safety,financialReconciliation,6.1
+P-SE-012,Southeast,Jane Smith,Safety,punchlistCompletion,21.48
+P-SE-012,Southeast,Jane Smith,Schedule,clientHandover,8.35
+P-SE-012,Southeast,Jane Smith,Schedule,finalDocumentation,28.86
+P-SE-012,Southeast,Jane Smith,Schedule,financialReconciliation,32.46
+P-SE-012,Southeast,Jane Smith,Schedule,punchlistCompletion,31.12
+P-SE-012,Southeast,Jane Smith,WC Insurance,clientHandover,36.37
+P-SE-012,Southeast,Jane Smith,WC Insurance,finalDocumentation,1.94
+P-SE-012,Southeast,Jane Smith,WC Insurance,financialReconciliation,13.62
+P-SE-012,Southeast,Jane Smith,WC Insurance,punchlistCompletion,28.99
+P-MW-013,Midwest,Mike Johnson,BR Insurance,clientHandover,33.38
+P-MW-013,Midwest,Mike Johnson,BR Insurance,finalDocumentation,54.5
+P-MW-013,Midwest,Mike Johnson,BR Insurance,financialReconciliation,20.34
+P-MW-013,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,26.62
+P-MW-013,Midwest,Mike Johnson,CA Insurance,clientHandover,39.46
+P-MW-013,Midwest,Mike Johnson,CA Insurance,finalDocumentation,48.14
+P-MW-013,Midwest,Mike Johnson,CA Insurance,financialReconciliation,43.25
+P-MW-013,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,31.55
+P-MW-013,Midwest,Mike Johnson,Cost,clientHandover,28.73
+P-MW-013,Midwest,Mike Johnson,Cost,finalDocumentation,52.81
+P-MW-013,Midwest,Mike Johnson,Cost,financialReconciliation,21.95
+P-MW-013,Midwest,Mike Johnson,Cost,punchlistCompletion,30.1
+P-MW-013,Midwest,Mike Johnson,GL Insurance,clientHandover,45.45
+P-MW-013,Midwest,Mike Johnson,GL Insurance,finalDocumentation,49.66
+P-MW-013,Midwest,Mike Johnson,GL Insurance,financialReconciliation,63.25
+P-MW-013,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,39.99
+P-MW-013,Midwest,Mike Johnson,Safety,clientHandover,24.16
+P-MW-013,Midwest,Mike Johnson,Safety,finalDocumentation,26.13
+P-MW-013,Midwest,Mike Johnson,Safety,financialReconciliation,51.68
+P-MW-013,Midwest,Mike Johnson,Safety,punchlistCompletion,47.57
+P-MW-013,Midwest,Mike Johnson,Schedule,clientHandover,27.21
+P-MW-013,Midwest,Mike Johnson,Schedule,finalDocumentation,23.9
+P-MW-013,Midwest,Mike Johnson,Schedule,financialReconciliation,33.41
+P-MW-013,Midwest,Mike Johnson,Schedule,punchlistCompletion,47.66
+P-MW-013,Midwest,Mike Johnson,WC Insurance,clientHandover,25.14
+P-MW-013,Midwest,Mike Johnson,WC Insurance,finalDocumentation,55.57
+P-MW-013,Midwest,Mike Johnson,WC Insurance,financialReconciliation,56.82
+P-MW-013,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,22.61
+P-WE-014,West,Alice Brown,BR Insurance,clientHandover,13.61
+P-WE-014,West,Alice Brown,BR Insurance,finalDocumentation,13.07
+P-WE-014,West,Alice Brown,BR Insurance,financialReconciliation,4.82
+P-WE-014,West,Alice Brown,BR Insurance,punchlistCompletion,9.87
+P-WE-014,West,Alice Brown,CA Insurance,clientHandover,21.31
+P-WE-014,West,Alice Brown,CA Insurance,finalDocumentation,32.03
+P-WE-014,West,Alice Brown,CA Insurance,financialReconciliation,30.79
+P-WE-014,West,Alice Brown,CA Insurance,punchlistCompletion,23.35
+P-WE-014,West,Alice Brown,Cost,clientHandover,26.18
+P-WE-014,West,Alice Brown,Cost,finalDocumentation,1.06
+P-WE-014,West,Alice Brown,Cost,financialReconciliation,19.85
+P-WE-014,West,Alice Brown,Cost,punchlistCompletion,33.4
+P-WE-014,West,Alice Brown,GL Insurance,clientHandover,33.22
+P-WE-014,West,Alice Brown,GL Insurance,finalDocumentation,26.24
+P-WE-014,West,Alice Brown,GL Insurance,financialReconciliation,12.93
+P-WE-014,West,Alice Brown,GL Insurance,punchlistCompletion,13.55
+P-WE-014,West,Alice Brown,Safety,clientHandover,2.89
+P-WE-014,West,Alice Brown,Safety,finalDocumentation,21.03
+P-WE-014,West,Alice Brown,Safety,financialReconciliation,10.83
+P-WE-014,West,Alice Brown,Safety,punchlistCompletion,19.11
+P-WE-014,West,Alice Brown,Schedule,clientHandover,21.55
+P-WE-014,West,Alice Brown,Schedule,finalDocumentation,12.17
+P-WE-014,West,Alice Brown,Schedule,financialReconciliation,8.39
+P-WE-014,West,Alice Brown,Schedule,punchlistCompletion,17.72
+P-WE-014,West,Alice Brown,WC Insurance,clientHandover,14.07
+P-WE-014,West,Alice Brown,WC Insurance,finalDocumentation,24.03
+P-WE-014,West,Alice Brown,WC Insurance,financialReconciliation,10.9
+P-WE-014,West,Alice Brown,WC Insurance,punchlistCompletion,10.61
+P-NE-015,Northeast,John Doe,BR Insurance,clientHandover,3.98
+P-NE-015,Northeast,John Doe,BR Insurance,finalDocumentation,29.91
+P-NE-015,Northeast,John Doe,BR Insurance,financialReconciliation,10.97
+P-NE-015,Northeast,John Doe,BR Insurance,punchlistCompletion,11.99
+P-NE-015,Northeast,John Doe,CA Insurance,clientHandover,8.91
+P-NE-015,Northeast,John Doe,CA Insurance,finalDocumentation,15.79
+P-NE-015,Northeast,John Doe,CA Insurance,financialReconciliation,39.99
+P-NE-015,Northeast,John Doe,CA Insurance,punchlistCompletion,25.01
+P-NE-015,Northeast,John Doe,Cost,clientHandover,26.6
+P-NE-015,Northeast,John Doe,Cost,finalDocumentation,25.2
+P-NE-015,Northeast,John Doe,Cost,financialReconciliation,34.19
+P-NE-015,Northeast,John Doe,Cost,punchlistCompletion,31.2
+P-NE-015,Northeast,John Doe,GL Insurance,clientHandover,31.62
+P-NE-015,Northeast,John Doe,GL Insurance,finalDocumentation,42.84
+P-NE-015,Northeast,John Doe,GL Insurance,financialReconciliation,14.39
+P-NE-015,Northeast,John Doe,GL Insurance,punchlistCompletion,17.79
+P-NE-015,Northeast,John Doe,Safety,clientHandover,36.15
+P-NE-015,Northeast,John Doe,Safety,finalDocumentation,18.24
+P-NE-015,Northeast,John Doe,Safety,financialReconciliation,19.45
+P-NE-015,Northeast,John Doe,Safety,punchlistCompletion,9.33
+P-NE-015,Northeast,John Doe,Schedule,clientHandover,13.48
+P-NE-015,Northeast,John Doe,Schedule,finalDocumentation,14.04
+P-NE-015,Northeast,John Doe,Schedule,financialReconciliation,2.02
+P-NE-015,Northeast,John Doe,Schedule,punchlistCompletion,23.92
+P-NE-015,Northeast,John Doe,WC Insurance,clientHandover,35.05
+P-NE-015,Northeast,John Doe,WC Insurance,finalDocumentation,30.32
+P-NE-015,Northeast,John Doe,WC Insurance,financialReconciliation,37.74
+P-NE-015,Northeast,John Doe,WC Insurance,punchlistCompletion,18.41
+P-SE-016,Southeast,Jane Smith,BR Insurance,clientHandover,50.0
+P-SE-016,Southeast,Jane Smith,BR Insurance,finalDocumentation,38.7
+P-SE-016,Southeast,Jane Smith,BR Insurance,financialReconciliation,35.82
+P-SE-016,Southeast,Jane Smith,BR Insurance,punchlistCompletion,51.52
+P-SE-016,Southeast,Jane Smith,CA Insurance,clientHandover,35.19
+P-SE-016,Southeast,Jane Smith,CA Insurance,finalDocumentation,50.66
+P-SE-016,Southeast,Jane Smith,CA Insurance,financialReconciliation,43.77
+P-SE-016,Southeast,Jane Smith,CA Insurance,punchlistCompletion,39.51
+P-SE-016,Southeast,Jane Smith,Cost,clientHandover,17.22
+P-SE-016,Southeast,Jane Smith,Cost,finalDocumentation,36.78
+P-SE-016,Southeast,Jane Smith,Cost,financialReconciliation,43.24
+P-SE-016,Southeast,Jane Smith,Cost,punchlistCompletion,26.76
+P-SE-016,Southeast,Jane Smith,GL Insurance,clientHandover,22.01
+P-SE-016,Southeast,Jane Smith,GL Insurance,finalDocumentation,27.04
+P-SE-016,Southeast,Jane Smith,GL Insurance,financialReconciliation,40.72
+P-SE-016,Southeast,Jane Smith,GL Insurance,punchlistCompletion,58.32
+P-SE-016,Southeast,Jane Smith,Safety,clientHandover,26.01
+P-SE-016,Southeast,Jane Smith,Safety,finalDocumentation,39.04
+P-SE-016,Southeast,Jane Smith,Safety,financialReconciliation,13.26
+P-SE-016,Southeast,Jane Smith,Safety,punchlistCompletion,39.8
+P-SE-016,Southeast,Jane Smith,Schedule,clientHandover,38.85
+P-SE-016,Southeast,Jane Smith,Schedule,finalDocumentation,27.58
+P-SE-016,Southeast,Jane Smith,Schedule,financialReconciliation,18.78
+P-SE-016,Southeast,Jane Smith,Schedule,punchlistCompletion,36.19
+P-SE-016,Southeast,Jane Smith,WC Insurance,clientHandover,46.06
+P-SE-016,Southeast,Jane Smith,WC Insurance,finalDocumentation,23.97
+P-SE-016,Southeast,Jane Smith,WC Insurance,financialReconciliation,32.26
+P-SE-016,Southeast,Jane Smith,WC Insurance,punchlistCompletion,47.93
+P-MW-017,Midwest,Mike Johnson,BR Insurance,clientHandover,18.36
+P-MW-017,Midwest,Mike Johnson,BR Insurance,finalDocumentation,23.61
+P-MW-017,Midwest,Mike Johnson,BR Insurance,financialReconciliation,14.04
+P-MW-017,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,3.06
+P-MW-017,Midwest,Mike Johnson,CA Insurance,clientHandover,32.67
+P-MW-017,Midwest,Mike Johnson,CA Insurance,finalDocumentation,15.55
+P-MW-017,Midwest,Mike Johnson,CA Insurance,financialReconciliation,15.71
+P-MW-017,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,8.24
+P-MW-017,Midwest,Mike Johnson,Cost,clientHandover,24.59
+P-MW-017,Midwest,Mike Johnson,Cost,finalDocumentation,18.56
+P-MW-017,Midwest,Mike Johnson,Cost,financialReconciliation,10.15
+P-MW-017,Midwest,Mike Johnson,Cost,punchlistCompletion,10.59
+P-MW-017,Midwest,Mike Johnson,GL Insurance,clientHandover,13.79
+P-MW-017,Midwest,Mike Johnson,GL Insurance,finalDocumentation,4.1
+P-MW-017,Midwest,Mike Johnson,GL Insurance,financialReconciliation,11.87
+P-MW-017,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,12.43
+P-MW-017,Midwest,Mike Johnson,Safety,clientHandover,8.96
+P-MW-017,Midwest,Mike Johnson,Safety,finalDocumentation,23.21
+P-MW-017,Midwest,Mike Johnson,Safety,financialReconciliation,19.18
+P-MW-017,Midwest,Mike Johnson,Safety,punchlistCompletion,16.12
+P-MW-017,Midwest,Mike Johnson,Schedule,clientHandover,24.05
+P-MW-017,Midwest,Mike Johnson,Schedule,finalDocumentation,26.75
+P-MW-017,Midwest,Mike Johnson,Schedule,financialReconciliation,28.81
+P-MW-017,Midwest,Mike Johnson,Schedule,punchlistCompletion,17.98
+P-MW-017,Midwest,Mike Johnson,WC Insurance,clientHandover,24.59
+P-MW-017,Midwest,Mike Johnson,WC Insurance,finalDocumentation,19.37
+P-MW-017,Midwest,Mike Johnson,WC Insurance,financialReconciliation,8.86
+P-MW-017,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,5.7
+P-WE-018,West,Alice Brown,BR Insurance,clientHandover,23.11
+P-WE-018,West,Alice Brown,BR Insurance,finalDocumentation,34.17
+P-WE-018,West,Alice Brown,BR Insurance,financialReconciliation,36.7
+P-WE-018,West,Alice Brown,BR Insurance,punchlistCompletion,24.6
+P-WE-018,West,Alice Brown,CA Insurance,clientHandover,43.58
+P-WE-018,West,Alice Brown,CA Insurance,finalDocumentation,45.89
+P-WE-018,West,Alice Brown,CA Insurance,financialReconciliation,36.76
+P-WE-018,West,Alice Brown,CA Insurance,punchlistCompletion,22.08
+P-WE-018,West,Alice Brown,Cost,clientHandover,53.14
+P-WE-018,West,Alice Brown,Cost,finalDocumentation,38.22
+P-WE-018,West,Alice Brown,Cost,financialReconciliation,37.07
+P-WE-018,West,Alice Brown,Cost,punchlistCompletion,23.24
+P-WE-018,West,Alice Brown,GL Insurance,clientHandover,34.78
+P-WE-018,West,Alice Brown,GL Insurance,finalDocumentation,47.85
+P-WE-018,West,Alice Brown,GL Insurance,financialReconciliation,34.82
+P-WE-018,West,Alice Brown,GL Insurance,punchlistCompletion,50.13
+P-WE-018,West,Alice Brown,Safety,clientHandover,44.9
+P-WE-018,West,Alice Brown,Safety,finalDocumentation,49.14
+P-WE-018,West,Alice Brown,Safety,financialReconciliation,31.76
+P-WE-018,West,Alice Brown,Safety,punchlistCompletion,53.14
+P-WE-018,West,Alice Brown,Schedule,clientHandover,47.62
+P-WE-018,West,Alice Brown,Schedule,finalDocumentation,40.36
+P-WE-018,West,Alice Brown,Schedule,financialReconciliation,51.27
+P-WE-018,West,Alice Brown,Schedule,punchlistCompletion,44.82
+P-WE-018,West,Alice Brown,WC Insurance,clientHandover,47.17
+P-WE-018,West,Alice Brown,WC Insurance,finalDocumentation,37.43
+P-WE-018,West,Alice Brown,WC Insurance,financialReconciliation,33.45
+P-WE-018,West,Alice Brown,WC Insurance,punchlistCompletion,21.16
+P-NE-019,Northeast,John Doe,BR Insurance,clientHandover,12.97
+P-NE-019,Northeast,John Doe,BR Insurance,finalDocumentation,31.07
+P-NE-019,Northeast,John Doe,BR Insurance,financialReconciliation,42.98
+P-NE-019,Northeast,John Doe,BR Insurance,punchlistCompletion,35.17
+P-NE-019,Northeast,John Doe,CA Insurance,clientHandover,34.78
+P-NE-019,Northeast,John Doe,CA Insurance,finalDocumentation,8.82
+P-NE-019,Northeast,John Doe,CA Insurance,financialReconciliation,13.05
+P-NE-019,Northeast,John Doe,CA Insurance,punchlistCompletion,14.1
+P-NE-019,Northeast,John Doe,Cost,clientHandover,23.07
+P-NE-019,Northeast,John Doe,Cost,finalDocumentation,12.01
+P-NE-019,Northeast,John Doe,Cost,financialReconciliation,18.47
+P-NE-019,Northeast,John Doe,Cost,punchlistCompletion,25.16
+P-NE-019,Northeast,John Doe,GL Insurance,clientHandover,34.58
+P-NE-019,Northeast,John Doe,GL Insurance,finalDocumentation,23.09
+P-NE-019,Northeast,John Doe,GL Insurance,financialReconciliation,13.78
+P-NE-019,Northeast,John Doe,GL Insurance,punchlistCompletion,16.28
+P-NE-019,Northeast,John Doe,Safety,clientHandover,35.28
+P-NE-019,Northeast,John Doe,Safety,finalDocumentation,32.45
+P-NE-019,Northeast,John Doe,Safety,financialReconciliation,32.08
+P-NE-019,Northeast,John Doe,Safety,punchlistCompletion,17.17
+P-NE-019,Northeast,John Doe,Schedule,clientHandover,22.47
+P-NE-019,Northeast,John Doe,Schedule,finalDocumentation,5.08
+P-NE-019,Northeast,John Doe,Schedule,financialReconciliation,9.43
+P-NE-019,Northeast,John Doe,Schedule,punchlistCompletion,29.71
+P-NE-019,Northeast,John Doe,WC Insurance,clientHandover,38.25
+P-NE-019,Northeast,John Doe,WC Insurance,finalDocumentation,47.0
+P-NE-019,Northeast,John Doe,WC Insurance,financialReconciliation,33.01
+P-NE-019,Northeast,John Doe,WC Insurance,punchlistCompletion,21.0
+P-SE-020,Southeast,Jane Smith,BR Insurance,clientHandover,24.42
+P-SE-020,Southeast,Jane Smith,BR Insurance,finalDocumentation,4.97
+P-SE-020,Southeast,Jane Smith,BR Insurance,financialReconciliation,34.16
+P-SE-020,Southeast,Jane Smith,BR Insurance,punchlistCompletion,31.13
+P-SE-020,Southeast,Jane Smith,CA Insurance,clientHandover,16.89
+P-SE-020,Southeast,Jane Smith,CA Insurance,finalDocumentation,7.84
+P-SE-020,Southeast,Jane Smith,CA Insurance,financialReconciliation,34.31
+P-SE-020,Southeast,Jane Smith,CA Insurance,punchlistCompletion,42.35
+P-SE-020,Southeast,Jane Smith,Cost,clientHandover,9.58
+P-SE-020,Southeast,Jane Smith,Cost,finalDocumentation,11.71
+P-SE-020,Southeast,Jane Smith,Cost,financialReconciliation,34.92
+P-SE-020,Southeast,Jane Smith,Cost,punchlistCompletion,29.29
+P-SE-020,Southeast,Jane Smith,GL Insurance,clientHandover,23.87
+P-SE-020,Southeast,Jane Smith,GL Insurance,finalDocumentation,20.48
+P-SE-020,Southeast,Jane Smith,GL Insurance,financialReconciliation,46.33
+P-SE-020,Southeast,Jane Smith,GL Insurance,punchlistCompletion,35.09
+P-SE-020,Southeast,Jane Smith,Safety,clientHandover,1.92
+P-SE-020,Southeast,Jane Smith,Safety,finalDocumentation,30.49
+P-SE-020,Southeast,Jane Smith,Safety,financialReconciliation,4.89
+P-SE-020,Southeast,Jane Smith,Safety,punchlistCompletion,35.73
+P-SE-020,Southeast,Jane Smith,Schedule,clientHandover,30.14
+P-SE-020,Southeast,Jane Smith,Schedule,finalDocumentation,22.43
+P-SE-020,Southeast,Jane Smith,Schedule,financialReconciliation,27.58
+P-SE-020,Southeast,Jane Smith,Schedule,punchlistCompletion,9.28
+P-SE-020,Southeast,Jane Smith,WC Insurance,clientHandover,27.09
+P-SE-020,Southeast,Jane Smith,WC Insurance,finalDocumentation,30.6
+P-SE-020,Southeast,Jane Smith,WC Insurance,financialReconciliation,29.62
+P-SE-020,Southeast,Jane Smith,WC Insurance,punchlistCompletion,5.04
+P-MW-021,Midwest,Mike Johnson,BR Insurance,clientHandover,18.47
+P-MW-021,Midwest,Mike Johnson,BR Insurance,finalDocumentation,25.74
+P-MW-021,Midwest,Mike Johnson,BR Insurance,financialReconciliation,48.23
+P-MW-021,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,49.07
+P-MW-021,Midwest,Mike Johnson,CA Insurance,clientHandover,42.41
+P-MW-021,Midwest,Mike Johnson,CA Insurance,finalDocumentation,53.27
+P-MW-021,Midwest,Mike Johnson,CA Insurance,financialReconciliation,36.59
+P-MW-021,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,27.75
+P-MW-021,Midwest,Mike Johnson,Cost,clientHandover,58.43
+P-MW-021,Midwest,Mike Johnson,Cost,finalDocumentation,53.98
+P-MW-021,Midwest,Mike Johnson,Cost,financialReconciliation,24.22
+P-MW-021,Midwest,Mike Johnson,Cost,punchlistCompletion,52.89
+P-MW-021,Midwest,Mike Johnson,GL Insurance,clientHandover,55.33
+P-MW-021,Midwest,Mike Johnson,GL Insurance,finalDocumentation,52.35
+P-MW-021,Midwest,Mike Johnson,GL Insurance,financialReconciliation,33.8
+P-MW-021,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,61.62
+P-MW-021,Midwest,Mike Johnson,Safety,clientHandover,29.42
+P-MW-021,Midwest,Mike Johnson,Safety,finalDocumentation,37.42
+P-MW-021,Midwest,Mike Johnson,Safety,financialReconciliation,40.29
+P-MW-021,Midwest,Mike Johnson,Safety,punchlistCompletion,45.15
+P-MW-021,Midwest,Mike Johnson,Schedule,clientHandover,27.65
+P-MW-021,Midwest,Mike Johnson,Schedule,finalDocumentation,31.14
+P-MW-021,Midwest,Mike Johnson,Schedule,financialReconciliation,34.24
+P-MW-021,Midwest,Mike Johnson,Schedule,punchlistCompletion,28.82
+P-MW-021,Midwest,Mike Johnson,WC Insurance,clientHandover,46.24
+P-MW-021,Midwest,Mike Johnson,WC Insurance,finalDocumentation,38.53
+P-MW-021,Midwest,Mike Johnson,WC Insurance,financialReconciliation,34.42
+P-MW-021,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,36.34
+P-WE-022,West,Alice Brown,BR Insurance,clientHandover,79.88
+P-WE-022,West,Alice Brown,BR Insurance,finalDocumentation,73.7
+P-WE-022,West,Alice Brown,BR Insurance,financialReconciliation,91.06
+P-WE-022,West,Alice Brown,BR Insurance,punchlistCompletion,77.43
+P-WE-022,West,Alice Brown,CA Insurance,clientHandover,85.06
+P-WE-022,West,Alice Brown,CA Insurance,finalDocumentation,89.12
+P-WE-022,West,Alice Brown,CA Insurance,financialReconciliation,87.8
+P-WE-022,West,Alice Brown,CA Insurance,punchlistCompletion,86.3
+P-WE-022,West,Alice Brown,Cost,clientHandover,97.13
+P-WE-022,West,Alice Brown,Cost,finalDocumentation,81.09
+P-WE-022,West,Alice Brown,Cost,financialReconciliation,84.17
+P-WE-022,West,Alice Brown,Cost,punchlistCompletion,95.15
+P-WE-022,West,Alice Brown,GL Insurance,clientHandover,94.92
+P-WE-022,West,Alice Brown,GL Insurance,finalDocumentation,80.8
+P-WE-022,West,Alice Brown,GL Insurance,financialReconciliation,89.26
+P-WE-022,West,Alice Brown,GL Insurance,punchlistCompletion,94.12
+P-WE-022,West,Alice Brown,Safety,clientHandover,98.34
+P-WE-022,West,Alice Brown,Safety,finalDocumentation,90.44
+P-WE-022,West,Alice Brown,Safety,financialReconciliation,68.32
+P-WE-022,West,Alice Brown,Safety,punchlistCompletion,76.84
+P-WE-022,West,Alice Brown,Schedule,clientHandover,75.46
+P-WE-022,West,Alice Brown,Schedule,finalDocumentation,81.37
+P-WE-022,West,Alice Brown,Schedule,financialReconciliation,95.53
+P-WE-022,West,Alice Brown,Schedule,punchlistCompletion,70.86
+P-WE-022,West,Alice Brown,WC Insurance,clientHandover,94.41
+P-WE-022,West,Alice Brown,WC Insurance,finalDocumentation,91.65
+P-WE-022,West,Alice Brown,WC Insurance,financialReconciliation,86.25
+P-WE-022,West,Alice Brown,WC Insurance,punchlistCompletion,90.44
+P-NE-023,Northeast,John Doe,BR Insurance,clientHandover,8.96
+P-NE-023,Northeast,John Doe,BR Insurance,finalDocumentation,6.2
+P-NE-023,Northeast,John Doe,BR Insurance,financialReconciliation,16.49
+P-NE-023,Northeast,John Doe,BR Insurance,punchlistCompletion,1.41
+P-NE-023,Northeast,John Doe,CA Insurance,clientHandover,5.04
+P-NE-023,Northeast,John Doe,CA Insurance,finalDocumentation,32.18
+P-NE-023,Northeast,John Doe,CA Insurance,financialReconciliation,23.32
+P-NE-023,Northeast,John Doe,CA Insurance,punchlistCompletion,18.71
+P-NE-023,Northeast,John Doe,Cost,clientHandover,5.06
+P-NE-023,Northeast,John Doe,Cost,finalDocumentation,9.55
+P-NE-023,Northeast,John Doe,Cost,financialReconciliation,7.55
+P-NE-023,Northeast,John Doe,Cost,punchlistCompletion,5.1
+P-NE-023,Northeast,John Doe,GL Insurance,clientHandover,20.41
+P-NE-023,Northeast,John Doe,GL Insurance,finalDocumentation,18.92
+P-NE-023,Northeast,John Doe,GL Insurance,financialReconciliation,37.13
+P-NE-023,Northeast,John Doe,GL Insurance,punchlistCompletion,27.81
+P-NE-023,Northeast,John Doe,Safety,clientHandover,6.63
+P-NE-023,Northeast,John Doe,Safety,finalDocumentation,14.93
+P-NE-023,Northeast,John Doe,Safety,financialReconciliation,5.81
+P-NE-023,Northeast,John Doe,Safety,punchlistCompletion,20.82
+P-NE-023,Northeast,John Doe,Schedule,clientHandover,8.59
+P-NE-023,Northeast,John Doe,Schedule,finalDocumentation,21.89
+P-NE-023,Northeast,John Doe,Schedule,financialReconciliation,20.68
+P-NE-023,Northeast,John Doe,Schedule,punchlistCompletion,10.26
+P-NE-023,Northeast,John Doe,WC Insurance,clientHandover,8.05
+P-NE-023,Northeast,John Doe,WC Insurance,finalDocumentation,9.77
+P-NE-023,Northeast,John Doe,WC Insurance,financialReconciliation,7.02
+P-NE-023,Northeast,John Doe,WC Insurance,punchlistCompletion,4.12
+P-SE-024,Southeast,Jane Smith,BR Insurance,clientHandover,33.03
+P-SE-024,Southeast,Jane Smith,BR Insurance,finalDocumentation,54.58
+P-SE-024,Southeast,Jane Smith,BR Insurance,financialReconciliation,55.63
+P-SE-024,Southeast,Jane Smith,BR Insurance,punchlistCompletion,48.25
+P-SE-024,Southeast,Jane Smith,CA Insurance,clientHandover,61.41
+P-SE-024,Southeast,Jane Smith,CA Insurance,finalDocumentation,47.9
+P-SE-024,Southeast,Jane Smith,CA Insurance,financialReconciliation,44.71
+P-SE-024,Southeast,Jane Smith,CA Insurance,punchlistCompletion,45.02
+P-SE-024,Southeast,Jane Smith,Cost,clientHandover,31.06
+P-SE-024,Southeast,Jane Smith,Cost,finalDocumentation,47.78
+P-SE-024,Southeast,Jane Smith,Cost,financialReconciliation,36.37
+P-SE-024,Southeast,Jane Smith,Cost,punchlistCompletion,46.62
+P-SE-024,Southeast,Jane Smith,GL Insurance,clientHandover,37.97
+P-SE-024,Southeast,Jane Smith,GL Insurance,finalDocumentation,34.96
+P-SE-024,Southeast,Jane Smith,GL Insurance,financialReconciliation,34.14
+P-SE-024,Southeast,Jane Smith,GL Insurance,punchlistCompletion,57.18
+P-SE-024,Southeast,Jane Smith,Safety,clientHandover,37.03
+P-SE-024,Southeast,Jane Smith,Safety,finalDocumentation,58.64
+P-SE-024,Southeast,Jane Smith,Safety,financialReconciliation,53.88
+P-SE-024,Southeast,Jane Smith,Safety,punchlistCompletion,40.11
+P-SE-024,Southeast,Jane Smith,Schedule,clientHandover,45.96
+P-SE-024,Southeast,Jane Smith,Schedule,finalDocumentation,57.74
+P-SE-024,Southeast,Jane Smith,Schedule,financialReconciliation,57.91
+P-SE-024,Southeast,Jane Smith,Schedule,punchlistCompletion,42.64
+P-SE-024,Southeast,Jane Smith,WC Insurance,clientHandover,30.74
+P-SE-024,Southeast,Jane Smith,WC Insurance,finalDocumentation,48.51
+P-SE-024,Southeast,Jane Smith,WC Insurance,financialReconciliation,65.76
+P-SE-024,Southeast,Jane Smith,WC Insurance,punchlistCompletion,38.15
+P-MW-025,Midwest,Mike Johnson,BR Insurance,clientHandover,35.0
+P-MW-025,Midwest,Mike Johnson,BR Insurance,finalDocumentation,37.5
+P-MW-025,Midwest,Mike Johnson,BR Insurance,financialReconciliation,41.51
+P-MW-025,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,46.96
+P-MW-025,Midwest,Mike Johnson,CA Insurance,clientHandover,34.78
+P-MW-025,Midwest,Mike Johnson,CA Insurance,finalDocumentation,39.45
+P-MW-025,Midwest,Mike Johnson,CA Insurance,financialReconciliation,30.01
+P-MW-025,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,50.35
+P-MW-025,Midwest,Mike Johnson,Cost,clientHandover,23.44
+P-MW-025,Midwest,Mike Johnson,Cost,finalDocumentation,44.6
+P-MW-025,Midwest,Mike Johnson,Cost,financialReconciliation,23.31
+P-MW-025,Midwest,Mike Johnson,Cost,punchlistCompletion,52.9
+P-MW-025,Midwest,Mike Johnson,GL Insurance,clientHandover,29.65
+P-MW-025,Midwest,Mike Johnson,GL Insurance,finalDocumentation,18.11
+P-MW-025,Midwest,Mike Johnson,GL Insurance,financialReconciliation,41.75
+P-MW-025,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,36.02
+P-MW-025,Midwest,Mike Johnson,Safety,clientHandover,10.0
+P-MW-025,Midwest,Mike Johnson,Safety,finalDocumentation,33.42
+P-MW-025,Midwest,Mike Johnson,Safety,financialReconciliation,13.95
+P-MW-025,Midwest,Mike Johnson,Safety,punchlistCompletion,13.28
+P-MW-025,Midwest,Mike Johnson,Schedule,clientHandover,33.39
+P-MW-025,Midwest,Mike Johnson,Schedule,finalDocumentation,48.6
+P-MW-025,Midwest,Mike Johnson,Schedule,financialReconciliation,33.84
+P-MW-025,Midwest,Mike Johnson,Schedule,punchlistCompletion,21.22
+P-MW-025,Midwest,Mike Johnson,WC Insurance,clientHandover,30.16
+P-MW-025,Midwest,Mike Johnson,WC Insurance,finalDocumentation,21.26
+P-MW-025,Midwest,Mike Johnson,WC Insurance,financialReconciliation,40.12
+P-MW-025,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,40.28
+P-WE-026,West,Alice Brown,BR Insurance,clientHandover,82.01
+P-WE-026,West,Alice Brown,BR Insurance,finalDocumentation,62.65
+P-WE-026,West,Alice Brown,BR Insurance,financialReconciliation,92.44
+P-WE-026,West,Alice Brown,BR Insurance,punchlistCompletion,97.48
+P-WE-026,West,Alice Brown,CA Insurance,clientHandover,72.24
+P-WE-026,West,Alice Brown,CA Insurance,finalDocumentation,98.13
+P-WE-026,West,Alice Brown,CA Insurance,financialReconciliation,87.55
+P-WE-026,West,Alice Brown,CA Insurance,punchlistCompletion,99.98
+P-WE-026,West,Alice Brown,Cost,clientHandover,84.49
+P-WE-026,West,Alice Brown,Cost,finalDocumentation,69.97
+P-WE-026,West,Alice Brown,Cost,financialReconciliation,90.96
+P-WE-026,West,Alice Brown,Cost,punchlistCompletion,75.07
+P-WE-026,West,Alice Brown,GL Insurance,clientHandover,69.65
+P-WE-026,West,Alice Brown,GL Insurance,finalDocumentation,98.11
+P-WE-026,West,Alice Brown,GL Insurance,financialReconciliation,83.3
+P-WE-026,West,Alice Brown,GL Insurance,punchlistCompletion,83.52
+P-WE-026,West,Alice Brown,Safety,clientHandover,83.99
+P-WE-026,West,Alice Brown,Safety,finalDocumentation,67.54
+P-WE-026,West,Alice Brown,Safety,financialReconciliation,83.55
+P-WE-026,West,Alice Brown,Safety,punchlistCompletion,60.97
+P-WE-026,West,Alice Brown,Schedule,clientHandover,60.86
+P-WE-026,West,Alice Brown,Schedule,finalDocumentation,83.91
+P-WE-026,West,Alice Brown,Schedule,financialReconciliation,91.07
+P-WE-026,West,Alice Brown,Schedule,punchlistCompletion,94.34
+P-WE-026,West,Alice Brown,WC Insurance,clientHandover,70.76
+P-WE-026,West,Alice Brown,WC Insurance,finalDocumentation,62.55
+P-WE-026,West,Alice Brown,WC Insurance,financialReconciliation,73.57
+P-WE-026,West,Alice Brown,WC Insurance,punchlistCompletion,77.85
+P-NE-027,Northeast,John Doe,BR Insurance,clientHandover,64.81
+P-NE-027,Northeast,John Doe,BR Insurance,finalDocumentation,44.19
+P-NE-027,Northeast,John Doe,BR Insurance,financialReconciliation,38.93
+P-NE-027,Northeast,John Doe,BR Insurance,punchlistCompletion,38.58
+P-NE-027,Northeast,John Doe,CA Insurance,clientHandover,55.31
+P-NE-027,Northeast,John Doe,CA Insurance,finalDocumentation,45.17
+P-NE-027,Northeast,John Doe,CA Insurance,financialReconciliation,68.52
+P-NE-027,Northeast,John Doe,CA Insurance,punchlistCompletion,49.58
+P-NE-027,Northeast,John Doe,Cost,clientHandover,56.39
+P-NE-027,Northeast,John Doe,Cost,finalDocumentation,67.64
+P-NE-027,Northeast,John Doe,Cost,financialReconciliation,54.41
+P-NE-027,Northeast,John Doe,Cost,punchlistCompletion,38.26
+P-NE-027,Northeast,John Doe,GL Insurance,clientHandover,61.75
+P-NE-027,Northeast,John Doe,GL Insurance,finalDocumentation,60.81
+P-NE-027,Northeast,John Doe,GL Insurance,financialReconciliation,47.19
+P-NE-027,Northeast,John Doe,GL Insurance,punchlistCompletion,68.31
+P-NE-027,Northeast,John Doe,Safety,clientHandover,36.33
+P-NE-027,Northeast,John Doe,Safety,finalDocumentation,42.67
+P-NE-027,Northeast,John Doe,Safety,financialReconciliation,36.92
+P-NE-027,Northeast,John Doe,Safety,punchlistCompletion,26.65
+P-NE-027,Northeast,John Doe,Schedule,clientHandover,51.06
+P-NE-027,Northeast,John Doe,Schedule,finalDocumentation,26.61
+P-NE-027,Northeast,John Doe,Schedule,financialReconciliation,43.82
+P-NE-027,Northeast,John Doe,Schedule,punchlistCompletion,55.25
+P-NE-027,Northeast,John Doe,WC Insurance,clientHandover,50.0
+P-NE-027,Northeast,John Doe,WC Insurance,finalDocumentation,39.53
+P-NE-027,Northeast,John Doe,WC Insurance,financialReconciliation,60.54
+P-NE-027,Northeast,John Doe,WC Insurance,punchlistCompletion,65.81
+P-SE-028,Southeast,Jane Smith,BR Insurance,clientHandover,24.7
+P-SE-028,Southeast,Jane Smith,BR Insurance,finalDocumentation,59.69
+P-SE-028,Southeast,Jane Smith,BR Insurance,financialReconciliation,38.46
+P-SE-028,Southeast,Jane Smith,BR Insurance,punchlistCompletion,56.52
+P-SE-028,Southeast,Jane Smith,CA Insurance,clientHandover,43.35
+P-SE-028,Southeast,Jane Smith,CA Insurance,finalDocumentation,56.29
+P-SE-028,Southeast,Jane Smith,CA Insurance,financialReconciliation,51.66
+P-SE-028,Southeast,Jane Smith,CA Insurance,punchlistCompletion,42.94
+P-SE-028,Southeast,Jane Smith,Cost,clientHandover,33.14
+P-SE-028,Southeast,Jane Smith,Cost,finalDocumentation,55.26
+P-SE-028,Southeast,Jane Smith,Cost,financialReconciliation,55.4
+P-SE-028,Southeast,Jane Smith,Cost,punchlistCompletion,50.02
+P-SE-028,Southeast,Jane Smith,GL Insurance,clientHandover,37.57
+P-SE-028,Southeast,Jane Smith,GL Insurance,finalDocumentation,32.86
+P-SE-028,Southeast,Jane Smith,GL Insurance,financialReconciliation,52.35
+P-SE-028,Southeast,Jane Smith,GL Insurance,punchlistCompletion,66.93
+P-SE-028,Southeast,Jane Smith,Safety,clientHandover,44.93
+P-SE-028,Southeast,Jane Smith,Safety,finalDocumentation,38.97
+P-SE-028,Southeast,Jane Smith,Safety,financialReconciliation,34.52
+P-SE-028,Southeast,Jane Smith,Safety,punchlistCompletion,54.11
+P-SE-028,Southeast,Jane Smith,Schedule,clientHandover,33.47
+P-SE-028,Southeast,Jane Smith,Schedule,finalDocumentation,40.7
+P-SE-028,Southeast,Jane Smith,Schedule,financialReconciliation,26.5
+P-SE-028,Southeast,Jane Smith,Schedule,punchlistCompletion,35.53
+P-SE-028,Southeast,Jane Smith,WC Insurance,clientHandover,25.73
+P-SE-028,Southeast,Jane Smith,WC Insurance,finalDocumentation,28.34
+P-SE-028,Southeast,Jane Smith,WC Insurance,financialReconciliation,44.09
+P-SE-028,Southeast,Jane Smith,WC Insurance,punchlistCompletion,44.03
+P-MW-029,Midwest,Mike Johnson,BR Insurance,clientHandover,62.8
+P-MW-029,Midwest,Mike Johnson,BR Insurance,finalDocumentation,68.59
+P-MW-029,Midwest,Mike Johnson,BR Insurance,financialReconciliation,70.54
+P-MW-029,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,54.94
+P-MW-029,Midwest,Mike Johnson,CA Insurance,clientHandover,64.87
+P-MW-029,Midwest,Mike Johnson,CA Insurance,finalDocumentation,74.08
+P-MW-029,Midwest,Mike Johnson,CA Insurance,financialReconciliation,70.21
+P-MW-029,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,73.74
+P-MW-029,Midwest,Mike Johnson,Cost,clientHandover,74.33
+P-MW-029,Midwest,Mike Johnson,Cost,finalDocumentation,76.05
+P-MW-029,Midwest,Mike Johnson,Cost,financialReconciliation,90.87
+P-MW-029,Midwest,Mike Johnson,Cost,punchlistCompletion,69.34
+P-MW-029,Midwest,Mike Johnson,GL Insurance,clientHandover,89.82
+P-MW-029,Midwest,Mike Johnson,GL Insurance,finalDocumentation,73.6
+P-MW-029,Midwest,Mike Johnson,GL Insurance,financialReconciliation,77.31
+P-MW-029,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,94.37
+P-MW-029,Midwest,Mike Johnson,Safety,clientHandover,77.6
+P-MW-029,Midwest,Mike Johnson,Safety,finalDocumentation,81.17
+P-MW-029,Midwest,Mike Johnson,Safety,financialReconciliation,57.05
+P-MW-029,Midwest,Mike Johnson,Safety,punchlistCompletion,80.56
+P-MW-029,Midwest,Mike Johnson,Schedule,clientHandover,57.75
+P-MW-029,Midwest,Mike Johnson,Schedule,finalDocumentation,58.94
+P-MW-029,Midwest,Mike Johnson,Schedule,financialReconciliation,87.21
+P-MW-029,Midwest,Mike Johnson,Schedule,punchlistCompletion,81.39
+P-MW-029,Midwest,Mike Johnson,WC Insurance,clientHandover,90.96
+P-MW-029,Midwest,Mike Johnson,WC Insurance,finalDocumentation,62.31
+P-MW-029,Midwest,Mike Johnson,WC Insurance,financialReconciliation,74.48
+P-MW-029,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,62.94
+P-WE-030,West,Alice Brown,BR Insurance,clientHandover,57.4
+P-WE-030,West,Alice Brown,BR Insurance,finalDocumentation,62.04
+P-WE-030,West,Alice Brown,BR Insurance,financialReconciliation,69.9
+P-WE-030,West,Alice Brown,BR Insurance,punchlistCompletion,59.28
+P-WE-030,West,Alice Brown,CA Insurance,clientHandover,82.77
+P-WE-030,West,Alice Brown,CA Insurance,finalDocumentation,70.19
+P-WE-030,West,Alice Brown,CA Insurance,financialReconciliation,62.78
+P-WE-030,West,Alice Brown,CA Insurance,punchlistCompletion,50.17
+P-WE-030,West,Alice Brown,Cost,clientHandover,74.21
+P-WE-030,West,Alice Brown,Cost,finalDocumentation,77.02
+P-WE-030,West,Alice Brown,Cost,financialReconciliation,75.79
+P-WE-030,West,Alice Brown,Cost,punchlistCompletion,47.75
+P-WE-030,West,Alice Brown,GL Insurance,clientHandover,69.09
+P-WE-030,West,Alice Brown,GL Insurance,finalDocumentation,88.23
+P-WE-030,West,Alice Brown,GL Insurance,financialReconciliation,50.48
+P-WE-030,West,Alice Brown,GL Insurance,punchlistCompletion,68.81
+P-WE-030,West,Alice Brown,Safety,clientHandover,70.83
+P-WE-030,West,Alice Brown,Safety,finalDocumentation,70.46
+P-WE-030,West,Alice Brown,Safety,financialReconciliation,64.55
+P-WE-030,West,Alice Brown,Safety,punchlistCompletion,53.44
+P-WE-030,West,Alice Brown,Schedule,clientHandover,49.34
+P-WE-030,West,Alice Brown,Schedule,finalDocumentation,47.55
+P-WE-030,West,Alice Brown,Schedule,financialReconciliation,62.87
+P-WE-030,West,Alice Brown,Schedule,punchlistCompletion,67.9
+P-WE-030,West,Alice Brown,WC Insurance,clientHandover,60.61
+P-WE-030,West,Alice Brown,WC Insurance,finalDocumentation,66.61
+P-WE-030,West,Alice Brown,WC Insurance,financialReconciliation,77.97
+P-WE-030,West,Alice Brown,WC Insurance,punchlistCompletion,77.79
+P-NE-031,Northeast,John Doe,BR Insurance,clientHandover,70.14
+P-NE-031,Northeast,John Doe,BR Insurance,finalDocumentation,68.9
+P-NE-031,Northeast,John Doe,BR Insurance,financialReconciliation,61.76
+P-NE-031,Northeast,John Doe,BR Insurance,punchlistCompletion,51.75
+P-NE-031,Northeast,John Doe,CA Insurance,clientHandover,51.99
+P-NE-031,Northeast,John Doe,CA Insurance,finalDocumentation,38.84
+P-NE-031,Northeast,John Doe,CA Insurance,financialReconciliation,48.73
+P-NE-031,Northeast,John Doe,CA Insurance,punchlistCompletion,68.85
+P-NE-031,Northeast,John Doe,Cost,clientHandover,51.67
+P-NE-031,Northeast,John Doe,Cost,finalDocumentation,73.09
+P-NE-031,Northeast,John Doe,Cost,financialReconciliation,54.2
+P-NE-031,Northeast,John Doe,Cost,punchlistCompletion,73.37
+P-NE-031,Northeast,John Doe,GL Insurance,clientHandover,81.9
+P-NE-031,Northeast,John Doe,GL Insurance,finalDocumentation,44.74
+P-NE-031,Northeast,John Doe,GL Insurance,financialReconciliation,78.84
+P-NE-031,Northeast,John Doe,GL Insurance,punchlistCompletion,67.25
+P-NE-031,Northeast,John Doe,Safety,clientHandover,32.44
+P-NE-031,Northeast,John Doe,Safety,finalDocumentation,59.75
+P-NE-031,Northeast,John Doe,Safety,financialReconciliation,65.9
+P-NE-031,Northeast,John Doe,Safety,punchlistCompletion,61.38
+P-NE-031,Northeast,John Doe,Schedule,clientHandover,67.07
+P-NE-031,Northeast,John Doe,Schedule,finalDocumentation,46.54
+P-NE-031,Northeast,John Doe,Schedule,financialReconciliation,58.99
+P-NE-031,Northeast,John Doe,Schedule,punchlistCompletion,60.71
+P-NE-031,Northeast,John Doe,WC Insurance,clientHandover,61.35
+P-NE-031,Northeast,John Doe,WC Insurance,finalDocumentation,65.87
+P-NE-031,Northeast,John Doe,WC Insurance,financialReconciliation,39.94
+P-NE-031,Northeast,John Doe,WC Insurance,punchlistCompletion,53.36
+P-SE-032,Southeast,Jane Smith,BR Insurance,clientHandover,30.97
+P-SE-032,Southeast,Jane Smith,BR Insurance,finalDocumentation,27.82
+P-SE-032,Southeast,Jane Smith,BR Insurance,financialReconciliation,39.56
+P-SE-032,Southeast,Jane Smith,BR Insurance,punchlistCompletion,37.5
+P-SE-032,Southeast,Jane Smith,CA Insurance,clientHandover,32.39
+P-SE-032,Southeast,Jane Smith,CA Insurance,finalDocumentation,27.0
+P-SE-032,Southeast,Jane Smith,CA Insurance,financialReconciliation,24.97
+P-SE-032,Southeast,Jane Smith,CA Insurance,punchlistCompletion,50.81
+P-SE-032,Southeast,Jane Smith,Cost,clientHandover,43.79
+P-SE-032,Southeast,Jane Smith,Cost,finalDocumentation,25.8
+P-SE-032,Southeast,Jane Smith,Cost,financialReconciliation,53.83
+P-SE-032,Southeast,Jane Smith,Cost,punchlistCompletion,22.16
+P-SE-032,Southeast,Jane Smith,GL Insurance,clientHandover,54.19
+P-SE-032,Southeast,Jane Smith,GL Insurance,finalDocumentation,32.16
+P-SE-032,Southeast,Jane Smith,GL Insurance,financialReconciliation,22.38
+P-SE-032,Southeast,Jane Smith,GL Insurance,punchlistCompletion,32.21
+P-SE-032,Southeast,Jane Smith,Safety,clientHandover,29.45
+P-SE-032,Southeast,Jane Smith,Safety,finalDocumentation,20.63
+P-SE-032,Southeast,Jane Smith,Safety,financialReconciliation,16.72
+P-SE-032,Southeast,Jane Smith,Safety,punchlistCompletion,47.51
+P-SE-032,Southeast,Jane Smith,Schedule,clientHandover,44.7
+P-SE-032,Southeast,Jane Smith,Schedule,finalDocumentation,18.82
+P-SE-032,Southeast,Jane Smith,Schedule,financialReconciliation,35.64
+P-SE-032,Southeast,Jane Smith,Schedule,punchlistCompletion,34.25
+P-SE-032,Southeast,Jane Smith,WC Insurance,clientHandover,33.67
+P-SE-032,Southeast,Jane Smith,WC Insurance,finalDocumentation,52.05
+P-SE-032,Southeast,Jane Smith,WC Insurance,financialReconciliation,22.32
+P-SE-032,Southeast,Jane Smith,WC Insurance,punchlistCompletion,43.1
+P-MW-033,Midwest,Mike Johnson,BR Insurance,clientHandover,92.47
+P-MW-033,Midwest,Mike Johnson,BR Insurance,finalDocumentation,90.19
+P-MW-033,Midwest,Mike Johnson,BR Insurance,financialReconciliation,91.3
+P-MW-033,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,89.76
+P-MW-033,Midwest,Mike Johnson,CA Insurance,clientHandover,97.68
+P-MW-033,Midwest,Mike Johnson,CA Insurance,finalDocumentation,91.82
+P-MW-033,Midwest,Mike Johnson,CA Insurance,financialReconciliation,91.08
+P-MW-033,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,96.12
+P-MW-033,Midwest,Mike Johnson,Cost,clientHandover,92.48
+P-MW-033,Midwest,Mike Johnson,Cost,finalDocumentation,99.84
+P-MW-033,Midwest,Mike Johnson,Cost,financialReconciliation,99.51
+P-MW-033,Midwest,Mike Johnson,Cost,punchlistCompletion,84.5
+P-MW-033,Midwest,Mike Johnson,GL Insurance,clientHandover,98.08
+P-MW-033,Midwest,Mike Johnson,GL Insurance,finalDocumentation,80.98
+P-MW-033,Midwest,Mike Johnson,GL Insurance,financialReconciliation,89.93
+P-MW-033,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,92.13
+P-MW-033,Midwest,Mike Johnson,Safety,clientHandover,92.34
+P-MW-033,Midwest,Mike Johnson,Safety,finalDocumentation,78.23
+P-MW-033,Midwest,Mike Johnson,Safety,financialReconciliation,90.57
+P-MW-033,Midwest,Mike Johnson,Safety,punchlistCompletion,86.98
+P-MW-033,Midwest,Mike Johnson,Schedule,clientHandover,88.09
+P-MW-033,Midwest,Mike Johnson,Schedule,finalDocumentation,85.53
+P-MW-033,Midwest,Mike Johnson,Schedule,financialReconciliation,88.01
+P-MW-033,Midwest,Mike Johnson,Schedule,punchlistCompletion,78.64
+P-MW-033,Midwest,Mike Johnson,WC Insurance,clientHandover,83.81
+P-MW-033,Midwest,Mike Johnson,WC Insurance,finalDocumentation,82.15
+P-MW-033,Midwest,Mike Johnson,WC Insurance,financialReconciliation,90.18
+P-MW-033,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,94.97
+P-WE-034,West,Alice Brown,BR Insurance,clientHandover,41.63
+P-WE-034,West,Alice Brown,BR Insurance,finalDocumentation,49.55
+P-WE-034,West,Alice Brown,BR Insurance,financialReconciliation,74.52
+P-WE-034,West,Alice Brown,BR Insurance,punchlistCompletion,40.61
+P-WE-034,West,Alice Brown,CA Insurance,clientHandover,78.2
+P-WE-034,West,Alice Brown,CA Insurance,finalDocumentation,77.66
+P-WE-034,West,Alice Brown,CA Insurance,financialReconciliation,67.97
+P-WE-034,West,Alice Brown,CA Insurance,punchlistCompletion,73.41
+P-WE-034,West,Alice Brown,Cost,clientHandover,70.9
+P-WE-034,West,Alice Brown,Cost,finalDocumentation,70.29
+P-WE-034,West,Alice Brown,Cost,financialReconciliation,52.8
+P-WE-034,West,Alice Brown,Cost,punchlistCompletion,44.61
+P-WE-034,West,Alice Brown,GL Insurance,clientHandover,54.28
+P-WE-034,West,Alice Brown,GL Insurance,finalDocumentation,65.23
+P-WE-034,West,Alice Brown,GL Insurance,financialReconciliation,77.22
+P-WE-034,West,Alice Brown,GL Insurance,punchlistCompletion,80.54
+P-WE-034,West,Alice Brown,Safety,clientHandover,71.86
+P-WE-034,West,Alice Brown,Safety,finalDocumentation,40.03
+P-WE-034,West,Alice Brown,Safety,financialReconciliation,54.58
+P-WE-034,West,Alice Brown,Safety,punchlistCompletion,38.29
+P-WE-034,West,Alice Brown,Schedule,clientHandover,58.18
+P-WE-034,West,Alice Brown,Schedule,finalDocumentation,60.85
+P-WE-034,West,Alice Brown,Schedule,financialReconciliation,52.63
+P-WE-034,West,Alice Brown,Schedule,punchlistCompletion,47.36
+P-WE-034,West,Alice Brown,WC Insurance,clientHandover,67.86
+P-WE-034,West,Alice Brown,WC Insurance,finalDocumentation,70.99
+P-WE-034,West,Alice Brown,WC Insurance,financialReconciliation,70.26
+P-WE-034,West,Alice Brown,WC Insurance,punchlistCompletion,57.27
+P-NE-035,Northeast,John Doe,BR Insurance,clientHandover,25.33
+P-NE-035,Northeast,John Doe,BR Insurance,finalDocumentation,41.95
+P-NE-035,Northeast,John Doe,BR Insurance,financialReconciliation,21.09
+P-NE-035,Northeast,John Doe,BR Insurance,punchlistCompletion,45.38
+P-NE-035,Northeast,John Doe,CA Insurance,clientHandover,31.7
+P-NE-035,Northeast,John Doe,CA Insurance,finalDocumentation,17.59
+P-NE-035,Northeast,John Doe,CA Insurance,financialReconciliation,24.17
+P-NE-035,Northeast,John Doe,CA Insurance,punchlistCompletion,49.85
+P-NE-035,Northeast,John Doe,Cost,clientHandover,40.91
+P-NE-035,Northeast,John Doe,Cost,finalDocumentation,14.56
+P-NE-035,Northeast,John Doe,Cost,financialReconciliation,32.19
+P-NE-035,Northeast,John Doe,Cost,punchlistCompletion,35.46
+P-NE-035,Northeast,John Doe,GL Insurance,clientHandover,52.37
+P-NE-035,Northeast,John Doe,GL Insurance,finalDocumentation,21.33
+P-NE-035,Northeast,John Doe,GL Insurance,financialReconciliation,18.0
+P-NE-035,Northeast,John Doe,GL Insurance,punchlistCompletion,26.35
+P-NE-035,Northeast,John Doe,Safety,clientHandover,43.61
+P-NE-035,Northeast,John Doe,Safety,finalDocumentation,32.89
+P-NE-035,Northeast,John Doe,Safety,financialReconciliation,38.9
+P-NE-035,Northeast,John Doe,Safety,punchlistCompletion,29.38
+P-NE-035,Northeast,John Doe,Schedule,clientHandover,39.63
+P-NE-035,Northeast,John Doe,Schedule,finalDocumentation,46.69
+P-NE-035,Northeast,John Doe,Schedule,financialReconciliation,22.63
+P-NE-035,Northeast,John Doe,Schedule,punchlistCompletion,40.18
+P-NE-035,Northeast,John Doe,WC Insurance,clientHandover,13.53
+P-NE-035,Northeast,John Doe,WC Insurance,finalDocumentation,33.46
+P-NE-035,Northeast,John Doe,WC Insurance,financialReconciliation,19.85
+P-NE-035,Northeast,John Doe,WC Insurance,punchlistCompletion,47.61
+P-SE-036,Southeast,Jane Smith,BR Insurance,clientHandover,61.11
+P-SE-036,Southeast,Jane Smith,BR Insurance,finalDocumentation,25.97
+P-SE-036,Southeast,Jane Smith,BR Insurance,financialReconciliation,43.78
+P-SE-036,Southeast,Jane Smith,BR Insurance,punchlistCompletion,49.43
+P-SE-036,Southeast,Jane Smith,CA Insurance,clientHandover,29.89
+P-SE-036,Southeast,Jane Smith,CA Insurance,finalDocumentation,39.35
+P-SE-036,Southeast,Jane Smith,CA Insurance,financialReconciliation,32.59
+P-SE-036,Southeast,Jane Smith,CA Insurance,punchlistCompletion,40.93
+P-SE-036,Southeast,Jane Smith,Cost,clientHandover,43.77
+P-SE-036,Southeast,Jane Smith,Cost,finalDocumentation,53.82
+P-SE-036,Southeast,Jane Smith,Cost,financialReconciliation,64.84
+P-SE-036,Southeast,Jane Smith,Cost,punchlistCompletion,56.73
+P-SE-036,Southeast,Jane Smith,GL Insurance,clientHandover,31.31
+P-SE-036,Southeast,Jane Smith,GL Insurance,finalDocumentation,49.57
+P-SE-036,Southeast,Jane Smith,GL Insurance,financialReconciliation,68.06
+P-SE-036,Southeast,Jane Smith,GL Insurance,punchlistCompletion,46.32
+P-SE-036,Southeast,Jane Smith,Safety,clientHandover,22.96
+P-SE-036,Southeast,Jane Smith,Safety,finalDocumentation,48.69
+P-SE-036,Southeast,Jane Smith,Safety,financialReconciliation,35.6
+P-SE-036,Southeast,Jane Smith,Safety,punchlistCompletion,25.18
+P-SE-036,Southeast,Jane Smith,Schedule,clientHandover,39.15
+P-SE-036,Southeast,Jane Smith,Schedule,finalDocumentation,24.89
+P-SE-036,Southeast,Jane Smith,Schedule,financialReconciliation,26.43
+P-SE-036,Southeast,Jane Smith,Schedule,punchlistCompletion,56.49
+P-SE-036,Southeast,Jane Smith,WC Insurance,clientHandover,58.22
+P-SE-036,Southeast,Jane Smith,WC Insurance,finalDocumentation,38.82
+P-SE-036,Southeast,Jane Smith,WC Insurance,financialReconciliation,62.02
+P-SE-036,Southeast,Jane Smith,WC Insurance,punchlistCompletion,41.74
+P-MW-037,Midwest,Mike Johnson,BR Insurance,clientHandover,52.98
+P-MW-037,Midwest,Mike Johnson,BR Insurance,finalDocumentation,51.79
+P-MW-037,Midwest,Mike Johnson,BR Insurance,financialReconciliation,56.03
+P-MW-037,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,51.2
+P-MW-037,Midwest,Mike Johnson,CA Insurance,clientHandover,80.6
+P-MW-037,Midwest,Mike Johnson,CA Insurance,finalDocumentation,75.44
+P-MW-037,Midwest,Mike Johnson,CA Insurance,financialReconciliation,49.59
+P-MW-037,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,50.03
+P-MW-037,Midwest,Mike Johnson,Cost,clientHandover,60.74
+P-MW-037,Midwest,Mike Johnson,Cost,finalDocumentation,74.89
+P-MW-037,Midwest,Mike Johnson,Cost,financialReconciliation,82.47
+P-MW-037,Midwest,Mike Johnson,Cost,punchlistCompletion,51.85
+P-MW-037,Midwest,Mike Johnson,GL Insurance,clientHandover,67.14
+P-MW-037,Midwest,Mike Johnson,GL Insurance,finalDocumentation,62.29
+P-MW-037,Midwest,Mike Johnson,GL Insurance,financialReconciliation,88.79
+P-MW-037,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,62.64
+P-MW-037,Midwest,Mike Johnson,Safety,clientHandover,73.61
+P-MW-037,Midwest,Mike Johnson,Safety,finalDocumentation,48.04
+P-MW-037,Midwest,Mike Johnson,Safety,financialReconciliation,45.74
+P-MW-037,Midwest,Mike Johnson,Safety,punchlistCompletion,65.58
+P-MW-037,Midwest,Mike Johnson,Schedule,clientHandover,70.67
+P-MW-037,Midwest,Mike Johnson,Schedule,finalDocumentation,78.92
+P-MW-037,Midwest,Mike Johnson,Schedule,financialReconciliation,71.51
+P-MW-037,Midwest,Mike Johnson,Schedule,punchlistCompletion,63.19
+P-MW-037,Midwest,Mike Johnson,WC Insurance,clientHandover,82.34
+P-MW-037,Midwest,Mike Johnson,WC Insurance,finalDocumentation,53.9
+P-MW-037,Midwest,Mike Johnson,WC Insurance,financialReconciliation,48.11
+P-MW-037,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,84.02
+P-WE-038,West,Alice Brown,BR Insurance,clientHandover,81.14
+P-WE-038,West,Alice Brown,BR Insurance,finalDocumentation,80.72
+P-WE-038,West,Alice Brown,BR Insurance,financialReconciliation,88.39
+P-WE-038,West,Alice Brown,BR Insurance,punchlistCompletion,77.86
+P-WE-038,West,Alice Brown,CA Insurance,clientHandover,86.68
+P-WE-038,West,Alice Brown,CA Insurance,finalDocumentation,96.93
+P-WE-038,West,Alice Brown,CA Insurance,financialReconciliation,68.75
+P-WE-038,West,Alice Brown,CA Insurance,punchlistCompletion,68.5
+P-WE-038,West,Alice Brown,Cost,clientHandover,83.24
+P-WE-038,West,Alice Brown,Cost,finalDocumentation,91.73
+P-WE-038,West,Alice Brown,Cost,financialReconciliation,91.86
+P-WE-038,West,Alice Brown,Cost,punchlistCompletion,84.83
+P-WE-038,West,Alice Brown,GL Insurance,clientHandover,96.14
+P-WE-038,West,Alice Brown,GL Insurance,finalDocumentation,98.42
+P-WE-038,West,Alice Brown,GL Insurance,financialReconciliation,93.71
+P-WE-038,West,Alice Brown,GL Insurance,punchlistCompletion,72.26
+P-WE-038,West,Alice Brown,Safety,clientHandover,80.15
+P-WE-038,West,Alice Brown,Safety,finalDocumentation,91.12
+P-WE-038,West,Alice Brown,Safety,financialReconciliation,64.36
+P-WE-038,West,Alice Brown,Safety,punchlistCompletion,80.53
+P-WE-038,West,Alice Brown,Schedule,clientHandover,63.99
+P-WE-038,West,Alice Brown,Schedule,finalDocumentation,71.04
+P-WE-038,West,Alice Brown,Schedule,financialReconciliation,68.62
+P-WE-038,West,Alice Brown,Schedule,punchlistCompletion,74.3
+P-WE-038,West,Alice Brown,WC Insurance,clientHandover,67.13
+P-WE-038,West,Alice Brown,WC Insurance,finalDocumentation,83.25
+P-WE-038,West,Alice Brown,WC Insurance,financialReconciliation,98.74
+P-WE-038,West,Alice Brown,WC Insurance,punchlistCompletion,81.03
+P-NE-039,Northeast,John Doe,BR Insurance,clientHandover,54.6
+P-NE-039,Northeast,John Doe,BR Insurance,finalDocumentation,44.64
+P-NE-039,Northeast,John Doe,BR Insurance,financialReconciliation,45.07
+P-NE-039,Northeast,John Doe,BR Insurance,punchlistCompletion,31.8
+P-NE-039,Northeast,John Doe,CA Insurance,clientHandover,33.69
+P-NE-039,Northeast,John Doe,CA Insurance,finalDocumentation,45.97
+P-NE-039,Northeast,John Doe,CA Insurance,financialReconciliation,67.92
+P-NE-039,Northeast,John Doe,CA Insurance,punchlistCompletion,37.11
+P-NE-039,Northeast,John Doe,Cost,clientHandover,51.15
+P-NE-039,Northeast,John Doe,Cost,finalDocumentation,46.01
+P-NE-039,Northeast,John Doe,Cost,financialReconciliation,54.22
+P-NE-039,Northeast,John Doe,Cost,punchlistCompletion,72.79
+P-NE-039,Northeast,John Doe,GL Insurance,clientHandover,44.6
+P-NE-039,Northeast,John Doe,GL Insurance,finalDocumentation,62.04
+P-NE-039,Northeast,John Doe,GL Insurance,financialReconciliation,64.83
+P-NE-039,Northeast,John Doe,GL Insurance,punchlistCompletion,66.76
+P-NE-039,Northeast,John Doe,Safety,clientHandover,59.11
+P-NE-039,Northeast,John Doe,Safety,finalDocumentation,49.22
+P-NE-039,Northeast,John Doe,Safety,financialReconciliation,53.07
+P-NE-039,Northeast,John Doe,Safety,punchlistCompletion,28.97
+P-NE-039,Northeast,John Doe,Schedule,clientHandover,48.93
+P-NE-039,Northeast,John Doe,Schedule,finalDocumentation,29.63
+P-NE-039,Northeast,John Doe,Schedule,financialReconciliation,52.32
+P-NE-039,Northeast,John Doe,Schedule,punchlistCompletion,38.0
+P-NE-039,Northeast,John Doe,WC Insurance,clientHandover,48.14
+P-NE-039,Northeast,John Doe,WC Insurance,finalDocumentation,48.06
+P-NE-039,Northeast,John Doe,WC Insurance,financialReconciliation,43.56
+P-NE-039,Northeast,John Doe,WC Insurance,punchlistCompletion,39.14
+P-SE-040,Southeast,Jane Smith,BR Insurance,clientHandover,71.81
+P-SE-040,Southeast,Jane Smith,BR Insurance,finalDocumentation,64.27
+P-SE-040,Southeast,Jane Smith,BR Insurance,financialReconciliation,42.33
+P-SE-040,Southeast,Jane Smith,BR Insurance,punchlistCompletion,46.97
+P-SE-040,Southeast,Jane Smith,CA Insurance,clientHandover,73.29
+P-SE-040,Southeast,Jane Smith,CA Insurance,finalDocumentation,55.7
+P-SE-040,Southeast,Jane Smith,CA Insurance,financialReconciliation,63.96
+P-SE-040,Southeast,Jane Smith,CA Insurance,punchlistCompletion,71.5
+P-SE-040,Southeast,Jane Smith,Cost,clientHandover,65.46
+P-SE-040,Southeast,Jane Smith,Cost,finalDocumentation,75.47
+P-SE-040,Southeast,Jane Smith,Cost,financialReconciliation,66.46
+P-SE-040,Southeast,Jane Smith,Cost,punchlistCompletion,65.25
+P-SE-040,Southeast,Jane Smith,GL Insurance,clientHandover,84.74
+P-SE-040,Southeast,Jane Smith,GL Insurance,finalDocumentation,76.01
+P-SE-040,Southeast,Jane Smith,GL Insurance,financialReconciliation,74.84
+P-SE-040,Southeast,Jane Smith,GL Insurance,punchlistCompletion,80.72
+P-SE-040,Southeast,Jane Smith,Safety,clientHandover,61.61
+P-SE-040,Southeast,Jane Smith,Safety,finalDocumentation,48.19
+P-SE-040,Southeast,Jane Smith,Safety,financialReconciliation,49.14
+P-SE-040,Southeast,Jane Smith,Safety,punchlistCompletion,39.89
+P-SE-040,Southeast,Jane Smith,Schedule,clientHandover,66.55
+P-SE-040,Southeast,Jane Smith,Schedule,finalDocumentation,70.27
+P-SE-040,Southeast,Jane Smith,Schedule,financialReconciliation,40.86
+P-SE-040,Southeast,Jane Smith,Schedule,punchlistCompletion,40.73
+P-SE-040,Southeast,Jane Smith,WC Insurance,clientHandover,48.51
+P-SE-040,Southeast,Jane Smith,WC Insurance,finalDocumentation,64.02
+P-SE-040,Southeast,Jane Smith,WC Insurance,financialReconciliation,63.12
+P-SE-040,Southeast,Jane Smith,WC Insurance,punchlistCompletion,54.07
+P-MW-041,Midwest,Mike Johnson,BR Insurance,clientHandover,56.64
+P-MW-041,Midwest,Mike Johnson,BR Insurance,finalDocumentation,72.84
+P-MW-041,Midwest,Mike Johnson,BR Insurance,financialReconciliation,59.79
+P-MW-041,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,51.61
+P-MW-041,Midwest,Mike Johnson,CA Insurance,clientHandover,68.7
+P-MW-041,Midwest,Mike Johnson,CA Insurance,finalDocumentation,60.8
+P-MW-041,Midwest,Mike Johnson,CA Insurance,financialReconciliation,77.07
+P-MW-041,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,74.86
+P-MW-041,Midwest,Mike Johnson,Cost,clientHandover,81.18
+P-MW-041,Midwest,Mike Johnson,Cost,finalDocumentation,73.71
+P-MW-041,Midwest,Mike Johnson,Cost,financialReconciliation,85.16
+P-MW-041,Midwest,Mike Johnson,Cost,punchlistCompletion,49.05
+P-MW-041,Midwest,Mike Johnson,GL Insurance,clientHandover,73.65
+P-MW-041,Midwest,Mike Johnson,GL Insurance,finalDocumentation,64.59
+P-MW-041,Midwest,Mike Johnson,GL Insurance,financialReconciliation,85.79
+P-MW-041,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,51.24
+P-MW-041,Midwest,Mike Johnson,Safety,clientHandover,52.36
+P-MW-041,Midwest,Mike Johnson,Safety,finalDocumentation,50.7
+P-MW-041,Midwest,Mike Johnson,Safety,financialReconciliation,68.11
+P-MW-041,Midwest,Mike Johnson,Safety,punchlistCompletion,47.22
+P-MW-041,Midwest,Mike Johnson,Schedule,clientHandover,66.54
+P-MW-041,Midwest,Mike Johnson,Schedule,finalDocumentation,75.81
+P-MW-041,Midwest,Mike Johnson,Schedule,financialReconciliation,74.74
+P-MW-041,Midwest,Mike Johnson,Schedule,punchlistCompletion,80.98
+P-MW-041,Midwest,Mike Johnson,WC Insurance,clientHandover,46.23
+P-MW-041,Midwest,Mike Johnson,WC Insurance,finalDocumentation,61.03
+P-MW-041,Midwest,Mike Johnson,WC Insurance,financialReconciliation,70.33
+P-MW-041,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,50.67
+P-WE-042,West,Alice Brown,BR Insurance,clientHandover,36.49
+P-WE-042,West,Alice Brown,BR Insurance,finalDocumentation,31.31
+P-WE-042,West,Alice Brown,BR Insurance,financialReconciliation,39.45
+P-WE-042,West,Alice Brown,BR Insurance,punchlistCompletion,43.06
+P-WE-042,West,Alice Brown,CA Insurance,clientHandover,63.88
+P-WE-042,West,Alice Brown,CA Insurance,finalDocumentation,44.22
+P-WE-042,West,Alice Brown,CA Insurance,financialReconciliation,34.31
+P-WE-042,West,Alice Brown,CA Insurance,punchlistCompletion,47.12
+P-WE-042,West,Alice Brown,Cost,clientHandover,55.43
+P-WE-042,West,Alice Brown,Cost,finalDocumentation,62.96
+P-WE-042,West,Alice Brown,Cost,financialReconciliation,62.48
+P-WE-042,West,Alice Brown,Cost,punchlistCompletion,46.88
+P-WE-042,West,Alice Brown,GL Insurance,clientHandover,58.47
+P-WE-042,West,Alice Brown,GL Insurance,finalDocumentation,56.2
+P-WE-042,West,Alice Brown,GL Insurance,financialReconciliation,66.14
+P-WE-042,West,Alice Brown,GL Insurance,punchlistCompletion,50.33
+P-WE-042,West,Alice Brown,Safety,clientHandover,32.55
+P-WE-042,West,Alice Brown,Safety,finalDocumentation,45.68
+P-WE-042,West,Alice Brown,Safety,financialReconciliation,58.2
+P-WE-042,West,Alice Brown,Safety,punchlistCompletion,38.93
+P-WE-042,West,Alice Brown,Schedule,clientHandover,54.71
+P-WE-042,West,Alice Brown,Schedule,finalDocumentation,33.4
+P-WE-042,West,Alice Brown,Schedule,financialReconciliation,36.3
+P-WE-042,West,Alice Brown,Schedule,punchlistCompletion,32.1
+P-WE-042,West,Alice Brown,WC Insurance,clientHandover,56.97
+P-WE-042,West,Alice Brown,WC Insurance,finalDocumentation,59.69
+P-WE-042,West,Alice Brown,WC Insurance,financialReconciliation,48.81
+P-WE-042,West,Alice Brown,WC Insurance,punchlistCompletion,34.82
+P-NE-043,Northeast,John Doe,BR Insurance,clientHandover,54.53
+P-NE-043,Northeast,John Doe,BR Insurance,finalDocumentation,75.73
+P-NE-043,Northeast,John Doe,BR Insurance,financialReconciliation,87.79
+P-NE-043,Northeast,John Doe,BR Insurance,punchlistCompletion,84.28
+P-NE-043,Northeast,John Doe,CA Insurance,clientHandover,74.96
+P-NE-043,Northeast,John Doe,CA Insurance,finalDocumentation,87.78
+P-NE-043,Northeast,John Doe,CA Insurance,financialReconciliation,77.55
+P-NE-043,Northeast,John Doe,CA Insurance,punchlistCompletion,63.73
+P-NE-043,Northeast,John Doe,Cost,clientHandover,90.47
+P-NE-043,Northeast,John Doe,Cost,finalDocumentation,89.33
+P-NE-043,Northeast,John Doe,Cost,financialReconciliation,58.88
+P-NE-043,Northeast,John Doe,Cost,punchlistCompletion,88.25
+P-NE-043,Northeast,John Doe,GL Insurance,clientHandover,75.71
+P-NE-043,Northeast,John Doe,GL Insurance,finalDocumentation,82.03
+P-NE-043,Northeast,John Doe,GL Insurance,financialReconciliation,87.38
+P-NE-043,Northeast,John Doe,GL Insurance,punchlistCompletion,81.94
+P-NE-043,Northeast,John Doe,Safety,clientHandover,82.48
+P-NE-043,Northeast,John Doe,Safety,finalDocumentation,49.69
+P-NE-043,Northeast,John Doe,Safety,financialReconciliation,84.85
+P-NE-043,Northeast,John Doe,Safety,punchlistCompletion,48.75
+P-NE-043,Northeast,John Doe,Schedule,clientHandover,70.01
+P-NE-043,Northeast,John Doe,Schedule,finalDocumentation,57.03
+P-NE-043,Northeast,John Doe,Schedule,financialReconciliation,78.15
+P-NE-043,Northeast,John Doe,Schedule,punchlistCompletion,65.21
+P-NE-043,Northeast,John Doe,WC Insurance,clientHandover,85.05
+P-NE-043,Northeast,John Doe,WC Insurance,finalDocumentation,57.61
+P-NE-043,Northeast,John Doe,WC Insurance,financialReconciliation,65.99
+P-NE-043,Northeast,John Doe,WC Insurance,punchlistCompletion,53.83
+P-SE-044,Southeast,Jane Smith,BR Insurance,clientHandover,75.4
+P-SE-044,Southeast,Jane Smith,BR Insurance,finalDocumentation,75.91
+P-SE-044,Southeast,Jane Smith,BR Insurance,financialReconciliation,75.18
+P-SE-044,Southeast,Jane Smith,BR Insurance,punchlistCompletion,64.76
+P-SE-044,Southeast,Jane Smith,CA Insurance,clientHandover,73.41
+P-SE-044,Southeast,Jane Smith,CA Insurance,finalDocumentation,65.96
+P-SE-044,Southeast,Jane Smith,CA Insurance,financialReconciliation,70.58
+P-SE-044,Southeast,Jane Smith,CA Insurance,punchlistCompletion,84.97
+P-SE-044,Southeast,Jane Smith,Cost,clientHandover,70.4
+P-SE-044,Southeast,Jane Smith,Cost,finalDocumentation,56.73
+P-SE-044,Southeast,Jane Smith,Cost,financialReconciliation,54.56
+P-SE-044,Southeast,Jane Smith,Cost,punchlistCompletion,70.42
+P-SE-044,Southeast,Jane Smith,GL Insurance,clientHandover,60.89
+P-SE-044,Southeast,Jane Smith,GL Insurance,finalDocumentation,85.6
+P-SE-044,Southeast,Jane Smith,GL Insurance,financialReconciliation,58.86
+P-SE-044,Southeast,Jane Smith,GL Insurance,punchlistCompletion,62.45
+P-SE-044,Southeast,Jane Smith,Safety,clientHandover,74.76
+P-SE-044,Southeast,Jane Smith,Safety,finalDocumentation,78.24
+P-SE-044,Southeast,Jane Smith,Safety,financialReconciliation,71.1
+P-SE-044,Southeast,Jane Smith,Safety,punchlistCompletion,55.98
+P-SE-044,Southeast,Jane Smith,Schedule,clientHandover,57.32
+P-SE-044,Southeast,Jane Smith,Schedule,finalDocumentation,59.83
+P-SE-044,Southeast,Jane Smith,Schedule,financialReconciliation,57.58
+P-SE-044,Southeast,Jane Smith,Schedule,punchlistCompletion,56.41
+P-SE-044,Southeast,Jane Smith,WC Insurance,clientHandover,54.09
+P-SE-044,Southeast,Jane Smith,WC Insurance,finalDocumentation,71.1
+P-SE-044,Southeast,Jane Smith,WC Insurance,financialReconciliation,73.22
+P-SE-044,Southeast,Jane Smith,WC Insurance,punchlistCompletion,77.41
+P-MW-045,Midwest,Mike Johnson,BR Insurance,clientHandover,50.99
+P-MW-045,Midwest,Mike Johnson,BR Insurance,finalDocumentation,55.17
+P-MW-045,Midwest,Mike Johnson,BR Insurance,financialReconciliation,68.84
+P-MW-045,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,64.67
+P-MW-045,Midwest,Mike Johnson,CA Insurance,clientHandover,55.03
+P-MW-045,Midwest,Mike Johnson,CA Insurance,finalDocumentation,68.39
+P-MW-045,Midwest,Mike Johnson,CA Insurance,financialReconciliation,48.86
+P-MW-045,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,62.07
+P-MW-045,Midwest,Mike Johnson,Cost,clientHandover,48.99
+P-MW-045,Midwest,Mike Johnson,Cost,finalDocumentation,40.73
+P-MW-045,Midwest,Mike Johnson,Cost,financialReconciliation,50.11
+P-MW-045,Midwest,Mike Johnson,Cost,punchlistCompletion,55.69
+P-MW-045,Midwest,Mike Johnson,GL Insurance,clientHandover,75.57
+P-MW-045,Midwest,Mike Johnson,GL Insurance,finalDocumentation,43.28
+P-MW-045,Midwest,Mike Johnson,GL Insurance,financialReconciliation,44.07
+P-MW-045,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,74.27
+P-MW-045,Midwest,Mike Johnson,Safety,clientHandover,48.08
+P-MW-045,Midwest,Mike Johnson,Safety,finalDocumentation,32.25
+P-MW-045,Midwest,Mike Johnson,Safety,financialReconciliation,42.42
+P-MW-045,Midwest,Mike Johnson,Safety,punchlistCompletion,50.29
+P-MW-045,Midwest,Mike Johnson,Schedule,clientHandover,38.04
+P-MW-045,Midwest,Mike Johnson,Schedule,finalDocumentation,56.98
+P-MW-045,Midwest,Mike Johnson,Schedule,financialReconciliation,57.09
+P-MW-045,Midwest,Mike Johnson,Schedule,punchlistCompletion,66.57
+P-MW-045,Midwest,Mike Johnson,WC Insurance,clientHandover,53.51
+P-MW-045,Midwest,Mike Johnson,WC Insurance,finalDocumentation,69.21
+P-MW-045,Midwest,Mike Johnson,WC Insurance,financialReconciliation,55.28
+P-MW-045,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,59.6
+P-WE-046,West,Alice Brown,BR Insurance,clientHandover,59.37
+P-WE-046,West,Alice Brown,BR Insurance,finalDocumentation,50.64
+P-WE-046,West,Alice Brown,BR Insurance,financialReconciliation,75.14
+P-WE-046,West,Alice Brown,BR Insurance,punchlistCompletion,51.78
+P-WE-046,West,Alice Brown,CA Insurance,clientHandover,85.93
+P-WE-046,West,Alice Brown,CA Insurance,finalDocumentation,79.95
+P-WE-046,West,Alice Brown,CA Insurance,financialReconciliation,87.25
+P-WE-046,West,Alice Brown,CA Insurance,punchlistCompletion,77.26
+P-WE-046,West,Alice Brown,Cost,clientHandover,59.9
+P-WE-046,West,Alice Brown,Cost,finalDocumentation,66.74
+P-WE-046,West,Alice Brown,Cost,financialReconciliation,73.18
+P-WE-046,West,Alice Brown,Cost,punchlistCompletion,81.57
+P-WE-046,West,Alice Brown,GL Insurance,clientHandover,72.35
+P-WE-046,West,Alice Brown,GL Insurance,finalDocumentation,62.35
+P-WE-046,West,Alice Brown,GL Insurance,financialReconciliation,67.32
+P-WE-046,West,Alice Brown,GL Insurance,punchlistCompletion,70.91
+P-WE-046,West,Alice Brown,Safety,clientHandover,65.91
+P-WE-046,West,Alice Brown,Safety,finalDocumentation,54.91
+P-WE-046,West,Alice Brown,Safety,financialReconciliation,62.58
+P-WE-046,West,Alice Brown,Safety,punchlistCompletion,62.51
+P-WE-046,West,Alice Brown,Schedule,clientHandover,82.97
+P-WE-046,West,Alice Brown,Schedule,finalDocumentation,53.03
+P-WE-046,West,Alice Brown,Schedule,financialReconciliation,51.14
+P-WE-046,West,Alice Brown,Schedule,punchlistCompletion,49.47
+P-WE-046,West,Alice Brown,WC Insurance,clientHandover,75.89
+P-WE-046,West,Alice Brown,WC Insurance,finalDocumentation,63.53
+P-WE-046,West,Alice Brown,WC Insurance,financialReconciliation,81.57
+P-WE-046,West,Alice Brown,WC Insurance,punchlistCompletion,73.92
+P-NE-047,Northeast,John Doe,BR Insurance,clientHandover,43.57
+P-NE-047,Northeast,John Doe,BR Insurance,finalDocumentation,49.47
+P-NE-047,Northeast,John Doe,BR Insurance,financialReconciliation,42.21
+P-NE-047,Northeast,John Doe,BR Insurance,punchlistCompletion,49.5
+P-NE-047,Northeast,John Doe,CA Insurance,clientHandover,43.5
+P-NE-047,Northeast,John Doe,CA Insurance,finalDocumentation,75.91
+P-NE-047,Northeast,John Doe,CA Insurance,financialReconciliation,47.06
+P-NE-047,Northeast,John Doe,CA Insurance,punchlistCompletion,57.45
+P-NE-047,Northeast,John Doe,Cost,clientHandover,63.8
+P-NE-047,Northeast,John Doe,Cost,finalDocumentation,78.71
+P-NE-047,Northeast,John Doe,Cost,financialReconciliation,55.68
+P-NE-047,Northeast,John Doe,Cost,punchlistCompletion,67.94
+P-NE-047,Northeast,John Doe,GL Insurance,clientHandover,72.55
+P-NE-047,Northeast,John Doe,GL Insurance,finalDocumentation,75.53
+P-NE-047,Northeast,John Doe,GL Insurance,financialReconciliation,76.16
+P-NE-047,Northeast,John Doe,GL Insurance,punchlistCompletion,69.8
+P-NE-047,Northeast,John Doe,Safety,clientHandover,63.67
+P-NE-047,Northeast,John Doe,Safety,finalDocumentation,69.52
+P-NE-047,Northeast,John Doe,Safety,financialReconciliation,47.07
+P-NE-047,Northeast,John Doe,Safety,punchlistCompletion,44.38
+P-NE-047,Northeast,John Doe,Schedule,clientHandover,47.99
+P-NE-047,Northeast,John Doe,Schedule,finalDocumentation,47.33
+P-NE-047,Northeast,John Doe,Schedule,financialReconciliation,39.66
+P-NE-047,Northeast,John Doe,Schedule,punchlistCompletion,57.31
+P-NE-047,Northeast,John Doe,WC Insurance,clientHandover,53.94
+P-NE-047,Northeast,John Doe,WC Insurance,finalDocumentation,64.42
+P-NE-047,Northeast,John Doe,WC Insurance,financialReconciliation,62.84
+P-NE-047,Northeast,John Doe,WC Insurance,punchlistCompletion,58.06
+P-SE-048,Southeast,Jane Smith,BR Insurance,clientHandover,70.96
+P-SE-048,Southeast,Jane Smith,BR Insurance,finalDocumentation,70.77
+P-SE-048,Southeast,Jane Smith,BR Insurance,financialReconciliation,82.94
+P-SE-048,Southeast,Jane Smith,BR Insurance,punchlistCompletion,64.4
+P-SE-048,Southeast,Jane Smith,CA Insurance,clientHandover,74.76
+P-SE-048,Southeast,Jane Smith,CA Insurance,finalDocumentation,77.36
+P-SE-048,Southeast,Jane Smith,CA Insurance,financialReconciliation,88.34
+P-SE-048,Southeast,Jane Smith,CA Insurance,punchlistCompletion,68.38
+P-SE-048,Southeast,Jane Smith,Cost,clientHandover,71.47
+P-SE-048,Southeast,Jane Smith,Cost,finalDocumentation,91.4
+P-SE-048,Southeast,Jane Smith,Cost,financialReconciliation,59.51
+P-SE-048,Southeast,Jane Smith,Cost,punchlistCompletion,93.35
+P-SE-048,Southeast,Jane Smith,GL Insurance,clientHandover,67.46
+P-SE-048,Southeast,Jane Smith,GL Insurance,finalDocumentation,93.42
+P-SE-048,Southeast,Jane Smith,GL Insurance,financialReconciliation,92.55
+P-SE-048,Southeast,Jane Smith,GL Insurance,punchlistCompletion,91.07
+P-SE-048,Southeast,Jane Smith,Safety,clientHandover,56.49
+P-SE-048,Southeast,Jane Smith,Safety,finalDocumentation,80.65
+P-SE-048,Southeast,Jane Smith,Safety,financialReconciliation,65.07
+P-SE-048,Southeast,Jane Smith,Safety,punchlistCompletion,55.24
+P-SE-048,Southeast,Jane Smith,Schedule,clientHandover,82.83
+P-SE-048,Southeast,Jane Smith,Schedule,finalDocumentation,55.09
+P-SE-048,Southeast,Jane Smith,Schedule,financialReconciliation,56.05
+P-SE-048,Southeast,Jane Smith,Schedule,punchlistCompletion,85.78
+P-SE-048,Southeast,Jane Smith,WC Insurance,clientHandover,64.5
+P-SE-048,Southeast,Jane Smith,WC Insurance,finalDocumentation,72.51
+P-SE-048,Southeast,Jane Smith,WC Insurance,financialReconciliation,82.05
+P-SE-048,Southeast,Jane Smith,WC Insurance,punchlistCompletion,71.43
+P-MW-049,Midwest,Mike Johnson,BR Insurance,clientHandover,35.89
+P-MW-049,Midwest,Mike Johnson,BR Insurance,finalDocumentation,60.52
+P-MW-049,Midwest,Mike Johnson,BR Insurance,financialReconciliation,66.21
+P-MW-049,Midwest,Mike Johnson,BR Insurance,punchlistCompletion,40.91
+P-MW-049,Midwest,Mike Johnson,CA Insurance,clientHandover,51.05
+P-MW-049,Midwest,Mike Johnson,CA Insurance,finalDocumentation,50.5
+P-MW-049,Midwest,Mike Johnson,CA Insurance,financialReconciliation,41.88
+P-MW-049,Midwest,Mike Johnson,CA Insurance,punchlistCompletion,70.86
+P-MW-049,Midwest,Mike Johnson,Cost,clientHandover,56.1
+P-MW-049,Midwest,Mike Johnson,Cost,finalDocumentation,53.47
+P-MW-049,Midwest,Mike Johnson,Cost,financialReconciliation,50.27
+P-MW-049,Midwest,Mike Johnson,Cost,punchlistCompletion,46.27
+P-MW-049,Midwest,Mike Johnson,GL Insurance,clientHandover,60.18
+P-MW-049,Midwest,Mike Johnson,GL Insurance,finalDocumentation,48.0
+P-MW-049,Midwest,Mike Johnson,GL Insurance,financialReconciliation,72.96
+P-MW-049,Midwest,Mike Johnson,GL Insurance,punchlistCompletion,63.65
+P-MW-049,Midwest,Mike Johnson,Safety,clientHandover,32.54
+P-MW-049,Midwest,Mike Johnson,Safety,finalDocumentation,65.65
+P-MW-049,Midwest,Mike Johnson,Safety,financialReconciliation,59.05
+P-MW-049,Midwest,Mike Johnson,Safety,punchlistCompletion,59.68
+P-MW-049,Midwest,Mike Johnson,Schedule,clientHandover,68.38
+P-MW-049,Midwest,Mike Johnson,Schedule,finalDocumentation,62.4
+P-MW-049,Midwest,Mike Johnson,Schedule,financialReconciliation,66.89
+P-MW-049,Midwest,Mike Johnson,Schedule,punchlistCompletion,43.71
+P-MW-049,Midwest,Mike Johnson,WC Insurance,clientHandover,43.4
+P-MW-049,Midwest,Mike Johnson,WC Insurance,finalDocumentation,36.1
+P-MW-049,Midwest,Mike Johnson,WC Insurance,financialReconciliation,66.05
+P-MW-049,Midwest,Mike Johnson,WC Insurance,punchlistCompletion,65.84
+P-WE-050,West,Alice Brown,BR Insurance,clientHandover,71.95
+P-WE-050,West,Alice Brown,BR Insurance,finalDocumentation,53.17
+P-WE-050,West,Alice Brown,BR Insurance,financialReconciliation,83.4
+P-WE-050,West,Alice Brown,BR Insurance,punchlistCompletion,60.24
+P-WE-050,West,Alice Brown,CA Insurance,clientHandover,64.52
+P-WE-050,West,Alice Brown,CA Insurance,finalDocumentation,82.09
+P-WE-050,West,Alice Brown,CA Insurance,financialReconciliation,57.45
+P-WE-050,West,Alice Brown,CA Insurance,punchlistCompletion,74.11
+P-WE-050,West,Alice Brown,Cost,clientHandover,56.13
+P-WE-050,West,Alice Brown,Cost,finalDocumentation,64.43
+P-WE-050,West,Alice Brown,Cost,financialReconciliation,70.0
+P-WE-050,West,Alice Brown,Cost,punchlistCompletion,94.78
+P-WE-050,West,Alice Brown,GL Insurance,clientHandover,85.84
+P-WE-050,West,Alice Brown,GL Insurance,finalDocumentation,63.5
+P-WE-050,West,Alice Brown,GL Insurance,financialReconciliation,91.19
+P-WE-050,West,Alice Brown,GL Insurance,punchlistCompletion,69.48
+P-WE-050,West,Alice Brown,Safety,clientHandover,78.66
+P-WE-050,West,Alice Brown,Safety,finalDocumentation,84.23
+P-WE-050,West,Alice Brown,Safety,financialReconciliation,73.0
+P-WE-050,West,Alice Brown,Safety,punchlistCompletion,80.57
+P-WE-050,West,Alice Brown,Schedule,clientHandover,69.08
+P-WE-050,West,Alice Brown,Schedule,finalDocumentation,62.98
+P-WE-050,West,Alice Brown,Schedule,financialReconciliation,51.13
+P-WE-050,West,Alice Brown,Schedule,punchlistCompletion,50.07
+P-WE-050,West,Alice Brown,WC Insurance,clientHandover,52.21
+P-WE-050,West,Alice Brown,WC Insurance,finalDocumentation,57.55
+P-WE-050,West,Alice Brown,WC Insurance,financialReconciliation,69.94
+P-WE-050,West,Alice Brown,WC Insurance,punchlistCompletion,80.22

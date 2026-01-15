@@ -1,0 +1,1401 @@
+projectId,region,projectManager,impact_category,process_name,score
+P-NE-001,Northeast,John Doe,BR Insurance,compliance,17.15
+P-NE-001,Northeast,John Doe,BR Insurance,designReview,36.4
+P-NE-001,Northeast,John Doe,BR Insurance,financialSetup,38.55
+P-NE-001,Northeast,John Doe,BR Insurance,subcontractorPlanning,20.2
+P-NE-001,Northeast,John Doe,CA Insurance,compliance,19.85
+P-NE-001,Northeast,John Doe,CA Insurance,designReview,24.4
+P-NE-001,Northeast,John Doe,CA Insurance,financialSetup,41.55
+P-NE-001,Northeast,John Doe,CA Insurance,subcontractorPlanning,12.45
+P-NE-001,Northeast,John Doe,Cost,compliance,39.2
+P-NE-001,Northeast,John Doe,Cost,designReview,33.3
+P-NE-001,Northeast,John Doe,Cost,financialSetup,50.25
+P-NE-001,Northeast,John Doe,Cost,subcontractorPlanning,18
+P-NE-001,Northeast,John Doe,GL Insurance,compliance,34.45
+P-NE-001,Northeast,John Doe,GL Insurance,designReview,26.9
+P-NE-001,Northeast,John Doe,GL Insurance,financialSetup,15.15
+P-NE-001,Northeast,John Doe,GL Insurance,subcontractorPlanning,30.1
+P-NE-001,Northeast,John Doe,Safety,compliance,12.55
+P-NE-001,Northeast,John Doe,Safety,designReview,14.55
+P-NE-001,Northeast,John Doe,Safety,financialSetup,21.8
+P-NE-001,Northeast,John Doe,Safety,subcontractorPlanning,20.25
+P-NE-001,Northeast,John Doe,Schedule,compliance,19.8
+P-NE-001,Northeast,John Doe,Schedule,designReview,12.6
+P-NE-001,Northeast,John Doe,Schedule,financialSetup,34.4
+P-NE-001,Northeast,John Doe,Schedule,subcontractorPlanning,20.85
+P-NE-001,Northeast,John Doe,WC Insurance,compliance,30.75
+P-NE-001,Northeast,John Doe,WC Insurance,designReview,36.35
+P-NE-001,Northeast,John Doe,WC Insurance,financialSetup,12.55
+P-NE-001,Northeast,John Doe,WC Insurance,subcontractorPlanning,7.3
+P-SE-002,Southeast,Jane Smith,BR Insurance,compliance,20.05
+P-SE-002,Southeast,Jane Smith,BR Insurance,designReview,14.5
+P-SE-002,Southeast,Jane Smith,BR Insurance,financialSetup,27.05
+P-SE-002,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,11.85
+P-SE-002,Southeast,Jane Smith,CA Insurance,compliance,23.15
+P-SE-002,Southeast,Jane Smith,CA Insurance,designReview,40.4
+P-SE-002,Southeast,Jane Smith,CA Insurance,financialSetup,27.4
+P-SE-002,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,29.4
+P-SE-002,Southeast,Jane Smith,Cost,compliance,15.7
+P-SE-002,Southeast,Jane Smith,Cost,designReview,55.7
+P-SE-002,Southeast,Jane Smith,Cost,financialSetup,18.2
+P-SE-002,Southeast,Jane Smith,Cost,subcontractorPlanning,23.25
+P-SE-002,Southeast,Jane Smith,GL Insurance,compliance,21.85
+P-SE-002,Southeast,Jane Smith,GL Insurance,designReview,27.85
+P-SE-002,Southeast,Jane Smith,GL Insurance,financialSetup,43.75
+P-SE-002,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,17.95
+P-SE-002,Southeast,Jane Smith,Safety,compliance,36.35
+P-SE-002,Southeast,Jane Smith,Safety,designReview,30.3
+P-SE-002,Southeast,Jane Smith,Safety,financialSetup,31.65
+P-SE-002,Southeast,Jane Smith,Safety,subcontractorPlanning,31.05
+P-SE-002,Southeast,Jane Smith,Schedule,compliance,34.5
+P-SE-002,Southeast,Jane Smith,Schedule,designReview,14.35
+P-SE-002,Southeast,Jane Smith,Schedule,financialSetup,34.1
+P-SE-002,Southeast,Jane Smith,Schedule,subcontractorPlanning,35.85
+P-SE-002,Southeast,Jane Smith,WC Insurance,compliance,13.2
+P-SE-002,Southeast,Jane Smith,WC Insurance,designReview,18.25
+P-SE-002,Southeast,Jane Smith,WC Insurance,financialSetup,15.25
+P-SE-002,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,16.75
+P-MW-003,Midwest,Mike Johnson,BR Insurance,compliance,32
+P-MW-003,Midwest,Mike Johnson,BR Insurance,designReview,26.35
+P-MW-003,Midwest,Mike Johnson,BR Insurance,financialSetup,53.4
+P-MW-003,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,23.9
+P-MW-003,Midwest,Mike Johnson,CA Insurance,compliance,37.8
+P-MW-003,Midwest,Mike Johnson,CA Insurance,designReview,28.05
+P-MW-003,Midwest,Mike Johnson,CA Insurance,financialSetup,32.45
+P-MW-003,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,53.35
+P-MW-003,Midwest,Mike Johnson,Cost,compliance,32.9
+P-MW-003,Midwest,Mike Johnson,Cost,designReview,43.6
+P-MW-003,Midwest,Mike Johnson,Cost,financialSetup,55.7
+P-MW-003,Midwest,Mike Johnson,Cost,subcontractorPlanning,36.35
+P-MW-003,Midwest,Mike Johnson,GL Insurance,compliance,16.2
+P-MW-003,Midwest,Mike Johnson,GL Insurance,designReview,25
+P-MW-003,Midwest,Mike Johnson,GL Insurance,financialSetup,35.2
+P-MW-003,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,58
+P-MW-003,Midwest,Mike Johnson,Safety,compliance,12.95
+P-MW-003,Midwest,Mike Johnson,Safety,designReview,36.6
+P-MW-003,Midwest,Mike Johnson,Safety,financialSetup,45.1
+P-MW-003,Midwest,Mike Johnson,Safety,subcontractorPlanning,17.7
+P-MW-003,Midwest,Mike Johnson,Schedule,compliance,14.5
+P-MW-003,Midwest,Mike Johnson,Schedule,designReview,34.75
+P-MW-003,Midwest,Mike Johnson,Schedule,financialSetup,20.1
+P-MW-003,Midwest,Mike Johnson,Schedule,subcontractorPlanning,17.35
+P-MW-003,Midwest,Mike Johnson,WC Insurance,compliance,35.55
+P-MW-003,Midwest,Mike Johnson,WC Insurance,designReview,14.55
+P-MW-003,Midwest,Mike Johnson,WC Insurance,financialSetup,52.1
+P-MW-003,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,28.05
+P-WE-004,West,Alice Brown,BR Insurance,compliance,22.25
+P-WE-004,West,Alice Brown,BR Insurance,designReview,20
+P-WE-004,West,Alice Brown,BR Insurance,financialSetup,18.1
+P-WE-004,West,Alice Brown,BR Insurance,subcontractorPlanning,12.75
+P-WE-004,West,Alice Brown,CA Insurance,compliance,41.25
+P-WE-004,West,Alice Brown,CA Insurance,designReview,34.7
+P-WE-004,West,Alice Brown,CA Insurance,financialSetup,26.6
+P-WE-004,West,Alice Brown,CA Insurance,subcontractorPlanning,20.65
+P-WE-004,West,Alice Brown,Cost,compliance,14
+P-WE-004,West,Alice Brown,Cost,designReview,16
+P-WE-004,West,Alice Brown,Cost,financialSetup,15.1
+P-WE-004,West,Alice Brown,Cost,subcontractorPlanning,35.9
+P-WE-004,West,Alice Brown,GL Insurance,compliance,48.5
+P-WE-004,West,Alice Brown,GL Insurance,designReview,32.65
+P-WE-004,West,Alice Brown,GL Insurance,financialSetup,55.95
+P-WE-004,West,Alice Brown,GL Insurance,subcontractorPlanning,47.55
+P-WE-004,West,Alice Brown,Safety,compliance,10.95
+P-WE-004,West,Alice Brown,Safety,designReview,23.2
+P-WE-004,West,Alice Brown,Safety,financialSetup,34.25
+P-WE-004,West,Alice Brown,Safety,subcontractorPlanning,18.3
+P-WE-004,West,Alice Brown,Schedule,compliance,44.8
+P-WE-004,West,Alice Brown,Schedule,designReview,13.2
+P-WE-004,West,Alice Brown,Schedule,financialSetup,9.4
+P-WE-004,West,Alice Brown,Schedule,subcontractorPlanning,21.95
+P-WE-004,West,Alice Brown,WC Insurance,compliance,17.35
+P-WE-004,West,Alice Brown,WC Insurance,designReview,22.65
+P-WE-004,West,Alice Brown,WC Insurance,financialSetup,15.45
+P-WE-004,West,Alice Brown,WC Insurance,subcontractorPlanning,18.6
+P-NE-005,Northeast,John Doe,BR Insurance,compliance,22.75
+P-NE-005,Northeast,John Doe,BR Insurance,designReview,53.45
+P-NE-005,Northeast,John Doe,BR Insurance,financialSetup,51.95
+P-NE-005,Northeast,John Doe,BR Insurance,subcontractorPlanning,32.1
+P-NE-005,Northeast,John Doe,CA Insurance,compliance,34.4
+P-NE-005,Northeast,John Doe,CA Insurance,designReview,34.35
+P-NE-005,Northeast,John Doe,CA Insurance,financialSetup,23.05
+P-NE-005,Northeast,John Doe,CA Insurance,subcontractorPlanning,16.6
+P-NE-005,Northeast,John Doe,Cost,compliance,42.2
+P-NE-005,Northeast,John Doe,Cost,designReview,40.2
+P-NE-005,Northeast,John Doe,Cost,financialSetup,36.1
+P-NE-005,Northeast,John Doe,Cost,subcontractorPlanning,21.75
+P-NE-005,Northeast,John Doe,GL Insurance,compliance,26.95
+P-NE-005,Northeast,John Doe,GL Insurance,designReview,22.8
+P-NE-005,Northeast,John Doe,GL Insurance,financialSetup,33
+P-NE-005,Northeast,John Doe,GL Insurance,subcontractorPlanning,56.45
+P-NE-005,Northeast,John Doe,Safety,compliance,41.25
+P-NE-005,Northeast,John Doe,Safety,designReview,19.4
+P-NE-005,Northeast,John Doe,Safety,financialSetup,29.1
+P-NE-005,Northeast,John Doe,Safety,subcontractorPlanning,32.95
+P-NE-005,Northeast,John Doe,Schedule,compliance,44.4
+P-NE-005,Northeast,John Doe,Schedule,designReview,13.05
+P-NE-005,Northeast,John Doe,Schedule,financialSetup,26.5
+P-NE-005,Northeast,John Doe,Schedule,subcontractorPlanning,38.4
+P-NE-005,Northeast,John Doe,WC Insurance,compliance,33
+P-NE-005,Northeast,John Doe,WC Insurance,designReview,48.05
+P-NE-005,Northeast,John Doe,WC Insurance,financialSetup,47.5
+P-NE-005,Northeast,John Doe,WC Insurance,subcontractorPlanning,19.15
+P-SE-006,Southeast,Jane Smith,BR Insurance,compliance,13.6
+P-SE-006,Southeast,Jane Smith,BR Insurance,designReview,16.8
+P-SE-006,Southeast,Jane Smith,BR Insurance,financialSetup,16.15
+P-SE-006,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,31.25
+P-SE-006,Southeast,Jane Smith,CA Insurance,compliance,14.1
+P-SE-006,Southeast,Jane Smith,CA Insurance,designReview,17.1
+P-SE-006,Southeast,Jane Smith,CA Insurance,financialSetup,35.8
+P-SE-006,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,38.1
+P-SE-006,Southeast,Jane Smith,Cost,compliance,14.2
+P-SE-006,Southeast,Jane Smith,Cost,designReview,14.6
+P-SE-006,Southeast,Jane Smith,Cost,financialSetup,29
+P-SE-006,Southeast,Jane Smith,Cost,subcontractorPlanning,42.85
+P-SE-006,Southeast,Jane Smith,GL Insurance,compliance,10.9
+P-SE-006,Southeast,Jane Smith,GL Insurance,designReview,40.05
+P-SE-006,Southeast,Jane Smith,GL Insurance,financialSetup,31.05
+P-SE-006,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,18.5
+P-SE-006,Southeast,Jane Smith,Safety,compliance,27.45
+P-SE-006,Southeast,Jane Smith,Safety,designReview,11.25
+P-SE-006,Southeast,Jane Smith,Safety,financialSetup,8.05
+P-SE-006,Southeast,Jane Smith,Safety,subcontractorPlanning,28.6
+P-SE-006,Southeast,Jane Smith,Schedule,compliance,11.7
+P-SE-006,Southeast,Jane Smith,Schedule,designReview,26.75
+P-SE-006,Southeast,Jane Smith,Schedule,financialSetup,15.2
+P-SE-006,Southeast,Jane Smith,Schedule,subcontractorPlanning,42.05
+P-SE-006,Southeast,Jane Smith,WC Insurance,compliance,21.8
+P-SE-006,Southeast,Jane Smith,WC Insurance,designReview,30.5
+P-SE-006,Southeast,Jane Smith,WC Insurance,financialSetup,20.95
+P-SE-006,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,22.5
+P-NE-007,Northeast,John Doe,BR Insurance,compliance,41.05
+P-NE-007,Northeast,John Doe,BR Insurance,designReview,43.6
+P-NE-007,Northeast,John Doe,BR Insurance,financialSetup,39.35
+P-NE-007,Northeast,John Doe,BR Insurance,subcontractorPlanning,33.25
+P-NE-007,Northeast,John Doe,CA Insurance,compliance,46
+P-NE-007,Northeast,John Doe,CA Insurance,designReview,58
+P-NE-007,Northeast,John Doe,CA Insurance,financialSetup,39
+P-NE-007,Northeast,John Doe,CA Insurance,subcontractorPlanning,70.45
+P-NE-007,Northeast,John Doe,Cost,compliance,62
+P-NE-007,Northeast,John Doe,Cost,designReview,70.4
+P-NE-007,Northeast,John Doe,Cost,financialSetup,53.25
+P-NE-007,Northeast,John Doe,Cost,subcontractorPlanning,47.5
+P-NE-007,Northeast,John Doe,GL Insurance,compliance,73.05
+P-NE-007,Northeast,John Doe,GL Insurance,designReview,59.7
+P-NE-007,Northeast,John Doe,GL Insurance,financialSetup,69.5
+P-NE-007,Northeast,John Doe,GL Insurance,subcontractorPlanning,24.15
+P-NE-007,Northeast,John Doe,Safety,compliance,38.65
+P-NE-007,Northeast,John Doe,Safety,designReview,40.2
+P-NE-007,Northeast,John Doe,Safety,financialSetup,17.65
+P-NE-007,Northeast,John Doe,Safety,subcontractorPlanning,39.8
+P-NE-007,Northeast,John Doe,Schedule,compliance,53.3
+P-NE-007,Northeast,John Doe,Schedule,designReview,27
+P-NE-007,Northeast,John Doe,Schedule,financialSetup,39.9
+P-NE-007,Northeast,John Doe,Schedule,subcontractorPlanning,41.2
+P-NE-007,Northeast,John Doe,WC Insurance,compliance,52.9
+P-NE-007,Northeast,John Doe,WC Insurance,designReview,37.45
+P-NE-007,Northeast,John Doe,WC Insurance,financialSetup,59.35
+P-NE-007,Northeast,John Doe,WC Insurance,subcontractorPlanning,38.2
+P-SE-008,Southeast,Jane Smith,BR Insurance,compliance,21.2
+P-SE-008,Southeast,Jane Smith,BR Insurance,designReview,39.55
+P-SE-008,Southeast,Jane Smith,BR Insurance,financialSetup,22.2
+P-SE-008,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,17.55
+P-SE-008,Southeast,Jane Smith,CA Insurance,compliance,39
+P-SE-008,Southeast,Jane Smith,CA Insurance,designReview,38.9
+P-SE-008,Southeast,Jane Smith,CA Insurance,financialSetup,50.85
+P-SE-008,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,43.85
+P-SE-008,Southeast,Jane Smith,Cost,compliance,58
+P-SE-008,Southeast,Jane Smith,Cost,designReview,45.7
+P-SE-008,Southeast,Jane Smith,Cost,financialSetup,49.25
+P-SE-008,Southeast,Jane Smith,Cost,subcontractorPlanning,28.35
+P-SE-008,Southeast,Jane Smith,GL Insurance,compliance,26.85
+P-SE-008,Southeast,Jane Smith,GL Insurance,designReview,62.15
+P-SE-008,Southeast,Jane Smith,GL Insurance,financialSetup,32.75
+P-SE-008,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,50.5
+P-SE-008,Southeast,Jane Smith,Safety,compliance,15.85
+P-SE-008,Southeast,Jane Smith,Safety,designReview,15.9
+P-SE-008,Southeast,Jane Smith,Safety,financialSetup,19.3
+P-SE-008,Southeast,Jane Smith,Safety,subcontractorPlanning,16.2
+P-SE-008,Southeast,Jane Smith,Schedule,compliance,51.4
+P-SE-008,Southeast,Jane Smith,Schedule,designReview,14.5
+P-SE-008,Southeast,Jane Smith,Schedule,financialSetup,30.2
+P-SE-008,Southeast,Jane Smith,Schedule,subcontractorPlanning,41.8
+P-SE-008,Southeast,Jane Smith,WC Insurance,compliance,60.7
+P-SE-008,Southeast,Jane Smith,WC Insurance,designReview,23.05
+P-SE-008,Southeast,Jane Smith,WC Insurance,financialSetup,27.85
+P-SE-008,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,64.2
+P-MW-009,Midwest,Mike Johnson,BR Insurance,compliance,32.35
+P-MW-009,Midwest,Mike Johnson,BR Insurance,designReview,45.2
+P-MW-009,Midwest,Mike Johnson,BR Insurance,financialSetup,25
+P-MW-009,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,36.15
+P-MW-009,Midwest,Mike Johnson,CA Insurance,compliance,26.85
+P-MW-009,Midwest,Mike Johnson,CA Insurance,designReview,21.9
+P-MW-009,Midwest,Mike Johnson,CA Insurance,financialSetup,41.65
+P-MW-009,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,45.1
+P-MW-009,Midwest,Mike Johnson,Cost,compliance,22.5
+P-MW-009,Midwest,Mike Johnson,Cost,designReview,73
+P-MW-009,Midwest,Mike Johnson,Cost,financialSetup,36.2
+P-MW-009,Midwest,Mike Johnson,Cost,subcontractorPlanning,27.65
+P-MW-009,Midwest,Mike Johnson,GL Insurance,compliance,55
+P-MW-009,Midwest,Mike Johnson,GL Insurance,designReview,39.4
+P-MW-009,Midwest,Mike Johnson,GL Insurance,financialSetup,75.4
+P-MW-009,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,52.95
+P-MW-009,Midwest,Mike Johnson,Safety,compliance,23.25
+P-MW-009,Midwest,Mike Johnson,Safety,designReview,35.9
+P-MW-009,Midwest,Mike Johnson,Safety,financialSetup,39.05
+P-MW-009,Midwest,Mike Johnson,Safety,subcontractorPlanning,15.75
+P-MW-009,Midwest,Mike Johnson,Schedule,compliance,43.6
+P-MW-009,Midwest,Mike Johnson,Schedule,designReview,29.55
+P-MW-009,Midwest,Mike Johnson,Schedule,financialSetup,8.8
+P-MW-009,Midwest,Mike Johnson,Schedule,subcontractorPlanning,55.35
+P-MW-009,Midwest,Mike Johnson,WC Insurance,compliance,35.95
+P-MW-009,Midwest,Mike Johnson,WC Insurance,designReview,52.45
+P-MW-009,Midwest,Mike Johnson,WC Insurance,financialSetup,39.45
+P-MW-009,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,59.3
+P-WE-010,West,Alice Brown,BR Insurance,compliance,13.45
+P-WE-010,West,Alice Brown,BR Insurance,designReview,47.75
+P-WE-010,West,Alice Brown,BR Insurance,financialSetup,24.75
+P-WE-010,West,Alice Brown,BR Insurance,subcontractorPlanning,16.05
+P-WE-010,West,Alice Brown,CA Insurance,compliance,29.85
+P-WE-010,West,Alice Brown,CA Insurance,designReview,37.9
+P-WE-010,West,Alice Brown,CA Insurance,financialSetup,11.95
+P-WE-010,West,Alice Brown,CA Insurance,subcontractorPlanning,25.95
+P-WE-010,West,Alice Brown,Cost,compliance,28.4
+P-WE-010,West,Alice Brown,Cost,designReview,20.4
+P-WE-010,West,Alice Brown,Cost,financialSetup,15.45
+P-WE-010,West,Alice Brown,Cost,subcontractorPlanning,50.1
+P-WE-010,West,Alice Brown,GL Insurance,compliance,46.85
+P-WE-010,West,Alice Brown,GL Insurance,designReview,29.5
+P-WE-010,West,Alice Brown,GL Insurance,financialSetup,39.65
+P-WE-010,West,Alice Brown,GL Insurance,subcontractorPlanning,49.05
+P-WE-010,West,Alice Brown,Safety,compliance,8.85
+P-WE-010,West,Alice Brown,Safety,designReview,32.6
+P-WE-010,West,Alice Brown,Safety,financialSetup,35.2
+P-WE-010,West,Alice Brown,Safety,subcontractorPlanning,11.2
+P-WE-010,West,Alice Brown,Schedule,compliance,39.7
+P-WE-010,West,Alice Brown,Schedule,designReview,16.15
+P-WE-010,West,Alice Brown,Schedule,financialSetup,20.4
+P-WE-010,West,Alice Brown,Schedule,subcontractorPlanning,37.6
+P-WE-010,West,Alice Brown,WC Insurance,compliance,43.05
+P-WE-010,West,Alice Brown,WC Insurance,designReview,20.3
+P-WE-010,West,Alice Brown,WC Insurance,financialSetup,28.1
+P-WE-010,West,Alice Brown,WC Insurance,subcontractorPlanning,30.3
+P-NE-011,Northeast,John Doe,BR Insurance,compliance,50
+P-NE-011,Northeast,John Doe,BR Insurance,designReview,45.9
+P-NE-011,Northeast,John Doe,BR Insurance,financialSetup,62.95
+P-NE-011,Northeast,John Doe,BR Insurance,subcontractorPlanning,47.3
+P-NE-011,Northeast,John Doe,CA Insurance,compliance,37.9
+P-NE-011,Northeast,John Doe,CA Insurance,designReview,27.8
+P-NE-011,Northeast,John Doe,CA Insurance,financialSetup,47.35
+P-NE-011,Northeast,John Doe,CA Insurance,subcontractorPlanning,74.15
+P-NE-011,Northeast,John Doe,Cost,compliance,67.7
+P-NE-011,Northeast,John Doe,Cost,designReview,68.6
+P-NE-011,Northeast,John Doe,Cost,financialSetup,57.6
+P-NE-011,Northeast,John Doe,Cost,subcontractorPlanning,34.6
+P-NE-011,Northeast,John Doe,GL Insurance,compliance,64.6
+P-NE-011,Northeast,John Doe,GL Insurance,designReview,62.8
+P-NE-011,Northeast,John Doe,GL Insurance,financialSetup,63.1
+P-NE-011,Northeast,John Doe,GL Insurance,subcontractorPlanning,68.85
+P-NE-011,Northeast,John Doe,Safety,compliance,33.4
+P-NE-011,Northeast,John Doe,Safety,designReview,42.7
+P-NE-011,Northeast,John Doe,Safety,financialSetup,46.4
+P-NE-011,Northeast,John Doe,Safety,subcontractorPlanning,50.7
+P-NE-011,Northeast,John Doe,Schedule,compliance,58.5
+P-NE-011,Northeast,John Doe,Schedule,designReview,34
+P-NE-011,Northeast,John Doe,Schedule,financialSetup,54.9
+P-NE-011,Northeast,John Doe,Schedule,subcontractorPlanning,22.95
+P-NE-011,Northeast,John Doe,WC Insurance,compliance,35.25
+P-NE-011,Northeast,John Doe,WC Insurance,designReview,26
+P-NE-011,Northeast,John Doe,WC Insurance,financialSetup,40.55
+P-NE-011,Northeast,John Doe,WC Insurance,subcontractorPlanning,62.65
+P-SE-012,Southeast,Jane Smith,BR Insurance,compliance,41
+P-SE-012,Southeast,Jane Smith,BR Insurance,designReview,35.2
+P-SE-012,Southeast,Jane Smith,BR Insurance,financialSetup,27.35
+P-SE-012,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,20.45
+P-SE-012,Southeast,Jane Smith,CA Insurance,compliance,37.1
+P-SE-012,Southeast,Jane Smith,CA Insurance,designReview,10.2
+P-SE-012,Southeast,Jane Smith,CA Insurance,financialSetup,32.85
+P-SE-012,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,38.15
+P-SE-012,Southeast,Jane Smith,Cost,compliance,39.4
+P-SE-012,Southeast,Jane Smith,Cost,designReview,14
+P-SE-012,Southeast,Jane Smith,Cost,financialSetup,16
+P-SE-012,Southeast,Jane Smith,Cost,subcontractorPlanning,40.2
+P-SE-012,Southeast,Jane Smith,GL Insurance,compliance,40.35
+P-SE-012,Southeast,Jane Smith,GL Insurance,designReview,58.7
+P-SE-012,Southeast,Jane Smith,GL Insurance,financialSetup,50.5
+P-SE-012,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,48.55
+P-SE-012,Southeast,Jane Smith,Safety,compliance,15.75
+P-SE-012,Southeast,Jane Smith,Safety,designReview,19.05
+P-SE-012,Southeast,Jane Smith,Safety,financialSetup,21.15
+P-SE-012,Southeast,Jane Smith,Safety,subcontractorPlanning,38.25
+P-SE-012,Southeast,Jane Smith,Schedule,compliance,41.1
+P-SE-012,Southeast,Jane Smith,Schedule,designReview,43.7
+P-SE-012,Southeast,Jane Smith,Schedule,financialSetup,30.8
+P-SE-012,Southeast,Jane Smith,Schedule,subcontractorPlanning,20.35
+P-SE-012,Southeast,Jane Smith,WC Insurance,compliance,30
+P-SE-012,Southeast,Jane Smith,WC Insurance,designReview,41.2
+P-SE-012,Southeast,Jane Smith,WC Insurance,financialSetup,19.2
+P-SE-012,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,51.45
+P-MW-013,Midwest,Mike Johnson,BR Insurance,compliance,14.9
+P-MW-013,Midwest,Mike Johnson,BR Insurance,designReview,33.25
+P-MW-013,Midwest,Mike Johnson,BR Insurance,financialSetup,53.55
+P-MW-013,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,32.4
+P-MW-013,Midwest,Mike Johnson,CA Insurance,compliance,50.85
+P-MW-013,Midwest,Mike Johnson,CA Insurance,designReview,48.75
+P-MW-013,Midwest,Mike Johnson,CA Insurance,financialSetup,49.25
+P-MW-013,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,55.75
+P-MW-013,Midwest,Mike Johnson,Cost,compliance,40.6
+P-MW-013,Midwest,Mike Johnson,Cost,designReview,32.1
+P-MW-013,Midwest,Mike Johnson,Cost,financialSetup,63.15
+P-MW-013,Midwest,Mike Johnson,Cost,subcontractorPlanning,31.15
+P-MW-013,Midwest,Mike Johnson,GL Insurance,compliance,56.1
+P-MW-013,Midwest,Mike Johnson,GL Insurance,designReview,57.5
+P-MW-013,Midwest,Mike Johnson,GL Insurance,financialSetup,52.7
+P-MW-013,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,43.3
+P-MW-013,Midwest,Mike Johnson,Safety,compliance,65
+P-MW-013,Midwest,Mike Johnson,Safety,designReview,60.45
+P-MW-013,Midwest,Mike Johnson,Safety,financialSetup,33.6
+P-MW-013,Midwest,Mike Johnson,Safety,subcontractorPlanning,35.95
+P-MW-013,Midwest,Mike Johnson,Schedule,compliance,44.2
+P-MW-013,Midwest,Mike Johnson,Schedule,designReview,57.05
+P-MW-013,Midwest,Mike Johnson,Schedule,financialSetup,32.5
+P-MW-013,Midwest,Mike Johnson,Schedule,subcontractorPlanning,30.45
+P-MW-013,Midwest,Mike Johnson,WC Insurance,compliance,72.45
+P-MW-013,Midwest,Mike Johnson,WC Insurance,designReview,27.55
+P-MW-013,Midwest,Mike Johnson,WC Insurance,financialSetup,60.1
+P-MW-013,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,32.5
+P-WE-014,West,Alice Brown,BR Insurance,compliance,9.15
+P-WE-014,West,Alice Brown,BR Insurance,designReview,11.3
+P-WE-014,West,Alice Brown,BR Insurance,financialSetup,19.9
+P-WE-014,West,Alice Brown,BR Insurance,subcontractorPlanning,17.4
+P-WE-014,West,Alice Brown,CA Insurance,compliance,25.85
+P-WE-014,West,Alice Brown,CA Insurance,designReview,32.1
+P-WE-014,West,Alice Brown,CA Insurance,financialSetup,39.4
+P-WE-014,West,Alice Brown,CA Insurance,subcontractorPlanning,30.3
+P-WE-014,West,Alice Brown,Cost,compliance,30.3
+P-WE-014,West,Alice Brown,Cost,designReview,48.7
+P-WE-014,West,Alice Brown,Cost,financialSetup,8.2
+P-WE-014,West,Alice Brown,Cost,subcontractorPlanning,34.5
+P-WE-014,West,Alice Brown,GL Insurance,compliance,14.5
+P-WE-014,West,Alice Brown,GL Insurance,designReview,21
+P-WE-014,West,Alice Brown,GL Insurance,financialSetup,29.85
+P-WE-014,West,Alice Brown,GL Insurance,subcontractorPlanning,44.35
+P-WE-014,West,Alice Brown,Safety,compliance,12.6
+P-WE-014,West,Alice Brown,Safety,designReview,25.35
+P-WE-014,West,Alice Brown,Safety,financialSetup,33.1
+P-WE-014,West,Alice Brown,Safety,subcontractorPlanning,8.75
+P-WE-014,West,Alice Brown,Schedule,compliance,18.5
+P-WE-014,West,Alice Brown,Schedule,designReview,23.55
+P-WE-014,West,Alice Brown,Schedule,financialSetup,17.6
+P-WE-014,West,Alice Brown,Schedule,subcontractorPlanning,31.3
+P-WE-014,West,Alice Brown,WC Insurance,compliance,28.15
+P-WE-014,West,Alice Brown,WC Insurance,designReview,19.8
+P-WE-014,West,Alice Brown,WC Insurance,financialSetup,28.3
+P-WE-014,West,Alice Brown,WC Insurance,subcontractorPlanning,13.75
+P-NE-015,Northeast,John Doe,BR Insurance,compliance,17.9
+P-NE-015,Northeast,John Doe,BR Insurance,designReview,17.65
+P-NE-015,Northeast,John Doe,BR Insurance,financialSetup,32.45
+P-NE-015,Northeast,John Doe,BR Insurance,subcontractorPlanning,13.05
+P-NE-015,Northeast,John Doe,CA Insurance,compliance,50.7
+P-NE-015,Northeast,John Doe,CA Insurance,designReview,32.75
+P-NE-015,Northeast,John Doe,CA Insurance,financialSetup,28.85
+P-NE-015,Northeast,John Doe,CA Insurance,subcontractorPlanning,24.9
+P-NE-015,Northeast,John Doe,Cost,compliance,44.4
+P-NE-015,Northeast,John Doe,Cost,designReview,42.5
+P-NE-015,Northeast,John Doe,Cost,financialSetup,40.55
+P-NE-015,Northeast,John Doe,Cost,subcontractorPlanning,24.1
+P-NE-015,Northeast,John Doe,GL Insurance,compliance,32.4
+P-NE-015,Northeast,John Doe,GL Insurance,designReview,33.7
+P-NE-015,Northeast,John Doe,GL Insurance,financialSetup,41.9
+P-NE-015,Northeast,John Doe,GL Insurance,subcontractorPlanning,43.5
+P-NE-015,Northeast,John Doe,Safety,compliance,22.8
+P-NE-015,Northeast,John Doe,Safety,designReview,24.1
+P-NE-015,Northeast,John Doe,Safety,financialSetup,18.4
+P-NE-015,Northeast,John Doe,Safety,subcontractorPlanning,37
+P-NE-015,Northeast,John Doe,Schedule,compliance,18.9
+P-NE-015,Northeast,John Doe,Schedule,designReview,34.9
+P-NE-015,Northeast,John Doe,Schedule,financialSetup,21.8
+P-NE-015,Northeast,John Doe,Schedule,subcontractorPlanning,23.75
+P-NE-015,Northeast,John Doe,WC Insurance,compliance,54.6
+P-NE-015,Northeast,John Doe,WC Insurance,designReview,20.6
+P-NE-015,Northeast,John Doe,WC Insurance,financialSetup,41.1
+P-NE-015,Northeast,John Doe,WC Insurance,subcontractorPlanning,53.6
+P-SE-016,Southeast,Jane Smith,BR Insurance,compliance,42.1
+P-SE-016,Southeast,Jane Smith,BR Insurance,designReview,67.4
+P-SE-016,Southeast,Jane Smith,BR Insurance,financialSetup,42.95
+P-SE-016,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,54.1
+P-SE-016,Southeast,Jane Smith,CA Insurance,compliance,59.45
+P-SE-016,Southeast,Jane Smith,CA Insurance,designReview,39.35
+P-SE-016,Southeast,Jane Smith,CA Insurance,financialSetup,55.05
+P-SE-016,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,40.2
+P-SE-016,Southeast,Jane Smith,Cost,compliance,52.3
+P-SE-016,Southeast,Jane Smith,Cost,designReview,36.2
+P-SE-016,Southeast,Jane Smith,Cost,financialSetup,56.3
+P-SE-016,Southeast,Jane Smith,Cost,subcontractorPlanning,19.6
+P-SE-016,Southeast,Jane Smith,GL Insurance,compliance,43.75
+P-SE-016,Southeast,Jane Smith,GL Insurance,designReview,58.4
+P-SE-016,Southeast,Jane Smith,GL Insurance,financialSetup,24.75
+P-SE-016,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,24.25
+P-SE-016,Southeast,Jane Smith,Safety,compliance,25.85
+P-SE-016,Southeast,Jane Smith,Safety,designReview,57.7
+P-SE-016,Southeast,Jane Smith,Safety,financialSetup,41.5
+P-SE-016,Southeast,Jane Smith,Safety,subcontractorPlanning,37.55
+P-SE-016,Southeast,Jane Smith,Schedule,compliance,35.2
+P-SE-016,Southeast,Jane Smith,Schedule,designReview,49.35
+P-SE-016,Southeast,Jane Smith,Schedule,financialSetup,44.8
+P-SE-016,Southeast,Jane Smith,Schedule,subcontractorPlanning,53.95
+P-SE-016,Southeast,Jane Smith,WC Insurance,compliance,42.55
+P-SE-016,Southeast,Jane Smith,WC Insurance,designReview,55.9
+P-SE-016,Southeast,Jane Smith,WC Insurance,financialSetup,23
+P-SE-016,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,56.95
+P-MW-017,Midwest,Mike Johnson,BR Insurance,compliance,15.2
+P-MW-017,Midwest,Mike Johnson,BR Insurance,designReview,8.7
+P-MW-017,Midwest,Mike Johnson,BR Insurance,financialSetup,33.9
+P-MW-017,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,18.35
+P-MW-017,Midwest,Mike Johnson,CA Insurance,compliance,22.5
+P-MW-017,Midwest,Mike Johnson,CA Insurance,designReview,21.9
+P-MW-017,Midwest,Mike Johnson,CA Insurance,financialSetup,24
+P-MW-017,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,28.6
+P-MW-017,Midwest,Mike Johnson,Cost,compliance,26.7
+P-MW-017,Midwest,Mike Johnson,Cost,designReview,18.7
+P-MW-017,Midwest,Mike Johnson,Cost,financialSetup,12
+P-MW-017,Midwest,Mike Johnson,Cost,subcontractorPlanning,29.9
+P-MW-017,Midwest,Mike Johnson,GL Insurance,compliance,22.8
+P-MW-017,Midwest,Mike Johnson,GL Insurance,designReview,26.9
+P-MW-017,Midwest,Mike Johnson,GL Insurance,financialSetup,12.6
+P-MW-017,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,12
+P-MW-017,Midwest,Mike Johnson,Safety,compliance,30.35
+P-MW-017,Midwest,Mike Johnson,Safety,designReview,24.15
+P-MW-017,Midwest,Mike Johnson,Safety,financialSetup,37.05
+P-MW-017,Midwest,Mike Johnson,Safety,subcontractorPlanning,13.65
+P-MW-017,Midwest,Mike Johnson,Schedule,compliance,23.2
+P-MW-017,Midwest,Mike Johnson,Schedule,designReview,21.55
+P-MW-017,Midwest,Mike Johnson,Schedule,financialSetup,28.8
+P-MW-017,Midwest,Mike Johnson,Schedule,subcontractorPlanning,28.2
+P-MW-017,Midwest,Mike Johnson,WC Insurance,compliance,4.9
+P-MW-017,Midwest,Mike Johnson,WC Insurance,designReview,7.85
+P-MW-017,Midwest,Mike Johnson,WC Insurance,financialSetup,16.8
+P-MW-017,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,29.05
+P-WE-018,West,Alice Brown,BR Insurance,compliance,33.45
+P-WE-018,West,Alice Brown,BR Insurance,designReview,21.2
+P-WE-018,West,Alice Brown,BR Insurance,financialSetup,35.8
+P-WE-018,West,Alice Brown,BR Insurance,subcontractorPlanning,39.05
+P-WE-018,West,Alice Brown,CA Insurance,compliance,53.05
+P-WE-018,West,Alice Brown,CA Insurance,designReview,35.15
+P-WE-018,West,Alice Brown,CA Insurance,financialSetup,45.3
+P-WE-018,West,Alice Brown,CA Insurance,subcontractorPlanning,50.75
+P-WE-018,West,Alice Brown,Cost,compliance,35.3
+P-WE-018,West,Alice Brown,Cost,designReview,21
+P-WE-018,West,Alice Brown,Cost,financialSetup,52.7
+P-WE-018,West,Alice Brown,Cost,subcontractorPlanning,57.2
+P-WE-018,West,Alice Brown,GL Insurance,compliance,55
+P-WE-018,West,Alice Brown,GL Insurance,designReview,57.85
+P-WE-018,West,Alice Brown,GL Insurance,financialSetup,48.85
+P-WE-018,West,Alice Brown,GL Insurance,subcontractorPlanning,40
+P-WE-018,West,Alice Brown,Safety,compliance,49.5
+P-WE-018,West,Alice Brown,Safety,designReview,57.1
+P-WE-018,West,Alice Brown,Safety,financialSetup,70.7
+P-WE-018,West,Alice Brown,Safety,subcontractorPlanning,58.95
+P-WE-018,West,Alice Brown,Schedule,compliance,54.5
+P-WE-018,West,Alice Brown,Schedule,designReview,51.45
+P-WE-018,West,Alice Brown,Schedule,financialSetup,49.9
+P-WE-018,West,Alice Brown,Schedule,subcontractorPlanning,53.6
+P-WE-018,West,Alice Brown,WC Insurance,compliance,50.05
+P-WE-018,West,Alice Brown,WC Insurance,designReview,21.15
+P-WE-018,West,Alice Brown,WC Insurance,financialSetup,50.9
+P-WE-018,West,Alice Brown,WC Insurance,subcontractorPlanning,48.9
+P-NE-019,Northeast,John Doe,BR Insurance,compliance,61.2
+P-NE-019,Northeast,John Doe,BR Insurance,designReview,42.3
+P-NE-019,Northeast,John Doe,BR Insurance,financialSetup,36.2
+P-NE-019,Northeast,John Doe,BR Insurance,subcontractorPlanning,12.25
+P-NE-019,Northeast,John Doe,CA Insurance,compliance,20.6
+P-NE-019,Northeast,John Doe,CA Insurance,designReview,16.65
+P-NE-019,Northeast,John Doe,CA Insurance,financialSetup,11.6
+P-NE-019,Northeast,John Doe,CA Insurance,subcontractorPlanning,49.3
+P-NE-019,Northeast,John Doe,Cost,compliance,29.8
+P-NE-019,Northeast,John Doe,Cost,designReview,34
+P-NE-019,Northeast,John Doe,Cost,financialSetup,8.45
+P-NE-019,Northeast,John Doe,Cost,subcontractorPlanning,21.4
+P-NE-019,Northeast,John Doe,GL Insurance,compliance,19.4
+P-NE-019,Northeast,John Doe,GL Insurance,designReview,14.55
+P-NE-019,Northeast,John Doe,GL Insurance,financialSetup,20.7
+P-NE-019,Northeast,John Doe,GL Insurance,subcontractorPlanning,52.25
+P-NE-019,Northeast,John Doe,Safety,compliance,30
+P-NE-019,Northeast,John Doe,Safety,designReview,21.2
+P-NE-019,Northeast,John Doe,Safety,financialSetup,45.75
+P-NE-019,Northeast,John Doe,Safety,subcontractorPlanning,48.8
+P-NE-019,Northeast,John Doe,Schedule,compliance,23.1
+P-NE-019,Northeast,John Doe,Schedule,designReview,30.9
+P-NE-019,Northeast,John Doe,Schedule,financialSetup,9.1
+P-NE-019,Northeast,John Doe,Schedule,subcontractorPlanning,31.25
+P-NE-019,Northeast,John Doe,WC Insurance,compliance,46.65
+P-NE-019,Northeast,John Doe,WC Insurance,designReview,28.5
+P-NE-019,Northeast,John Doe,WC Insurance,financialSetup,59.6
+P-NE-019,Northeast,John Doe,WC Insurance,subcontractorPlanning,33.75
+P-SE-020,Southeast,Jane Smith,BR Insurance,compliance,28
+P-SE-020,Southeast,Jane Smith,BR Insurance,designReview,32.25
+P-SE-020,Southeast,Jane Smith,BR Insurance,financialSetup,14.8
+P-SE-020,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,22.9
+P-SE-020,Southeast,Jane Smith,CA Insurance,compliance,43.15
+P-SE-020,Southeast,Jane Smith,CA Insurance,designReview,49.9
+P-SE-020,Southeast,Jane Smith,CA Insurance,financialSetup,12
+P-SE-020,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,21.15
+P-SE-020,Southeast,Jane Smith,Cost,compliance,34.9
+P-SE-020,Southeast,Jane Smith,Cost,designReview,33.1
+P-SE-020,Southeast,Jane Smith,Cost,financialSetup,20.2
+P-SE-020,Southeast,Jane Smith,Cost,subcontractorPlanning,20.05
+P-SE-020,Southeast,Jane Smith,GL Insurance,compliance,39.75
+P-SE-020,Southeast,Jane Smith,GL Insurance,designReview,38.1
+P-SE-020,Southeast,Jane Smith,GL Insurance,financialSetup,32.8
+P-SE-020,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,27.85
+P-SE-020,Southeast,Jane Smith,Safety,compliance,10.5
+P-SE-020,Southeast,Jane Smith,Safety,designReview,42.05
+P-SE-020,Southeast,Jane Smith,Safety,financialSetup,46.65
+P-SE-020,Southeast,Jane Smith,Safety,subcontractorPlanning,7.55
+P-SE-020,Southeast,Jane Smith,Schedule,compliance,39.7
+P-SE-020,Southeast,Jane Smith,Schedule,designReview,20
+P-SE-020,Southeast,Jane Smith,Schedule,financialSetup,32.6
+P-SE-020,Southeast,Jane Smith,Schedule,subcontractorPlanning,29.2
+P-SE-020,Southeast,Jane Smith,WC Insurance,compliance,43.8
+P-SE-020,Southeast,Jane Smith,WC Insurance,designReview,17
+P-SE-020,Southeast,Jane Smith,WC Insurance,financialSetup,32.3
+P-SE-020,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,35.65
+P-MW-021,Midwest,Mike Johnson,BR Insurance,compliance,56.05
+P-MW-021,Midwest,Mike Johnson,BR Insurance,designReview,62.65
+P-MW-021,Midwest,Mike Johnson,BR Insurance,financialSetup,30
+P-MW-021,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,37.8
+P-MW-021,Midwest,Mike Johnson,CA Insurance,compliance,44.55
+P-MW-021,Midwest,Mike Johnson,CA Insurance,designReview,30.05
+P-MW-021,Midwest,Mike Johnson,CA Insurance,financialSetup,70.9
+P-MW-021,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,49.85
+P-MW-021,Midwest,Mike Johnson,Cost,compliance,32.7
+P-MW-021,Midwest,Mike Johnson,Cost,designReview,59.1
+P-MW-021,Midwest,Mike Johnson,Cost,financialSetup,62.3
+P-MW-021,Midwest,Mike Johnson,Cost,subcontractorPlanning,65.6
+P-MW-021,Midwest,Mike Johnson,GL Insurance,compliance,32.9
+P-MW-021,Midwest,Mike Johnson,GL Insurance,designReview,68
+P-MW-021,Midwest,Mike Johnson,GL Insurance,financialSetup,59.3
+P-MW-021,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,60.15
+P-MW-021,Midwest,Mike Johnson,Safety,compliance,48.15
+P-MW-021,Midwest,Mike Johnson,Safety,designReview,49.05
+P-MW-021,Midwest,Mike Johnson,Safety,financialSetup,43
+P-MW-021,Midwest,Mike Johnson,Safety,subcontractorPlanning,37.95
+P-MW-021,Midwest,Mike Johnson,Schedule,compliance,40.1
+P-MW-021,Midwest,Mike Johnson,Schedule,designReview,32.5
+P-MW-021,Midwest,Mike Johnson,Schedule,financialSetup,53
+P-MW-021,Midwest,Mike Johnson,Schedule,subcontractorPlanning,31.85
+P-MW-021,Midwest,Mike Johnson,WC Insurance,compliance,42.65
+P-MW-021,Midwest,Mike Johnson,WC Insurance,designReview,40.4
+P-MW-021,Midwest,Mike Johnson,WC Insurance,financialSetup,49.35
+P-MW-021,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,45.45
+P-WE-022,West,Alice Brown,BR Insurance,compliance,84.05
+P-WE-022,West,Alice Brown,BR Insurance,designReview,78.5
+P-WE-022,West,Alice Brown,BR Insurance,financialSetup,80
+P-WE-022,West,Alice Brown,BR Insurance,subcontractorPlanning,83.55
+P-WE-022,West,Alice Brown,CA Insurance,compliance,87.45
+P-WE-022,West,Alice Brown,CA Insurance,designReview,84.8
+P-WE-022,West,Alice Brown,CA Insurance,financialSetup,81.8
+P-WE-022,West,Alice Brown,CA Insurance,subcontractorPlanning,88.4
+P-WE-022,West,Alice Brown,Cost,compliance,80.6
+P-WE-022,West,Alice Brown,Cost,designReview,92.8
+P-WE-022,West,Alice Brown,Cost,financialSetup,80.75
+P-WE-022,West,Alice Brown,Cost,subcontractorPlanning,89.9
+P-WE-022,West,Alice Brown,GL Insurance,compliance,77.95
+P-WE-022,West,Alice Brown,GL Insurance,designReview,81.8
+P-WE-022,West,Alice Brown,GL Insurance,financialSetup,84.55
+P-WE-022,West,Alice Brown,GL Insurance,subcontractorPlanning,87.75
+P-WE-022,West,Alice Brown,Safety,compliance,79.75
+P-WE-022,West,Alice Brown,Safety,designReview,77.85
+P-WE-022,West,Alice Brown,Safety,financialSetup,86.35
+P-WE-022,West,Alice Brown,Safety,subcontractorPlanning,92.9
+P-WE-022,West,Alice Brown,Schedule,compliance,95.6
+P-WE-022,West,Alice Brown,Schedule,designReview,76.45
+P-WE-022,West,Alice Brown,Schedule,financialSetup,86.1
+P-WE-022,West,Alice Brown,Schedule,subcontractorPlanning,77.7
+P-WE-022,West,Alice Brown,WC Insurance,compliance,94.65
+P-WE-022,West,Alice Brown,WC Insurance,designReview,87.8
+P-WE-022,West,Alice Brown,WC Insurance,financialSetup,84.9
+P-WE-022,West,Alice Brown,WC Insurance,subcontractorPlanning,89.65
+P-NE-023,Northeast,John Doe,BR Insurance,compliance,15.4
+P-NE-023,Northeast,John Doe,BR Insurance,designReview,10.7
+P-NE-023,Northeast,John Doe,BR Insurance,financialSetup,13.85
+P-NE-023,Northeast,John Doe,BR Insurance,subcontractorPlanning,11.1
+P-NE-023,Northeast,John Doe,CA Insurance,compliance,33.1
+P-NE-023,Northeast,John Doe,CA Insurance,designReview,35.5
+P-NE-023,Northeast,John Doe,CA Insurance,financialSetup,44.95
+P-NE-023,Northeast,John Doe,CA Insurance,subcontractorPlanning,15.45
+P-NE-023,Northeast,John Doe,Cost,compliance,15.4
+P-NE-023,Northeast,John Doe,Cost,designReview,14.7
+P-NE-023,Northeast,John Doe,Cost,financialSetup,20.4
+P-NE-023,Northeast,John Doe,Cost,subcontractorPlanning,16.3
+P-NE-023,Northeast,John Doe,GL Insurance,compliance,45.75
+P-NE-023,Northeast,John Doe,GL Insurance,designReview,42.45
+P-NE-023,Northeast,John Doe,GL Insurance,financialSetup,22.3
+P-NE-023,Northeast,John Doe,GL Insurance,subcontractorPlanning,17.75
+P-NE-023,Northeast,John Doe,Safety,compliance,7.85
+P-NE-023,Northeast,John Doe,Safety,designReview,25.75
+P-NE-023,Northeast,John Doe,Safety,financialSetup,19.9
+P-NE-023,Northeast,John Doe,Safety,subcontractorPlanning,17.45
+P-NE-023,Northeast,John Doe,Schedule,compliance,21
+P-NE-023,Northeast,John Doe,Schedule,designReview,14.3
+P-NE-023,Northeast,John Doe,Schedule,financialSetup,31.1
+P-NE-023,Northeast,John Doe,Schedule,subcontractorPlanning,11.75
+P-NE-023,Northeast,John Doe,WC Insurance,compliance,14.7
+P-NE-023,Northeast,John Doe,WC Insurance,designReview,8.65
+P-NE-023,Northeast,John Doe,WC Insurance,financialSetup,20.9
+P-NE-023,Northeast,John Doe,WC Insurance,subcontractorPlanning,25.95
+P-SE-024,Southeast,Jane Smith,BR Insurance,compliance,64.6
+P-SE-024,Southeast,Jane Smith,BR Insurance,designReview,49.4
+P-SE-024,Southeast,Jane Smith,BR Insurance,financialSetup,68.45
+P-SE-024,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,34.85
+P-SE-024,Southeast,Jane Smith,CA Insurance,compliance,56.3
+P-SE-024,Southeast,Jane Smith,CA Insurance,designReview,48.95
+P-SE-024,Southeast,Jane Smith,CA Insurance,financialSetup,48.6
+P-SE-024,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,78.4
+P-SE-024,Southeast,Jane Smith,Cost,compliance,48.2
+P-SE-024,Southeast,Jane Smith,Cost,designReview,48.8
+P-SE-024,Southeast,Jane Smith,Cost,financialSetup,56.35
+P-SE-024,Southeast,Jane Smith,Cost,subcontractorPlanning,37.95
+P-SE-024,Southeast,Jane Smith,GL Insurance,compliance,34.75
+P-SE-024,Southeast,Jane Smith,GL Insurance,designReview,60.25
+P-SE-024,Southeast,Jane Smith,GL Insurance,financialSetup,56.05
+P-SE-024,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,41.3
+P-SE-024,Southeast,Jane Smith,Safety,compliance,61.4
+P-SE-024,Southeast,Jane Smith,Safety,designReview,43.55
+P-SE-024,Southeast,Jane Smith,Safety,financialSetup,69.05
+P-SE-024,Southeast,Jane Smith,Safety,subcontractorPlanning,42.6
+P-SE-024,Southeast,Jane Smith,Schedule,compliance,68.8
+P-SE-024,Southeast,Jane Smith,Schedule,designReview,57.15
+P-SE-024,Southeast,Jane Smith,Schedule,financialSetup,63.2
+P-SE-024,Southeast,Jane Smith,Schedule,subcontractorPlanning,60.45
+P-SE-024,Southeast,Jane Smith,WC Insurance,compliance,67.9
+P-SE-024,Southeast,Jane Smith,WC Insurance,designReview,52.3
+P-SE-024,Southeast,Jane Smith,WC Insurance,financialSetup,59.45
+P-SE-024,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,34.8
+P-MW-025,Midwest,Mike Johnson,BR Insurance,compliance,39.65
+P-MW-025,Midwest,Mike Johnson,BR Insurance,designReview,58.05
+P-MW-025,Midwest,Mike Johnson,BR Insurance,financialSetup,52.6
+P-MW-025,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,41.35
+P-MW-025,Midwest,Mike Johnson,CA Insurance,compliance,51.3
+P-MW-025,Midwest,Mike Johnson,CA Insurance,designReview,57.45
+P-MW-025,Midwest,Mike Johnson,CA Insurance,financialSetup,46.9
+P-MW-025,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,41.4
+P-MW-025,Midwest,Mike Johnson,Cost,compliance,34.2
+P-MW-025,Midwest,Mike Johnson,Cost,designReview,65.8
+P-MW-025,Midwest,Mike Johnson,Cost,financialSetup,45.5
+P-MW-025,Midwest,Mike Johnson,Cost,subcontractorPlanning,36.05
+P-MW-025,Midwest,Mike Johnson,GL Insurance,compliance,44.65
+P-MW-025,Midwest,Mike Johnson,GL Insurance,designReview,38.45
+P-MW-025,Midwest,Mike Johnson,GL Insurance,financialSetup,19.7
+P-MW-025,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,33.45
+P-MW-025,Midwest,Mike Johnson,Safety,compliance,24.35
+P-MW-025,Midwest,Mike Johnson,Safety,designReview,17.55
+P-MW-025,Midwest,Mike Johnson,Safety,financialSetup,46.75
+P-MW-025,Midwest,Mike Johnson,Safety,subcontractorPlanning,21.75
+P-MW-025,Midwest,Mike Johnson,Schedule,compliance,29.9
+P-MW-025,Midwest,Mike Johnson,Schedule,designReview,31.45
+P-MW-025,Midwest,Mike Johnson,Schedule,financialSetup,60.6
+P-MW-025,Midwest,Mike Johnson,Schedule,subcontractorPlanning,35.05
+P-MW-025,Midwest,Mike Johnson,WC Insurance,compliance,36.25
+P-MW-025,Midwest,Mike Johnson,WC Insurance,designReview,42.95
+P-MW-025,Midwest,Mike Johnson,WC Insurance,financialSetup,30.85
+P-MW-025,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,32.8
+P-WE-026,West,Alice Brown,BR Insurance,compliance,82.9
+P-WE-026,West,Alice Brown,BR Insurance,designReview,94.25
+P-WE-026,West,Alice Brown,BR Insurance,financialSetup,57.1
+P-WE-026,West,Alice Brown,BR Insurance,subcontractorPlanning,79
+P-WE-026,West,Alice Brown,CA Insurance,compliance,79.55
+P-WE-026,West,Alice Brown,CA Insurance,designReview,91.5
+P-WE-026,West,Alice Brown,CA Insurance,financialSetup,92.35
+P-WE-026,West,Alice Brown,CA Insurance,subcontractorPlanning,64
+P-WE-026,West,Alice Brown,Cost,compliance,82.3
+P-WE-026,West,Alice Brown,Cost,designReview,88.5
+P-WE-026,West,Alice Brown,Cost,financialSetup,81.3
+P-WE-026,West,Alice Brown,Cost,subcontractorPlanning,85.55
+P-WE-026,West,Alice Brown,GL Insurance,compliance,77.85
+P-WE-026,West,Alice Brown,GL Insurance,designReview,79.5
+P-WE-026,West,Alice Brown,GL Insurance,financialSetup,82.55
+P-WE-026,West,Alice Brown,GL Insurance,subcontractorPlanning,71.15
+P-WE-026,West,Alice Brown,Safety,compliance,79.85
+P-WE-026,West,Alice Brown,Safety,designReview,64.25
+P-WE-026,West,Alice Brown,Safety,financialSetup,75.95
+P-WE-026,West,Alice Brown,Safety,subcontractorPlanning,84.25
+P-WE-026,West,Alice Brown,Schedule,compliance,84
+P-WE-026,West,Alice Brown,Schedule,designReview,88.7
+P-WE-026,West,Alice Brown,Schedule,financialSetup,84.2
+P-WE-026,West,Alice Brown,Schedule,subcontractorPlanning,72.6
+P-WE-026,West,Alice Brown,WC Insurance,compliance,81.75
+P-WE-026,West,Alice Brown,WC Insurance,designReview,78
+P-WE-026,West,Alice Brown,WC Insurance,financialSetup,68.6
+P-WE-026,West,Alice Brown,WC Insurance,subcontractorPlanning,75.65
+P-NE-027,Northeast,John Doe,BR Insurance,compliance,47.6
+P-NE-027,Northeast,John Doe,BR Insurance,designReview,50.3
+P-NE-027,Northeast,John Doe,BR Insurance,financialSetup,50.85
+P-NE-027,Northeast,John Doe,BR Insurance,subcontractorPlanning,74.8
+P-NE-027,Northeast,John Doe,CA Insurance,compliance,89.15
+P-NE-027,Northeast,John Doe,CA Insurance,designReview,67.65
+P-NE-027,Northeast,John Doe,CA Insurance,financialSetup,54.25
+P-NE-027,Northeast,John Doe,CA Insurance,subcontractorPlanning,71.3
+P-NE-027,Northeast,John Doe,Cost,compliance,60.3
+P-NE-027,Northeast,John Doe,Cost,designReview,51.4
+P-NE-027,Northeast,John Doe,Cost,financialSetup,75.65
+P-NE-027,Northeast,John Doe,Cost,subcontractorPlanning,65.45
+P-NE-027,Northeast,John Doe,GL Insurance,compliance,58.8
+P-NE-027,Northeast,John Doe,GL Insurance,designReview,74.3
+P-NE-027,Northeast,John Doe,GL Insurance,financialSetup,62.15
+P-NE-027,Northeast,John Doe,GL Insurance,subcontractorPlanning,70.1
+P-NE-027,Northeast,John Doe,Safety,compliance,51.95
+P-NE-027,Northeast,John Doe,Safety,designReview,34.15
+P-NE-027,Northeast,John Doe,Safety,financialSetup,47.6
+P-NE-027,Northeast,John Doe,Safety,subcontractorPlanning,41.1
+P-NE-027,Northeast,John Doe,Schedule,compliance,48.4
+P-NE-027,Northeast,John Doe,Schedule,designReview,62.3
+P-NE-027,Northeast,John Doe,Schedule,financialSetup,38.6
+P-NE-027,Northeast,John Doe,Schedule,subcontractorPlanning,58.05
+P-NE-027,Northeast,John Doe,WC Insurance,compliance,56.45
+P-NE-027,Northeast,John Doe,WC Insurance,designReview,67.3
+P-NE-027,Northeast,John Doe,WC Insurance,financialSetup,33.5
+P-NE-027,Northeast,John Doe,WC Insurance,subcontractorPlanning,51.2
+P-SE-028,Southeast,Jane Smith,BR Insurance,compliance,52.65
+P-SE-028,Southeast,Jane Smith,BR Insurance,designReview,56.1
+P-SE-028,Southeast,Jane Smith,BR Insurance,financialSetup,75.75
+P-SE-028,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,31.9
+P-SE-028,Southeast,Jane Smith,CA Insurance,compliance,48.45
+P-SE-028,Southeast,Jane Smith,CA Insurance,designReview,55.25
+P-SE-028,Southeast,Jane Smith,CA Insurance,financialSetup,54.75
+P-SE-028,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,57.9
+P-SE-028,Southeast,Jane Smith,Cost,compliance,60.9
+P-SE-028,Southeast,Jane Smith,Cost,designReview,63.1
+P-SE-028,Southeast,Jane Smith,Cost,financialSetup,58.95
+P-SE-028,Southeast,Jane Smith,Cost,subcontractorPlanning,50.25
+P-SE-028,Southeast,Jane Smith,GL Insurance,compliance,57.45
+P-SE-028,Southeast,Jane Smith,GL Insurance,designReview,74.95
+P-SE-028,Southeast,Jane Smith,GL Insurance,financialSetup,39.3
+P-SE-028,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,48.1
+P-SE-028,Southeast,Jane Smith,Safety,compliance,48.35
+P-SE-028,Southeast,Jane Smith,Safety,designReview,50.55
+P-SE-028,Southeast,Jane Smith,Safety,financialSetup,43.4
+P-SE-028,Southeast,Jane Smith,Safety,subcontractorPlanning,61.3
+P-SE-028,Southeast,Jane Smith,Schedule,compliance,38.6
+P-SE-028,Southeast,Jane Smith,Schedule,designReview,56.05
+P-SE-028,Southeast,Jane Smith,Schedule,financialSetup,46.7
+P-SE-028,Southeast,Jane Smith,Schedule,subcontractorPlanning,42.4
+P-SE-028,Southeast,Jane Smith,WC Insurance,compliance,48.9
+P-SE-028,Southeast,Jane Smith,WC Insurance,designReview,56.45
+P-SE-028,Southeast,Jane Smith,WC Insurance,financialSetup,27.7
+P-SE-028,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,27.5
+P-MW-029,Midwest,Mike Johnson,BR Insurance,compliance,72.25
+P-MW-029,Midwest,Mike Johnson,BR Insurance,designReview,61.4
+P-MW-029,Midwest,Mike Johnson,BR Insurance,financialSetup,68.85
+P-MW-029,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,63.4
+P-MW-029,Midwest,Mike Johnson,CA Insurance,compliance,70.5
+P-MW-029,Midwest,Mike Johnson,CA Insurance,designReview,86.2
+P-MW-029,Midwest,Mike Johnson,CA Insurance,financialSetup,87.35
+P-MW-029,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,68.25
+P-MW-029,Midwest,Mike Johnson,Cost,compliance,87.4
+P-MW-029,Midwest,Mike Johnson,Cost,designReview,64.9
+P-MW-029,Midwest,Mike Johnson,Cost,financialSetup,78.7
+P-MW-029,Midwest,Mike Johnson,Cost,subcontractorPlanning,76.3
+P-MW-029,Midwest,Mike Johnson,GL Insurance,compliance,88.15
+P-MW-029,Midwest,Mike Johnson,GL Insurance,designReview,86.95
+P-MW-029,Midwest,Mike Johnson,GL Insurance,financialSetup,78.05
+P-MW-029,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,88.45
+P-MW-029,Midwest,Mike Johnson,Safety,compliance,55.45
+P-MW-029,Midwest,Mike Johnson,Safety,designReview,87.95
+P-MW-029,Midwest,Mike Johnson,Safety,financialSetup,83.2
+P-MW-029,Midwest,Mike Johnson,Safety,subcontractorPlanning,82.65
+P-MW-029,Midwest,Mike Johnson,Schedule,compliance,87.2
+P-MW-029,Midwest,Mike Johnson,Schedule,designReview,85.65
+P-MW-029,Midwest,Mike Johnson,Schedule,financialSetup,57.4
+P-MW-029,Midwest,Mike Johnson,Schedule,subcontractorPlanning,67.2
+P-MW-029,Midwest,Mike Johnson,WC Insurance,compliance,85.25
+P-MW-029,Midwest,Mike Johnson,WC Insurance,designReview,65.05
+P-MW-029,Midwest,Mike Johnson,WC Insurance,financialSetup,76.65
+P-MW-029,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,94.8
+P-WE-030,West,Alice Brown,BR Insurance,compliance,85.3
+P-WE-030,West,Alice Brown,BR Insurance,designReview,67.1
+P-WE-030,West,Alice Brown,BR Insurance,financialSetup,69.6
+P-WE-030,West,Alice Brown,BR Insurance,subcontractorPlanning,63.2
+P-WE-030,West,Alice Brown,CA Insurance,compliance,55.55
+P-WE-030,West,Alice Brown,CA Insurance,designReview,59.8
+P-WE-030,West,Alice Brown,CA Insurance,financialSetup,79.85
+P-WE-030,West,Alice Brown,CA Insurance,subcontractorPlanning,83.3
+P-WE-030,West,Alice Brown,Cost,compliance,80
+P-WE-030,West,Alice Brown,Cost,designReview,59.3
+P-WE-030,West,Alice Brown,Cost,financialSetup,82.55
+P-WE-030,West,Alice Brown,Cost,subcontractorPlanning,70.75
+P-WE-030,West,Alice Brown,GL Insurance,compliance,63
+P-WE-030,West,Alice Brown,GL Insurance,designReview,73.65
+P-WE-030,West,Alice Brown,GL Insurance,financialSetup,84.8
+P-WE-030,West,Alice Brown,GL Insurance,subcontractorPlanning,75.95
+P-WE-030,West,Alice Brown,Safety,compliance,82.5
+P-WE-030,West,Alice Brown,Safety,designReview,59.45
+P-WE-030,West,Alice Brown,Safety,financialSetup,76.85
+P-WE-030,West,Alice Brown,Safety,subcontractorPlanning,78.55
+P-WE-030,West,Alice Brown,Schedule,compliance,72.8
+P-WE-030,West,Alice Brown,Schedule,designReview,64.4
+P-WE-030,West,Alice Brown,Schedule,financialSetup,54.4
+P-WE-030,West,Alice Brown,Schedule,subcontractorPlanning,53.15
+P-WE-030,West,Alice Brown,WC Insurance,compliance,80.3
+P-WE-030,West,Alice Brown,WC Insurance,designReview,83.75
+P-WE-030,West,Alice Brown,WC Insurance,financialSetup,62.3
+P-WE-030,West,Alice Brown,WC Insurance,subcontractorPlanning,70.7
+P-NE-031,Northeast,John Doe,BR Insurance,compliance,66.3
+P-NE-031,Northeast,John Doe,BR Insurance,designReview,53.4
+P-NE-031,Northeast,John Doe,BR Insurance,financialSetup,77.4
+P-NE-031,Northeast,John Doe,BR Insurance,subcontractorPlanning,70.75
+P-NE-031,Northeast,John Doe,CA Insurance,compliance,56.3
+P-NE-031,Northeast,John Doe,CA Insurance,designReview,74.5
+P-NE-031,Northeast,John Doe,CA Insurance,financialSetup,43.8
+P-NE-031,Northeast,John Doe,CA Insurance,subcontractorPlanning,47.3
+P-NE-031,Northeast,John Doe,Cost,compliance,61.5
+P-NE-031,Northeast,John Doe,Cost,designReview,86.2
+P-NE-031,Northeast,John Doe,Cost,financialSetup,81.75
+P-NE-031,Northeast,John Doe,Cost,subcontractorPlanning,59
+P-NE-031,Northeast,John Doe,GL Insurance,compliance,82.15
+P-NE-031,Northeast,John Doe,GL Insurance,designReview,75.95
+P-NE-031,Northeast,John Doe,GL Insurance,financialSetup,50.3
+P-NE-031,Northeast,John Doe,GL Insurance,subcontractorPlanning,82.2
+P-NE-031,Northeast,John Doe,Safety,compliance,81.9
+P-NE-031,Northeast,John Doe,Safety,designReview,76.25
+P-NE-031,Northeast,John Doe,Safety,financialSetup,60.95
+P-NE-031,Northeast,John Doe,Safety,subcontractorPlanning,41.6
+P-NE-031,Northeast,John Doe,Schedule,compliance,79.3
+P-NE-031,Northeast,John Doe,Schedule,designReview,61.65
+P-NE-031,Northeast,John Doe,Schedule,financialSetup,52.1
+P-NE-031,Northeast,John Doe,Schedule,subcontractorPlanning,77.65
+P-NE-031,Northeast,John Doe,WC Insurance,compliance,48.55
+P-NE-031,Northeast,John Doe,WC Insurance,designReview,51.35
+P-NE-031,Northeast,John Doe,WC Insurance,financialSetup,76.5
+P-NE-031,Northeast,John Doe,WC Insurance,subcontractorPlanning,56.75
+P-SE-032,Southeast,Jane Smith,BR Insurance,compliance,46.4
+P-SE-032,Southeast,Jane Smith,BR Insurance,designReview,53.65
+P-SE-032,Southeast,Jane Smith,BR Insurance,financialSetup,41.25
+P-SE-032,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,36.65
+P-SE-032,Southeast,Jane Smith,CA Insurance,compliance,32.15
+P-SE-032,Southeast,Jane Smith,CA Insurance,designReview,59.45
+P-SE-032,Southeast,Jane Smith,CA Insurance,financialSetup,29.15
+P-SE-032,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,45.5
+P-SE-032,Southeast,Jane Smith,Cost,compliance,54.1
+P-SE-032,Southeast,Jane Smith,Cost,designReview,30.8
+P-SE-032,Southeast,Jane Smith,Cost,financialSetup,29.35
+P-SE-032,Southeast,Jane Smith,Cost,subcontractorPlanning,51.45
+P-SE-032,Southeast,Jane Smith,GL Insurance,compliance,33.2
+P-SE-032,Southeast,Jane Smith,GL Insurance,designReview,40
+P-SE-032,Southeast,Jane Smith,GL Insurance,financialSetup,45.5
+P-SE-032,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,65.5
+P-SE-032,Southeast,Jane Smith,Safety,compliance,27.15
+P-SE-032,Southeast,Jane Smith,Safety,designReview,53.3
+P-SE-032,Southeast,Jane Smith,Safety,financialSetup,18.9
+P-SE-032,Southeast,Jane Smith,Safety,subcontractorPlanning,39.9
+P-SE-032,Southeast,Jane Smith,Schedule,compliance,37.4
+P-SE-032,Southeast,Jane Smith,Schedule,designReview,37.7
+P-SE-032,Southeast,Jane Smith,Schedule,financialSetup,27.8
+P-SE-032,Southeast,Jane Smith,Schedule,subcontractorPlanning,51.25
+P-SE-032,Southeast,Jane Smith,WC Insurance,compliance,27.35
+P-SE-032,Southeast,Jane Smith,WC Insurance,designReview,50.55
+P-SE-032,Southeast,Jane Smith,WC Insurance,financialSetup,50.45
+P-SE-032,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,45.5
+P-MW-033,Midwest,Mike Johnson,BR Insurance,compliance,94.9
+P-MW-033,Midwest,Mike Johnson,BR Insurance,designReview,84.5
+P-MW-033,Midwest,Mike Johnson,BR Insurance,financialSetup,87.6
+P-MW-033,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,90.1
+P-MW-033,Midwest,Mike Johnson,CA Insurance,compliance,87.4
+P-MW-033,Midwest,Mike Johnson,CA Insurance,designReview,81.3
+P-MW-033,Midwest,Mike Johnson,CA Insurance,financialSetup,88.55
+P-MW-033,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,89.8
+P-MW-033,Midwest,Mike Johnson,Cost,compliance,89
+P-MW-033,Midwest,Mike Johnson,Cost,designReview,86.6
+P-MW-033,Midwest,Mike Johnson,Cost,financialSetup,92.2
+P-MW-033,Midwest,Mike Johnson,Cost,subcontractorPlanning,83.95
+P-MW-033,Midwest,Mike Johnson,GL Insurance,compliance,85.3
+P-MW-033,Midwest,Mike Johnson,GL Insurance,designReview,83.45
+P-MW-033,Midwest,Mike Johnson,GL Insurance,financialSetup,72.2
+P-MW-033,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,88.75
+P-MW-033,Midwest,Mike Johnson,Safety,compliance,81.95
+P-MW-033,Midwest,Mike Johnson,Safety,designReview,92.7
+P-MW-033,Midwest,Mike Johnson,Safety,financialSetup,74.5
+P-MW-033,Midwest,Mike Johnson,Safety,subcontractorPlanning,90.3
+P-MW-033,Midwest,Mike Johnson,Schedule,compliance,80.4
+P-MW-033,Midwest,Mike Johnson,Schedule,designReview,72.15
+P-MW-033,Midwest,Mike Johnson,Schedule,financialSetup,87.1
+P-MW-033,Midwest,Mike Johnson,Schedule,subcontractorPlanning,81.85
+P-MW-033,Midwest,Mike Johnson,WC Insurance,compliance,78.05
+P-MW-033,Midwest,Mike Johnson,WC Insurance,designReview,92.6
+P-MW-033,Midwest,Mike Johnson,WC Insurance,financialSetup,84.5
+P-MW-033,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,84.05
+P-WE-034,West,Alice Brown,BR Insurance,compliance,74.95
+P-WE-034,West,Alice Brown,BR Insurance,designReview,50.95
+P-WE-034,West,Alice Brown,BR Insurance,financialSetup,55.45
+P-WE-034,West,Alice Brown,BR Insurance,subcontractorPlanning,49.15
+P-WE-034,West,Alice Brown,CA Insurance,compliance,85.35
+P-WE-034,West,Alice Brown,CA Insurance,designReview,81.85
+P-WE-034,West,Alice Brown,CA Insurance,financialSetup,70.25
+P-WE-034,West,Alice Brown,CA Insurance,subcontractorPlanning,86.4
+P-WE-034,West,Alice Brown,Cost,compliance,49
+P-WE-034,West,Alice Brown,Cost,designReview,54.5
+P-WE-034,West,Alice Brown,Cost,financialSetup,82.95
+P-WE-034,West,Alice Brown,Cost,subcontractorPlanning,83.45
+P-WE-034,West,Alice Brown,GL Insurance,compliance,88.45
+P-WE-034,West,Alice Brown,GL Insurance,designReview,84.75
+P-WE-034,West,Alice Brown,GL Insurance,financialSetup,76
+P-WE-034,West,Alice Brown,GL Insurance,subcontractorPlanning,63.9
+P-WE-034,West,Alice Brown,Safety,compliance,62.7
+P-WE-034,West,Alice Brown,Safety,designReview,53.6
+P-WE-034,West,Alice Brown,Safety,financialSetup,47.95
+P-WE-034,West,Alice Brown,Safety,subcontractorPlanning,80.9
+P-WE-034,West,Alice Brown,Schedule,compliance,58.5
+P-WE-034,West,Alice Brown,Schedule,designReview,54.3
+P-WE-034,West,Alice Brown,Schedule,financialSetup,69
+P-WE-034,West,Alice Brown,Schedule,subcontractorPlanning,63.45
+P-WE-034,West,Alice Brown,WC Insurance,compliance,71.55
+P-WE-034,West,Alice Brown,WC Insurance,designReview,56.2
+P-WE-034,West,Alice Brown,WC Insurance,financialSetup,72.55
+P-WE-034,West,Alice Brown,WC Insurance,subcontractorPlanning,67.8
+P-NE-035,Northeast,John Doe,BR Insurance,compliance,34.25
+P-NE-035,Northeast,John Doe,BR Insurance,designReview,55.75
+P-NE-035,Northeast,John Doe,BR Insurance,financialSetup,41.5
+P-NE-035,Northeast,John Doe,BR Insurance,subcontractorPlanning,30.6
+P-NE-035,Northeast,John Doe,CA Insurance,compliance,42
+P-NE-035,Northeast,John Doe,CA Insurance,designReview,54.3
+P-NE-035,Northeast,John Doe,CA Insurance,financialSetup,30
+P-NE-035,Northeast,John Doe,CA Insurance,subcontractorPlanning,39.05
+P-NE-035,Northeast,John Doe,Cost,compliance,34.7
+P-NE-035,Northeast,John Doe,Cost,designReview,55
+P-NE-035,Northeast,John Doe,Cost,financialSetup,21.9
+P-NE-035,Northeast,John Doe,Cost,subcontractorPlanning,56.2
+P-NE-035,Northeast,John Doe,GL Insurance,compliance,21.2
+P-NE-035,Northeast,John Doe,GL Insurance,designReview,38.8
+P-NE-035,Northeast,John Doe,GL Insurance,financialSetup,31.95
+P-NE-035,Northeast,John Doe,GL Insurance,subcontractorPlanning,57.15
+P-NE-035,Northeast,John Doe,Safety,compliance,57.7
+P-NE-035,Northeast,John Doe,Safety,designReview,37.15
+P-NE-035,Northeast,John Doe,Safety,financialSetup,45.2
+P-NE-035,Northeast,John Doe,Safety,subcontractorPlanning,61.65
+P-NE-035,Northeast,John Doe,Schedule,compliance,33.7
+P-NE-035,Northeast,John Doe,Schedule,designReview,51.55
+P-NE-035,Northeast,John Doe,Schedule,financialSetup,43
+P-NE-035,Northeast,John Doe,Schedule,subcontractorPlanning,56.5
+P-NE-035,Northeast,John Doe,WC Insurance,compliance,33.4
+P-NE-035,Northeast,John Doe,WC Insurance,designReview,54
+P-NE-035,Northeast,John Doe,WC Insurance,financialSetup,39.05
+P-NE-035,Northeast,John Doe,WC Insurance,subcontractorPlanning,23.05
+P-SE-036,Southeast,Jane Smith,BR Insurance,compliance,50.55
+P-SE-036,Southeast,Jane Smith,BR Insurance,designReview,44.45
+P-SE-036,Southeast,Jane Smith,BR Insurance,financialSetup,25.7
+P-SE-036,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,58
+P-SE-036,Southeast,Jane Smith,CA Insurance,compliance,35.15
+P-SE-036,Southeast,Jane Smith,CA Insurance,designReview,38.45
+P-SE-036,Southeast,Jane Smith,CA Insurance,financialSetup,50.7
+P-SE-036,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,40.8
+P-SE-036,Southeast,Jane Smith,Cost,compliance,70.4
+P-SE-036,Southeast,Jane Smith,Cost,designReview,55.5
+P-SE-036,Southeast,Jane Smith,Cost,financialSetup,65.65
+P-SE-036,Southeast,Jane Smith,Cost,subcontractorPlanning,59
+P-SE-036,Southeast,Jane Smith,GL Insurance,compliance,85.65
+P-SE-036,Southeast,Jane Smith,GL Insurance,designReview,57.95
+P-SE-036,Southeast,Jane Smith,GL Insurance,financialSetup,53.95
+P-SE-036,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,41.9
+P-SE-036,Southeast,Jane Smith,Safety,compliance,53.25
+P-SE-036,Southeast,Jane Smith,Safety,designReview,31.7
+P-SE-036,Southeast,Jane Smith,Safety,financialSetup,47.95
+P-SE-036,Southeast,Jane Smith,Safety,subcontractorPlanning,34.55
+P-SE-036,Southeast,Jane Smith,Schedule,compliance,36.1
+P-SE-036,Southeast,Jane Smith,Schedule,designReview,64.5
+P-SE-036,Southeast,Jane Smith,Schedule,financialSetup,24.6
+P-SE-036,Southeast,Jane Smith,Schedule,subcontractorPlanning,40.1
+P-SE-036,Southeast,Jane Smith,WC Insurance,compliance,75.8
+P-SE-036,Southeast,Jane Smith,WC Insurance,designReview,46.35
+P-SE-036,Southeast,Jane Smith,WC Insurance,financialSetup,39.15
+P-SE-036,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,68.05
+P-MW-037,Midwest,Mike Johnson,BR Insurance,compliance,54.1
+P-MW-037,Midwest,Mike Johnson,BR Insurance,designReview,58.25
+P-MW-037,Midwest,Mike Johnson,BR Insurance,financialSetup,68.1
+P-MW-037,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,70.8
+P-MW-037,Midwest,Mike Johnson,CA Insurance,compliance,51.7
+P-MW-037,Midwest,Mike Johnson,CA Insurance,designReview,65.3
+P-MW-037,Midwest,Mike Johnson,CA Insurance,financialSetup,70.9
+P-MW-037,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,84.2
+P-MW-037,Midwest,Mike Johnson,Cost,compliance,82.8
+P-MW-037,Midwest,Mike Johnson,Cost,designReview,54.6
+P-MW-037,Midwest,Mike Johnson,Cost,financialSetup,73.45
+P-MW-037,Midwest,Mike Johnson,Cost,subcontractorPlanning,56.75
+P-MW-037,Midwest,Mike Johnson,GL Insurance,compliance,83.5
+P-MW-037,Midwest,Mike Johnson,GL Insurance,designReview,66.6
+P-MW-037,Midwest,Mike Johnson,GL Insurance,financialSetup,80.45
+P-MW-037,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,69.3
+P-MW-037,Midwest,Mike Johnson,Safety,compliance,64.05
+P-MW-037,Midwest,Mike Johnson,Safety,designReview,75.55
+P-MW-037,Midwest,Mike Johnson,Safety,financialSetup,56.55
+P-MW-037,Midwest,Mike Johnson,Safety,subcontractorPlanning,76.55
+P-MW-037,Midwest,Mike Johnson,Schedule,compliance,71.9
+P-MW-037,Midwest,Mike Johnson,Schedule,designReview,84.4
+P-MW-037,Midwest,Mike Johnson,Schedule,financialSetup,82.6
+P-MW-037,Midwest,Mike Johnson,Schedule,subcontractorPlanning,73.5
+P-MW-037,Midwest,Mike Johnson,WC Insurance,compliance,70.4
+P-MW-037,Midwest,Mike Johnson,WC Insurance,designReview,88.95
+P-MW-037,Midwest,Mike Johnson,WC Insurance,financialSetup,62.55
+P-MW-037,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,88.1
+P-WE-038,West,Alice Brown,BR Insurance,compliance,87.95
+P-WE-038,West,Alice Brown,BR Insurance,designReview,69.95
+P-WE-038,West,Alice Brown,BR Insurance,financialSetup,86.85
+P-WE-038,West,Alice Brown,BR Insurance,subcontractorPlanning,78.8
+P-WE-038,West,Alice Brown,CA Insurance,compliance,76.1
+P-WE-038,West,Alice Brown,CA Insurance,designReview,84.05
+P-WE-038,West,Alice Brown,CA Insurance,financialSetup,96.65
+P-WE-038,West,Alice Brown,CA Insurance,subcontractorPlanning,87.95
+P-WE-038,West,Alice Brown,Cost,compliance,84.1
+P-WE-038,West,Alice Brown,Cost,designReview,91.7
+P-WE-038,West,Alice Brown,Cost,financialSetup,81.55
+P-WE-038,West,Alice Brown,Cost,subcontractorPlanning,85.4
+P-WE-038,West,Alice Brown,GL Insurance,compliance,81.5
+P-WE-038,West,Alice Brown,GL Insurance,designReview,78.2
+P-WE-038,West,Alice Brown,GL Insurance,financialSetup,84.45
+P-WE-038,West,Alice Brown,GL Insurance,subcontractorPlanning,92.7
+P-WE-038,West,Alice Brown,Safety,compliance,66.5
+P-WE-038,West,Alice Brown,Safety,designReview,82.25
+P-WE-038,West,Alice Brown,Safety,financialSetup,91.75
+P-WE-038,West,Alice Brown,Safety,subcontractorPlanning,83.25
+P-WE-038,West,Alice Brown,Schedule,compliance,71.6
+P-WE-038,West,Alice Brown,Schedule,designReview,86.7
+P-WE-038,West,Alice Brown,Schedule,financialSetup,87.1
+P-WE-038,West,Alice Brown,Schedule,subcontractorPlanning,70.45
+P-WE-038,West,Alice Brown,WC Insurance,compliance,84.65
+P-WE-038,West,Alice Brown,WC Insurance,designReview,83.1
+P-WE-038,West,Alice Brown,WC Insurance,financialSetup,84.5
+P-WE-038,West,Alice Brown,WC Insurance,subcontractorPlanning,68.4
+P-NE-039,Northeast,John Doe,BR Insurance,compliance,51.5
+P-NE-039,Northeast,John Doe,BR Insurance,designReview,29.35
+P-NE-039,Northeast,John Doe,BR Insurance,financialSetup,59.1
+P-NE-039,Northeast,John Doe,BR Insurance,subcontractorPlanning,60.8
+P-NE-039,Northeast,John Doe,CA Insurance,compliance,83.85
+P-NE-039,Northeast,John Doe,CA Insurance,designReview,58.9
+P-NE-039,Northeast,John Doe,CA Insurance,financialSetup,47.8
+P-NE-039,Northeast,John Doe,CA Insurance,subcontractorPlanning,47.7
+P-NE-039,Northeast,John Doe,Cost,compliance,67.9
+P-NE-039,Northeast,John Doe,Cost,designReview,75.3
+P-NE-039,Northeast,John Doe,Cost,financialSetup,40.9
+P-NE-039,Northeast,John Doe,Cost,subcontractorPlanning,51.65
+P-NE-039,Northeast,John Doe,GL Insurance,compliance,55.5
+P-NE-039,Northeast,John Doe,GL Insurance,designReview,74.85
+P-NE-039,Northeast,John Doe,GL Insurance,financialSetup,70.4
+P-NE-039,Northeast,John Doe,GL Insurance,subcontractorPlanning,51.35
+P-NE-039,Northeast,John Doe,Safety,compliance,53.85
+P-NE-039,Northeast,John Doe,Safety,designReview,35.65
+P-NE-039,Northeast,John Doe,Safety,financialSetup,51.9
+P-NE-039,Northeast,John Doe,Safety,subcontractorPlanning,61.7
+P-NE-039,Northeast,John Doe,Schedule,compliance,52.7
+P-NE-039,Northeast,John Doe,Schedule,designReview,34.1
+P-NE-039,Northeast,John Doe,Schedule,financialSetup,27.5
+P-NE-039,Northeast,John Doe,Schedule,subcontractorPlanning,64.95
+P-NE-039,Northeast,John Doe,WC Insurance,compliance,46.55
+P-NE-039,Northeast,John Doe,WC Insurance,designReview,52.25
+P-NE-039,Northeast,John Doe,WC Insurance,financialSetup,62.25
+P-NE-039,Northeast,John Doe,WC Insurance,subcontractorPlanning,62.75
+P-SE-040,Southeast,Jane Smith,BR Insurance,compliance,54.05
+P-SE-040,Southeast,Jane Smith,BR Insurance,designReview,47.65
+P-SE-040,Southeast,Jane Smith,BR Insurance,financialSetup,73.7
+P-SE-040,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,67.2
+P-SE-040,Southeast,Jane Smith,CA Insurance,compliance,79.35
+P-SE-040,Southeast,Jane Smith,CA Insurance,designReview,71.75
+P-SE-040,Southeast,Jane Smith,CA Insurance,financialSetup,79.45
+P-SE-040,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,84.65
+P-SE-040,Southeast,Jane Smith,Cost,compliance,74.8
+P-SE-040,Southeast,Jane Smith,Cost,designReview,73.3
+P-SE-040,Southeast,Jane Smith,Cost,financialSetup,74.15
+P-SE-040,Southeast,Jane Smith,Cost,subcontractorPlanning,80.95
+P-SE-040,Southeast,Jane Smith,GL Insurance,compliance,84.55
+P-SE-040,Southeast,Jane Smith,GL Insurance,designReview,80.15
+P-SE-040,Southeast,Jane Smith,GL Insurance,financialSetup,84.7
+P-SE-040,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,79.95
+P-SE-040,Southeast,Jane Smith,Safety,compliance,48.15
+P-SE-040,Southeast,Jane Smith,Safety,designReview,44.85
+P-SE-040,Southeast,Jane Smith,Safety,financialSetup,49
+P-SE-040,Southeast,Jane Smith,Safety,subcontractorPlanning,74.1
+P-SE-040,Southeast,Jane Smith,Schedule,compliance,42.3
+P-SE-040,Southeast,Jane Smith,Schedule,designReview,37.8
+P-SE-040,Southeast,Jane Smith,Schedule,financialSetup,74.7
+P-SE-040,Southeast,Jane Smith,Schedule,subcontractorPlanning,78.4
+P-SE-040,Southeast,Jane Smith,WC Insurance,compliance,61.45
+P-SE-040,Southeast,Jane Smith,WC Insurance,designReview,58.8
+P-SE-040,Southeast,Jane Smith,WC Insurance,financialSetup,70.85
+P-SE-040,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,56.35
+P-MW-041,Midwest,Mike Johnson,BR Insurance,compliance,54.7
+P-MW-041,Midwest,Mike Johnson,BR Insurance,designReview,60.1
+P-MW-041,Midwest,Mike Johnson,BR Insurance,financialSetup,80.3
+P-MW-041,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,53.55
+P-MW-041,Midwest,Mike Johnson,CA Insurance,compliance,84.2
+P-MW-041,Midwest,Mike Johnson,CA Insurance,designReview,78.45
+P-MW-041,Midwest,Mike Johnson,CA Insurance,financialSetup,68.4
+P-MW-041,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,73.2
+P-MW-041,Midwest,Mike Johnson,Cost,compliance,77.5
+P-MW-041,Midwest,Mike Johnson,Cost,designReview,58.7
+P-MW-041,Midwest,Mike Johnson,Cost,financialSetup,80.6
+P-MW-041,Midwest,Mike Johnson,Cost,subcontractorPlanning,81.5
+P-MW-041,Midwest,Mike Johnson,GL Insurance,compliance,83.8
+P-MW-041,Midwest,Mike Johnson,GL Insurance,designReview,53.25
+P-MW-041,Midwest,Mike Johnson,GL Insurance,financialSetup,72.85
+P-MW-041,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,83.3
+P-MW-041,Midwest,Mike Johnson,Safety,compliance,83.9
+P-MW-041,Midwest,Mike Johnson,Safety,designReview,54.2
+P-MW-041,Midwest,Mike Johnson,Safety,financialSetup,52.1
+P-MW-041,Midwest,Mike Johnson,Safety,subcontractorPlanning,48.9
+P-MW-041,Midwest,Mike Johnson,Schedule,compliance,81
+P-MW-041,Midwest,Mike Johnson,Schedule,designReview,79.85
+P-MW-041,Midwest,Mike Johnson,Schedule,financialSetup,78.9
+P-MW-041,Midwest,Mike Johnson,Schedule,subcontractorPlanning,81.45
+P-MW-041,Midwest,Mike Johnson,WC Insurance,compliance,82.8
+P-MW-041,Midwest,Mike Johnson,WC Insurance,designReview,67.1
+P-MW-041,Midwest,Mike Johnson,WC Insurance,financialSetup,64.1
+P-MW-041,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,54.15
+P-WE-042,West,Alice Brown,BR Insurance,compliance,39.35
+P-WE-042,West,Alice Brown,BR Insurance,designReview,49.8
+P-WE-042,West,Alice Brown,BR Insurance,financialSetup,37.5
+P-WE-042,West,Alice Brown,BR Insurance,subcontractorPlanning,47.8
+P-WE-042,West,Alice Brown,CA Insurance,compliance,41.2
+P-WE-042,West,Alice Brown,CA Insurance,designReview,61.55
+P-WE-042,West,Alice Brown,CA Insurance,financialSetup,46.75
+P-WE-042,West,Alice Brown,CA Insurance,subcontractorPlanning,74.7
+P-WE-042,West,Alice Brown,Cost,compliance,61.5
+P-WE-042,West,Alice Brown,Cost,designReview,51
+P-WE-042,West,Alice Brown,Cost,financialSetup,71.95
+P-WE-042,West,Alice Brown,Cost,subcontractorPlanning,64.85
+P-WE-042,West,Alice Brown,GL Insurance,compliance,79.8
+P-WE-042,West,Alice Brown,GL Insurance,designReview,57.3
+P-WE-042,West,Alice Brown,GL Insurance,financialSetup,78
+P-WE-042,West,Alice Brown,GL Insurance,subcontractorPlanning,67.35
+P-WE-042,West,Alice Brown,Safety,compliance,70
+P-WE-042,West,Alice Brown,Safety,designReview,44.8
+P-WE-042,West,Alice Brown,Safety,financialSetup,57.35
+P-WE-042,West,Alice Brown,Safety,subcontractorPlanning,30.1
+P-WE-042,West,Alice Brown,Schedule,compliance,36.2
+P-WE-042,West,Alice Brown,Schedule,designReview,44.7
+P-WE-042,West,Alice Brown,Schedule,financialSetup,40.3
+P-WE-042,West,Alice Brown,Schedule,subcontractorPlanning,61
+P-WE-042,West,Alice Brown,WC Insurance,compliance,46.9
+P-WE-042,West,Alice Brown,WC Insurance,designReview,45.75
+P-WE-042,West,Alice Brown,WC Insurance,financialSetup,61.3
+P-WE-042,West,Alice Brown,WC Insurance,subcontractorPlanning,65.35
+P-NE-043,Northeast,John Doe,BR Insurance,compliance,85.15
+P-NE-043,Northeast,John Doe,BR Insurance,designReview,87.85
+P-NE-043,Northeast,John Doe,BR Insurance,financialSetup,80.45
+P-NE-043,Northeast,John Doe,BR Insurance,subcontractorPlanning,64.4
+P-NE-043,Northeast,John Doe,CA Insurance,compliance,79.75
+P-NE-043,Northeast,John Doe,CA Insurance,designReview,67.85
+P-NE-043,Northeast,John Doe,CA Insurance,financialSetup,91.95
+P-NE-043,Northeast,John Doe,CA Insurance,subcontractorPlanning,87.15
+P-NE-043,Northeast,John Doe,Cost,compliance,60.2
+P-NE-043,Northeast,John Doe,Cost,designReview,85.6
+P-NE-043,Northeast,John Doe,Cost,financialSetup,89.05
+P-NE-043,Northeast,John Doe,Cost,subcontractorPlanning,86.25
+P-NE-043,Northeast,John Doe,GL Insurance,compliance,79.1
+P-NE-043,Northeast,John Doe,GL Insurance,designReview,82.7
+P-NE-043,Northeast,John Doe,GL Insurance,financialSetup,80.85
+P-NE-043,Northeast,John Doe,GL Insurance,subcontractorPlanning,87.6
+P-NE-043,Northeast,John Doe,Safety,compliance,90
+P-NE-043,Northeast,John Doe,Safety,designReview,66.95
+P-NE-043,Northeast,John Doe,Safety,financialSetup,51.6
+P-NE-043,Northeast,John Doe,Safety,subcontractorPlanning,84.3
+P-NE-043,Northeast,John Doe,Schedule,compliance,82.9
+P-NE-043,Northeast,John Doe,Schedule,designReview,81.55
+P-NE-043,Northeast,John Doe,Schedule,financialSetup,73.8
+P-NE-043,Northeast,John Doe,Schedule,subcontractorPlanning,79
+P-NE-043,Northeast,John Doe,WC Insurance,compliance,76.6
+P-NE-043,Northeast,John Doe,WC Insurance,designReview,66.15
+P-NE-043,Northeast,John Doe,WC Insurance,financialSetup,63.2
+P-NE-043,Northeast,John Doe,WC Insurance,subcontractorPlanning,83.2
+P-SE-044,Southeast,Jane Smith,BR Insurance,compliance,88.9
+P-SE-044,Southeast,Jane Smith,BR Insurance,designReview,68.35
+P-SE-044,Southeast,Jane Smith,BR Insurance,financialSetup,90.35
+P-SE-044,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,76.8
+P-SE-044,Southeast,Jane Smith,CA Insurance,compliance,75.9
+P-SE-044,Southeast,Jane Smith,CA Insurance,designReview,81.2
+P-SE-044,Southeast,Jane Smith,CA Insurance,financialSetup,69.75
+P-SE-044,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,72.15
+P-SE-044,Southeast,Jane Smith,Cost,compliance,58.3
+P-SE-044,Southeast,Jane Smith,Cost,designReview,75.9
+P-SE-044,Southeast,Jane Smith,Cost,financialSetup,63.75
+P-SE-044,Southeast,Jane Smith,Cost,subcontractorPlanning,77.3
+P-SE-044,Southeast,Jane Smith,GL Insurance,compliance,70.7
+P-SE-044,Southeast,Jane Smith,GL Insurance,designReview,72.7
+P-SE-044,Southeast,Jane Smith,GL Insurance,financialSetup,81.8
+P-SE-044,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,67.4
+P-SE-044,Southeast,Jane Smith,Safety,compliance,83
+P-SE-044,Southeast,Jane Smith,Safety,designReview,62.6
+P-SE-044,Southeast,Jane Smith,Safety,financialSetup,87.75
+P-SE-044,Southeast,Jane Smith,Safety,subcontractorPlanning,78.8
+P-SE-044,Southeast,Jane Smith,Schedule,compliance,72.1
+P-SE-044,Southeast,Jane Smith,Schedule,designReview,49.15
+P-SE-044,Southeast,Jane Smith,Schedule,financialSetup,71.5
+P-SE-044,Southeast,Jane Smith,Schedule,subcontractorPlanning,62.55
+P-SE-044,Southeast,Jane Smith,WC Insurance,compliance,77.2
+P-SE-044,Southeast,Jane Smith,WC Insurance,designReview,84.3
+P-SE-044,Southeast,Jane Smith,WC Insurance,financialSetup,82.5
+P-SE-044,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,58.1
+P-MW-045,Midwest,Mike Johnson,BR Insurance,compliance,68.2
+P-MW-045,Midwest,Mike Johnson,BR Insurance,designReview,72.85
+P-MW-045,Midwest,Mike Johnson,BR Insurance,financialSetup,72.7
+P-MW-045,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,61.2
+P-MW-045,Midwest,Mike Johnson,CA Insurance,compliance,67.8
+P-MW-045,Midwest,Mike Johnson,CA Insurance,designReview,62.85
+P-MW-045,Midwest,Mike Johnson,CA Insurance,financialSetup,74.75
+P-MW-045,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,56.55
+P-MW-045,Midwest,Mike Johnson,Cost,compliance,59.4
+P-MW-045,Midwest,Mike Johnson,Cost,designReview,62.8
+P-MW-045,Midwest,Mike Johnson,Cost,financialSetup,50.1
+P-MW-045,Midwest,Mike Johnson,Cost,subcontractorPlanning,53.5
+P-MW-045,Midwest,Mike Johnson,GL Insurance,compliance,45.65
+P-MW-045,Midwest,Mike Johnson,GL Insurance,designReview,77.15
+P-MW-045,Midwest,Mike Johnson,GL Insurance,financialSetup,54.8
+P-MW-045,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,79.45
+P-MW-045,Midwest,Mike Johnson,Safety,compliance,54.05
+P-MW-045,Midwest,Mike Johnson,Safety,designReview,55.55
+P-MW-045,Midwest,Mike Johnson,Safety,financialSetup,35.9
+P-MW-045,Midwest,Mike Johnson,Safety,subcontractorPlanning,49.95
+P-MW-045,Midwest,Mike Johnson,Schedule,compliance,58.1
+P-MW-045,Midwest,Mike Johnson,Schedule,designReview,80.15
+P-MW-045,Midwest,Mike Johnson,Schedule,financialSetup,60
+P-MW-045,Midwest,Mike Johnson,Schedule,subcontractorPlanning,38.6
+P-MW-045,Midwest,Mike Johnson,WC Insurance,compliance,62.4
+P-MW-045,Midwest,Mike Johnson,WC Insurance,designReview,66.05
+P-MW-045,Midwest,Mike Johnson,WC Insurance,financialSetup,72.6
+P-MW-045,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,58.85
+P-WE-046,West,Alice Brown,BR Insurance,compliance,86.4
+P-WE-046,West,Alice Brown,BR Insurance,designReview,57.55
+P-WE-046,West,Alice Brown,BR Insurance,financialSetup,52.9
+P-WE-046,West,Alice Brown,BR Insurance,subcontractorPlanning,59.85
+P-WE-046,West,Alice Brown,CA Insurance,compliance,91.45
+P-WE-046,West,Alice Brown,CA Insurance,designReview,74.6
+P-WE-046,West,Alice Brown,CA Insurance,financialSetup,87.9
+P-WE-046,West,Alice Brown,CA Insurance,subcontractorPlanning,91.8
+P-WE-046,West,Alice Brown,Cost,compliance,87.1
+P-WE-046,West,Alice Brown,Cost,designReview,77.5
+P-WE-046,West,Alice Brown,Cost,financialSetup,89.3
+P-WE-046,West,Alice Brown,Cost,subcontractorPlanning,58.1
+P-WE-046,West,Alice Brown,GL Insurance,compliance,64.6
+P-WE-046,West,Alice Brown,GL Insurance,designReview,93
+P-WE-046,West,Alice Brown,GL Insurance,financialSetup,73.7
+P-WE-046,West,Alice Brown,GL Insurance,subcontractorPlanning,77.25
+P-WE-046,West,Alice Brown,Safety,compliance,77.15
+P-WE-046,West,Alice Brown,Safety,designReview,78.2
+P-WE-046,West,Alice Brown,Safety,financialSetup,66.4
+P-WE-046,West,Alice Brown,Safety,subcontractorPlanning,70.1
+P-WE-046,West,Alice Brown,Schedule,compliance,49.1
+P-WE-046,West,Alice Brown,Schedule,designReview,64.3
+P-WE-046,West,Alice Brown,Schedule,financialSetup,61.5
+P-WE-046,West,Alice Brown,Schedule,subcontractorPlanning,79.4
+P-WE-046,West,Alice Brown,WC Insurance,compliance,84.8
+P-WE-046,West,Alice Brown,WC Insurance,designReview,74.3
+P-WE-046,West,Alice Brown,WC Insurance,financialSetup,72.1
+P-WE-046,West,Alice Brown,WC Insurance,subcontractorPlanning,73
+P-NE-047,Northeast,John Doe,BR Insurance,compliance,55.8
+P-NE-047,Northeast,John Doe,BR Insurance,designReview,62.9
+P-NE-047,Northeast,John Doe,BR Insurance,financialSetup,54.5
+P-NE-047,Northeast,John Doe,BR Insurance,subcontractorPlanning,35.5
+P-NE-047,Northeast,John Doe,CA Insurance,compliance,53.15
+P-NE-047,Northeast,John Doe,CA Insurance,designReview,66.2
+P-NE-047,Northeast,John Doe,CA Insurance,financialSetup,75.9
+P-NE-047,Northeast,John Doe,CA Insurance,subcontractorPlanning,57.6
+P-NE-047,Northeast,John Doe,Cost,compliance,63.1
+P-NE-047,Northeast,John Doe,Cost,designReview,74.1
+P-NE-047,Northeast,John Doe,Cost,financialSetup,88.05
+P-NE-047,Northeast,John Doe,Cost,subcontractorPlanning,74.95
+P-NE-047,Northeast,John Doe,GL Insurance,compliance,78.45
+P-NE-047,Northeast,John Doe,GL Insurance,designReview,78.35
+P-NE-047,Northeast,John Doe,GL Insurance,financialSetup,79.6
+P-NE-047,Northeast,John Doe,GL Insurance,subcontractorPlanning,80.1
+P-NE-047,Northeast,John Doe,Safety,compliance,54.15
+P-NE-047,Northeast,John Doe,Safety,designReview,41.9
+P-NE-047,Northeast,John Doe,Safety,financialSetup,86.75
+P-NE-047,Northeast,John Doe,Safety,subcontractorPlanning,67.3
+P-NE-047,Northeast,John Doe,Schedule,compliance,34.2
+P-NE-047,Northeast,John Doe,Schedule,designReview,68.65
+P-NE-047,Northeast,John Doe,Schedule,financialSetup,68.1
+P-NE-047,Northeast,John Doe,Schedule,subcontractorPlanning,52.1
+P-NE-047,Northeast,John Doe,WC Insurance,compliance,66.8
+P-NE-047,Northeast,John Doe,WC Insurance,designReview,70.3
+P-NE-047,Northeast,John Doe,WC Insurance,financialSetup,71.65
+P-NE-047,Northeast,John Doe,WC Insurance,subcontractorPlanning,52.2
+P-SE-048,Southeast,Jane Smith,BR Insurance,compliance,92.8
+P-SE-048,Southeast,Jane Smith,BR Insurance,designReview,75.55
+P-SE-048,Southeast,Jane Smith,BR Insurance,financialSetup,81.85
+P-SE-048,Southeast,Jane Smith,BR Insurance,subcontractorPlanning,84.95
+P-SE-048,Southeast,Jane Smith,CA Insurance,compliance,89.05
+P-SE-048,Southeast,Jane Smith,CA Insurance,designReview,65.7
+P-SE-048,Southeast,Jane Smith,CA Insurance,financialSetup,68.9
+P-SE-048,Southeast,Jane Smith,CA Insurance,subcontractorPlanning,71.2
+P-SE-048,Southeast,Jane Smith,Cost,compliance,68.4
+P-SE-048,Southeast,Jane Smith,Cost,designReview,91
+P-SE-048,Southeast,Jane Smith,Cost,financialSetup,85.75
+P-SE-048,Southeast,Jane Smith,Cost,subcontractorPlanning,82
+P-SE-048,Southeast,Jane Smith,GL Insurance,compliance,89.6
+P-SE-048,Southeast,Jane Smith,GL Insurance,designReview,85.1
+P-SE-048,Southeast,Jane Smith,GL Insurance,financialSetup,89.15
+P-SE-048,Southeast,Jane Smith,GL Insurance,subcontractorPlanning,74.95
+P-SE-048,Southeast,Jane Smith,Safety,compliance,76.1
+P-SE-048,Southeast,Jane Smith,Safety,designReview,60.35
+P-SE-048,Southeast,Jane Smith,Safety,financialSetup,80.95
+P-SE-048,Southeast,Jane Smith,Safety,subcontractorPlanning,66.1
+P-SE-048,Southeast,Jane Smith,Schedule,compliance,65.1
+P-SE-048,Southeast,Jane Smith,Schedule,designReview,95.35
+P-SE-048,Southeast,Jane Smith,Schedule,financialSetup,74.4
+P-SE-048,Southeast,Jane Smith,Schedule,subcontractorPlanning,86.65
+P-SE-048,Southeast,Jane Smith,WC Insurance,compliance,76.6
+P-SE-048,Southeast,Jane Smith,WC Insurance,designReview,75.8
+P-SE-048,Southeast,Jane Smith,WC Insurance,financialSetup,83.95
+P-SE-048,Southeast,Jane Smith,WC Insurance,subcontractorPlanning,72
+P-MW-049,Midwest,Mike Johnson,BR Insurance,compliance,84.3
+P-MW-049,Midwest,Mike Johnson,BR Insurance,designReview,59.85
+P-MW-049,Midwest,Mike Johnson,BR Insurance,financialSetup,67.65
+P-MW-049,Midwest,Mike Johnson,BR Insurance,subcontractorPlanning,47.4
+P-MW-049,Midwest,Mike Johnson,CA Insurance,compliance,51.4
+P-MW-049,Midwest,Mike Johnson,CA Insurance,designReview,67.6
+P-MW-049,Midwest,Mike Johnson,CA Insurance,financialSetup,46.45
+P-MW-049,Midwest,Mike Johnson,CA Insurance,subcontractorPlanning,47.75
+P-MW-049,Midwest,Mike Johnson,Cost,compliance,55.1
+P-MW-049,Midwest,Mike Johnson,Cost,designReview,62.5
+P-MW-049,Midwest,Mike Johnson,Cost,financialSetup,59.85
+P-MW-049,Midwest,Mike Johnson,Cost,subcontractorPlanning,65.25
+P-MW-049,Midwest,Mike Johnson,GL Insurance,compliance,73.2
+P-MW-049,Midwest,Mike Johnson,GL Insurance,designReview,62.35
+P-MW-049,Midwest,Mike Johnson,GL Insurance,financialSetup,62.35
+P-MW-049,Midwest,Mike Johnson,GL Insurance,subcontractorPlanning,65.7
+P-MW-049,Midwest,Mike Johnson,Safety,compliance,74.25
+P-MW-049,Midwest,Mike Johnson,Safety,designReview,70.55
+P-MW-049,Midwest,Mike Johnson,Safety,financialSetup,82.3
+P-MW-049,Midwest,Mike Johnson,Safety,subcontractorPlanning,47.2
+P-MW-049,Midwest,Mike Johnson,Schedule,compliance,74.4
+P-MW-049,Midwest,Mike Johnson,Schedule,designReview,48.3
+P-MW-049,Midwest,Mike Johnson,Schedule,financialSetup,66.4
+P-MW-049,Midwest,Mike Johnson,Schedule,subcontractorPlanning,82.85
+P-MW-049,Midwest,Mike Johnson,WC Insurance,compliance,73.1
+P-MW-049,Midwest,Mike Johnson,WC Insurance,designReview,70.2
+P-MW-049,Midwest,Mike Johnson,WC Insurance,financialSetup,40.1
+P-MW-049,Midwest,Mike Johnson,WC Insurance,subcontractorPlanning,48.05
+P-WE-050,West,Alice Brown,BR Insurance,compliance,83.1
+P-WE-050,West,Alice Brown,BR Insurance,designReview,67.5
+P-WE-050,West,Alice Brown,BR Insurance,financialSetup,59.85
+P-WE-050,West,Alice Brown,BR Insurance,subcontractorPlanning,71.8
+P-WE-050,West,Alice Brown,CA Insurance,compliance,71.95
+P-WE-050,West,Alice Brown,CA Insurance,designReview,79.15
+P-WE-050,West,Alice Brown,CA Insurance,financialSetup,89
+P-WE-050,West,Alice Brown,CA Insurance,subcontractorPlanning,75.6
+P-WE-050,West,Alice Brown,Cost,compliance,82.5
+P-WE-050,West,Alice Brown,Cost,designReview,93.2
+P-WE-050,West,Alice Brown,Cost,financialSetup,63.25
+P-WE-050,West,Alice Brown,Cost,subcontractorPlanning,50.9
+P-WE-050,West,Alice Brown,GL Insurance,compliance,83.6
+P-WE-050,West,Alice Brown,GL Insurance,designReview,73
+P-WE-050,West,Alice Brown,GL Insurance,financialSetup,70.65
+P-WE-050,West,Alice Brown,GL Insurance,subcontractorPlanning,84.1
+P-WE-050,West,Alice Brown,Safety,compliance,87.05
+P-WE-050,West,Alice Brown,Safety,designReview,82.25
+P-WE-050,West,Alice Brown,Safety,financialSetup,90.7
+P-WE-050,West,Alice Brown,Safety,subcontractorPlanning,85.05
+P-WE-050,West,Alice Brown,Schedule,compliance,51.2
+P-WE-050,West,Alice Brown,Schedule,designReview,57.7
+P-WE-050,West,Alice Brown,Schedule,financialSetup,60.7
+P-WE-050,West,Alice Brown,Schedule,subcontractorPlanning,74.75
+P-WE-050,West,Alice Brown,WC Insurance,compliance,69.6
+P-WE-050,West,Alice Brown,WC Insurance,designReview,83.95
+P-WE-050,West,Alice Brown,WC Insurance,financialSetup,66.75
+P-WE-050,West,Alice Brown,WC Insurance,subcontractorPlanning,57.85

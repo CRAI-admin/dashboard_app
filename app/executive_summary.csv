@@ -1,0 +1,351 @@
+projectId,region,projectManager,impact_category,score,phaseScore_bidding,phaseScore_precon,phaseScore_construction,phaseScore_closeout
+P-NE-001,Northeast,John Doe,Schedule,16.388125,8,21.9125,17.64,18
+P-NE-001,Northeast,John Doe,Cost,23.648375,14,35.1875,21.406,24
+P-NE-001,Northeast,John Doe,Safety,12.899875,5,17.2875,14.312,15
+P-NE-001,Northeast,John Doe,GL Insurance,24.1595,17,26.65,25.988,27
+P-NE-001,Northeast,John Doe,WC Insurance,19.443375,11,21.7375,24.036,21
+P-NE-001,Northeast,John Doe,BR Insurance,19.48125,9,28.075,21.85,19
+P-NE-001,Northeast,John Doe,CA Insurance,21.617625,12,24.5625,27.908,22
+P-SE-002,Southeast,Jane Smith,Schedule,17.325,4,29.7,21.6,14
+P-SE-002,Southeast,Jane Smith,Cost,19.224125,10,28.2125,18.684,20
+P-SE-002,Southeast,Jane Smith,Safety,14.554875,2,32.3375,11.882,12
+P-SE-002,Southeast,Jane Smith,GL Insurance,22.5125,13,27.85,26.2,23
+P-SE-002,Southeast,Jane Smith,WC Insurance,15.021125,7,15.8625,20.222,17
+P-SE-002,Southeast,Jane Smith,BR Insurance,16.035625,5,18.3625,25.78,15
+P-SE-002,Southeast,Jane Smith,CA Insurance,18.401375,8,30.0875,17.518,18
+P-MW-003,Midwest,Mike Johnson,Schedule,20.07625,11,21.675,26.63,21
+P-MW-003,Midwest,Mike Johnson,Cost,28.159375,17,42.1375,26.5,27
+P-MW-003,Midwest,Mike Johnson,Safety,18.599875,9,28.0875,18.312,19
+P-MW-003,Midwest,Mike Johnson,GL Insurance,27.2315,20,33.6,25.326,30
+P-MW-003,Midwest,Mike Johnson,WC Insurance,22.773125,14,32.5625,20.53,24
+P-MW-003,Midwest,Mike Johnson,BR Insurance,24.258125,12,33.9125,29.12,22
+P-MW-003,Midwest,Mike Johnson,CA Insurance,25.755125,15,37.9125,25.108,25
+P-WE-004,West,Alice Brown,Schedule,13.256875,1,22.3375,18.69,11
+P-WE-004,West,Alice Brown,Cost,16.3775,7,20.25,21.26,17
+P-WE-004,West,Alice Brown,Safety,11.57825,1,21.675,14.638,9
+P-WE-004,West,Alice Brown,GL Insurance,25.340625,10,46.1625,25.2,20
+P-WE-004,West,Alice Brown,WC Insurance,14.455125,4,18.5125,21.308,14
+P-WE-004,West,Alice Brown,BR Insurance,12.59875,2,18.275,18.12,12
+P-WE-004,West,Alice Brown,CA Insurance,17.274,5,30.8,18.296,15
+P-NE-005,Northeast,John Doe,Schedule,23.411875,15,30.5875,23.06,25
+P-NE-005,Northeast,John Doe,Cost,27.857625,21,35.0625,24.368,31
+P-NE-005,Northeast,John Doe,Safety,22.72675,13,30.675,24.232,23
+P-NE-005,Northeast,John Doe,GL Insurance,29.8285,24,34.8,26.514,34
+P-NE-005,Northeast,John Doe,WC Insurance,28.16325,18,36.925,29.728,28
+P-NE-005,Northeast,John Doe,BR Insurance,25.815625,16,40.0625,21.2,26
+P-NE-005,Northeast,John Doe,CA Insurance,26.7395,19,27.1,31.858,29
+P-SE-006,Southeast,Jane Smith,Schedule,13.59875,3,23.925,14.47,13
+P-SE-006,Southeast,Jane Smith,Cost,18.594125,9,25.1625,21.214,19
+P-SE-006,Southeast,Jane Smith,Safety,11.545375,1,18.8375,15.344,11
+P-SE-006,Southeast,Jane Smith,GL Insurance,20.03225,12,25.125,21.004,22
+P-SE-006,Southeast,Jane Smith,WC Insurance,16.866875,6,23.9375,21.53,16
+P-SE-006,Southeast,Jane Smith,BR Insurance,14.65,4,19.45,21.15,14
+P-SE-006,Southeast,Jane Smith,CA Insurance,16.54675,7,26.275,15.912,17
+P-NE-007,Northeast,John Doe,Schedule,36.7125,28,40.35,40.5,38
+P-NE-007,Northeast,John Doe,Cost,44.713375,34,58.2875,42.566,44
+P-NE-007,Northeast,John Doe,Safety,32.90175,26,34.075,35.532,36
+P-NE-007,Northeast,John Doe,GL Insurance,46.661,37,56.6,46.044,47
+P-NE-007,Northeast,John Doe,WC Insurance,38.26575,31,46.975,34.088,41
+P-NE-007,Northeast,John Doe,BR Insurance,35.925625,29,39.3125,36.39,39
+P-NE-007,Northeast,John Doe,CA Insurance,41.994125,32,53.3625,40.614,42
+P-SE-008,Southeast,Jane Smith,Schedule,20.71875,10,34.475,18.4,20
+P-SE-008,Southeast,Jane Smith,Cost,28.10825,16,45.325,25.108,26
+P-SE-008,Southeast,Jane Smith,Safety,16.932625,8,16.8125,24.918,18
+P-SE-008,Southeast,Jane Smith,GL Insurance,30.765625,19,43.0625,32,29
+P-SE-008,Southeast,Jane Smith,WC Insurance,26.6535,13,43.95,26.664,23
+P-SE-008,Southeast,Jane Smith,BR Insurance,21.31375,11,25.125,28.13,21
+P-SE-008,Southeast,Jane Smith,CA Insurance,25.8665,14,43.15,22.316,24
+P-MW-009,Midwest,Mike Johnson,Schedule,27.83625,22,34.325,23.02,32
+P-MW-009,Midwest,Mike Johnson,Cost,35.936375,28,39.8375,37.908,38
+P-MW-009,Midwest,Mike Johnson,Safety,26.731375,20,28.4875,28.438,30
+P-MW-009,Midwest,Mike Johnson,GL Insurance,40.114375,31,55.6875,32.77,41
+P-MW-009,Midwest,Mike Johnson,WC Insurance,35.803875,25,46.7875,36.428,35
+P-MW-009,Midwest,Mike Johnson,BR Insurance,30.86625,23,34.675,32.79,33
+P-MW-009,Midwest,Mike Johnson,CA Insurance,31.72875,26,33.875,31.04,36
+P-WE-010,West,Alice Brown,Schedule,19.448125,7,28.4625,25.33,17
+P-WE-010,West,Alice Brown,Cost,24.936875,13,28.5875,35.16,23
+P-WE-010,West,Alice Brown,Safety,17.030125,5,21.9625,26.158,15
+P-WE-010,West,Alice Brown,GL Insurance,29.265625,16,41.2625,33.8,26
+P-WE-010,West,Alice Brown,WC Insurance,20.824875,10,30.4375,22.862,20
+P-WE-010,West,Alice Brown,BR Insurance,16.7125,8,25.5,15.35,18
+P-WE-010,West,Alice Brown,CA Insurance,20.864625,11,26.4125,25.046,21
+P-NE-011,Northeast,John Doe,Schedule,39.446875,30,42.5875,45.2,40
+P-NE-011,Northeast,John Doe,Cost,44.76725,36,57.125,39.944,46
+P-NE-011,Northeast,John Doe,Safety,35.69,28,43.3,33.46,38
+P-NE-011,Northeast,John Doe,GL Insurance,47.941875,39,64.8375,38.93,49
+P-NE-011,Northeast,John Doe,WC Insurance,40.296625,33,41.1125,44.074,43
+P-NE-011,Northeast,John Doe,BR Insurance,39.309375,31,51.5375,33.7,41
+P-NE-011,Northeast,John Doe,CA Insurance,41.462,34,46.8,41.048,44
+P-SE-012,Southeast,Jane Smith,Schedule,19.046875,6,33.9875,20.2,16
+P-SE-012,Southeast,Jane Smith,Cost,19.472,12,27.4,16.488,22
+P-SE-012,Southeast,Jane Smith,Safety,14.535,4,23.55,16.59,14
+P-SE-012,Southeast,Jane Smith,GL Insurance,28.50925,15,49.525,24.512,25
+P-SE-012,Southeast,Jane Smith,WC Insurance,20.994125,9,35.4625,20.514,19
+P-SE-012,Southeast,Jane Smith,BR Insurance,18.41,7,31,18.64,17
+P-SE-012,Southeast,Jane Smith,CA Insurance,19.40525,10,29.575,18.046,20
+P-MW-013,Midwest,Mike Johnson,Schedule,33.3325,25,41.05,32.28,35
+P-MW-013,Midwest,Mike Johnson,Cost,37.6675,31,41.75,36.92,41
+P-MW-013,Midwest,Mike Johnson,Safety,32.303,23,48.75,24.462,33
+P-MW-013,Midwest,Mike Johnson,GL Insurance,41.275,34,52.4,34.7,44
+P-MW-013,Midwest,Mike Johnson,WC Insurance,41.0775,28,48.15,50.16,38
+P-MW-013,Midwest,Mike Johnson,BR Insurance,33.56125,26,33.525,38.72,36
+P-MW-013,Midwest,Mike Johnson,CA Insurance,39.254,29,51.15,37.866,39
+P-WE-014,West,Alice Brown,Schedule,13.831875,1,22.7375,21.59,10
+P-WE-014,West,Alice Brown,Cost,17.09275,6,30.425,15.946,16
+P-WE-014,West,Alice Brown,Safety,11.0925,1,19.95,15.42,8
+P-WE-014,West,Alice Brown,GL Insurance,18.86075,9,27.425,20.018,19
+P-WE-014,West,Alice Brown,WC Insurance,15.9155,3,22.5,25.162,13
+P-WE-014,West,Alice Brown,BR Insurance,10.334375,1,14.4375,14.9,11
+P-WE-014,West,Alice Brown,CA Insurance,18.460125,4,31.9125,23.928,14
+P-NE-015,Northeast,John Doe,Schedule,19.101875,12,24.8375,17.57,22
+P-NE-015,Northeast,John Doe,Cost,26.629875,18,37.8875,22.632,28
+P-NE-015,Northeast,John Doe,Safety,18.55175,10,25.575,18.632,20
+P-NE-015,Northeast,John Doe,GL Insurance,27.86975,21,37.875,21.604,31
+P-NE-015,Northeast,John Doe,WC Insurance,27.25625,15,42.475,26.55,25
+P-NE-015,Northeast,John Doe,BR Insurance,19.098125,13,20.2625,20.13,23
+P-NE-015,Northeast,John Doe,CA Insurance,26.743,16,34.3,30.672,26
+P-SE-016,Southeast,Jane Smith,Schedule,30.83375,21,45.825,25.51,31
+P-SE-016,Southeast,Jane Smith,Cost,34.762,27,41.1,33.948,37
+P-SE-016,Southeast,Jane Smith,Safety,29.3385,19,40.65,28.704,29
+P-SE-016,Southeast,Jane Smith,GL Insurance,35.221875,30,37.7875,33.1,40
+P-SE-016,Southeast,Jane Smith,WC Insurance,35.055,24,44.6,37.62,34
+P-SE-016,Southeast,Jane Smith,BR Insurance,34.811875,22,51.6375,33.61,32
+P-SE-016,Southeast,Jane Smith,CA Insurance,36.047125,25,48.5125,35.676,35
+P-MW-017,Midwest,Mike Johnson,Schedule,13.296875,2,25.4375,13.75,12
+P-MW-017,Midwest,Mike Johnson,Cost,18.14675,8,21.825,24.762,18
+P-MW-017,Midwest,Mike Johnson,Safety,13.912,1,26.3,18.348,10
+P-MW-017,Midwest,Mike Johnson,GL Insurance,18.89425,11,18.575,25.002,21
+P-MW-017,Midwest,Mike Johnson,WC Insurance,14.07,5,14.65,21.63,15
+P-MW-017,Midwest,Mike Johnson,BR Insurance,12.386875,3,19.0375,14.51,13
+P-MW-017,Midwest,Mike Johnson,CA Insurance,17.529,6,24.25,23.866,16
+P-WE-018,West,Alice Brown,Schedule,39.633125,27,52.3625,42.17,37
+P-WE-018,West,Alice Brown,Cost,40.4695,33,41.55,44.328,43
+P-WE-018,West,Alice Brown,Safety,37.461625,25,59.0625,30.784,35
+P-WE-018,West,Alice Brown,GL Insurance,44.40975,36,50.425,45.214,46
+P-WE-018,West,Alice Brown,WC Insurance,37.3125,30,42.75,36.5,40
+P-WE-018,West,Alice Brown,BR Insurance,31.18125,28,32.375,26.35,38
+P-WE-018,West,Alice Brown,CA Insurance,38.544625,31,46.0625,36.116,41
+P-NE-019,Northeast,John Doe,Schedule,20.929375,14,23.5875,22.13,24
+P-NE-019,Northeast,John Doe,Cost,23.304125,20,23.4125,19.804,30
+P-NE-019,Northeast,John Doe,Safety,24.269375,12,36.4375,26.64,22
+P-NE-019,Northeast,John Doe,GL Insurance,28.45625,23,26.725,31.1,33
+P-NE-019,Northeast,John Doe,WC Insurance,28.08675,17,42.125,26.222,27
+P-NE-019,Northeast,John Doe,BR Insurance,23.416875,15,37.9875,15.68,25
+P-NE-019,Northeast,John Doe,CA Insurance,24.851875,18,24.5375,28.87,28
+P-SE-020,Southeast,Jane Smith,Schedule,20.18125,9,30.375,22.35,19
+P-SE-020,Southeast,Jane Smith,Cost,22.957625,15,27.0625,24.768,25
+P-SE-020,Southeast,Jane Smith,Safety,17.084875,7,26.6875,17.652,17
+P-SE-020,Southeast,Jane Smith,GL Insurance,24.64975,18,34.625,17.974,28
+P-SE-020,Southeast,Jane Smith,WC Insurance,20.939375,12,32.1875,17.57,22
+P-SE-020,Southeast,Jane Smith,BR Insurance,20.741875,10,24.4875,28.48,20
+P-SE-020,Southeast,Jane Smith,CA Insurance,23.7905,13,31.55,27.612,23
+P-MW-021,Midwest,Mike Johnson,Schedule,33.110625,24,39.3625,35.08,34
+P-MW-021,Midwest,Mike Johnson,Cost,38.36575,30,54.925,28.538,40
+P-MW-021,Midwest,Mike Johnson,Safety,32.574375,22,44.5375,31.76,32
+P-MW-021,Midwest,Mike Johnson,GL Insurance,39.484875,33,55.0875,26.852,43
+P-MW-021,Midwest,Mike Johnson,WC Insurance,37.709125,27,44.4625,42.374,37
+P-MW-021,Midwest,Mike Johnson,BR Insurance,35.13375,25,46.625,33.91,35
+P-MW-021,Midwest,Mike Johnson,CA Insurance,38.769875,28,48.8375,40.242,38
+P-WE-022,West,Alice Brown,Schedule,83.320625,80,83.9625,79.32,90
+P-WE-022,West,Alice Brown,Cost,87.380125,86,86.0125,81.508,96
+P-WE-022,West,Alice Brown,Safety,83.940625,78,84.2125,85.55,88
+P-WE-022,West,Alice Brown,GL Insurance,88.769625,89,83.0125,84.066,99
+P-WE-022,West,Alice Brown,WC Insurance,86.588,83,89.25,81.102,93
+P-WE-022,West,Alice Brown,BR Insurance,84.27625,81,81.525,83.58,91
+P-WE-022,West,Alice Brown,CA Insurance,86.719625,84,85.6125,83.266,94
+P-NE-023,Northeast,John Doe,Schedule,10.774375,1,19.5375,13.56,9
+P-NE-023,Northeast,John Doe,Cost,14.9635,5,16.7,23.154,15
+P-NE-023,Northeast,John Doe,Safety,12.102375,1,17.7375,22.672,7
+P-NE-023,Northeast,John Doe,GL Insurance,19.367125,8,32.0625,19.406,18
+P-NE-023,Northeast,John Doe,WC Insurance,13.7755,2,17.55,23.552,12
+P-NE-023,Northeast,John Doe,BR Insurance,10.723125,1,12.7625,19.13,10
+P-NE-023,Northeast,John Doe,CA Insurance,17.332,3,32.25,21.078,13
+P-SE-024,Southeast,Jane Smith,Schedule,43.4425,33,62.4,35.37,43
+P-SE-024,Southeast,Jane Smith,Cost,43.91175,39,47.825,39.822,49
+P-SE-024,Southeast,Jane Smith,Safety,40.294,31,54.15,35.026,41
+P-SE-024,Southeast,Jane Smith,GL Insurance,50.565375,42,48.0875,60.174,52
+P-SE-024,Southeast,Jane Smith,WC Insurance,43.810625,36,53.6125,39.63,46
+P-SE-024,Southeast,Jane Smith,BR Insurance,44.14125,34,54.325,44.24,44
+P-SE-024,Southeast,Jane Smith,CA Insurance,47.341625,37,58.0625,47.304,47
+P-MW-025,Midwest,Mike Johnson,Schedule,29.235,19,39.25,29.69,29
+P-MW-025,Midwest,Mike Johnson,Cost,35.255875,25,45.3875,35.636,35
+P-MW-025,Midwest,Mike Johnson,Safety,25.6255,17,27.6,30.902,27
+P-MW-025,Midwest,Mike Johnson,GL Insurance,35.278625,28,34.0625,41.052,38
+P-MW-025,Midwest,Mike Johnson,WC Insurance,30.600125,22,35.7125,32.688,32
+P-MW-025,Midwest,Mike Johnson,BR Insurance,30.478125,20,47.9125,24,30
+P-MW-025,Midwest,Mike Johnson,CA Insurance,33.265625,23,49.2625,27.8,33
+P-WE-026,West,Alice Brown,Schedule,75.69875,68,82.375,74.42,78
+P-WE-026,West,Alice Brown,Cost,78.576625,74,84.4125,71.894,84
+P-WE-026,West,Alice Brown,Safety,71.79975,66,76.075,69.124,76
+P-WE-026,West,Alice Brown,GL Insurance,79.965125,77,77.7625,78.098,87
+P-WE-026,West,Alice Brown,WC Insurance,76.495,71,76,77.98,81
+P-WE-026,West,Alice Brown,BR Insurance,76.833125,69,78.3125,81.02,79
+P-WE-026,West,Alice Brown,CA Insurance,78.1605,72,81.85,76.792,82
+P-NE-027,Northeast,John Doe,Schedule,45.504375,35,51.8375,50.18,45
+P-NE-027,Northeast,John Doe,Cost,52.0025,41,63.2,52.81,51
+P-NE-027,Northeast,John Doe,Safety,41.7335,33,43.7,47.234,43
+P-NE-027,Northeast,John Doe,GL Insurance,53.340375,44,66.3375,49.024,54
+P-NE-027,Northeast,John Doe,WC Insurance,43.808125,38,52.1125,37.12,48
+P-NE-027,Northeast,John Doe,BR Insurance,47.046875,36,55.8875,50.3,46
+P-NE-027,Northeast,John Doe,CA Insurance,52.283375,39,70.5875,50.546,49
+P-SE-028,Southeast,Jane Smith,Schedule,39.316875,29,45.9375,43.33,39
+P-SE-028,Southeast,Jane Smith,Cost,47.533,35,58.3,51.832,45
+P-SE-028,Southeast,Jane Smith,Safety,37.9495,27,50.9,36.898,37
+P-SE-028,Southeast,Jane Smith,GL Insurance,48.026,38,54.95,51.154,48
+P-SE-028,Southeast,Jane Smith,WC Insurance,38.567875,32,40.1375,40.134,42
+P-SE-028,Southeast,Jane Smith,BR Insurance,39.37,30,54.1,33.38,40
+P-SE-028,Southeast,Jane Smith,CA Insurance,41.499375,33,54.0875,35.91,43
+P-MW-029,Midwest,Mike Johnson,Schedule,65.523125,58,74.3625,61.73,68
+P-MW-029,Midwest,Mike Johnson,Cost,72.14875,64,76.825,73.77,74
+P-MW-029,Midwest,Mike Johnson,Safety,65.490625,56,77.3125,62.65,66
+P-MW-029,Midwest,Mike Johnson,GL Insurance,76.455,67,85.4,76.42,77
+P-MW-029,Midwest,Mike Johnson,WC Insurance,70.894375,61,80.4375,71.14,71
+P-MW-029,Midwest,Mike Johnson,BR Insurance,62.90875,59,66.475,57.16,69
+P-MW-029,Midwest,Mike Johnson,CA Insurance,71.62375,62,78.075,74.42,72
+P-WE-030,West,Alice Brown,Schedule,55.734375,50,61.1875,51.75,60
+P-WE-030,West,Alice Brown,Cost,62.346,56,73.15,54.234,66
+P-WE-030,West,Alice Brown,Safety,56.604375,48,74.3375,46.08,58
+P-WE-030,West,Alice Brown,GL Insurance,64.6705,59,74.35,56.332,69
+P-WE-030,West,Alice Brown,WC Insurance,61.367125,53,74.2625,55.206,63
+P-WE-030,West,Alice Brown,BR Insurance,62.37,51,71.3,66.18,61
+P-WE-030,West,Alice Brown,CA Insurance,60.70375,54,69.625,55.19,64
+P-NE-031,Northeast,John Doe,Schedule,56.14125,43,67.675,60.89,53
+P-NE-031,Northeast,John Doe,Cost,57.825125,49,72.1125,51.188,59
+P-NE-031,Northeast,John Doe,Safety,50.99625,41,65.175,46.81,51
+P-NE-031,Northeast,John Doe,GL Insurance,61.7125,52,72.65,60.2,62
+P-NE-031,Northeast,John Doe,WC Insurance,53.009875,46,58.2875,51.752,56
+P-NE-031,Northeast,John Doe,BR Insurance,55.478125,44,66.9625,56.95,54
+P-NE-031,Northeast,John Doe,CA Insurance,52.03525,47,55.475,48.666,57
+P-SE-032,Southeast,Jane Smith,Schedule,30.096875,23,38.5375,25.85,33
+P-SE-032,Southeast,Jane Smith,Cost,35.44225,29,41.425,32.344,39
+P-SE-032,Southeast,Jane Smith,Safety,29.195125,21,34.8125,29.968,31
+P-SE-032,Southeast,Jane Smith,GL Insurance,39.321,32,46.05,37.234,42
+P-SE-032,Southeast,Jane Smith,WC Insurance,37.177625,26,43.4625,43.248,36
+P-SE-032,Southeast,Jane Smith,BR Insurance,33.651875,24,44.4875,32.12,34
+P-SE-032,Southeast,Jane Smith,CA Insurance,36.556125,27,41.5625,40.662,37
+P-MW-033,Midwest,Mike Johnson,Schedule,86.13375,82,80.375,90.16,92
+P-MW-033,Midwest,Mike Johnson,Cost,88.282375,88,87.9375,79.192,98
+P-MW-033,Midwest,Mike Johnson,Safety,82.925125,80,84.8625,76.838,90
+P-MW-033,Midwest,Mike Johnson,GL Insurance,89.11975,91,82.425,83.054,100
+P-MW-033,Midwest,Mike Johnson,WC Insurance,87.381,85,84.8,84.724,95
+P-MW-033,Midwest,Mike Johnson,BR Insurance,87.53625,83,89.275,84.87,93
+P-MW-033,Midwest,Mike Johnson,CA Insurance,87.738625,86,86.7625,82.192,96
+P-WE-034,West,Alice Brown,Schedule,52.318125,45,61.3125,47.96,55
+P-WE-034,West,Alice Brown,Cost,59.83875,51,67.475,59.88,61
+P-WE-034,West,Alice Brown,Safety,49.964375,43,61.2875,42.57,53
+P-WE-034,West,Alice Brown,GL Insurance,60.19025,54,78.275,44.486,64
+P-WE-034,West,Alice Brown,WC Insurance,56.10075,48,67.025,51.378,58
+P-WE-034,West,Alice Brown,BR Insurance,53.50625,46,57.625,54.4,56
+P-WE-034,West,Alice Brown,CA Insurance,60.345125,49,80.9625,52.418,59
+P-NE-035,Northeast,John Doe,Schedule,28.556875,18,46.1875,22.04,28
+P-NE-035,Northeast,John Doe,Cost,34.251,24,41.95,37.054,34
+P-NE-035,Northeast,John Doe,Safety,29.29025,16,50.425,24.736,26
+P-NE-035,Northeast,John Doe,GL Insurance,31.37775,27,37.275,24.236,37
+P-NE-035,Northeast,John Doe,WC Insurance,29.44825,21,37.375,28.418,31
+P-NE-035,Northeast,John Doe,BR Insurance,29.24125,19,40.525,28.44,29
+P-NE-035,Northeast,John Doe,CA Insurance,31.938875,22,41.3375,32.418,32
+P-SE-036,Southeast,Jane Smith,Schedule,38.55125,31,41.325,40.88,41
+P-SE-036,Southeast,Jane Smith,Cost,48.676875,37,62.6375,48.07,47
+P-SE-036,Southeast,Jane Smith,Safety,34.088625,29,41.8625,26.492,39
+P-SE-036,Southeast,Jane Smith,GL Insurance,47.646625,40,59.8625,40.724,50
+P-SE-036,Southeast,Jane Smith,WC Insurance,45.205875,34,57.3375,45.486,44
+P-SE-036,Southeast,Jane Smith,BR Insurance,41.05875,32,44.675,45.56,42
+P-SE-036,Southeast,Jane Smith,CA Insurance,40.41075,35,41.275,40.368,45
+P-MW-037,Midwest,Mike Johnson,Schedule,62.5025,55,78.1,51.91,65
+P-MW-037,Midwest,Mike Johnson,Cost,64.6535,61,66.9,59.714,71
+P-MW-037,Midwest,Mike Johnson,Safety,59.59525,53,68.175,54.206,63
+P-MW-037,Midwest,Mike Johnson,GL Insurance,71.333625,64,74.9625,72.372,74
+P-MW-037,Midwest,Mike Johnson,WC Insurance,66.718,58,77.5,63.372,68
+P-MW-037,Midwest,Mike Johnson,BR Insurance,63.058125,56,62.8125,67.42,66
+P-MW-037,Midwest,Mike Johnson,CA Insurance,64.70725,59,68.025,62.804,69
+P-WE-038,West,Alice Brown,Schedule,78.828125,72,78.9625,82.35,82
+P-WE-038,West,Alice Brown,Cost,83.969875,78,85.6875,84.192,88
+P-WE-038,West,Alice Brown,Safety,76.696875,70,80.9375,75.85,80
+P-WE-038,West,Alice Brown,GL Insurance,84.105625,81,84.2125,80.21,91
+P-WE-038,West,Alice Brown,WC Insurance,77.955125,75,80.1625,71.658,85
+P-WE-038,West,Alice Brown,BR Insurance,78.639375,73,80.8875,77.67,83
+P-WE-038,West,Alice Brown,CA Insurance,81.911375,76,86.1875,79.458,86
+P-NE-039,Northeast,John Doe,Schedule,42.900625,37,44.8125,42.79,47
+P-NE-039,Northeast,John Doe,Cost,49.866875,43,58.9375,44.53,53
+P-NE-039,Northeast,John Doe,Safety,43.24175,35,50.775,42.192,45
+P-NE-039,Northeast,John Doe,GL Insurance,55.14525,46,63.025,55.556,56
+P-NE-039,Northeast,John Doe,WC Insurance,49.7295,40,55.95,52.968,50
+P-NE-039,Northeast,John Doe,BR Insurance,44.341875,38,50.1875,41.18,48
+P-NE-039,Northeast,John Doe,CA Insurance,49.992125,41,59.5625,48.406,51
+P-SE-040,Southeast,Jane Smith,Schedule,53.87,47,58.3,53.18,57
+P-SE-040,Southeast,Jane Smith,Cost,59.8805,53,75.8,47.722,63
+P-SE-040,Southeast,Jane Smith,Safety,50.79125,45,54.025,49.14,55
+P-SE-040,Southeast,Jane Smith,GL Insurance,70.236875,56,82.3375,76.61,66
+P-SE-040,Southeast,Jane Smith,WC Insurance,58.963625,50,61.8625,63.992,60
+P-SE-040,Southeast,Jane Smith,BR Insurance,54.535,48,60.65,51.49,58
+P-SE-040,Southeast,Jane Smith,CA Insurance,60.4165,51,78.8,50.866,61
+P-MW-041,Midwest,Mike Johnson,Schedule,63.43,52,80.3,59.42,62
+P-MW-041,Midwest,Mike Johnson,Cost,66.50375,58,74.575,65.44,68
+P-MW-041,Midwest,Mike Johnson,Safety,55.02125,50,59.775,50.31,60
+P-MW-041,Midwest,Mike Johnson,GL Insurance,68.666,61,73.3,69.364,71
+P-MW-041,Midwest,Mike Johnson,WC Insurance,63.713875,55,67.0375,67.818,65
+P-MW-041,Midwest,Mike Johnson,BR Insurance,58.835625,53,62.1625,57.18,63
+P-MW-041,Midwest,Mike Johnson,CA Insurance,66.749625,56,76.0625,68.936,66
+P-WE-042,West,Alice Brown,Schedule,46.31,40,45.55,49.69,50
+P-WE-042,West,Alice Brown,Cost,54.60325,46,62.325,54.088,56
+P-WE-042,West,Alice Brown,Safety,45.324125,38,50.5625,44.734,48
+P-WE-042,West,Alice Brown,GL Insurance,56.360625,49,70.6125,46.83,59
+P-WE-042,West,Alice Brown,WC Insurance,50.38975,43,54.825,50.734,53
+P-WE-042,West,Alice Brown,BR Insurance,46.210625,41,43.6125,49.23,51
+P-WE-042,West,Alice Brown,CA Insurance,52.0885,44,56.05,54.304,54
+P-NE-043,Northeast,John Doe,Schedule,69.655625,60,79.3125,69.31,70
+P-NE-043,Northeast,John Doe,Cost,73.23975,66,80.275,70.684,76
+P-NE-043,Northeast,John Doe,Safety,64.461125,58,73.2125,58.632,68
+P-NE-043,Northeast,John Doe,GL Insurance,77.047625,69,82.5625,77.628,79
+P-NE-043,Northeast,John Doe,WC Insurance,70.499375,63,72.2875,73.71,73
+P-NE-043,Northeast,John Doe,BR Insurance,70.795625,61,79.4625,71.72,71
+P-NE-043,Northeast,John Doe,CA Insurance,72.81725,64,81.675,71.594,74
+P-SE-044,Southeast,Jane Smith,Schedule,59.51625,54,63.825,56.24,64
+P-SE-044,Southeast,Jane Smith,Cost,68.163625,60,68.8125,73.842,70
+P-SE-044,Southeast,Jane Smith,Safety,64.017875,52,78.0375,64.034,62
+P-SE-044,Southeast,Jane Smith,GL Insurance,69.213,63,73.15,67.702,73
+P-SE-044,Southeast,Jane Smith,WC Insurance,66.72125,57,75.525,67.36,67
+P-SE-044,Southeast,Jane Smith,BR Insurance,66.1225,55,81.1,63.39,65
+P-SE-044,Southeast,Jane Smith,CA Insurance,66.9445,58,74.75,67.028,68
+P-MW-045,Midwest,Mike Johnson,Schedule,50.185625,42,59.2125,47.53,52
+P-MW-045,Midwest,Mike Johnson,Cost,57.112,48,56.45,65.998,58
+P-MW-045,Midwest,Mike Johnson,Safety,45.836625,40,48.8625,44.484,50
+P-MW-045,Midwest,Mike Johnson,GL Insurance,58.896625,51,64.2625,59.324,61
+P-MW-045,Midwest,Mike Johnson,WC Insurance,54.88275,45,64.975,54.556,55
+P-MW-045,Midwest,Mike Johnson,BR Insurance,54.136875,43,68.7375,51.81,53
+P-MW-045,Midwest,Mike Johnson,CA Insurance,56.092875,46,65.4875,56.884,56
+P-WE-046,West,Alice Brown,Schedule,64.79125,57,63.575,71.59,67
+P-WE-046,West,Alice Brown,Cost,68.3025,63,78,59.21,73
+P-WE-046,West,Alice Brown,Safety,63.851125,55,72.9625,62.442,65
+P-WE-046,West,Alice Brown,GL Insurance,73.438875,66,77.1375,74.618,76
+P-WE-046,West,Alice Brown,WC Insurance,65.515,60,76.05,56.01,70
+P-WE-046,West,Alice Brown,BR Insurance,64.93625,58,64.175,69.57,68
+P-WE-046,West,Alice Brown,CA Insurance,71.127375,61,86.4375,66.072,71
+P-NE-047,Northeast,John Doe,Schedule,52.265625,44,55.7625,55.3,54
+P-NE-047,Northeast,John Doe,Cost,61.2685,50,75.05,60.024,60
+P-NE-047,Northeast,John Doe,Safety,50.92425,42,62.525,47.172,52
+P-NE-047,Northeast,John Doe,GL Insurance,62.54675,53,79.125,55.062,63
+P-NE-047,Northeast,John Doe,WC Insurance,58.167875,47,65.2375,63.434,57
+P-NE-047,Northeast,John Doe,BR Insurance,49.40375,45,52.175,45.44,55
+P-NE-047,Northeast,John Doe,CA Insurance,54.010625,48,63.2125,46.83,58
+P-SE-048,Southeast,Jane Smith,Schedule,70.37375,62,80.375,67.12,72
+P-SE-048,Southeast,Jane Smith,Cost,75.899875,68,81.7875,75.812,78
+P-SE-048,Southeast,Jane Smith,Safety,66.97175,60,70.875,67.012,70
+P-SE-048,Southeast,Jane Smith,GL Insurance,77.678,71,84.7,74.012,81
+P-SE-048,Southeast,Jane Smith,WC Insurance,74.473375,65,77.0875,80.806,75
+P-SE-048,Southeast,Jane Smith,BR Insurance,73.439375,63,83.7875,73.97,73
+P-SE-048,Southeast,Jane Smith,CA Insurance,71.588625,66,73.7125,70.642,76
+P-MW-049,Midwest,Mike Johnson,Schedule,53.126875,39,67.9875,56.52,49
+P-MW-049,Midwest,Mike Johnson,Cost,52.43575,45,60.675,49.068,55
+P-MW-049,Midwest,Mike Johnson,Safety,49.50575,37,68.575,45.448,47
+P-MW-049,Midwest,Mike Johnson,GL Insurance,54.8385,48,65.9,47.454,58
+P-MW-049,Midwest,Mike Johnson,WC Insurance,50.265625,42,57.8625,49.2,52
+P-MW-049,Midwest,Mike Johnson,BR Insurance,52.695,40,64.8,55.98,50
+P-MW-049,Midwest,Mike Johnson,CA Insurance,49.7665,43,53.3,49.766,53
+P-WE-050,West,Alice Brown,Schedule,66.211875,59,61.0875,75.76,69
+P-WE-050,West,Alice Brown,Cost,71.906125,65,72.4625,75.162,75
+P-WE-050,West,Alice Brown,Safety,68.214125,57,86.2625,62.594,67
+P-WE-050,West,Alice Brown,GL Insurance,75.145375,68,77.8375,76.744,78
+P-WE-050,West,Alice Brown,WC Insurance,66.074875,62,69.5375,60.762,72
+P-WE-050,West,Alice Brown,BR Insurance,68.085625,60,70.5625,71.78,70
+P-WE-050,West,Alice Brown,CA Insurance,70.99575,63,78.925,69.058,73

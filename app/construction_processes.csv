@@ -1,0 +1,1751 @@
+projectId,region,projectManager,impact_category,process_name,score
+P-NE-001,Northeast,John Doe,BR Insurance,communication,27.75
+P-NE-001,Northeast,John Doe,BR Insurance,financial,36
+P-NE-001,Northeast,John Doe,BR Insurance,operations,17.5
+P-NE-001,Northeast,John Doe,BR Insurance,quality,14.6
+P-NE-001,Northeast,John Doe,BR Insurance,safety,13.4
+P-NE-001,Northeast,John Doe,CA Insurance,communication,22.1
+P-NE-001,Northeast,John Doe,CA Insurance,financial,30.59
+P-NE-001,Northeast,John Doe,CA Insurance,operations,32.25
+P-NE-001,Northeast,John Doe,CA Insurance,quality,24.3
+P-NE-001,Northeast,John Doe,CA Insurance,safety,30.3
+P-NE-001,Northeast,John Doe,Cost,communication,7.1
+P-NE-001,Northeast,John Doe,Cost,financial,23.43
+P-NE-001,Northeast,John Doe,Cost,operations,27.6
+P-NE-001,Northeast,John Doe,Cost,quality,37.85
+P-NE-001,Northeast,John Doe,Cost,safety,11.05
+P-NE-001,Northeast,John Doe,GL Insurance,communication,14.25
+P-NE-001,Northeast,John Doe,GL Insurance,financial,42.89
+P-NE-001,Northeast,John Doe,GL Insurance,operations,21.95
+P-NE-001,Northeast,John Doe,GL Insurance,quality,18.05
+P-NE-001,Northeast,John Doe,GL Insurance,safety,32.8
+P-NE-001,Northeast,John Doe,Safety,communication,8.55
+P-NE-001,Northeast,John Doe,Safety,financial,15.61
+P-NE-001,Northeast,John Doe,Safety,operations,17.6
+P-NE-001,Northeast,John Doe,Safety,quality,12.3
+P-NE-001,Northeast,John Doe,Safety,safety,17.5
+P-NE-001,Northeast,John Doe,Schedule,communication,19.75
+P-NE-001,Northeast,John Doe,Schedule,financial,12.75
+P-NE-001,Northeast,John Doe,Schedule,operations,23.1
+P-NE-001,Northeast,John Doe,Schedule,quality,11.1
+P-NE-001,Northeast,John Doe,Schedule,safety,21.5
+P-NE-001,Northeast,John Doe,WC Insurance,communication,42.25
+P-NE-001,Northeast,John Doe,WC Insurance,financial,16.93
+P-NE-001,Northeast,John Doe,WC Insurance,operations,26
+P-NE-001,Northeast,John Doe,WC Insurance,quality,17.5
+P-NE-001,Northeast,John Doe,WC Insurance,safety,17.5
+P-SE-002,Southeast,Jane Smith,BR Insurance,communication,30.95
+P-SE-002,Southeast,Jane Smith,BR Insurance,financial,22
+P-SE-002,Southeast,Jane Smith,BR Insurance,operations,27.45
+P-SE-002,Southeast,Jane Smith,BR Insurance,quality,29.5
+P-SE-002,Southeast,Jane Smith,BR Insurance,safety,19
+P-SE-002,Southeast,Jane Smith,CA Insurance,communication,17.4
+P-SE-002,Southeast,Jane Smith,CA Insurance,financial,17.69
+P-SE-002,Southeast,Jane Smith,CA Insurance,operations,28.5
+P-SE-002,Southeast,Jane Smith,CA Insurance,quality,7.6
+P-SE-002,Southeast,Jane Smith,CA Insurance,safety,16.4
+P-SE-002,Southeast,Jane Smith,Cost,communication,15.3
+P-SE-002,Southeast,Jane Smith,Cost,financial,16.92
+P-SE-002,Southeast,Jane Smith,Cost,operations,25.4
+P-SE-002,Southeast,Jane Smith,Cost,quality,19.55
+P-SE-002,Southeast,Jane Smith,Cost,safety,16.25
+P-SE-002,Southeast,Jane Smith,GL Insurance,communication,22.95
+P-SE-002,Southeast,Jane Smith,GL Insurance,financial,44.15
+P-SE-002,Southeast,Jane Smith,GL Insurance,operations,26.35
+P-SE-002,Southeast,Jane Smith,GL Insurance,quality,15.05
+P-SE-002,Southeast,Jane Smith,GL Insurance,safety,22.5
+P-SE-002,Southeast,Jane Smith,Safety,communication,18.1
+P-SE-002,Southeast,Jane Smith,Safety,financial,14.41
+P-SE-002,Southeast,Jane Smith,Safety,operations,12.15
+P-SE-002,Southeast,Jane Smith,Safety,quality,7.9
+P-SE-002,Southeast,Jane Smith,Safety,safety,6.85
+P-SE-002,Southeast,Jane Smith,Schedule,communication,17.1
+P-SE-002,Southeast,Jane Smith,Schedule,financial,23.6
+P-SE-002,Southeast,Jane Smith,Schedule,operations,17.45
+P-SE-002,Southeast,Jane Smith,Schedule,quality,25.65
+P-SE-002,Southeast,Jane Smith,Schedule,safety,24.2
+P-SE-002,Southeast,Jane Smith,WC Insurance,communication,28.35
+P-SE-002,Southeast,Jane Smith,WC Insurance,financial,11.96
+P-SE-002,Southeast,Jane Smith,WC Insurance,operations,18.7
+P-SE-002,Southeast,Jane Smith,WC Insurance,quality,14.7
+P-SE-002,Southeast,Jane Smith,WC Insurance,safety,27.4
+P-MW-003,Midwest,Mike Johnson,BR Insurance,communication,41
+P-MW-003,Midwest,Mike Johnson,BR Insurance,financial,35.35
+P-MW-003,Midwest,Mike Johnson,BR Insurance,operations,7.85
+P-MW-003,Midwest,Mike Johnson,BR Insurance,quality,40.15
+P-MW-003,Midwest,Mike Johnson,BR Insurance,safety,21.25
+P-MW-003,Midwest,Mike Johnson,CA Insurance,communication,16.9
+P-MW-003,Midwest,Mike Johnson,CA Insurance,financial,29.29
+P-MW-003,Midwest,Mike Johnson,CA Insurance,operations,10.55
+P-MW-003,Midwest,Mike Johnson,CA Insurance,quality,34.9
+P-MW-003,Midwest,Mike Johnson,CA Insurance,safety,33.9
+P-MW-003,Midwest,Mike Johnson,Cost,communication,19.5
+P-MW-003,Midwest,Mike Johnson,Cost,financial,21.7
+P-MW-003,Midwest,Mike Johnson,Cost,operations,21.45
+P-MW-003,Midwest,Mike Johnson,Cost,quality,43.2
+P-MW-003,Midwest,Mike Johnson,Cost,safety,26.65
+P-MW-003,Midwest,Mike Johnson,GL Insurance,communication,6.6
+P-MW-003,Midwest,Mike Johnson,GL Insurance,financial,15.88
+P-MW-003,Midwest,Mike Johnson,GL Insurance,operations,23
+P-MW-003,Midwest,Mike Johnson,GL Insurance,quality,40.65
+P-MW-003,Midwest,Mike Johnson,GL Insurance,safety,40.5
+P-MW-003,Midwest,Mike Johnson,Safety,communication,19
+P-MW-003,Midwest,Mike Johnson,Safety,financial,37.01
+P-MW-003,Midwest,Mike Johnson,Safety,operations,12.05
+P-MW-003,Midwest,Mike Johnson,Safety,quality,4.9
+P-MW-003,Midwest,Mike Johnson,Safety,safety,18.6
+P-MW-003,Midwest,Mike Johnson,Schedule,communication,26.9
+P-MW-003,Midwest,Mike Johnson,Schedule,financial,17.1
+P-MW-003,Midwest,Mike Johnson,Schedule,operations,14.7
+P-MW-003,Midwest,Mike Johnson,Schedule,quality,30.7
+P-MW-003,Midwest,Mike Johnson,Schedule,safety,43.75
+P-MW-003,Midwest,Mike Johnson,WC Insurance,communication,10.3
+P-MW-003,Midwest,Mike Johnson,WC Insurance,financial,20.65
+P-MW-003,Midwest,Mike Johnson,WC Insurance,operations,9.25
+P-MW-003,Midwest,Mike Johnson,WC Insurance,quality,30.7
+P-MW-003,Midwest,Mike Johnson,WC Insurance,safety,31.75
+P-WE-004,West,Alice Brown,BR Insurance,communication,9.15
+P-WE-004,West,Alice Brown,BR Insurance,financial,24.4
+P-WE-004,West,Alice Brown,BR Insurance,operations,16.6
+P-WE-004,West,Alice Brown,BR Insurance,quality,17.7
+P-WE-004,West,Alice Brown,BR Insurance,safety,22.75
+P-WE-004,West,Alice Brown,CA Insurance,communication,11.4
+P-WE-004,West,Alice Brown,CA Insurance,financial,21.73
+P-WE-004,West,Alice Brown,CA Insurance,operations,21.45
+P-WE-004,West,Alice Brown,CA Insurance,quality,16
+P-WE-004,West,Alice Brown,CA Insurance,safety,20.9
+P-WE-004,West,Alice Brown,Cost,communication,18.75
+P-WE-004,West,Alice Brown,Cost,financial,19.5
+P-WE-004,West,Alice Brown,Cost,operations,33.6
+P-WE-004,West,Alice Brown,Cost,quality,16.05
+P-WE-004,West,Alice Brown,Cost,safety,18.4
+P-WE-004,West,Alice Brown,GL Insurance,communication,15.2
+P-WE-004,West,Alice Brown,GL Insurance,financial,25.6
+P-WE-004,West,Alice Brown,GL Insurance,operations,40.45
+P-WE-004,West,Alice Brown,GL Insurance,quality,13.95
+P-WE-004,West,Alice Brown,GL Insurance,safety,30.8
+P-WE-004,West,Alice Brown,Safety,communication,11.85
+P-WE-004,West,Alice Brown,Safety,financial,20.54
+P-WE-004,West,Alice Brown,Safety,operations,16.5
+P-WE-004,West,Alice Brown,Safety,quality,14.1
+P-WE-004,West,Alice Brown,Safety,safety,10.2
+P-WE-004,West,Alice Brown,Schedule,communication,27.6
+P-WE-004,West,Alice Brown,Schedule,financial,10.5
+P-WE-004,West,Alice Brown,Schedule,operations,22.35
+P-WE-004,West,Alice Brown,Schedule,quality,14.4
+P-WE-004,West,Alice Brown,Schedule,safety,18.6
+P-WE-004,West,Alice Brown,WC Insurance,communication,19.8
+P-WE-004,West,Alice Brown,WC Insurance,financial,26.04
+P-WE-004,West,Alice Brown,WC Insurance,operations,20.85
+P-WE-004,West,Alice Brown,WC Insurance,quality,15.4
+P-WE-004,West,Alice Brown,WC Insurance,safety,24.45
+P-NE-005,Northeast,John Doe,BR Insurance,communication,23.55
+P-NE-005,Northeast,John Doe,BR Insurance,financial,21
+P-NE-005,Northeast,John Doe,BR Insurance,operations,13.9
+P-NE-005,Northeast,John Doe,BR Insurance,quality,18.85
+P-NE-005,Northeast,John Doe,BR Insurance,safety,28.7
+P-NE-005,Northeast,John Doe,CA Insurance,communication,44
+P-NE-005,Northeast,John Doe,CA Insurance,financial,26.29
+P-NE-005,Northeast,John Doe,CA Insurance,operations,36.8
+P-NE-005,Northeast,John Doe,CA Insurance,quality,24.8
+P-NE-005,Northeast,John Doe,CA Insurance,safety,27.4
+P-NE-005,Northeast,John Doe,Cost,communication,17.55
+P-NE-005,Northeast,John Doe,Cost,financial,21.79
+P-NE-005,Northeast,John Doe,Cost,operations,23.35
+P-NE-005,Northeast,John Doe,Cost,quality,16.8
+P-NE-005,Northeast,John Doe,Cost,safety,42.35
+P-NE-005,Northeast,John Doe,GL Insurance,communication,24.9
+P-NE-005,Northeast,John Doe,GL Insurance,financial,26.07
+P-NE-005,Northeast,John Doe,GL Insurance,operations,17.9
+P-NE-005,Northeast,John Doe,GL Insurance,quality,33.4
+P-NE-005,Northeast,John Doe,GL Insurance,safety,30.3
+P-NE-005,Northeast,John Doe,Safety,communication,15.7
+P-NE-005,Northeast,John Doe,Safety,financial,24.76
+P-NE-005,Northeast,John Doe,Safety,operations,36.95
+P-NE-005,Northeast,John Doe,Safety,quality,27.1
+P-NE-005,Northeast,John Doe,Safety,safety,16.65
+P-NE-005,Northeast,John Doe,Schedule,communication,23.25
+P-NE-005,Northeast,John Doe,Schedule,financial,33.45
+P-NE-005,Northeast,John Doe,Schedule,operations,19.75
+P-NE-005,Northeast,John Doe,Schedule,quality,17.15
+P-NE-005,Northeast,John Doe,Schedule,safety,21.7
+P-NE-005,Northeast,John Doe,WC Insurance,communication,46.9
+P-NE-005,Northeast,John Doe,WC Insurance,financial,33.39
+P-NE-005,Northeast,John Doe,WC Insurance,operations,18.95
+P-NE-005,Northeast,John Doe,WC Insurance,quality,32.9
+P-NE-005,Northeast,John Doe,WC Insurance,safety,16.5
+P-SE-006,Southeast,Jane Smith,BR Insurance,communication,20
+P-SE-006,Southeast,Jane Smith,BR Insurance,financial,16.85
+P-SE-006,Southeast,Jane Smith,BR Insurance,operations,20.05
+P-SE-006,Southeast,Jane Smith,BR Insurance,quality,23.85
+P-SE-006,Southeast,Jane Smith,BR Insurance,safety,25
+P-SE-006,Southeast,Jane Smith,CA Insurance,communication,40.8
+P-SE-006,Southeast,Jane Smith,CA Insurance,financial,10.41
+P-SE-006,Southeast,Jane Smith,CA Insurance,operations,11.45
+P-SE-006,Southeast,Jane Smith,CA Insurance,quality,7
+P-SE-006,Southeast,Jane Smith,CA Insurance,safety,9.9
+P-SE-006,Southeast,Jane Smith,Cost,communication,16.3
+P-SE-006,Southeast,Jane Smith,Cost,financial,9.52
+P-SE-006,Southeast,Jane Smith,Cost,operations,36.45
+P-SE-006,Southeast,Jane Smith,Cost,quality,10.4
+P-SE-006,Southeast,Jane Smith,Cost,safety,33.4
+P-SE-006,Southeast,Jane Smith,GL Insurance,communication,21.55
+P-SE-006,Southeast,Jane Smith,GL Insurance,financial,34.07
+P-SE-006,Southeast,Jane Smith,GL Insurance,operations,24.5
+P-SE-006,Southeast,Jane Smith,GL Insurance,quality,13.45
+P-SE-006,Southeast,Jane Smith,GL Insurance,safety,11.45
+P-SE-006,Southeast,Jane Smith,Safety,communication,10.95
+P-SE-006,Southeast,Jane Smith,Safety,financial,14.12
+P-SE-006,Southeast,Jane Smith,Safety,operations,11
+P-SE-006,Southeast,Jane Smith,Safety,quality,27
+P-SE-006,Southeast,Jane Smith,Safety,safety,13.65
+P-SE-006,Southeast,Jane Smith,Schedule,communication,25.75
+P-SE-006,Southeast,Jane Smith,Schedule,financial,9.8
+P-SE-006,Southeast,Jane Smith,Schedule,operations,13.25
+P-SE-006,Southeast,Jane Smith,Schedule,quality,8.75
+P-SE-006,Southeast,Jane Smith,Schedule,safety,14.8
+P-SE-006,Southeast,Jane Smith,WC Insurance,communication,21.5
+P-SE-006,Southeast,Jane Smith,WC Insurance,financial,38.1
+P-SE-006,Southeast,Jane Smith,WC Insurance,operations,24.1
+P-SE-006,Southeast,Jane Smith,WC Insurance,quality,10.4
+P-SE-006,Southeast,Jane Smith,WC Insurance,safety,13.55
+P-NE-007,Northeast,John Doe,BR Insurance,communication,48.85
+P-NE-007,Northeast,John Doe,BR Insurance,financial,43.15
+P-NE-007,Northeast,John Doe,BR Insurance,operations,20.7
+P-NE-007,Northeast,John Doe,BR Insurance,quality,53.6
+P-NE-007,Northeast,John Doe,BR Insurance,safety,15.65
+P-NE-007,Northeast,John Doe,CA Insurance,communication,22.1
+P-NE-007,Northeast,John Doe,CA Insurance,financial,68.22
+P-NE-007,Northeast,John Doe,CA Insurance,operations,33.55
+P-NE-007,Northeast,John Doe,CA Insurance,quality,44.5
+P-NE-007,Northeast,John Doe,CA Insurance,safety,34.7
+P-NE-007,Northeast,John Doe,Cost,communication,26.35
+P-NE-007,Northeast,John Doe,Cost,financial,34.58
+P-NE-007,Northeast,John Doe,Cost,operations,64
+P-NE-007,Northeast,John Doe,Cost,quality,45.35
+P-NE-007,Northeast,John Doe,Cost,safety,42.55
+P-NE-007,Northeast,John Doe,GL Insurance,communication,51.65
+P-NE-007,Northeast,John Doe,GL Insurance,financial,29.32
+P-NE-007,Northeast,John Doe,GL Insurance,operations,46.1
+P-NE-007,Northeast,John Doe,GL Insurance,quality,38.9
+P-NE-007,Northeast,John Doe,GL Insurance,safety,64.25
+P-NE-007,Northeast,John Doe,Safety,communication,12.95
+P-NE-007,Northeast,John Doe,Safety,financial,40.36
+P-NE-007,Northeast,John Doe,Safety,operations,53.15
+P-NE-007,Northeast,John Doe,Safety,quality,34.8
+P-NE-007,Northeast,John Doe,Safety,safety,36.4
+P-NE-007,Northeast,John Doe,Schedule,communication,51.45
+P-NE-007,Northeast,John Doe,Schedule,financial,40.75
+P-NE-007,Northeast,John Doe,Schedule,operations,27.4
+P-NE-007,Northeast,John Doe,Schedule,quality,43.85
+P-NE-007,Northeast,John Doe,Schedule,safety,39.05
+P-NE-007,Northeast,John Doe,WC Insurance,communication,20.25
+P-NE-007,Northeast,John Doe,WC Insurance,financial,38.64
+P-NE-007,Northeast,John Doe,WC Insurance,operations,31.5
+P-NE-007,Northeast,John Doe,WC Insurance,quality,32.6
+P-NE-007,Northeast,John Doe,WC Insurance,safety,47.45
+P-SE-008,Southeast,Jane Smith,BR Insurance,communication,19.5
+P-SE-008,Southeast,Jane Smith,BR Insurance,financial,34.55
+P-SE-008,Southeast,Jane Smith,BR Insurance,operations,25.35
+P-SE-008,Southeast,Jane Smith,BR Insurance,quality,22.7
+P-SE-008,Southeast,Jane Smith,BR Insurance,safety,38.55
+P-SE-008,Southeast,Jane Smith,CA Insurance,communication,33.9
+P-SE-008,Southeast,Jane Smith,CA Insurance,financial,24.58
+P-SE-008,Southeast,Jane Smith,CA Insurance,operations,12
+P-SE-008,Southeast,Jane Smith,CA Insurance,quality,10
+P-SE-008,Southeast,Jane Smith,CA Insurance,safety,31.1
+P-SE-008,Southeast,Jane Smith,Cost,communication,41.2
+P-SE-008,Southeast,Jane Smith,Cost,financial,14.24
+P-SE-008,Southeast,Jane Smith,Cost,operations,18.4
+P-SE-008,Southeast,Jane Smith,Cost,quality,37.1
+P-SE-008,Southeast,Jane Smith,Cost,safety,14.6
+P-SE-008,Southeast,Jane Smith,GL Insurance,communication,36.55
+P-SE-008,Southeast,Jane Smith,GL Insurance,financial,5.55
+P-SE-008,Southeast,Jane Smith,GL Insurance,operations,49.25
+P-SE-008,Southeast,Jane Smith,GL Insurance,quality,46.05
+P-SE-008,Southeast,Jane Smith,GL Insurance,safety,22.6
+P-SE-008,Southeast,Jane Smith,Safety,communication,32.6
+P-SE-008,Southeast,Jane Smith,Safety,financial,17.99
+P-SE-008,Southeast,Jane Smith,Safety,operations,42.45
+P-SE-008,Southeast,Jane Smith,Safety,quality,15.6
+P-SE-008,Southeast,Jane Smith,Safety,safety,15.95
+P-SE-008,Southeast,Jane Smith,Schedule,communication,14.65
+P-SE-008,Southeast,Jane Smith,Schedule,financial,22.8
+P-SE-008,Southeast,Jane Smith,Schedule,operations,18.85
+P-SE-008,Southeast,Jane Smith,Schedule,quality,22.1
+P-SE-008,Southeast,Jane Smith,Schedule,safety,13.6
+P-SE-008,Southeast,Jane Smith,WC Insurance,communication,12.2
+P-SE-008,Southeast,Jane Smith,WC Insurance,financial,29.27
+P-SE-008,Southeast,Jane Smith,WC Insurance,operations,27.5
+P-SE-008,Southeast,Jane Smith,WC Insurance,quality,17.9
+P-SE-008,Southeast,Jane Smith,WC Insurance,safety,46.45
+P-MW-009,Midwest,Mike Johnson,BR Insurance,communication,45.6
+P-MW-009,Midwest,Mike Johnson,BR Insurance,financial,31.55
+P-MW-009,Midwest,Mike Johnson,BR Insurance,operations,13.5
+P-MW-009,Midwest,Mike Johnson,BR Insurance,quality,23.3
+P-MW-009,Midwest,Mike Johnson,BR Insurance,safety,50
+P-MW-009,Midwest,Mike Johnson,CA Insurance,communication,34.1
+P-MW-009,Midwest,Mike Johnson,CA Insurance,financial,19.7
+P-MW-009,Midwest,Mike Johnson,CA Insurance,operations,52.6
+P-MW-009,Midwest,Mike Johnson,CA Insurance,quality,26.7
+P-MW-009,Midwest,Mike Johnson,CA Insurance,safety,22.1
+P-MW-009,Midwest,Mike Johnson,Cost,communication,21.25
+P-MW-009,Midwest,Mike Johnson,Cost,financial,32.39
+P-MW-009,Midwest,Mike Johnson,Cost,operations,59.1
+P-MW-009,Midwest,Mike Johnson,Cost,quality,54.1
+P-MW-009,Midwest,Mike Johnson,Cost,safety,22.7
+P-MW-009,Midwest,Mike Johnson,GL Insurance,communication,44.95
+P-MW-009,Midwest,Mike Johnson,GL Insurance,financial,24.55
+P-MW-009,Midwest,Mike Johnson,GL Insurance,operations,35.05
+P-MW-009,Midwest,Mike Johnson,GL Insurance,quality,37.8
+P-MW-009,Midwest,Mike Johnson,GL Insurance,safety,21.5
+P-MW-009,Midwest,Mike Johnson,Safety,communication,30.15
+P-MW-009,Midwest,Mike Johnson,Safety,financial,17.69
+P-MW-009,Midwest,Mike Johnson,Safety,operations,13.9
+P-MW-009,Midwest,Mike Johnson,Safety,quality,46.7
+P-MW-009,Midwest,Mike Johnson,Safety,safety,33.75
+P-MW-009,Midwest,Mike Johnson,Schedule,communication,31.55
+P-MW-009,Midwest,Mike Johnson,Schedule,financial,18.85
+P-MW-009,Midwest,Mike Johnson,Schedule,operations,29.05
+P-MW-009,Midwest,Mike Johnson,Schedule,quality,11.05
+P-MW-009,Midwest,Mike Johnson,Schedule,safety,24.6
+P-MW-009,Midwest,Mike Johnson,WC Insurance,communication,15.35
+P-MW-009,Midwest,Mike Johnson,WC Insurance,financial,27.59
+P-MW-009,Midwest,Mike Johnson,WC Insurance,operations,51.2
+P-MW-009,Midwest,Mike Johnson,WC Insurance,quality,37.1
+P-MW-009,Midwest,Mike Johnson,WC Insurance,safety,50.9
+P-WE-010,West,Alice Brown,BR Insurance,communication,22.75
+P-WE-010,West,Alice Brown,BR Insurance,financial,15.1
+P-WE-010,West,Alice Brown,BR Insurance,operations,22.85
+P-WE-010,West,Alice Brown,BR Insurance,quality,10.15
+P-WE-010,West,Alice Brown,BR Insurance,safety,5.9
+P-WE-010,West,Alice Brown,CA Insurance,communication,9.7
+P-WE-010,West,Alice Brown,CA Insurance,financial,27.18
+P-WE-010,West,Alice Brown,CA Insurance,operations,35.75
+P-WE-010,West,Alice Brown,CA Insurance,quality,36
+P-WE-010,West,Alice Brown,CA Insurance,safety,16.6
+P-WE-010,West,Alice Brown,Cost,communication,9.3
+P-WE-010,West,Alice Brown,Cost,financial,46.85
+P-WE-010,West,Alice Brown,Cost,operations,39.45
+P-WE-010,West,Alice Brown,Cost,quality,43.35
+P-WE-010,West,Alice Brown,Cost,safety,36.85
+P-WE-010,West,Alice Brown,GL Insurance,communication,39.7
+P-WE-010,West,Alice Brown,GL Insurance,financial,21.55
+P-WE-010,West,Alice Brown,GL Insurance,operations,41.85
+P-WE-010,West,Alice Brown,GL Insurance,quality,14.85
+P-WE-010,West,Alice Brown,GL Insurance,safety,51.05
+P-WE-010,West,Alice Brown,Safety,communication,35.3
+P-WE-010,West,Alice Brown,Safety,financial,28.54
+P-WE-010,West,Alice Brown,Safety,operations,19.15
+P-WE-010,West,Alice Brown,Safety,quality,12.5
+P-WE-010,West,Alice Brown,Safety,safety,35.3
+P-WE-010,West,Alice Brown,Schedule,communication,38.05
+P-WE-010,West,Alice Brown,Schedule,financial,14.2
+P-WE-010,West,Alice Brown,Schedule,operations,34.7
+P-WE-010,West,Alice Brown,Schedule,quality,21.25
+P-WE-010,West,Alice Brown,Schedule,safety,18.45
+P-WE-010,West,Alice Brown,WC Insurance,communication,20.95
+P-WE-010,West,Alice Brown,WC Insurance,financial,21.81
+P-WE-010,West,Alice Brown,WC Insurance,operations,30.75
+P-WE-010,West,Alice Brown,WC Insurance,quality,7.8
+P-WE-010,West,Alice Brown,WC Insurance,safety,33
+P-NE-011,Northeast,John Doe,BR Insurance,communication,41.5
+P-NE-011,Northeast,John Doe,BR Insurance,financial,29.85
+P-NE-011,Northeast,John Doe,BR Insurance,operations,17.25
+P-NE-011,Northeast,John Doe,BR Insurance,quality,42.1
+P-NE-011,Northeast,John Doe,BR Insurance,safety,37.8
+P-NE-011,Northeast,John Doe,CA Insurance,communication,34.7
+P-NE-011,Northeast,John Doe,CA Insurance,financial,37.64
+P-NE-011,Northeast,John Doe,CA Insurance,operations,48.7
+P-NE-011,Northeast,John Doe,CA Insurance,quality,39.7
+P-NE-011,Northeast,John Doe,CA Insurance,safety,44.5
+P-NE-011,Northeast,John Doe,Cost,communication,39.75
+P-NE-011,Northeast,John Doe,Cost,financial,30.62
+P-NE-011,Northeast,John Doe,Cost,operations,27.55
+P-NE-011,Northeast,John Doe,Cost,quality,62.6
+P-NE-011,Northeast,John Doe,Cost,safety,39.2
+P-NE-011,Northeast,John Doe,GL Insurance,communication,54.95
+P-NE-011,Northeast,John Doe,GL Insurance,financial,25.3
+P-NE-011,Northeast,John Doe,GL Insurance,operations,44.75
+P-NE-011,Northeast,John Doe,GL Insurance,quality,19.5
+P-NE-011,Northeast,John Doe,GL Insurance,safety,50.15
+P-NE-011,Northeast,John Doe,Safety,communication,19.15
+P-NE-011,Northeast,John Doe,Safety,financial,36.05
+P-NE-011,Northeast,John Doe,Safety,operations,51.95
+P-NE-011,Northeast,John Doe,Safety,quality,15.3
+P-NE-011,Northeast,John Doe,Safety,safety,44.85
+P-NE-011,Northeast,John Doe,Schedule,communication,43.25
+P-NE-011,Northeast,John Doe,Schedule,financial,23.1
+P-NE-011,Northeast,John Doe,Schedule,operations,59.3
+P-NE-011,Northeast,John Doe,Schedule,quality,42.2
+P-NE-011,Northeast,John Doe,Schedule,safety,58.15
+P-NE-011,Northeast,John Doe,WC Insurance,communication,38.55
+P-NE-011,Northeast,John Doe,WC Insurance,financial,39.82
+P-NE-011,Northeast,John Doe,WC Insurance,operations,45.3
+P-NE-011,Northeast,John Doe,WC Insurance,quality,49.7
+P-NE-011,Northeast,John Doe,WC Insurance,safety,47
+P-SE-012,Southeast,Jane Smith,BR Insurance,communication,11.7
+P-SE-012,Southeast,Jane Smith,BR Insurance,financial,19.5
+P-SE-012,Southeast,Jane Smith,BR Insurance,operations,29.05
+P-SE-012,Southeast,Jane Smith,BR Insurance,quality,17.75
+P-SE-012,Southeast,Jane Smith,BR Insurance,safety,15.2
+P-SE-012,Southeast,Jane Smith,CA Insurance,communication,8.5
+P-SE-012,Southeast,Jane Smith,CA Insurance,financial,38.78
+P-SE-012,Southeast,Jane Smith,CA Insurance,operations,7.95
+P-SE-012,Southeast,Jane Smith,CA Insurance,quality,11.9
+P-SE-012,Southeast,Jane Smith,CA Insurance,safety,23.1
+P-SE-012,Southeast,Jane Smith,Cost,communication,8.65
+P-SE-012,Southeast,Jane Smith,Cost,financial,14.64
+P-SE-012,Southeast,Jane Smith,Cost,operations,32.5
+P-SE-012,Southeast,Jane Smith,Cost,quality,14.65
+P-SE-012,Southeast,Jane Smith,Cost,safety,12
+P-SE-012,Southeast,Jane Smith,GL Insurance,communication,27.55
+P-SE-012,Southeast,Jane Smith,GL Insurance,financial,38.16
+P-SE-012,Southeast,Jane Smith,GL Insurance,operations,17.95
+P-SE-012,Southeast,Jane Smith,GL Insurance,quality,18.4
+P-SE-012,Southeast,Jane Smith,GL Insurance,safety,20.5
+P-SE-012,Southeast,Jane Smith,Safety,communication,16.5
+P-SE-012,Southeast,Jane Smith,Safety,financial,16.2
+P-SE-012,Southeast,Jane Smith,Safety,operations,19.55
+P-SE-012,Southeast,Jane Smith,Safety,quality,8.5
+P-SE-012,Southeast,Jane Smith,Safety,safety,22.2
+P-SE-012,Southeast,Jane Smith,Schedule,communication,21.65
+P-SE-012,Southeast,Jane Smith,Schedule,financial,31.65
+P-SE-012,Southeast,Jane Smith,Schedule,operations,17.7
+P-SE-012,Southeast,Jane Smith,Schedule,quality,11.4
+P-SE-012,Southeast,Jane Smith,Schedule,safety,18.6
+P-SE-012,Southeast,Jane Smith,WC Insurance,communication,22.4
+P-SE-012,Southeast,Jane Smith,WC Insurance,financial,34.17
+P-SE-012,Southeast,Jane Smith,WC Insurance,operations,17.15
+P-SE-012,Southeast,Jane Smith,WC Insurance,quality,7.3
+P-SE-012,Southeast,Jane Smith,WC Insurance,safety,21.55
+P-MW-013,Midwest,Mike Johnson,BR Insurance,communication,36.4
+P-MW-013,Midwest,Mike Johnson,BR Insurance,financial,42.1
+P-MW-013,Midwest,Mike Johnson,BR Insurance,operations,38.55
+P-MW-013,Midwest,Mike Johnson,BR Insurance,quality,45.8
+P-MW-013,Midwest,Mike Johnson,BR Insurance,safety,30.75
+P-MW-013,Midwest,Mike Johnson,CA Insurance,communication,20
+P-MW-013,Midwest,Mike Johnson,CA Insurance,financial,30.68
+P-MW-013,Midwest,Mike Johnson,CA Insurance,operations,53.65
+P-MW-013,Midwest,Mike Johnson,CA Insurance,quality,45.1
+P-MW-013,Midwest,Mike Johnson,CA Insurance,safety,39.9
+P-MW-013,Midwest,Mike Johnson,Cost,communication,47.1
+P-MW-013,Midwest,Mike Johnson,Cost,financial,47.2
+P-MW-013,Midwest,Mike Johnson,Cost,operations,32.1
+P-MW-013,Midwest,Mike Johnson,Cost,quality,41
+P-MW-013,Midwest,Mike Johnson,Cost,safety,17.2
+P-MW-013,Midwest,Mike Johnson,GL Insurance,communication,48.15
+P-MW-013,Midwest,Mike Johnson,GL Insurance,financial,28.25
+P-MW-013,Midwest,Mike Johnson,GL Insurance,operations,26.5
+P-MW-013,Midwest,Mike Johnson,GL Insurance,quality,24.5
+P-MW-013,Midwest,Mike Johnson,GL Insurance,safety,46.1
+P-MW-013,Midwest,Mike Johnson,Safety,communication,22.15
+P-MW-013,Midwest,Mike Johnson,Safety,financial,50.56
+P-MW-013,Midwest,Mike Johnson,Safety,operations,11
+P-MW-013,Midwest,Mike Johnson,Safety,quality,24.4
+P-MW-013,Midwest,Mike Johnson,Safety,safety,14.2
+P-MW-013,Midwest,Mike Johnson,Schedule,communication,32.25
+P-MW-013,Midwest,Mike Johnson,Schedule,financial,37.35
+P-MW-013,Midwest,Mike Johnson,Schedule,operations,35.2
+P-MW-013,Midwest,Mike Johnson,Schedule,quality,31.75
+P-MW-013,Midwest,Mike Johnson,Schedule,safety,24.85
+P-MW-013,Midwest,Mike Johnson,WC Insurance,communication,52.05
+P-MW-013,Midwest,Mike Johnson,WC Insurance,financial,53.1
+P-MW-013,Midwest,Mike Johnson,WC Insurance,operations,44.05
+P-MW-013,Midwest,Mike Johnson,WC Insurance,quality,55.5
+P-MW-013,Midwest,Mike Johnson,WC Insurance,safety,46.1
+P-WE-014,West,Alice Brown,BR Insurance,communication,14.8
+P-WE-014,West,Alice Brown,BR Insurance,financial,17.95
+P-WE-014,West,Alice Brown,BR Insurance,operations,17.75
+P-WE-014,West,Alice Brown,BR Insurance,quality,13.8
+P-WE-014,West,Alice Brown,BR Insurance,safety,10.2
+P-WE-014,West,Alice Brown,CA Insurance,communication,19
+P-WE-014,West,Alice Brown,CA Insurance,financial,22.94
+P-WE-014,West,Alice Brown,CA Insurance,operations,39
+P-WE-014,West,Alice Brown,CA Insurance,quality,20.3
+P-WE-014,West,Alice Brown,CA Insurance,safety,18.4
+P-WE-014,West,Alice Brown,Cost,communication,14.2
+P-WE-014,West,Alice Brown,Cost,financial,13.93
+P-WE-014,West,Alice Brown,Cost,operations,13.6
+P-WE-014,West,Alice Brown,Cost,quality,12.85
+P-WE-014,West,Alice Brown,Cost,safety,25.15
+P-WE-014,West,Alice Brown,GL Insurance,communication,13
+P-WE-014,West,Alice Brown,GL Insurance,financial,12.69
+P-WE-014,West,Alice Brown,GL Insurance,operations,25.3
+P-WE-014,West,Alice Brown,GL Insurance,quality,28.2
+P-WE-014,West,Alice Brown,GL Insurance,safety,20.9
+P-WE-014,West,Alice Brown,Safety,communication,9.15
+P-WE-014,West,Alice Brown,Safety,financial,20.3
+P-WE-014,West,Alice Brown,Safety,operations,11.15
+P-WE-014,West,Alice Brown,Safety,quality,13.9
+P-WE-014,West,Alice Brown,Safety,safety,22.6
+P-WE-014,West,Alice Brown,Schedule,communication,19.4
+P-WE-014,West,Alice Brown,Schedule,financial,26.15
+P-WE-014,West,Alice Brown,Schedule,operations,16.55
+P-WE-014,West,Alice Brown,Schedule,quality,24.8
+P-WE-014,West,Alice Brown,Schedule,safety,21.05
+P-WE-014,West,Alice Brown,WC Insurance,communication,15.1
+P-WE-014,West,Alice Brown,WC Insurance,financial,31.11
+P-WE-014,West,Alice Brown,WC Insurance,operations,24.35
+P-WE-014,West,Alice Brown,WC Insurance,quality,23.4
+P-WE-014,West,Alice Brown,WC Insurance,safety,31.85
+P-NE-015,Northeast,John Doe,BR Insurance,communication,26.6
+P-NE-015,Northeast,John Doe,BR Insurance,financial,10
+P-NE-015,Northeast,John Doe,BR Insurance,operations,27.2
+P-NE-015,Northeast,John Doe,BR Insurance,quality,26.15
+P-NE-015,Northeast,John Doe,BR Insurance,safety,10.7
+P-NE-015,Northeast,John Doe,CA Insurance,communication,35
+P-NE-015,Northeast,John Doe,CA Insurance,financial,38.41
+P-NE-015,Northeast,John Doe,CA Insurance,operations,38.85
+P-NE-015,Northeast,John Doe,CA Insurance,quality,16.6
+P-NE-015,Northeast,John Doe,CA Insurance,safety,24.5
+P-NE-015,Northeast,John Doe,Cost,communication,23
+P-NE-015,Northeast,John Doe,Cost,financial,20.31
+P-NE-015,Northeast,John Doe,Cost,operations,29.55
+P-NE-015,Northeast,John Doe,Cost,quality,20.65
+P-NE-015,Northeast,John Doe,Cost,safety,19.65
+P-NE-015,Northeast,John Doe,GL Insurance,communication,18.3
+P-NE-015,Northeast,John Doe,GL Insurance,financial,22.42
+P-NE-015,Northeast,John Doe,GL Insurance,operations,35.8
+P-NE-015,Northeast,John Doe,GL Insurance,quality,16.75
+P-NE-015,Northeast,John Doe,GL Insurance,safety,14.75
+P-NE-015,Northeast,John Doe,Safety,communication,16.75
+P-NE-015,Northeast,John Doe,Safety,financial,27.01
+P-NE-015,Northeast,John Doe,Safety,operations,32.15
+P-NE-015,Northeast,John Doe,Safety,quality,10.2
+P-NE-015,Northeast,John Doe,Safety,safety,7.05
+P-NE-015,Northeast,John Doe,Schedule,communication,19.3
+P-NE-015,Northeast,John Doe,Schedule,financial,14.75
+P-NE-015,Northeast,John Doe,Schedule,operations,17.75
+P-NE-015,Northeast,John Doe,Schedule,quality,21.6
+P-NE-015,Northeast,John Doe,Schedule,safety,14.45
+P-NE-015,Northeast,John Doe,WC Insurance,communication,38.75
+P-NE-015,Northeast,John Doe,WC Insurance,financial,24.2
+P-NE-015,Northeast,John Doe,WC Insurance,operations,18.8
+P-NE-015,Northeast,John Doe,WC Insurance,quality,12.7
+P-NE-015,Northeast,John Doe,WC Insurance,safety,38.3
+P-SE-016,Southeast,Jane Smith,BR Insurance,communication,49.9
+P-SE-016,Southeast,Jane Smith,BR Insurance,financial,39.5
+P-SE-016,Southeast,Jane Smith,BR Insurance,operations,32.3
+P-SE-016,Southeast,Jane Smith,BR Insurance,quality,29.75
+P-SE-016,Southeast,Jane Smith,BR Insurance,safety,16.6
+P-SE-016,Southeast,Jane Smith,CA Insurance,communication,30
+P-SE-016,Southeast,Jane Smith,CA Insurance,financial,40.43
+P-SE-016,Southeast,Jane Smith,CA Insurance,operations,34.35
+P-SE-016,Southeast,Jane Smith,CA Insurance,quality,23.4
+P-SE-016,Southeast,Jane Smith,CA Insurance,safety,50.2
+P-SE-016,Southeast,Jane Smith,Cost,communication,50.1
+P-SE-016,Southeast,Jane Smith,Cost,financial,23.39
+P-SE-016,Southeast,Jane Smith,Cost,operations,15
+P-SE-016,Southeast,Jane Smith,Cost,quality,42.1
+P-SE-016,Southeast,Jane Smith,Cost,safety,39.15
+P-SE-016,Southeast,Jane Smith,GL Insurance,communication,27.65
+P-SE-016,Southeast,Jane Smith,GL Insurance,financial,13.15
+P-SE-016,Southeast,Jane Smith,GL Insurance,operations,43.5
+P-SE-016,Southeast,Jane Smith,GL Insurance,quality,54.55
+P-SE-016,Southeast,Jane Smith,GL Insurance,safety,26.65
+P-SE-016,Southeast,Jane Smith,Safety,communication,12.75
+P-SE-016,Southeast,Jane Smith,Safety,financial,36.52
+P-SE-016,Southeast,Jane Smith,Safety,operations,41.2
+P-SE-016,Southeast,Jane Smith,Safety,quality,12.7
+P-SE-016,Southeast,Jane Smith,Safety,safety,40.35
+P-SE-016,Southeast,Jane Smith,Schedule,communication,15.65
+P-SE-016,Southeast,Jane Smith,Schedule,financial,17.7
+P-SE-016,Southeast,Jane Smith,Schedule,operations,31.8
+P-SE-016,Southeast,Jane Smith,Schedule,quality,40.05
+P-SE-016,Southeast,Jane Smith,Schedule,safety,22.35
+P-SE-016,Southeast,Jane Smith,WC Insurance,communication,27.15
+P-SE-016,Southeast,Jane Smith,WC Insurance,financial,47.5
+P-SE-016,Southeast,Jane Smith,WC Insurance,operations,43.3
+P-SE-016,Southeast,Jane Smith,WC Insurance,quality,47.5
+P-SE-016,Southeast,Jane Smith,WC Insurance,safety,22.65
+P-MW-017,Midwest,Mike Johnson,BR Insurance,communication,13.15
+P-MW-017,Midwest,Mike Johnson,BR Insurance,financial,14.85
+P-MW-017,Midwest,Mike Johnson,BR Insurance,operations,11
+P-MW-017,Midwest,Mike Johnson,BR Insurance,quality,13.2
+P-MW-017,Midwest,Mike Johnson,BR Insurance,safety,20.35
+P-MW-017,Midwest,Mike Johnson,CA Insurance,communication,14.8
+P-MW-017,Midwest,Mike Johnson,CA Insurance,financial,41.13
+P-MW-017,Midwest,Mike Johnson,CA Insurance,operations,31
+P-MW-017,Midwest,Mike Johnson,CA Insurance,quality,12
+P-MW-017,Midwest,Mike Johnson,CA Insurance,safety,20.4
+P-MW-017,Midwest,Mike Johnson,Cost,communication,37.5
+P-MW-017,Midwest,Mike Johnson,Cost,financial,15.41
+P-MW-017,Midwest,Mike Johnson,Cost,operations,29.35
+P-MW-017,Midwest,Mike Johnson,Cost,quality,10.3
+P-MW-017,Midwest,Mike Johnson,Cost,safety,31.25
+P-MW-017,Midwest,Mike Johnson,GL Insurance,communication,26.4
+P-MW-017,Midwest,Mike Johnson,GL Insurance,financial,20.46
+P-MW-017,Midwest,Mike Johnson,GL Insurance,operations,35.4
+P-MW-017,Midwest,Mike Johnson,GL Insurance,quality,26.25
+P-MW-017,Midwest,Mike Johnson,GL Insurance,safety,16.5
+P-MW-017,Midwest,Mike Johnson,Safety,communication,13.3
+P-MW-017,Midwest,Mike Johnson,Safety,financial,29.29
+P-MW-017,Midwest,Mike Johnson,Safety,operations,20.5
+P-MW-017,Midwest,Mike Johnson,Safety,quality,12.8
+P-MW-017,Midwest,Mike Johnson,Safety,safety,15.85
+P-MW-017,Midwest,Mike Johnson,Schedule,communication,31
+P-MW-017,Midwest,Mike Johnson,Schedule,financial,9.65
+P-MW-017,Midwest,Mike Johnson,Schedule,operations,10.1
+P-MW-017,Midwest,Mike Johnson,Schedule,quality,8.05
+P-MW-017,Midwest,Mike Johnson,Schedule,safety,9.95
+P-MW-017,Midwest,Mike Johnson,WC Insurance,communication,35.25
+P-MW-017,Midwest,Mike Johnson,WC Insurance,financial,13.75
+P-MW-017,Midwest,Mike Johnson,WC Insurance,operations,12.85
+P-MW-017,Midwest,Mike Johnson,WC Insurance,quality,30
+P-MW-017,Midwest,Mike Johnson,WC Insurance,safety,16.3
+P-WE-018,West,Alice Brown,BR Insurance,communication,38.4
+P-WE-018,West,Alice Brown,BR Insurance,financial,26.1
+P-WE-018,West,Alice Brown,BR Insurance,operations,21.85
+P-WE-018,West,Alice Brown,BR Insurance,quality,22.9
+P-WE-018,West,Alice Brown,BR Insurance,safety,22.5
+P-WE-018,West,Alice Brown,CA Insurance,communication,48
+P-WE-018,West,Alice Brown,CA Insurance,financial,41.13
+P-WE-018,West,Alice Brown,CA Insurance,operations,41.95
+P-WE-018,West,Alice Brown,CA Insurance,quality,21.6
+P-WE-018,West,Alice Brown,CA Insurance,safety,27.9
+P-WE-018,West,Alice Brown,Cost,communication,45.95
+P-WE-018,West,Alice Brown,Cost,financial,59.19
+P-WE-018,West,Alice Brown,Cost,operations,30.35
+P-WE-018,West,Alice Brown,Cost,quality,47.25
+P-WE-018,West,Alice Brown,Cost,safety,38.9
+P-WE-018,West,Alice Brown,GL Insurance,communication,41.65
+P-WE-018,West,Alice Brown,GL Insurance,financial,49.52
+P-WE-018,West,Alice Brown,GL Insurance,operations,48.75
+P-WE-018,West,Alice Brown,GL Insurance,quality,33.65
+P-WE-018,West,Alice Brown,GL Insurance,safety,52.5
+P-WE-018,West,Alice Brown,Safety,communication,15.7
+P-WE-018,West,Alice Brown,Safety,financial,18.47
+P-WE-018,West,Alice Brown,Safety,operations,43.7
+P-WE-018,West,Alice Brown,Safety,quality,30.1
+P-WE-018,West,Alice Brown,Safety,safety,45.95
+P-WE-018,West,Alice Brown,Schedule,communication,48.3
+P-WE-018,West,Alice Brown,Schedule,financial,22.15
+P-WE-018,West,Alice Brown,Schedule,operations,53.5
+P-WE-018,West,Alice Brown,Schedule,quality,54.3
+P-WE-018,West,Alice Brown,Schedule,safety,32.6
+P-WE-018,West,Alice Brown,WC Insurance,communication,26.95
+P-WE-018,West,Alice Brown,WC Insurance,financial,47.45
+P-WE-018,West,Alice Brown,WC Insurance,operations,23.65
+P-WE-018,West,Alice Brown,WC Insurance,quality,58.8
+P-WE-018,West,Alice Brown,WC Insurance,safety,25.65
+P-NE-019,Northeast,John Doe,BR Insurance,communication,4.65
+P-NE-019,Northeast,John Doe,BR Insurance,financial,16.4
+P-NE-019,Northeast,John Doe,BR Insurance,operations,21.8
+P-NE-019,Northeast,John Doe,BR Insurance,quality,16.2
+P-NE-019,Northeast,John Doe,BR Insurance,safety,19.35
+P-NE-019,Northeast,John Doe,CA Insurance,communication,44.6
+P-NE-019,Northeast,John Doe,CA Insurance,financial,22.5
+P-NE-019,Northeast,John Doe,CA Insurance,operations,24.65
+P-NE-019,Northeast,John Doe,CA Insurance,quality,16.8
+P-NE-019,Northeast,John Doe,CA Insurance,safety,35.8
+P-NE-019,Northeast,John Doe,Cost,communication,20.25
+P-NE-019,Northeast,John Doe,Cost,financial,22.22
+P-NE-019,Northeast,John Doe,Cost,operations,19.55
+P-NE-019,Northeast,John Doe,Cost,quality,19.7
+P-NE-019,Northeast,John Doe,Cost,safety,17.3
+P-NE-019,Northeast,John Doe,GL Insurance,communication,26.05
+P-NE-019,Northeast,John Doe,GL Insurance,financial,23.25
+P-NE-019,Northeast,John Doe,GL Insurance,operations,25.55
+P-NE-019,Northeast,John Doe,GL Insurance,quality,39.85
+P-NE-019,Northeast,John Doe,GL Insurance,safety,40.8
+P-NE-019,Northeast,John Doe,Safety,communication,33.5
+P-NE-019,Northeast,John Doe,Safety,financial,14.2
+P-NE-019,Northeast,John Doe,Safety,operations,26.85
+P-NE-019,Northeast,John Doe,Safety,quality,24.2
+P-NE-019,Northeast,John Doe,Safety,safety,34.45
+P-NE-019,Northeast,John Doe,Schedule,communication,7.4
+P-NE-019,Northeast,John Doe,Schedule,financial,10.9
+P-NE-019,Northeast,John Doe,Schedule,operations,41.1
+P-NE-019,Northeast,John Doe,Schedule,quality,31.75
+P-NE-019,Northeast,John Doe,Schedule,safety,19.5
+P-NE-019,Northeast,John Doe,WC Insurance,communication,39.65
+P-NE-019,Northeast,John Doe,WC Insurance,financial,26.06
+P-NE-019,Northeast,John Doe,WC Insurance,operations,13.85
+P-NE-019,Northeast,John Doe,WC Insurance,quality,12.2
+P-NE-019,Northeast,John Doe,WC Insurance,safety,39.35
+P-SE-020,Southeast,Jane Smith,BR Insurance,communication,28.35
+P-SE-020,Southeast,Jane Smith,BR Insurance,financial,38.3
+P-SE-020,Southeast,Jane Smith,BR Insurance,operations,23.05
+P-SE-020,Southeast,Jane Smith,BR Insurance,quality,23.55
+P-SE-020,Southeast,Jane Smith,BR Insurance,safety,29.15
+P-SE-020,Southeast,Jane Smith,CA Insurance,communication,30
+P-SE-020,Southeast,Jane Smith,CA Insurance,financial,18.56
+P-SE-020,Southeast,Jane Smith,CA Insurance,operations,22.9
+P-SE-020,Southeast,Jane Smith,CA Insurance,quality,26
+P-SE-020,Southeast,Jane Smith,CA Insurance,safety,40.6
+P-SE-020,Southeast,Jane Smith,Cost,communication,19.6
+P-SE-020,Southeast,Jane Smith,Cost,financial,13.64
+P-SE-020,Southeast,Jane Smith,Cost,operations,14.15
+P-SE-020,Southeast,Jane Smith,Cost,quality,34.8
+P-SE-020,Southeast,Jane Smith,Cost,safety,41.65
+P-SE-020,Southeast,Jane Smith,GL Insurance,communication,13.65
+P-SE-020,Southeast,Jane Smith,GL Insurance,financial,16.92
+P-SE-020,Southeast,Jane Smith,GL Insurance,operations,28.25
+P-SE-020,Southeast,Jane Smith,GL Insurance,quality,20.3
+P-SE-020,Southeast,Jane Smith,GL Insurance,safety,10.75
+P-SE-020,Southeast,Jane Smith,Safety,communication,11.85
+P-SE-020,Southeast,Jane Smith,Safety,financial,13.41
+P-SE-020,Southeast,Jane Smith,Safety,operations,16.75
+P-SE-020,Southeast,Jane Smith,Safety,quality,21.9
+P-SE-020,Southeast,Jane Smith,Safety,safety,24.35
+P-SE-020,Southeast,Jane Smith,Schedule,communication,22.75
+P-SE-020,Southeast,Jane Smith,Schedule,financial,22.3
+P-SE-020,Southeast,Jane Smith,Schedule,operations,23.5
+P-SE-020,Southeast,Jane Smith,Schedule,quality,32.35
+P-SE-020,Southeast,Jane Smith,Schedule,safety,10.85
+P-SE-020,Southeast,Jane Smith,WC Insurance,communication,23.85
+P-SE-020,Southeast,Jane Smith,WC Insurance,financial,14.95
+P-SE-020,Southeast,Jane Smith,WC Insurance,operations,19.3
+P-SE-020,Southeast,Jane Smith,WC Insurance,quality,21
+P-SE-020,Southeast,Jane Smith,WC Insurance,safety,8.75
+P-MW-021,Midwest,Mike Johnson,BR Insurance,communication,51.9
+P-MW-021,Midwest,Mike Johnson,BR Insurance,financial,10.85
+P-MW-021,Midwest,Mike Johnson,BR Insurance,operations,51.4
+P-MW-021,Midwest,Mike Johnson,BR Insurance,quality,40.9
+P-MW-021,Midwest,Mike Johnson,BR Insurance,safety,14.5
+P-MW-021,Midwest,Mike Johnson,CA Insurance,communication,44.8
+P-MW-021,Midwest,Mike Johnson,CA Insurance,financial,29.86
+P-MW-021,Midwest,Mike Johnson,CA Insurance,operations,34.45
+P-MW-021,Midwest,Mike Johnson,CA Insurance,quality,41.8
+P-MW-021,Midwest,Mike Johnson,CA Insurance,safety,50.3
+P-MW-021,Midwest,Mike Johnson,Cost,communication,24.1
+P-MW-021,Midwest,Mike Johnson,Cost,financial,32.24
+P-MW-021,Midwest,Mike Johnson,Cost,operations,23.6
+P-MW-021,Midwest,Mike Johnson,Cost,quality,33.8
+P-MW-021,Midwest,Mike Johnson,Cost,safety,28.95
+P-MW-021,Midwest,Mike Johnson,GL Insurance,communication,30.1
+P-MW-021,Midwest,Mike Johnson,GL Insurance,financial,32.16
+P-MW-021,Midwest,Mike Johnson,GL Insurance,operations,15.8
+P-MW-021,Midwest,Mike Johnson,GL Insurance,quality,15.95
+P-MW-021,Midwest,Mike Johnson,GL Insurance,safety,40.25
+P-MW-021,Midwest,Mike Johnson,Safety,communication,25.55
+P-MW-021,Midwest,Mike Johnson,Safety,financial,27.55
+P-MW-021,Midwest,Mike Johnson,Safety,operations,40.55
+P-MW-021,Midwest,Mike Johnson,Safety,quality,27.1
+P-MW-021,Midwest,Mike Johnson,Safety,safety,38.05
+P-MW-021,Midwest,Mike Johnson,Schedule,communication,23.45
+P-MW-021,Midwest,Mike Johnson,Schedule,financial,22.3
+P-MW-021,Midwest,Mike Johnson,Schedule,operations,34.9
+P-MW-021,Midwest,Mike Johnson,Schedule,quality,54.65
+P-MW-021,Midwest,Mike Johnson,Schedule,safety,40.1
+P-MW-021,Midwest,Mike Johnson,WC Insurance,communication,49.5
+P-MW-021,Midwest,Mike Johnson,WC Insurance,financial,42.02
+P-MW-021,Midwest,Mike Johnson,WC Insurance,operations,13.65
+P-MW-021,Midwest,Mike Johnson,WC Insurance,quality,54.1
+P-MW-021,Midwest,Mike Johnson,WC Insurance,safety,52.6
+P-WE-022,West,Alice Brown,BR Insurance,communication,80.8
+P-WE-022,West,Alice Brown,BR Insurance,financial,76.4
+P-WE-022,West,Alice Brown,BR Insurance,operations,89.55
+P-WE-022,West,Alice Brown,BR Insurance,quality,85.1
+P-WE-022,West,Alice Brown,BR Insurance,safety,86.05
+P-WE-022,West,Alice Brown,CA Insurance,communication,91.2
+P-WE-022,West,Alice Brown,CA Insurance,financial,74.03
+P-WE-022,West,Alice Brown,CA Insurance,operations,87.3
+P-WE-022,West,Alice Brown,CA Insurance,quality,77.5
+P-WE-022,West,Alice Brown,CA Insurance,safety,86.3
+P-WE-022,West,Alice Brown,Cost,communication,78.6
+P-WE-022,West,Alice Brown,Cost,financial,86.34
+P-WE-022,West,Alice Brown,Cost,operations,79.85
+P-WE-022,West,Alice Brown,Cost,quality,85.85
+P-WE-022,West,Alice Brown,Cost,safety,76.9
+P-WE-022,West,Alice Brown,GL Insurance,communication,87.3
+P-WE-022,West,Alice Brown,GL Insurance,financial,84.08
+P-WE-022,West,Alice Brown,GL Insurance,operations,77.35
+P-WE-022,West,Alice Brown,GL Insurance,quality,89.25
+P-WE-022,West,Alice Brown,GL Insurance,safety,82.35
+P-WE-022,West,Alice Brown,Safety,communication,76.55
+P-WE-022,West,Alice Brown,Safety,financial,84.9
+P-WE-022,West,Alice Brown,Safety,operations,90.45
+P-WE-022,West,Alice Brown,Safety,quality,94.1
+P-WE-022,West,Alice Brown,Safety,safety,81.75
+P-WE-022,West,Alice Brown,Schedule,communication,80.35
+P-WE-022,West,Alice Brown,Schedule,financial,79.15
+P-WE-022,West,Alice Brown,Schedule,operations,82.9
+P-WE-022,West,Alice Brown,Schedule,quality,90.2
+P-WE-022,West,Alice Brown,Schedule,safety,64
+P-WE-022,West,Alice Brown,WC Insurance,communication,76.9
+P-WE-022,West,Alice Brown,WC Insurance,financial,82.61
+P-WE-022,West,Alice Brown,WC Insurance,operations,81
+P-WE-022,West,Alice Brown,WC Insurance,quality,88.6
+P-WE-022,West,Alice Brown,WC Insurance,safety,76.4
+P-NE-023,Northeast,John Doe,BR Insurance,communication,17.1
+P-NE-023,Northeast,John Doe,BR Insurance,financial,18.75
+P-NE-023,Northeast,John Doe,BR Insurance,operations,13.95
+P-NE-023,Northeast,John Doe,BR Insurance,quality,14.6
+P-NE-023,Northeast,John Doe,BR Insurance,safety,31.25
+P-NE-023,Northeast,John Doe,CA Insurance,communication,11.4
+P-NE-023,Northeast,John Doe,CA Insurance,financial,30.44
+P-NE-023,Northeast,John Doe,CA Insurance,operations,20.45
+P-NE-023,Northeast,John Doe,CA Insurance,quality,16.6
+P-NE-023,Northeast,John Doe,CA Insurance,safety,26.5
+P-NE-023,Northeast,John Doe,Cost,communication,19.45
+P-NE-023,Northeast,John Doe,Cost,financial,22.82
+P-NE-023,Northeast,John Doe,Cost,operations,13.6
+P-NE-023,Northeast,John Doe,Cost,quality,28.45
+P-NE-023,Northeast,John Doe,Cost,safety,31.45
+P-NE-023,Northeast,John Doe,GL Insurance,communication,12.35
+P-NE-023,Northeast,John Doe,GL Insurance,financial,23.93
+P-NE-023,Northeast,John Doe,GL Insurance,operations,23.1
+P-NE-023,Northeast,John Doe,GL Insurance,quality,28.8
+P-NE-023,Northeast,John Doe,GL Insurance,safety,8.85
+P-NE-023,Northeast,John Doe,Safety,communication,12
+P-NE-023,Northeast,John Doe,Safety,financial,29.06
+P-NE-023,Northeast,John Doe,Safety,operations,15.95
+P-NE-023,Northeast,John Doe,Safety,quality,27
+P-NE-023,Northeast,John Doe,Safety,safety,29.35
+P-NE-023,Northeast,John Doe,Schedule,communication,8.6
+P-NE-023,Northeast,John Doe,Schedule,financial,13.4
+P-NE-023,Northeast,John Doe,Schedule,operations,18.25
+P-NE-023,Northeast,John Doe,Schedule,quality,17.75
+P-NE-023,Northeast,John Doe,Schedule,safety,9.8
+P-NE-023,Northeast,John Doe,WC Insurance,communication,15.5
+P-NE-023,Northeast,John Doe,WC Insurance,financial,29.21
+P-NE-023,Northeast,John Doe,WC Insurance,operations,30.4
+P-NE-023,Northeast,John Doe,WC Insurance,quality,16.7
+P-NE-023,Northeast,John Doe,WC Insurance,safety,25.95
+P-SE-024,Southeast,Jane Smith,BR Insurance,communication,63
+P-SE-024,Southeast,Jane Smith,BR Insurance,financial,41.2
+P-SE-024,Southeast,Jane Smith,BR Insurance,operations,49.5
+P-SE-024,Southeast,Jane Smith,BR Insurance,quality,34.05
+P-SE-024,Southeast,Jane Smith,BR Insurance,safety,33.45
+P-SE-024,Southeast,Jane Smith,CA Insurance,communication,65.6
+P-SE-024,Southeast,Jane Smith,CA Insurance,financial,40.97
+P-SE-024,Southeast,Jane Smith,CA Insurance,operations,46.95
+P-SE-024,Southeast,Jane Smith,CA Insurance,quality,55.7
+P-SE-024,Southeast,Jane Smith,CA Insurance,safety,27.3
+P-SE-024,Southeast,Jane Smith,Cost,communication,37.05
+P-SE-024,Southeast,Jane Smith,Cost,financial,49.51
+P-SE-024,Southeast,Jane Smith,Cost,operations,41.25
+P-SE-024,Southeast,Jane Smith,Cost,quality,45.35
+P-SE-024,Southeast,Jane Smith,Cost,safety,25.95
+P-SE-024,Southeast,Jane Smith,GL Insurance,communication,78
+P-SE-024,Southeast,Jane Smith,GL Insurance,financial,65.22
+P-SE-024,Southeast,Jane Smith,GL Insurance,operations,61.35
+P-SE-024,Southeast,Jane Smith,GL Insurance,quality,45.2
+P-SE-024,Southeast,Jane Smith,GL Insurance,safety,51.1
+P-SE-024,Southeast,Jane Smith,Safety,communication,39.65
+P-SE-024,Southeast,Jane Smith,Safety,financial,52.53
+P-SE-024,Southeast,Jane Smith,Safety,operations,19.25
+P-SE-024,Southeast,Jane Smith,Safety,quality,47.4
+P-SE-024,Southeast,Jane Smith,Safety,safety,16.3
+P-SE-024,Southeast,Jane Smith,Schedule,communication,29.7
+P-SE-024,Southeast,Jane Smith,Schedule,financial,44.25
+P-SE-024,Southeast,Jane Smith,Schedule,operations,26.75
+P-SE-024,Southeast,Jane Smith,Schedule,quality,40
+P-SE-024,Southeast,Jane Smith,Schedule,safety,36.15
+P-SE-024,Southeast,Jane Smith,WC Insurance,communication,53.35
+P-SE-024,Southeast,Jane Smith,WC Insurance,financial,46.95
+P-SE-024,Southeast,Jane Smith,WC Insurance,operations,36.2
+P-SE-024,Southeast,Jane Smith,WC Insurance,quality,13.2
+P-SE-024,Southeast,Jane Smith,WC Insurance,safety,48.45
+P-MW-025,Midwest,Mike Johnson,BR Insurance,communication,25.4
+P-MW-025,Midwest,Mike Johnson,BR Insurance,financial,19.95
+P-MW-025,Midwest,Mike Johnson,BR Insurance,operations,33.8
+P-MW-025,Midwest,Mike Johnson,BR Insurance,quality,16.55
+P-MW-025,Midwest,Mike Johnson,BR Insurance,safety,24.3
+P-MW-025,Midwest,Mike Johnson,CA Insurance,communication,54.5
+P-MW-025,Midwest,Mike Johnson,CA Insurance,financial,11.6
+P-MW-025,Midwest,Mike Johnson,CA Insurance,operations,30.1
+P-MW-025,Midwest,Mike Johnson,CA Insurance,quality,31.4
+P-MW-025,Midwest,Mike Johnson,CA Insurance,safety,11.4
+P-MW-025,Midwest,Mike Johnson,Cost,communication,44.25
+P-MW-025,Midwest,Mike Johnson,Cost,financial,32.93
+P-MW-025,Midwest,Mike Johnson,Cost,operations,42.35
+P-MW-025,Midwest,Mike Johnson,Cost,quality,31.7
+P-MW-025,Midwest,Mike Johnson,Cost,safety,26.95
+P-MW-025,Midwest,Mike Johnson,GL Insurance,communication,40.6
+P-MW-025,Midwest,Mike Johnson,GL Insurance,financial,25.36
+P-MW-025,Midwest,Mike Johnson,GL Insurance,operations,53.35
+P-MW-025,Midwest,Mike Johnson,GL Insurance,quality,45.15
+P-MW-025,Midwest,Mike Johnson,GL Insurance,safety,40.8
+P-MW-025,Midwest,Mike Johnson,Safety,communication,44.5
+P-MW-025,Midwest,Mike Johnson,Safety,financial,30.71
+P-MW-025,Midwest,Mike Johnson,Safety,operations,50.4
+P-MW-025,Midwest,Mike Johnson,Safety,quality,10.7
+P-MW-025,Midwest,Mike Johnson,Safety,safety,18.2
+P-MW-025,Midwest,Mike Johnson,Schedule,communication,35.05
+P-MW-025,Midwest,Mike Johnson,Schedule,financial,35.55
+P-MW-025,Midwest,Mike Johnson,Schedule,operations,17.05
+P-MW-025,Midwest,Mike Johnson,Schedule,quality,30.65
+P-MW-025,Midwest,Mike Johnson,Schedule,safety,30.15
+P-MW-025,Midwest,Mike Johnson,WC Insurance,communication,13.1
+P-MW-025,Midwest,Mike Johnson,WC Insurance,financial,48.04
+P-MW-025,Midwest,Mike Johnson,WC Insurance,operations,43.6
+P-MW-025,Midwest,Mike Johnson,WC Insurance,quality,28.2
+P-MW-025,Midwest,Mike Johnson,WC Insurance,safety,30.5
+P-WE-026,West,Alice Brown,BR Insurance,communication,67.5
+P-WE-026,West,Alice Brown,BR Insurance,financial,86
+P-WE-026,West,Alice Brown,BR Insurance,operations,89.7
+P-WE-026,West,Alice Brown,BR Insurance,quality,75.45
+P-WE-026,West,Alice Brown,BR Insurance,safety,86.45
+P-WE-026,West,Alice Brown,CA Insurance,communication,86.5
+P-WE-026,West,Alice Brown,CA Insurance,financial,55.81
+P-WE-026,West,Alice Brown,CA Insurance,operations,77.05
+P-WE-026,West,Alice Brown,CA Insurance,quality,81.5
+P-WE-026,West,Alice Brown,CA Insurance,safety,83.1
+P-WE-026,West,Alice Brown,Cost,communication,91.3
+P-WE-026,West,Alice Brown,Cost,financial,86.32
+P-WE-026,West,Alice Brown,Cost,operations,69.35
+P-WE-026,West,Alice Brown,Cost,quality,61.1
+P-WE-026,West,Alice Brown,Cost,safety,51.4
+P-WE-026,West,Alice Brown,GL Insurance,communication,77.55
+P-WE-026,West,Alice Brown,GL Insurance,financial,88.39
+P-WE-026,West,Alice Brown,GL Insurance,operations,74.05
+P-WE-026,West,Alice Brown,GL Insurance,quality,84.9
+P-WE-026,West,Alice Brown,GL Insurance,safety,65.6
+P-WE-026,West,Alice Brown,Safety,communication,77.95
+P-WE-026,West,Alice Brown,Safety,financial,67.12
+P-WE-026,West,Alice Brown,Safety,operations,75.95
+P-WE-026,West,Alice Brown,Safety,quality,55.2
+P-WE-026,West,Alice Brown,Safety,safety,69.4
+P-WE-026,West,Alice Brown,Schedule,communication,81
+P-WE-026,West,Alice Brown,Schedule,financial,70
+P-WE-026,West,Alice Brown,Schedule,operations,76.35
+P-WE-026,West,Alice Brown,Schedule,quality,69.9
+P-WE-026,West,Alice Brown,Schedule,safety,74.85
+P-WE-026,West,Alice Brown,WC Insurance,communication,83.9
+P-WE-026,West,Alice Brown,WC Insurance,financial,72.1
+P-WE-026,West,Alice Brown,WC Insurance,operations,84.5
+P-WE-026,West,Alice Brown,WC Insurance,quality,75.5
+P-WE-026,West,Alice Brown,WC Insurance,safety,73.9
+P-NE-027,Northeast,John Doe,BR Insurance,communication,30.15
+P-NE-027,Northeast,John Doe,BR Insurance,financial,55
+P-NE-027,Northeast,John Doe,BR Insurance,operations,62.3
+P-NE-027,Northeast,John Doe,BR Insurance,quality,40.75
+P-NE-027,Northeast,John Doe,BR Insurance,safety,63.3
+P-NE-027,Northeast,John Doe,CA Insurance,communication,46.2
+P-NE-027,Northeast,John Doe,CA Insurance,financial,61.43
+P-NE-027,Northeast,John Doe,CA Insurance,operations,56.1
+P-NE-027,Northeast,John Doe,CA Insurance,quality,43.6
+P-NE-027,Northeast,John Doe,CA Insurance,safety,45.4
+P-NE-027,Northeast,John Doe,Cost,communication,51.15
+P-NE-027,Northeast,John Doe,Cost,financial,59.5
+P-NE-027,Northeast,John Doe,Cost,operations,42.5
+P-NE-027,Northeast,John Doe,Cost,quality,59.3
+P-NE-027,Northeast,John Doe,Cost,safety,51.6
+P-NE-027,Northeast,John Doe,GL Insurance,communication,31.55
+P-NE-027,Northeast,John Doe,GL Insurance,financial,62.22
+P-NE-027,Northeast,John Doe,GL Insurance,operations,46.25
+P-NE-027,Northeast,John Doe,GL Insurance,quality,60.5
+P-NE-027,Northeast,John Doe,GL Insurance,safety,44.6
+P-NE-027,Northeast,John Doe,Safety,communication,36.9
+P-NE-027,Northeast,John Doe,Safety,financial,62.82
+P-NE-027,Northeast,John Doe,Safety,operations,42.15
+P-NE-027,Northeast,John Doe,Safety,quality,58
+P-NE-027,Northeast,John Doe,Safety,safety,36.3
+P-NE-027,Northeast,John Doe,Schedule,communication,50.35
+P-NE-027,Northeast,John Doe,Schedule,financial,60.85
+P-NE-027,Northeast,John Doe,Schedule,operations,43.1
+P-NE-027,Northeast,John Doe,Schedule,quality,64.25
+P-NE-027,Northeast,John Doe,Schedule,safety,32.35
+P-NE-027,Northeast,John Doe,WC Insurance,communication,46.25
+P-NE-027,Northeast,John Doe,WC Insurance,financial,28.25
+P-NE-027,Northeast,John Doe,WC Insurance,operations,30.5
+P-NE-027,Northeast,John Doe,WC Insurance,quality,46.7
+P-NE-027,Northeast,John Doe,WC Insurance,safety,33.9
+P-SE-028,Southeast,Jane Smith,BR Insurance,communication,28.2
+P-SE-028,Southeast,Jane Smith,BR Insurance,financial,53.6
+P-SE-028,Southeast,Jane Smith,BR Insurance,operations,23.45
+P-SE-028,Southeast,Jane Smith,BR Insurance,quality,12.6
+P-SE-028,Southeast,Jane Smith,BR Insurance,safety,49.05
+P-SE-028,Southeast,Jane Smith,CA Insurance,communication,43.7
+P-SE-028,Southeast,Jane Smith,CA Insurance,financial,27.55
+P-SE-028,Southeast,Jane Smith,CA Insurance,operations,37.2
+P-SE-028,Southeast,Jane Smith,CA Insurance,quality,13.2
+P-SE-028,Southeast,Jane Smith,CA Insurance,safety,57.9
+P-SE-028,Southeast,Jane Smith,Cost,communication,28.8
+P-SE-028,Southeast,Jane Smith,Cost,financial,57.81
+P-SE-028,Southeast,Jane Smith,Cost,operations,52.7
+P-SE-028,Southeast,Jane Smith,Cost,quality,66.2
+P-SE-028,Southeast,Jane Smith,Cost,safety,53.65
+P-SE-028,Southeast,Jane Smith,GL Insurance,communication,28.4
+P-SE-028,Southeast,Jane Smith,GL Insurance,financial,66.57
+P-SE-028,Southeast,Jane Smith,GL Insurance,operations,59.45
+P-SE-028,Southeast,Jane Smith,GL Insurance,quality,52.25
+P-SE-028,Southeast,Jane Smith,GL Insurance,safety,49.1
+P-SE-028,Southeast,Jane Smith,Safety,communication,47.15
+P-SE-028,Southeast,Jane Smith,Safety,financial,29.39
+P-SE-028,Southeast,Jane Smith,Safety,operations,48.6
+P-SE-028,Southeast,Jane Smith,Safety,quality,16.8
+P-SE-028,Southeast,Jane Smith,Safety,safety,42.55
+P-SE-028,Southeast,Jane Smith,Schedule,communication,52.4
+P-SE-028,Southeast,Jane Smith,Schedule,financial,52.4
+P-SE-028,Southeast,Jane Smith,Schedule,operations,17.85
+P-SE-028,Southeast,Jane Smith,Schedule,quality,60.45
+P-SE-028,Southeast,Jane Smith,Schedule,safety,33.55
+P-SE-028,Southeast,Jane Smith,WC Insurance,communication,52.3
+P-SE-028,Southeast,Jane Smith,WC Insurance,financial,40.82
+P-SE-028,Southeast,Jane Smith,WC Insurance,operations,34.4
+P-SE-028,Southeast,Jane Smith,WC Insurance,quality,20.9
+P-SE-028,Southeast,Jane Smith,WC Insurance,safety,52.25
+P-MW-029,Midwest,Mike Johnson,BR Insurance,communication,57.1
+P-MW-029,Midwest,Mike Johnson,BR Insurance,financial,76.35
+P-MW-029,Midwest,Mike Johnson,BR Insurance,operations,50.95
+P-MW-029,Midwest,Mike Johnson,BR Insurance,quality,59.3
+P-MW-029,Midwest,Mike Johnson,BR Insurance,safety,42.1
+P-MW-029,Midwest,Mike Johnson,CA Insurance,communication,84.8
+P-MW-029,Midwest,Mike Johnson,CA Insurance,financial,61.7
+P-MW-029,Midwest,Mike Johnson,CA Insurance,operations,78.5
+P-MW-029,Midwest,Mike Johnson,CA Insurance,quality,71.5
+P-MW-029,Midwest,Mike Johnson,CA Insurance,safety,75.6
+P-MW-029,Midwest,Mike Johnson,Cost,communication,58.8
+P-MW-029,Midwest,Mike Johnson,Cost,financial,71.5
+P-MW-029,Midwest,Mike Johnson,Cost,operations,86.75
+P-MW-029,Midwest,Mike Johnson,Cost,quality,83.15
+P-MW-029,Midwest,Mike Johnson,Cost,safety,68.65
+P-MW-029,Midwest,Mike Johnson,GL Insurance,communication,87.6
+P-MW-029,Midwest,Mike Johnson,GL Insurance,financial,90
+P-MW-029,Midwest,Mike Johnson,GL Insurance,operations,62.75
+P-MW-029,Midwest,Mike Johnson,GL Insurance,quality,75.45
+P-MW-029,Midwest,Mike Johnson,GL Insurance,safety,66.3
+P-MW-029,Midwest,Mike Johnson,Safety,communication,90.3
+P-MW-029,Midwest,Mike Johnson,Safety,financial,49.9
+P-MW-029,Midwest,Mike Johnson,Safety,operations,62.8
+P-MW-029,Midwest,Mike Johnson,Safety,quality,40.5
+P-MW-029,Midwest,Mike Johnson,Safety,safety,69.75
+P-MW-029,Midwest,Mike Johnson,Schedule,communication,64.95
+P-MW-029,Midwest,Mike Johnson,Schedule,financial,62.8
+P-MW-029,Midwest,Mike Johnson,Schedule,operations,41.45
+P-MW-029,Midwest,Mike Johnson,Schedule,quality,87.35
+P-MW-029,Midwest,Mike Johnson,Schedule,safety,52.1
+P-MW-029,Midwest,Mike Johnson,WC Insurance,communication,66.4
+P-MW-029,Midwest,Mike Johnson,WC Insurance,financial,80.95
+P-MW-029,Midwest,Mike Johnson,WC Insurance,operations,49.25
+P-MW-029,Midwest,Mike Johnson,WC Insurance,quality,83.3
+P-MW-029,Midwest,Mike Johnson,WC Insurance,safety,75.8
+P-WE-030,West,Alice Brown,BR Insurance,communication,77.8
+P-WE-030,West,Alice Brown,BR Insurance,financial,55.7
+P-WE-030,West,Alice Brown,BR Insurance,operations,69.85
+P-WE-030,West,Alice Brown,BR Insurance,quality,59.4
+P-WE-030,West,Alice Brown,BR Insurance,safety,68.15
+P-WE-030,West,Alice Brown,CA Insurance,communication,33.7
+P-WE-030,West,Alice Brown,CA Insurance,financial,81.25
+P-WE-030,West,Alice Brown,CA Insurance,operations,63.8
+P-WE-030,West,Alice Brown,CA Insurance,quality,46.3
+P-WE-030,West,Alice Brown,CA Insurance,safety,50.9
+P-WE-030,West,Alice Brown,Cost,communication,40.2
+P-WE-030,West,Alice Brown,Cost,financial,58.02
+P-WE-030,West,Alice Brown,Cost,operations,56.2
+P-WE-030,West,Alice Brown,Cost,quality,44.95
+P-WE-030,West,Alice Brown,Cost,safety,71.8
+P-WE-030,West,Alice Brown,GL Insurance,communication,57.8
+P-WE-030,West,Alice Brown,GL Insurance,financial,44.71
+P-WE-030,West,Alice Brown,GL Insurance,operations,64.25
+P-WE-030,West,Alice Brown,GL Insurance,quality,50.25
+P-WE-030,West,Alice Brown,GL Insurance,safety,64.65
+P-WE-030,West,Alice Brown,Safety,communication,36.1
+P-WE-030,West,Alice Brown,Safety,financial,28.65
+P-WE-030,West,Alice Brown,Safety,operations,66.4
+P-WE-030,West,Alice Brown,Safety,quality,34.4
+P-WE-030,West,Alice Brown,Safety,safety,64.85
+P-WE-030,West,Alice Brown,Schedule,communication,67.8
+P-WE-030,West,Alice Brown,Schedule,financial,45.1
+P-WE-030,West,Alice Brown,Schedule,operations,35.55
+P-WE-030,West,Alice Brown,Schedule,quality,48.75
+P-WE-030,West,Alice Brown,Schedule,safety,61.55
+P-WE-030,West,Alice Brown,WC Insurance,communication,43.95
+P-WE-030,West,Alice Brown,WC Insurance,financial,48.18
+P-WE-030,West,Alice Brown,WC Insurance,operations,76.05
+P-WE-030,West,Alice Brown,WC Insurance,quality,45.3
+P-WE-030,West,Alice Brown,WC Insurance,safety,62.55
+P-NE-031,Northeast,John Doe,BR Insurance,communication,32.5
+P-NE-031,Northeast,John Doe,BR Insurance,financial,61.7
+P-NE-031,Northeast,John Doe,BR Insurance,operations,78.1
+P-NE-031,Northeast,John Doe,BR Insurance,quality,64.7
+P-NE-031,Northeast,John Doe,BR Insurance,safety,47.75
+P-NE-031,Northeast,John Doe,CA Insurance,communication,53.4
+P-NE-031,Northeast,John Doe,CA Insurance,financial,57.38
+P-NE-031,Northeast,John Doe,CA Insurance,operations,45.45
+P-NE-031,Northeast,John Doe,CA Insurance,quality,34.9
+P-NE-031,Northeast,John Doe,CA Insurance,safety,52.2
+P-NE-031,Northeast,John Doe,Cost,communication,64.35
+P-NE-031,Northeast,John Doe,Cost,financial,55.79
+P-NE-031,Northeast,John Doe,Cost,operations,34.35
+P-NE-031,Northeast,John Doe,Cost,quality,55.8
+P-NE-031,Northeast,John Doe,Cost,safety,45.65
+P-NE-031,Northeast,John Doe,GL Insurance,communication,75
+P-NE-031,Northeast,John Doe,GL Insurance,financial,47.95
+P-NE-031,Northeast,John Doe,GL Insurance,operations,45.15
+P-NE-031,Northeast,John Doe,GL Insurance,quality,74.9
+P-NE-031,Northeast,John Doe,GL Insurance,safety,58
+P-NE-031,Northeast,John Doe,Safety,communication,43.8
+P-NE-031,Northeast,John Doe,Safety,financial,55.15
+P-NE-031,Northeast,John Doe,Safety,operations,66.2
+P-NE-031,Northeast,John Doe,Safety,quality,34.8
+P-NE-031,Northeast,John Doe,Safety,safety,34.1
+P-NE-031,Northeast,John Doe,Schedule,communication,63.55
+P-NE-031,Northeast,John Doe,Schedule,financial,55.15
+P-NE-031,Northeast,John Doe,Schedule,operations,58.5
+P-NE-031,Northeast,John Doe,Schedule,quality,71.6
+P-NE-031,Northeast,John Doe,Schedule,safety,55.65
+P-NE-031,Northeast,John Doe,WC Insurance,communication,70.6
+P-NE-031,Northeast,John Doe,WC Insurance,financial,39.66
+P-NE-031,Northeast,John Doe,WC Insurance,operations,47.5
+P-NE-031,Northeast,John Doe,WC Insurance,quality,51
+P-NE-031,Northeast,John Doe,WC Insurance,safety,50
+P-SE-032,Southeast,Jane Smith,BR Insurance,communication,17.7
+P-SE-032,Southeast,Jane Smith,BR Insurance,financial,25.35
+P-SE-032,Southeast,Jane Smith,BR Insurance,operations,42.85
+P-SE-032,Southeast,Jane Smith,BR Insurance,quality,27.85
+P-SE-032,Southeast,Jane Smith,BR Insurance,safety,46.85
+P-SE-032,Southeast,Jane Smith,CA Insurance,communication,39.8
+P-SE-032,Southeast,Jane Smith,CA Insurance,financial,36.46
+P-SE-032,Southeast,Jane Smith,CA Insurance,operations,46.05
+P-SE-032,Southeast,Jane Smith,CA Insurance,quality,34
+P-SE-032,Southeast,Jane Smith,CA Insurance,safety,47
+P-SE-032,Southeast,Jane Smith,Cost,communication,20.9
+P-SE-032,Southeast,Jane Smith,Cost,financial,16.97
+P-SE-032,Southeast,Jane Smith,Cost,operations,50.05
+P-SE-032,Southeast,Jane Smith,Cost,quality,18.85
+P-SE-032,Southeast,Jane Smith,Cost,safety,54.95
+P-SE-032,Southeast,Jane Smith,GL Insurance,communication,42.55
+P-SE-032,Southeast,Jane Smith,GL Insurance,financial,39.67
+P-SE-032,Southeast,Jane Smith,GL Insurance,operations,35.9
+P-SE-032,Southeast,Jane Smith,GL Insurance,quality,27.9
+P-SE-032,Southeast,Jane Smith,GL Insurance,safety,40.15
+P-SE-032,Southeast,Jane Smith,Safety,communication,24.2
+P-SE-032,Southeast,Jane Smith,Safety,financial,31.84
+P-SE-032,Southeast,Jane Smith,Safety,operations,31.9
+P-SE-032,Southeast,Jane Smith,Safety,quality,40.5
+P-SE-032,Southeast,Jane Smith,Safety,safety,21.4
+P-SE-032,Southeast,Jane Smith,Schedule,communication,19.6
+P-SE-032,Southeast,Jane Smith,Schedule,financial,33.4
+P-SE-032,Southeast,Jane Smith,Schedule,operations,12.25
+P-SE-032,Southeast,Jane Smith,Schedule,quality,31.3
+P-SE-032,Southeast,Jane Smith,Schedule,safety,32.7
+P-SE-032,Southeast,Jane Smith,WC Insurance,communication,33.1
+P-SE-032,Southeast,Jane Smith,WC Insurance,financial,35.84
+P-SE-032,Southeast,Jane Smith,WC Insurance,operations,45.3
+P-SE-032,Southeast,Jane Smith,WC Insurance,quality,42.3
+P-SE-032,Southeast,Jane Smith,WC Insurance,safety,59.7
+P-MW-033,Midwest,Mike Johnson,BR Insurance,communication,72.4
+P-MW-033,Midwest,Mike Johnson,BR Insurance,financial,79.1
+P-MW-033,Midwest,Mike Johnson,BR Insurance,operations,90.1
+P-MW-033,Midwest,Mike Johnson,BR Insurance,quality,93.1
+P-MW-033,Midwest,Mike Johnson,BR Insurance,safety,89.65
+P-MW-033,Midwest,Mike Johnson,CA Insurance,communication,86.1
+P-MW-033,Midwest,Mike Johnson,CA Insurance,financial,80.81
+P-MW-033,Midwest,Mike Johnson,CA Insurance,operations,78.55
+P-MW-033,Midwest,Mike Johnson,CA Insurance,quality,84.5
+P-MW-033,Midwest,Mike Johnson,CA Insurance,safety,81
+P-MW-033,Midwest,Mike Johnson,Cost,communication,71.45
+P-MW-033,Midwest,Mike Johnson,Cost,financial,77.31
+P-MW-033,Midwest,Mike Johnson,Cost,operations,71.7
+P-MW-033,Midwest,Mike Johnson,Cost,quality,87.25
+P-MW-033,Midwest,Mike Johnson,Cost,safety,88.25
+P-MW-033,Midwest,Mike Johnson,GL Insurance,communication,73.7
+P-MW-033,Midwest,Mike Johnson,GL Insurance,financial,82.22
+P-MW-033,Midwest,Mike Johnson,GL Insurance,operations,90.5
+P-MW-033,Midwest,Mike Johnson,GL Insurance,quality,89.25
+P-MW-033,Midwest,Mike Johnson,GL Insurance,safety,79.6
+P-MW-033,Midwest,Mike Johnson,Safety,communication,84.45
+P-MW-033,Midwest,Mike Johnson,Safety,financial,70.94
+P-MW-033,Midwest,Mike Johnson,Safety,operations,84.1
+P-MW-033,Midwest,Mike Johnson,Safety,quality,77.5
+P-MW-033,Midwest,Mike Johnson,Safety,safety,67.2
+P-MW-033,Midwest,Mike Johnson,Schedule,communication,91.25
+P-MW-033,Midwest,Mike Johnson,Schedule,financial,87.15
+P-MW-033,Midwest,Mike Johnson,Schedule,operations,84.95
+P-MW-033,Midwest,Mike Johnson,Schedule,quality,92.35
+P-MW-033,Midwest,Mike Johnson,Schedule,safety,95.1
+P-MW-033,Midwest,Mike Johnson,WC Insurance,communication,83.25
+P-MW-033,Midwest,Mike Johnson,WC Insurance,financial,90.62
+P-MW-033,Midwest,Mike Johnson,WC Insurance,operations,94.2
+P-MW-033,Midwest,Mike Johnson,WC Insurance,quality,69.6
+P-MW-033,Midwest,Mike Johnson,WC Insurance,safety,85.95
+P-WE-034,West,Alice Brown,BR Insurance,communication,39
+P-WE-034,West,Alice Brown,BR Insurance,financial,72.65
+P-WE-034,West,Alice Brown,BR Insurance,operations,68.6
+P-WE-034,West,Alice Brown,BR Insurance,quality,52.4
+P-WE-034,West,Alice Brown,BR Insurance,safety,39.35
+P-WE-034,West,Alice Brown,CA Insurance,communication,54.4
+P-WE-034,West,Alice Brown,CA Insurance,financial,52.69
+P-WE-034,West,Alice Brown,CA Insurance,operations,29.5
+P-WE-034,West,Alice Brown,CA Insurance,quality,58.9
+P-WE-034,West,Alice Brown,CA Insurance,safety,66.6
+P-WE-034,West,Alice Brown,Cost,communication,74.55
+P-WE-034,West,Alice Brown,Cost,financial,59.5
+P-WE-034,West,Alice Brown,Cost,operations,44.85
+P-WE-034,West,Alice Brown,Cost,quality,50.95
+P-WE-034,West,Alice Brown,Cost,safety,69.55
+P-WE-034,West,Alice Brown,GL Insurance,communication,31.9
+P-WE-034,West,Alice Brown,GL Insurance,financial,56.28
+P-WE-034,West,Alice Brown,GL Insurance,operations,55.2
+P-WE-034,West,Alice Brown,GL Insurance,quality,37
+P-WE-034,West,Alice Brown,GL Insurance,safety,42.05
+P-WE-034,West,Alice Brown,Safety,communication,39.8
+P-WE-034,West,Alice Brown,Safety,financial,36.85
+P-WE-034,West,Alice Brown,Safety,operations,30.9
+P-WE-034,West,Alice Brown,Safety,quality,53.7
+P-WE-034,West,Alice Brown,Safety,safety,51.6
+P-WE-034,West,Alice Brown,Schedule,communication,38.55
+P-WE-034,West,Alice Brown,Schedule,financial,55.7
+P-WE-034,West,Alice Brown,Schedule,operations,52.3
+P-WE-034,West,Alice Brown,Schedule,quality,54.05
+P-WE-034,West,Alice Brown,Schedule,safety,39.2
+P-WE-034,West,Alice Brown,WC Insurance,communication,46.25
+P-WE-034,West,Alice Brown,WC Insurance,financial,59.14
+P-WE-034,West,Alice Brown,WC Insurance,operations,66.85
+P-WE-034,West,Alice Brown,WC Insurance,quality,34.7
+P-WE-034,West,Alice Brown,WC Insurance,safety,49.95
+P-NE-035,Northeast,John Doe,BR Insurance,communication,26.9
+P-NE-035,Northeast,John Doe,BR Insurance,financial,16.55
+P-NE-035,Northeast,John Doe,BR Insurance,operations,44.95
+P-NE-035,Northeast,John Doe,BR Insurance,quality,36.8
+P-NE-035,Northeast,John Doe,BR Insurance,safety,17
+P-NE-035,Northeast,John Doe,CA Insurance,communication,33
+P-NE-035,Northeast,John Doe,CA Insurance,financial,8.79
+P-NE-035,Northeast,John Doe,CA Insurance,operations,39.2
+P-NE-035,Northeast,John Doe,CA Insurance,quality,45.9
+P-NE-035,Northeast,John Doe,CA Insurance,safety,35.2
+P-NE-035,Northeast,John Doe,Cost,communication,9.85
+P-NE-035,Northeast,John Doe,Cost,financial,53.72
+P-NE-035,Northeast,John Doe,Cost,operations,47.6
+P-NE-035,Northeast,John Doe,Cost,quality,31.7
+P-NE-035,Northeast,John Doe,Cost,safety,42.4
+P-NE-035,Northeast,John Doe,GL Insurance,communication,39.25
+P-NE-035,Northeast,John Doe,GL Insurance,financial,17.78
+P-NE-035,Northeast,John Doe,GL Insurance,operations,25.1
+P-NE-035,Northeast,John Doe,GL Insurance,quality,16.3
+P-NE-035,Northeast,John Doe,GL Insurance,safety,22.75
+P-NE-035,Northeast,John Doe,Safety,communication,16.65
+P-NE-035,Northeast,John Doe,Safety,financial,30.63
+P-NE-035,Northeast,John Doe,Safety,operations,34.6
+P-NE-035,Northeast,John Doe,Safety,quality,18.2
+P-NE-035,Northeast,John Doe,Safety,safety,23.6
+P-NE-035,Northeast,John Doe,Schedule,communication,21.65
+P-NE-035,Northeast,John Doe,Schedule,financial,14.75
+P-NE-035,Northeast,John Doe,Schedule,operations,37.4
+P-NE-035,Northeast,John Doe,Schedule,quality,21.6
+P-NE-035,Northeast,John Doe,Schedule,safety,14.8
+P-NE-035,Northeast,John Doe,WC Insurance,communication,34.95
+P-NE-035,Northeast,John Doe,WC Insurance,financial,18.39
+P-NE-035,Northeast,John Doe,WC Insurance,operations,6.55
+P-NE-035,Northeast,John Doe,WC Insurance,quality,30.2
+P-NE-035,Northeast,John Doe,WC Insurance,safety,52
+P-SE-036,Southeast,Jane Smith,BR Insurance,communication,63.4
+P-SE-036,Southeast,Jane Smith,BR Insurance,financial,45.35
+P-SE-036,Southeast,Jane Smith,BR Insurance,operations,42
+P-SE-036,Southeast,Jane Smith,BR Insurance,quality,41
+P-SE-036,Southeast,Jane Smith,BR Insurance,safety,36.05
+P-SE-036,Southeast,Jane Smith,CA Insurance,communication,44.3
+P-SE-036,Southeast,Jane Smith,CA Insurance,financial,32.64
+P-SE-036,Southeast,Jane Smith,CA Insurance,operations,27.7
+P-SE-036,Southeast,Jane Smith,CA Insurance,quality,51.9
+P-SE-036,Southeast,Jane Smith,CA Insurance,safety,45.3
+P-SE-036,Southeast,Jane Smith,Cost,communication,42.2
+P-SE-036,Southeast,Jane Smith,Cost,financial,55.55
+P-SE-036,Southeast,Jane Smith,Cost,operations,57.35
+P-SE-036,Southeast,Jane Smith,Cost,quality,48.45
+P-SE-036,Southeast,Jane Smith,Cost,safety,36.8
+P-SE-036,Southeast,Jane Smith,GL Insurance,communication,36.75
+P-SE-036,Southeast,Jane Smith,GL Insurance,financial,46.22
+P-SE-036,Southeast,Jane Smith,GL Insurance,operations,22.9
+P-SE-036,Southeast,Jane Smith,GL Insurance,quality,57.05
+P-SE-036,Southeast,Jane Smith,GL Insurance,safety,40.7
+P-SE-036,Southeast,Jane Smith,Safety,communication,27.3
+P-SE-036,Southeast,Jane Smith,Safety,financial,24.51
+P-SE-036,Southeast,Jane Smith,Safety,operations,23
+P-SE-036,Southeast,Jane Smith,Safety,quality,26.3
+P-SE-036,Southeast,Jane Smith,Safety,safety,31.35
+P-SE-036,Southeast,Jane Smith,Schedule,communication,43.6
+P-SE-036,Southeast,Jane Smith,Schedule,financial,30.25
+P-SE-036,Southeast,Jane Smith,Schedule,operations,34.7
+P-SE-036,Southeast,Jane Smith,Schedule,quality,45.85
+P-SE-036,Southeast,Jane Smith,Schedule,safety,50
+P-SE-036,Southeast,Jane Smith,WC Insurance,communication,42.05
+P-SE-036,Southeast,Jane Smith,WC Insurance,financial,59.23
+P-SE-036,Southeast,Jane Smith,WC Insurance,operations,46.4
+P-SE-036,Southeast,Jane Smith,WC Insurance,quality,29.6
+P-SE-036,Southeast,Jane Smith,WC Insurance,safety,50.15
+P-MW-037,Midwest,Mike Johnson,BR Insurance,communication,67.75
+P-MW-037,Midwest,Mike Johnson,BR Insurance,financial,52.6
+P-MW-037,Midwest,Mike Johnson,BR Insurance,operations,70.85
+P-MW-037,Midwest,Mike Johnson,BR Insurance,quality,64.25
+P-MW-037,Midwest,Mike Johnson,BR Insurance,safety,81.65
+P-MW-037,Midwest,Mike Johnson,CA Insurance,communication,52.7
+P-MW-037,Midwest,Mike Johnson,CA Insurance,financial,81.57
+P-MW-037,Midwest,Mike Johnson,CA Insurance,operations,56.55
+P-MW-037,Midwest,Mike Johnson,CA Insurance,quality,52.7
+P-MW-037,Midwest,Mike Johnson,CA Insurance,safety,70.5
+P-MW-037,Midwest,Mike Johnson,Cost,communication,61.9
+P-MW-037,Midwest,Mike Johnson,Cost,financial,55.17
+P-MW-037,Midwest,Mike Johnson,Cost,operations,72.55
+P-MW-037,Midwest,Mike Johnson,Cost,quality,59.9
+P-MW-037,Midwest,Mike Johnson,Cost,safety,49.05
+P-MW-037,Midwest,Mike Johnson,GL Insurance,communication,75
+P-MW-037,Midwest,Mike Johnson,GL Insurance,financial,80.21
+P-MW-037,Midwest,Mike Johnson,GL Insurance,operations,65
+P-MW-037,Midwest,Mike Johnson,GL Insurance,quality,76.5
+P-MW-037,Midwest,Mike Johnson,GL Insurance,safety,65.15
+P-MW-037,Midwest,Mike Johnson,Safety,communication,54.15
+P-MW-037,Midwest,Mike Johnson,Safety,financial,52.58
+P-MW-037,Midwest,Mike Johnson,Safety,operations,52.55
+P-MW-037,Midwest,Mike Johnson,Safety,quality,57.3
+P-MW-037,Midwest,Mike Johnson,Safety,safety,54.45
+P-MW-037,Midwest,Mike Johnson,Schedule,communication,46.15
+P-MW-037,Midwest,Mike Johnson,Schedule,financial,74.55
+P-MW-037,Midwest,Mike Johnson,Schedule,operations,48.8
+P-MW-037,Midwest,Mike Johnson,Schedule,quality,52.4
+P-MW-037,Midwest,Mike Johnson,Schedule,safety,37.65
+P-MW-037,Midwest,Mike Johnson,WC Insurance,communication,79.75
+P-MW-037,Midwest,Mike Johnson,WC Insurance,financial,47.96
+P-MW-037,Midwest,Mike Johnson,WC Insurance,operations,53.95
+P-MW-037,Midwest,Mike Johnson,WC Insurance,quality,60.6
+P-MW-037,Midwest,Mike Johnson,WC Insurance,safety,74.6
+P-WE-038,West,Alice Brown,BR Insurance,communication,82
+P-WE-038,West,Alice Brown,BR Insurance,financial,68.2
+P-WE-038,West,Alice Brown,BR Insurance,operations,87.8
+P-WE-038,West,Alice Brown,BR Insurance,quality,89.95
+P-WE-038,West,Alice Brown,BR Insurance,safety,60.4
+P-WE-038,West,Alice Brown,CA Insurance,communication,88.2
+P-WE-038,West,Alice Brown,CA Insurance,financial,86.49
+P-WE-038,West,Alice Brown,CA Insurance,operations,70.8
+P-WE-038,West,Alice Brown,CA Insurance,quality,79.7
+P-WE-038,West,Alice Brown,CA Insurance,safety,72.1
+P-WE-038,West,Alice Brown,Cost,communication,87.85
+P-WE-038,West,Alice Brown,Cost,financial,77.71
+P-WE-038,West,Alice Brown,Cost,operations,88.4
+P-WE-038,West,Alice Brown,Cost,quality,79.4
+P-WE-038,West,Alice Brown,Cost,safety,87.6
+P-WE-038,West,Alice Brown,GL Insurance,communication,75.25
+P-WE-038,West,Alice Brown,GL Insurance,financial,82.45
+P-WE-038,West,Alice Brown,GL Insurance,operations,70.45
+P-WE-038,West,Alice Brown,GL Insurance,quality,82.55
+P-WE-038,West,Alice Brown,GL Insurance,safety,90.35
+P-WE-038,West,Alice Brown,Safety,communication,70.15
+P-WE-038,West,Alice Brown,Safety,financial,71.4
+P-WE-038,West,Alice Brown,Safety,operations,74.15
+P-WE-038,West,Alice Brown,Safety,quality,88.3
+P-WE-038,West,Alice Brown,Safety,safety,75.25
+P-WE-038,West,Alice Brown,Schedule,communication,90.6
+P-WE-038,West,Alice Brown,Schedule,financial,80.1
+P-WE-038,West,Alice Brown,Schedule,operations,84.7
+P-WE-038,West,Alice Brown,Schedule,quality,82.2
+P-WE-038,West,Alice Brown,Schedule,safety,74.15
+P-WE-038,West,Alice Brown,WC Insurance,communication,82.85
+P-WE-038,West,Alice Brown,WC Insurance,financial,69.19
+P-WE-038,West,Alice Brown,WC Insurance,operations,58.15
+P-WE-038,West,Alice Brown,WC Insurance,quality,62.8
+P-WE-038,West,Alice Brown,WC Insurance,safety,85.3
+P-NE-039,Northeast,John Doe,BR Insurance,communication,39.8
+P-NE-039,Northeast,John Doe,BR Insurance,financial,61.25
+P-NE-039,Northeast,John Doe,BR Insurance,operations,26.7
+P-NE-039,Northeast,John Doe,BR Insurance,quality,29.75
+P-NE-039,Northeast,John Doe,BR Insurance,safety,48.4
+P-NE-039,Northeast,John Doe,CA Insurance,communication,57.4
+P-NE-039,Northeast,John Doe,CA Insurance,financial,37.53
+P-NE-039,Northeast,John Doe,CA Insurance,operations,27.2
+P-NE-039,Northeast,John Doe,CA Insurance,quality,65.6
+P-NE-039,Northeast,John Doe,CA Insurance,safety,54.3
+P-NE-039,Northeast,John Doe,Cost,communication,46.15
+P-NE-039,Northeast,John Doe,Cost,financial,57.05
+P-NE-039,Northeast,John Doe,Cost,operations,37.65
+P-NE-039,Northeast,John Doe,Cost,quality,45.95
+P-NE-039,Northeast,John Doe,Cost,safety,35.85
+P-NE-039,Northeast,John Doe,GL Insurance,communication,39
+P-NE-039,Northeast,John Doe,GL Insurance,financial,50.18
+P-NE-039,Northeast,John Doe,GL Insurance,operations,44.1
+P-NE-039,Northeast,John Doe,GL Insurance,quality,77.55
+P-NE-039,Northeast,John Doe,GL Insurance,safety,66.95
+P-NE-039,Northeast,John Doe,Safety,communication,57.2
+P-NE-039,Northeast,John Doe,Safety,financial,38.06
+P-NE-039,Northeast,John Doe,Safety,operations,39.4
+P-NE-039,Northeast,John Doe,Safety,quality,22.2
+P-NE-039,Northeast,John Doe,Safety,safety,54.1
+P-NE-039,Northeast,John Doe,Schedule,communication,55.9
+P-NE-039,Northeast,John Doe,Schedule,financial,35.05
+P-NE-039,Northeast,John Doe,Schedule,operations,63.9
+P-NE-039,Northeast,John Doe,Schedule,quality,25.5
+P-NE-039,Northeast,John Doe,Schedule,safety,33.6
+P-NE-039,Northeast,John Doe,WC Insurance,communication,66.35
+P-NE-039,Northeast,John Doe,WC Insurance,financial,63.74
+P-NE-039,Northeast,John Doe,WC Insurance,operations,36.7
+P-NE-039,Northeast,John Doe,WC Insurance,quality,29
+P-NE-039,Northeast,John Doe,WC Insurance,safety,69.05
+P-SE-040,Southeast,Jane Smith,BR Insurance,communication,78.8
+P-SE-040,Southeast,Jane Smith,BR Insurance,financial,54.45
+P-SE-040,Southeast,Jane Smith,BR Insurance,operations,58.05
+P-SE-040,Southeast,Jane Smith,BR Insurance,quality,25.35
+P-SE-040,Southeast,Jane Smith,BR Insurance,safety,40.8
+P-SE-040,Southeast,Jane Smith,CA Insurance,communication,50.1
+P-SE-040,Southeast,Jane Smith,CA Insurance,financial,38.03
+P-SE-040,Southeast,Jane Smith,CA Insurance,operations,55.2
+P-SE-040,Southeast,Jane Smith,CA Insurance,quality,62.7
+P-SE-040,Southeast,Jane Smith,CA Insurance,safety,48.3
+P-SE-040,Southeast,Jane Smith,Cost,communication,47.4
+P-SE-040,Southeast,Jane Smith,Cost,financial,34.86
+P-SE-040,Southeast,Jane Smith,Cost,operations,51.05
+P-SE-040,Southeast,Jane Smith,Cost,quality,55.4
+P-SE-040,Southeast,Jane Smith,Cost,safety,49.9
+P-SE-040,Southeast,Jane Smith,GL Insurance,communication,61.55
+P-SE-040,Southeast,Jane Smith,GL Insurance,financial,81.35
+P-SE-040,Southeast,Jane Smith,GL Insurance,operations,83.3
+P-SE-040,Southeast,Jane Smith,GL Insurance,quality,86.2
+P-SE-040,Southeast,Jane Smith,GL Insurance,safety,70.65
+P-SE-040,Southeast,Jane Smith,Safety,communication,33.75
+P-SE-040,Southeast,Jane Smith,Safety,financial,42.95
+P-SE-040,Southeast,Jane Smith,Safety,operations,54.75
+P-SE-040,Southeast,Jane Smith,Safety,quality,50
+P-SE-040,Southeast,Jane Smith,Safety,safety,64.25
+P-SE-040,Southeast,Jane Smith,Schedule,communication,76.3
+P-SE-040,Southeast,Jane Smith,Schedule,financial,49.25
+P-SE-040,Southeast,Jane Smith,Schedule,operations,48.55
+P-SE-040,Southeast,Jane Smith,Schedule,quality,57.15
+P-SE-040,Southeast,Jane Smith,Schedule,safety,34.65
+P-SE-040,Southeast,Jane Smith,WC Insurance,communication,69.7
+P-SE-040,Southeast,Jane Smith,WC Insurance,financial,45.66
+P-SE-040,Southeast,Jane Smith,WC Insurance,operations,56.75
+P-SE-040,Southeast,Jane Smith,WC Insurance,quality,73
+P-SE-040,Southeast,Jane Smith,WC Insurance,safety,74.85
+P-MW-041,Midwest,Mike Johnson,BR Insurance,communication,45.5
+P-MW-041,Midwest,Mike Johnson,BR Insurance,financial,42.95
+P-MW-041,Midwest,Mike Johnson,BR Insurance,operations,55.35
+P-MW-041,Midwest,Mike Johnson,BR Insurance,quality,67.3
+P-MW-041,Midwest,Mike Johnson,BR Insurance,safety,74.8
+P-MW-041,Midwest,Mike Johnson,CA Insurance,communication,76.6
+P-MW-041,Midwest,Mike Johnson,CA Insurance,financial,66.58
+P-MW-041,Midwest,Mike Johnson,CA Insurance,operations,83.3
+P-MW-041,Midwest,Mike Johnson,CA Insurance,quality,59.1
+P-MW-041,Midwest,Mike Johnson,CA Insurance,safety,59.1
+P-MW-041,Midwest,Mike Johnson,Cost,communication,72.15
+P-MW-041,Midwest,Mike Johnson,Cost,financial,51.25
+P-MW-041,Midwest,Mike Johnson,Cost,operations,53.05
+P-MW-041,Midwest,Mike Johnson,Cost,quality,90.55
+P-MW-041,Midwest,Mike Johnson,Cost,safety,60.2
+P-MW-041,Midwest,Mike Johnson,GL Insurance,communication,55.7
+P-MW-041,Midwest,Mike Johnson,GL Insurance,financial,80.87
+P-MW-041,Midwest,Mike Johnson,GL Insurance,operations,70.2
+P-MW-041,Midwest,Mike Johnson,GL Insurance,quality,78.15
+P-MW-041,Midwest,Mike Johnson,GL Insurance,safety,61.9
+P-MW-041,Midwest,Mike Johnson,Safety,communication,55.1
+P-MW-041,Midwest,Mike Johnson,Safety,financial,61.55
+P-MW-041,Midwest,Mike Johnson,Safety,operations,47.75
+P-MW-041,Midwest,Mike Johnson,Safety,quality,36.5
+P-MW-041,Midwest,Mike Johnson,Safety,safety,50.65
+P-MW-041,Midwest,Mike Johnson,Schedule,communication,54.65
+P-MW-041,Midwest,Mike Johnson,Schedule,financial,70.85
+P-MW-041,Midwest,Mike Johnson,Schedule,operations,59.85
+P-MW-041,Midwest,Mike Johnson,Schedule,quality,47.8
+P-MW-041,Midwest,Mike Johnson,Schedule,safety,63.95
+P-MW-041,Midwest,Mike Johnson,WC Insurance,communication,50.85
+P-MW-041,Midwest,Mike Johnson,WC Insurance,financial,64.44
+P-MW-041,Midwest,Mike Johnson,WC Insurance,operations,71.65
+P-MW-041,Midwest,Mike Johnson,WC Insurance,quality,64.1
+P-MW-041,Midwest,Mike Johnson,WC Insurance,safety,88.05
+P-WE-042,West,Alice Brown,BR Insurance,communication,47.55
+P-WE-042,West,Alice Brown,BR Insurance,financial,33.95
+P-WE-042,West,Alice Brown,BR Insurance,operations,42.45
+P-WE-042,West,Alice Brown,BR Insurance,quality,68.75
+P-WE-042,West,Alice Brown,BR Insurance,safety,53.45
+P-WE-042,West,Alice Brown,CA Insurance,communication,47.6
+P-WE-042,West,Alice Brown,CA Insurance,financial,62.77
+P-WE-042,West,Alice Brown,CA Insurance,operations,48.15
+P-WE-042,West,Alice Brown,CA Insurance,quality,58.7
+P-WE-042,West,Alice Brown,CA Insurance,safety,54.3
+P-WE-042,West,Alice Brown,Cost,communication,63.7
+P-WE-042,West,Alice Brown,Cost,financial,63.04
+P-WE-042,West,Alice Brown,Cost,operations,33.75
+P-WE-042,West,Alice Brown,Cost,quality,71.2
+P-WE-042,West,Alice Brown,Cost,safety,38.75
+P-WE-042,West,Alice Brown,GL Insurance,communication,51.7
+P-WE-042,West,Alice Brown,GL Insurance,financial,72.4
+P-WE-042,West,Alice Brown,GL Insurance,operations,36.5
+P-WE-042,West,Alice Brown,GL Insurance,quality,34.95
+P-WE-042,West,Alice Brown,GL Insurance,safety,38.6
+P-WE-042,West,Alice Brown,Safety,communication,34.15
+P-WE-042,West,Alice Brown,Safety,financial,43.12
+P-WE-042,West,Alice Brown,Safety,operations,48.95
+P-WE-042,West,Alice Brown,Safety,quality,32.1
+P-WE-042,West,Alice Brown,Safety,safety,65.35
+P-WE-042,West,Alice Brown,Schedule,communication,63.7
+P-WE-042,West,Alice Brown,Schedule,financial,52.7
+P-WE-042,West,Alice Brown,Schedule,operations,65.9
+P-WE-042,West,Alice Brown,Schedule,quality,34.25
+P-WE-042,West,Alice Brown,Schedule,safety,31.9
+P-WE-042,West,Alice Brown,WC Insurance,communication,34.85
+P-WE-042,West,Alice Brown,WC Insurance,financial,50.77
+P-WE-042,West,Alice Brown,WC Insurance,operations,72.7
+P-WE-042,West,Alice Brown,WC Insurance,quality,52.4
+P-WE-042,West,Alice Brown,WC Insurance,safety,42.95
+P-NE-043,Northeast,John Doe,BR Insurance,communication,85.5
+P-NE-043,Northeast,John Doe,BR Insurance,financial,63
+P-NE-043,Northeast,John Doe,BR Insurance,operations,79.75
+P-NE-043,Northeast,John Doe,BR Insurance,quality,57.15
+P-NE-043,Northeast,John Doe,BR Insurance,safety,73.2
+P-NE-043,Northeast,John Doe,CA Insurance,communication,87.1
+P-NE-043,Northeast,John Doe,CA Insurance,financial,64.72
+P-NE-043,Northeast,John Doe,CA Insurance,operations,74.85
+P-NE-043,Northeast,John Doe,CA Insurance,quality,87.6
+P-NE-043,Northeast,John Doe,CA Insurance,safety,43.7
+P-NE-043,Northeast,John Doe,Cost,communication,84.55
+P-NE-043,Northeast,John Doe,Cost,financial,68.82
+P-NE-043,Northeast,John Doe,Cost,operations,81.35
+P-NE-043,Northeast,John Doe,Cost,quality,74.25
+P-NE-043,Northeast,John Doe,Cost,safety,44.45
+P-NE-043,Northeast,John Doe,GL Insurance,communication,71.45
+P-NE-043,Northeast,John Doe,GL Insurance,financial,76.54
+P-NE-043,Northeast,John Doe,GL Insurance,operations,81.6
+P-NE-043,Northeast,John Doe,GL Insurance,quality,72.85
+P-NE-043,Northeast,John Doe,GL Insurance,safety,85.7
+P-NE-043,Northeast,John Doe,Safety,communication,56.1
+P-NE-043,Northeast,John Doe,Safety,financial,69.16
+P-NE-043,Northeast,John Doe,Safety,operations,65.45
+P-NE-043,Northeast,John Doe,Safety,quality,52.1
+P-NE-043,Northeast,John Doe,Safety,safety,50.35
+P-NE-043,Northeast,John Doe,Schedule,communication,64.9
+P-NE-043,Northeast,John Doe,Schedule,financial,82.2
+P-NE-043,Northeast,John Doe,Schedule,operations,82.05
+P-NE-043,Northeast,John Doe,Schedule,quality,55.7
+P-NE-043,Northeast,John Doe,Schedule,safety,61.7
+P-NE-043,Northeast,John Doe,WC Insurance,communication,83.6
+P-NE-043,Northeast,John Doe,WC Insurance,financial,56.05
+P-NE-043,Northeast,John Doe,WC Insurance,operations,86
+P-NE-043,Northeast,John Doe,WC Insurance,quality,55.6
+P-NE-043,Northeast,John Doe,WC Insurance,safety,87.3
+P-SE-044,Southeast,Jane Smith,BR Insurance,communication,71.95
+P-SE-044,Southeast,Jane Smith,BR Insurance,financial,50.5
+P-SE-044,Southeast,Jane Smith,BR Insurance,operations,48.45
+P-SE-044,Southeast,Jane Smith,BR Insurance,quality,81.9
+P-SE-044,Southeast,Jane Smith,BR Insurance,safety,64.15
+P-SE-044,Southeast,Jane Smith,CA Insurance,communication,81.7
+P-SE-044,Southeast,Jane Smith,CA Insurance,financial,41.19
+P-SE-044,Southeast,Jane Smith,CA Insurance,operations,63.35
+P-SE-044,Southeast,Jane Smith,CA Insurance,quality,83.8
+P-SE-044,Southeast,Jane Smith,CA Insurance,safety,65.1
+P-SE-044,Southeast,Jane Smith,Cost,communication,64.95
+P-SE-044,Southeast,Jane Smith,Cost,financial,83.96
+P-SE-044,Southeast,Jane Smith,Cost,operations,73.25
+P-SE-044,Southeast,Jane Smith,Cost,quality,70.65
+P-SE-044,Southeast,Jane Smith,Cost,safety,76.4
+P-SE-044,Southeast,Jane Smith,GL Insurance,communication,78.6
+P-SE-044,Southeast,Jane Smith,GL Insurance,financial,71.81
+P-SE-044,Southeast,Jane Smith,GL Insurance,operations,47.05
+P-SE-044,Southeast,Jane Smith,GL Insurance,quality,58
+P-SE-044,Southeast,Jane Smith,GL Insurance,safety,83.05
+P-SE-044,Southeast,Jane Smith,Safety,communication,72.05
+P-SE-044,Southeast,Jane Smith,Safety,financial,52.27
+P-SE-044,Southeast,Jane Smith,Safety,operations,68.25
+P-SE-044,Southeast,Jane Smith,Safety,quality,66
+P-SE-044,Southeast,Jane Smith,Safety,safety,61.6
+P-SE-044,Southeast,Jane Smith,Schedule,communication,43.15
+P-SE-044,Southeast,Jane Smith,Schedule,financial,55.45
+P-SE-044,Southeast,Jane Smith,Schedule,operations,41.45
+P-SE-044,Southeast,Jane Smith,Schedule,quality,61.8
+P-SE-044,Southeast,Jane Smith,Schedule,safety,79.35
+P-SE-044,Southeast,Jane Smith,WC Insurance,communication,88.75
+P-SE-044,Southeast,Jane Smith,WC Insurance,financial,63.1
+P-SE-044,Southeast,Jane Smith,WC Insurance,operations,73.05
+P-SE-044,Southeast,Jane Smith,WC Insurance,quality,50.6
+P-SE-044,Southeast,Jane Smith,WC Insurance,safety,61.3
+P-MW-045,Midwest,Mike Johnson,BR Insurance,communication,36.1
+P-MW-045,Midwest,Mike Johnson,BR Insurance,financial,52.9
+P-MW-045,Midwest,Mike Johnson,BR Insurance,operations,50.9
+P-MW-045,Midwest,Mike Johnson,BR Insurance,quality,58.55
+P-MW-045,Midwest,Mike Johnson,BR Insurance,safety,60.6
+P-MW-045,Midwest,Mike Johnson,CA Insurance,communication,54.8
+P-MW-045,Midwest,Mike Johnson,CA Insurance,financial,60.67
+P-MW-045,Midwest,Mike Johnson,CA Insurance,operations,68.15
+P-MW-045,Midwest,Mike Johnson,CA Insurance,quality,60.2
+P-MW-045,Midwest,Mike Johnson,CA Insurance,safety,40.6
+P-MW-045,Midwest,Mike Johnson,Cost,communication,58.9
+P-MW-045,Midwest,Mike Johnson,Cost,financial,73.24
+P-MW-045,Midwest,Mike Johnson,Cost,operations,68.8
+P-MW-045,Midwest,Mike Johnson,Cost,quality,65.9
+P-MW-045,Midwest,Mike Johnson,Cost,safety,63.15
+P-MW-045,Midwest,Mike Johnson,GL Insurance,communication,68.7
+P-MW-045,Midwest,Mike Johnson,GL Insurance,financial,51.67
+P-MW-045,Midwest,Mike Johnson,GL Insurance,operations,74.15
+P-MW-045,Midwest,Mike Johnson,GL Insurance,quality,35.6
+P-MW-045,Midwest,Mike Johnson,GL Insurance,safety,66.5
+P-MW-045,Midwest,Mike Johnson,Safety,communication,40.7
+P-MW-045,Midwest,Mike Johnson,Safety,financial,27.07
+P-MW-045,Midwest,Mike Johnson,Safety,operations,62.8
+P-MW-045,Midwest,Mike Johnson,Safety,quality,57.5
+P-MW-045,Midwest,Mike Johnson,Safety,safety,34.35
+P-MW-045,Midwest,Mike Johnson,Schedule,communication,51.9
+P-MW-045,Midwest,Mike Johnson,Schedule,financial,28.9
+P-MW-045,Midwest,Mike Johnson,Schedule,operations,55.9
+P-MW-045,Midwest,Mike Johnson,Schedule,quality,51.5
+P-MW-045,Midwest,Mike Johnson,Schedule,safety,49.45
+P-MW-045,Midwest,Mike Johnson,WC Insurance,communication,80
+P-MW-045,Midwest,Mike Johnson,WC Insurance,financial,39.93
+P-MW-045,Midwest,Mike Johnson,WC Insurance,operations,49.3
+P-MW-045,Midwest,Mike Johnson,WC Insurance,quality,57.7
+P-MW-045,Midwest,Mike Johnson,WC Insurance,safety,45.85
+P-WE-046,West,Alice Brown,BR Insurance,communication,66.3
+P-WE-046,West,Alice Brown,BR Insurance,financial,78.95
+P-WE-046,West,Alice Brown,BR Insurance,operations,81.45
+P-WE-046,West,Alice Brown,BR Insurance,quality,49.4
+P-WE-046,West,Alice Brown,BR Insurance,safety,71.75
+P-WE-046,West,Alice Brown,CA Insurance,communication,51
+P-WE-046,West,Alice Brown,CA Insurance,financial,46.21
+P-WE-046,West,Alice Brown,CA Insurance,operations,80.25
+P-WE-046,West,Alice Brown,CA Insurance,quality,69.6
+P-WE-046,West,Alice Brown,CA Insurance,safety,83.3
+P-WE-046,West,Alice Brown,Cost,communication,52.35
+P-WE-046,West,Alice Brown,Cost,financial,51.4
+P-WE-046,West,Alice Brown,Cost,operations,71.6
+P-WE-046,West,Alice Brown,Cost,quality,76.4
+P-WE-046,West,Alice Brown,Cost,safety,44.3
+P-WE-046,West,Alice Brown,GL Insurance,communication,66.35
+P-WE-046,West,Alice Brown,GL Insurance,financial,75.24
+P-WE-046,West,Alice Brown,GL Insurance,operations,89.05
+P-WE-046,West,Alice Brown,GL Insurance,quality,84.4
+P-WE-046,West,Alice Brown,GL Insurance,safety,58.05
+P-WE-046,West,Alice Brown,Safety,communication,84
+P-WE-046,West,Alice Brown,Safety,financial,53.21
+P-WE-046,West,Alice Brown,Safety,operations,43.7
+P-WE-046,West,Alice Brown,Safety,quality,61.6
+P-WE-046,West,Alice Brown,Safety,safety,69.7
+P-WE-046,West,Alice Brown,Schedule,communication,86.95
+P-WE-046,West,Alice Brown,Schedule,financial,46.15
+P-WE-046,West,Alice Brown,Schedule,operations,75.45
+P-WE-046,West,Alice Brown,Schedule,quality,69.8
+P-WE-046,West,Alice Brown,Schedule,safety,79.6
+P-WE-046,West,Alice Brown,WC Insurance,communication,49.2
+P-WE-046,West,Alice Brown,WC Insurance,financial,56.55
+P-WE-046,West,Alice Brown,WC Insurance,operations,55.7
+P-WE-046,West,Alice Brown,WC Insurance,quality,65.6
+P-WE-046,West,Alice Brown,WC Insurance,safety,53
+P-NE-047,Northeast,John Doe,BR Insurance,communication,44.7
+P-NE-047,Northeast,John Doe,BR Insurance,financial,43.25
+P-NE-047,Northeast,John Doe,BR Insurance,operations,36
+P-NE-047,Northeast,John Doe,BR Insurance,quality,51.8
+P-NE-047,Northeast,John Doe,BR Insurance,safety,51.45
+P-NE-047,Northeast,John Doe,CA Insurance,communication,47.1
+P-NE-047,Northeast,John Doe,CA Insurance,financial,56.1
+P-NE-047,Northeast,John Doe,CA Insurance,operations,45.75
+P-NE-047,Northeast,John Doe,CA Insurance,quality,55.6
+P-NE-047,Northeast,John Doe,CA Insurance,safety,29.6
+P-NE-047,Northeast,John Doe,Cost,communication,68.5
+P-NE-047,Northeast,John Doe,Cost,financial,42.02
+P-NE-047,Northeast,John Doe,Cost,operations,67.95
+P-NE-047,Northeast,John Doe,Cost,quality,55.55
+P-NE-047,Northeast,John Doe,Cost,safety,66.1
+P-NE-047,Northeast,John Doe,GL Insurance,communication,65.75
+P-NE-047,Northeast,John Doe,GL Insurance,financial,51.56
+P-NE-047,Northeast,John Doe,GL Insurance,operations,32.3
+P-NE-047,Northeast,John Doe,GL Insurance,quality,66.2
+P-NE-047,Northeast,John Doe,GL Insurance,safety,59.5
+P-NE-047,Northeast,John Doe,Safety,communication,26.65
+P-NE-047,Northeast,John Doe,Safety,financial,46.36
+P-NE-047,Northeast,John Doe,Safety,operations,38.75
+P-NE-047,Northeast,John Doe,Safety,quality,67.4
+P-NE-047,Northeast,John Doe,Safety,safety,56.7
+P-NE-047,Northeast,John Doe,Schedule,communication,47.7
+P-NE-047,Northeast,John Doe,Schedule,financial,68.85
+P-NE-047,Northeast,John Doe,Schedule,operations,52.7
+P-NE-047,Northeast,John Doe,Schedule,quality,53.75
+P-NE-047,Northeast,John Doe,Schedule,safety,53.5
+P-NE-047,Northeast,John Doe,WC Insurance,communication,75.05
+P-NE-047,Northeast,John Doe,WC Insurance,financial,74.47
+P-NE-047,Northeast,John Doe,WC Insurance,operations,41.25
+P-NE-047,Northeast,John Doe,WC Insurance,quality,57.9
+P-NE-047,Northeast,John Doe,WC Insurance,safety,68.5
+P-SE-048,Southeast,Jane Smith,BR Insurance,communication,58
+P-SE-048,Southeast,Jane Smith,BR Insurance,financial,75.6
+P-SE-048,Southeast,Jane Smith,BR Insurance,operations,69.55
+P-SE-048,Southeast,Jane Smith,BR Insurance,quality,88
+P-SE-048,Southeast,Jane Smith,BR Insurance,safety,78.7
+P-SE-048,Southeast,Jane Smith,CA Insurance,communication,52.6
+P-SE-048,Southeast,Jane Smith,CA Insurance,financial,78.21
+P-SE-048,Southeast,Jane Smith,CA Insurance,operations,83.1
+P-SE-048,Southeast,Jane Smith,CA Insurance,quality,81.1
+P-SE-048,Southeast,Jane Smith,CA Insurance,safety,58.2
+P-SE-048,Southeast,Jane Smith,Cost,communication,68.95
+P-SE-048,Southeast,Jane Smith,Cost,financial,77.81
+P-SE-048,Southeast,Jane Smith,Cost,operations,79.25
+P-SE-048,Southeast,Jane Smith,Cost,quality,72.85
+P-SE-048,Southeast,Jane Smith,Cost,safety,80.2
+P-SE-048,Southeast,Jane Smith,GL Insurance,communication,79.3
+P-SE-048,Southeast,Jane Smith,GL Insurance,financial,57.66
+P-SE-048,Southeast,Jane Smith,GL Insurance,operations,84.45
+P-SE-048,Southeast,Jane Smith,GL Insurance,quality,69.45
+P-SE-048,Southeast,Jane Smith,GL Insurance,safety,79.2
+P-SE-048,Southeast,Jane Smith,Safety,communication,67.1
+P-SE-048,Southeast,Jane Smith,Safety,financial,84.86
+P-SE-048,Southeast,Jane Smith,Safety,operations,70.8
+P-SE-048,Southeast,Jane Smith,Safety,quality,64.6
+P-SE-048,Southeast,Jane Smith,Safety,safety,47.7
+P-SE-048,Southeast,Jane Smith,Schedule,communication,61.55
+P-SE-048,Southeast,Jane Smith,Schedule,financial,54.25
+P-SE-048,Southeast,Jane Smith,Schedule,operations,77.95
+P-SE-048,Southeast,Jane Smith,Schedule,quality,63.55
+P-SE-048,Southeast,Jane Smith,Schedule,safety,78.3
+P-SE-048,Southeast,Jane Smith,WC Insurance,communication,85.3
+P-SE-048,Southeast,Jane Smith,WC Insurance,financial,70.43
+P-SE-048,Southeast,Jane Smith,WC Insurance,operations,82.5
+P-SE-048,Southeast,Jane Smith,WC Insurance,quality,87.1
+P-SE-048,Southeast,Jane Smith,WC Insurance,safety,78.7
+P-MW-049,Midwest,Mike Johnson,BR Insurance,communication,56.95
+P-MW-049,Midwest,Mike Johnson,BR Insurance,financial,45.05
+P-MW-049,Midwest,Mike Johnson,BR Insurance,operations,72.3
+P-MW-049,Midwest,Mike Johnson,BR Insurance,quality,62.7
+P-MW-049,Midwest,Mike Johnson,BR Insurance,safety,42.9
+P-MW-049,Midwest,Mike Johnson,CA Insurance,communication,44.2
+P-MW-049,Midwest,Mike Johnson,CA Insurance,financial,69.33
+P-MW-049,Midwest,Mike Johnson,CA Insurance,operations,44.4
+P-MW-049,Midwest,Mike Johnson,CA Insurance,quality,56.5
+P-MW-049,Midwest,Mike Johnson,CA Insurance,safety,34.4
+P-MW-049,Midwest,Mike Johnson,Cost,communication,37.9
+P-MW-049,Midwest,Mike Johnson,Cost,financial,63.89
+P-MW-049,Midwest,Mike Johnson,Cost,operations,27.2
+P-MW-049,Midwest,Mike Johnson,Cost,quality,67.7
+P-MW-049,Midwest,Mike Johnson,Cost,safety,48.65
+P-MW-049,Midwest,Mike Johnson,GL Insurance,communication,57.7
+P-MW-049,Midwest,Mike Johnson,GL Insurance,financial,53.77
+P-MW-049,Midwest,Mike Johnson,GL Insurance,operations,30.7
+P-MW-049,Midwest,Mike Johnson,GL Insurance,quality,52.85
+P-MW-049,Midwest,Mike Johnson,GL Insurance,safety,42.25
+P-MW-049,Midwest,Mike Johnson,Safety,communication,38.7
+P-MW-049,Midwest,Mike Johnson,Safety,financial,42.94
+P-MW-049,Midwest,Mike Johnson,Safety,operations,63.3
+P-MW-049,Midwest,Mike Johnson,Safety,quality,59.5
+P-MW-049,Midwest,Mike Johnson,Safety,safety,22.8
+P-MW-049,Midwest,Mike Johnson,Schedule,communication,65.95
+P-MW-049,Midwest,Mike Johnson,Schedule,financial,66.5
+P-MW-049,Midwest,Mike Johnson,Schedule,operations,43.7
+P-MW-049,Midwest,Mike Johnson,Schedule,quality,64.55
+P-MW-049,Midwest,Mike Johnson,Schedule,safety,41.9
+P-MW-049,Midwest,Mike Johnson,WC Insurance,communication,50.25
+P-MW-049,Midwest,Mike Johnson,WC Insurance,financial,55.35
+P-MW-049,Midwest,Mike Johnson,WC Insurance,operations,51.55
+P-MW-049,Midwest,Mike Johnson,WC Insurance,quality,48.4
+P-MW-049,Midwest,Mike Johnson,WC Insurance,safety,40.45
+P-WE-050,West,Alice Brown,BR Insurance,communication,86.2
+P-WE-050,West,Alice Brown,BR Insurance,financial,80.4
+P-WE-050,West,Alice Brown,BR Insurance,operations,59.3
+P-WE-050,West,Alice Brown,BR Insurance,quality,71.7
+P-WE-050,West,Alice Brown,BR Insurance,safety,61.3
+P-WE-050,West,Alice Brown,CA Insurance,communication,60.6
+P-WE-050,West,Alice Brown,CA Insurance,financial,56.59
+P-WE-050,West,Alice Brown,CA Insurance,operations,85.1
+P-WE-050,West,Alice Brown,CA Insurance,quality,88.9
+P-WE-050,West,Alice Brown,CA Insurance,safety,54.1
+P-WE-050,West,Alice Brown,Cost,communication,83.15
+P-WE-050,West,Alice Brown,Cost,financial,86.66
+P-WE-050,West,Alice Brown,Cost,operations,79.65
+P-WE-050,West,Alice Brown,Cost,quality,50.45
+P-WE-050,West,Alice Brown,Cost,safety,75.9
+P-WE-050,West,Alice Brown,GL Insurance,communication,80.1
+P-WE-050,West,Alice Brown,GL Insurance,financial,54.27
+P-WE-050,West,Alice Brown,GL Insurance,operations,81.4
+P-WE-050,West,Alice Brown,GL Insurance,quality,86.3
+P-WE-050,West,Alice Brown,GL Insurance,safety,81.65
+P-WE-050,West,Alice Brown,Safety,communication,52.25
+P-WE-050,West,Alice Brown,Safety,financial,64.32
+P-WE-050,West,Alice Brown,Safety,operations,67.7
+P-WE-050,West,Alice Brown,Safety,quality,61.3
+P-WE-050,West,Alice Brown,Safety,safety,67.4
+P-WE-050,West,Alice Brown,Schedule,communication,74.7
+P-WE-050,West,Alice Brown,Schedule,financial,81.35
+P-WE-050,West,Alice Brown,Schedule,operations,74.45
+P-WE-050,West,Alice Brown,Schedule,quality,82.2
+P-WE-050,West,Alice Brown,Schedule,safety,66.1
+P-WE-050,West,Alice Brown,WC Insurance,communication,56.75
+P-WE-050,West,Alice Brown,WC Insurance,financial,50.76
+P-WE-050,West,Alice Brown,WC Insurance,operations,56.5
+P-WE-050,West,Alice Brown,WC Insurance,quality,74.1
+P-WE-050,West,Alice Brown,WC Insurance,safety,65.7

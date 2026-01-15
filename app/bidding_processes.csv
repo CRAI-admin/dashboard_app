@@ -1,0 +1,1401 @@
+projectId,region,projectManager,impact_category,process_name,score
+P-NE-001,Northeast,John Doe,BR Insurance,bidresults,5.35
+P-NE-001,Northeast,John Doe,BR Insurance,bidreview,23.56
+P-NE-001,Northeast,John Doe,BR Insurance,compliance,10.53
+P-NE-001,Northeast,John Doe,BR Insurance,estimating,20.55
+P-NE-001,Northeast,John Doe,CA Insurance,bidresults,4.0
+P-NE-001,Northeast,John Doe,CA Insurance,bidreview,30.67
+P-NE-001,Northeast,John Doe,CA Insurance,compliance,3.88
+P-NE-001,Northeast,John Doe,CA Insurance,estimating,11.43
+P-NE-001,Northeast,John Doe,Cost,bidresults,3.87
+P-NE-001,Northeast,John Doe,Cost,bidreview,25.3
+P-NE-001,Northeast,John Doe,Cost,compliance,30.44
+P-NE-001,Northeast,John Doe,Cost,estimating,23.33
+P-NE-001,Northeast,John Doe,GL Insurance,bidresults,20.62
+P-NE-001,Northeast,John Doe,GL Insurance,bidreview,1.96
+P-NE-001,Northeast,John Doe,GL Insurance,compliance,24.4
+P-NE-001,Northeast,John Doe,GL Insurance,estimating,8.16
+P-NE-001,Northeast,John Doe,Safety,bidresults,13.13
+P-NE-001,Northeast,John Doe,Safety,bidreview,11.13
+P-NE-001,Northeast,John Doe,Safety,compliance,6.25
+P-NE-001,Northeast,John Doe,Safety,estimating,1.72
+P-NE-001,Northeast,John Doe,Schedule,bidresults,7.03
+P-NE-001,Northeast,John Doe,Schedule,bidreview,18.26
+P-NE-001,Northeast,John Doe,Schedule,compliance,8.43
+P-NE-001,Northeast,John Doe,Schedule,estimating,1.68
+P-NE-001,Northeast,John Doe,WC Insurance,bidresults,1.19
+P-NE-001,Northeast,John Doe,WC Insurance,bidreview,7.61
+P-NE-001,Northeast,John Doe,WC Insurance,compliance,25.28
+P-NE-001,Northeast,John Doe,WC Insurance,estimating,18.68
+P-SE-002,Southeast,Jane Smith,BR Insurance,bidresults,6.03
+P-SE-002,Southeast,Jane Smith,BR Insurance,bidreview,16.26
+P-SE-002,Southeast,Jane Smith,BR Insurance,compliance,9.88
+P-SE-002,Southeast,Jane Smith,BR Insurance,estimating,9.76
+P-SE-002,Southeast,Jane Smith,CA Insurance,bidresults,17.45
+P-SE-002,Southeast,Jane Smith,CA Insurance,bidreview,8.21
+P-SE-002,Southeast,Jane Smith,CA Insurance,compliance,18.5
+P-SE-002,Southeast,Jane Smith,CA Insurance,estimating,26.29
+P-SE-002,Southeast,Jane Smith,Cost,bidresults,17.01
+P-SE-002,Southeast,Jane Smith,Cost,bidreview,16.55
+P-SE-002,Southeast,Jane Smith,Cost,compliance,11.98
+P-SE-002,Southeast,Jane Smith,Cost,estimating,29.22
+P-SE-002,Southeast,Jane Smith,GL Insurance,bidresults,10.26
+P-SE-002,Southeast,Jane Smith,GL Insurance,bidreview,23.55
+P-SE-002,Southeast,Jane Smith,GL Insurance,compliance,8.29
+P-SE-002,Southeast,Jane Smith,GL Insurance,estimating,2.47
+P-SE-002,Southeast,Jane Smith,Safety,bidresults,13.12
+P-SE-002,Southeast,Jane Smith,Safety,bidreview,18.42
+P-SE-002,Southeast,Jane Smith,Safety,compliance,19.1
+P-SE-002,Southeast,Jane Smith,Safety,estimating,13.99
+P-SE-002,Southeast,Jane Smith,Schedule,bidresults,17.78
+P-SE-002,Southeast,Jane Smith,Schedule,bidreview,20.49
+P-SE-002,Southeast,Jane Smith,Schedule,compliance,19.56
+P-SE-002,Southeast,Jane Smith,Schedule,estimating,14.89
+P-SE-002,Southeast,Jane Smith,WC Insurance,bidresults,8.23
+P-SE-002,Southeast,Jane Smith,WC Insurance,bidreview,3.07
+P-SE-002,Southeast,Jane Smith,WC Insurance,compliance,3.63
+P-SE-002,Southeast,Jane Smith,WC Insurance,estimating,7.05
+P-MW-003,Midwest,Mike Johnson,BR Insurance,bidresults,8.65
+P-MW-003,Midwest,Mike Johnson,BR Insurance,bidreview,29.35
+P-MW-003,Midwest,Mike Johnson,BR Insurance,compliance,9.21
+P-MW-003,Midwest,Mike Johnson,BR Insurance,estimating,15.22
+P-MW-003,Midwest,Mike Johnson,CA Insurance,bidresults,31.53
+P-MW-003,Midwest,Mike Johnson,CA Insurance,bidreview,20.09
+P-MW-003,Midwest,Mike Johnson,CA Insurance,compliance,20.88
+P-MW-003,Midwest,Mike Johnson,CA Insurance,estimating,9.93
+P-MW-003,Midwest,Mike Johnson,Cost,bidresults,25.65
+P-MW-003,Midwest,Mike Johnson,Cost,bidreview,36.62
+P-MW-003,Midwest,Mike Johnson,Cost,compliance,21.05
+P-MW-003,Midwest,Mike Johnson,Cost,estimating,24.04
+P-MW-003,Midwest,Mike Johnson,GL Insurance,bidresults,37.77
+P-MW-003,Midwest,Mike Johnson,GL Insurance,bidreview,13.3
+P-MW-003,Midwest,Mike Johnson,GL Insurance,compliance,9.23
+P-MW-003,Midwest,Mike Johnson,GL Insurance,estimating,11.44
+P-MW-003,Midwest,Mike Johnson,Safety,bidresults,1.9
+P-MW-003,Midwest,Mike Johnson,Safety,bidreview,24.6
+P-MW-003,Midwest,Mike Johnson,Safety,compliance,7.41
+P-MW-003,Midwest,Mike Johnson,Safety,estimating,22.73
+P-MW-003,Midwest,Mike Johnson,Schedule,bidresults,12.38
+P-MW-003,Midwest,Mike Johnson,Schedule,bidreview,6.13
+P-MW-003,Midwest,Mike Johnson,Schedule,compliance,5.9
+P-MW-003,Midwest,Mike Johnson,Schedule,estimating,22.87
+P-MW-003,Midwest,Mike Johnson,WC Insurance,bidresults,14.06
+P-MW-003,Midwest,Mike Johnson,WC Insurance,bidreview,29.92
+P-MW-003,Midwest,Mike Johnson,WC Insurance,compliance,22.63
+P-MW-003,Midwest,Mike Johnson,WC Insurance,estimating,11.38
+P-WE-004,West,Alice Brown,BR Insurance,bidresults,10.13
+P-WE-004,West,Alice Brown,BR Insurance,bidreview,6.6
+P-WE-004,West,Alice Brown,BR Insurance,compliance,3.34
+P-WE-004,West,Alice Brown,BR Insurance,estimating,14.46
+P-WE-004,West,Alice Brown,CA Insurance,bidresults,7.32
+P-WE-004,West,Alice Brown,CA Insurance,bidreview,11.89
+P-WE-004,West,Alice Brown,CA Insurance,compliance,22.02
+P-WE-004,West,Alice Brown,CA Insurance,estimating,23.89
+P-WE-004,West,Alice Brown,Cost,bidresults,17.31
+P-WE-004,West,Alice Brown,Cost,bidreview,3.36
+P-WE-004,West,Alice Brown,Cost,compliance,3.85
+P-WE-004,West,Alice Brown,Cost,estimating,2.23
+P-WE-004,West,Alice Brown,GL Insurance,bidresults,25.96
+P-WE-004,West,Alice Brown,GL Insurance,bidreview,29.89
+P-WE-004,West,Alice Brown,GL Insurance,compliance,29.16
+P-WE-004,West,Alice Brown,GL Insurance,estimating,16.34
+P-WE-004,West,Alice Brown,Safety,bidresults,8.63
+P-WE-004,West,Alice Brown,Safety,bidreview,16.84
+P-WE-004,West,Alice Brown,Safety,compliance,2.27
+P-WE-004,West,Alice Brown,Safety,estimating,9.44
+P-WE-004,West,Alice Brown,Schedule,bidresults,11.19
+P-WE-004,West,Alice Brown,Schedule,bidreview,8.99
+P-WE-004,West,Alice Brown,Schedule,compliance,20.95
+P-WE-004,West,Alice Brown,Schedule,estimating,5.39
+P-WE-004,West,Alice Brown,WC Insurance,bidresults,13.35
+P-WE-004,West,Alice Brown,WC Insurance,bidreview,1.26
+P-WE-004,West,Alice Brown,WC Insurance,compliance,16.68
+P-WE-004,West,Alice Brown,WC Insurance,estimating,17.58
+P-NE-005,Northeast,John Doe,BR Insurance,bidresults,18.01
+P-NE-005,Northeast,John Doe,BR Insurance,bidreview,31.73
+P-NE-005,Northeast,John Doe,BR Insurance,compliance,4.0
+P-NE-005,Northeast,John Doe,BR Insurance,estimating,34.14
+P-NE-005,Northeast,John Doe,CA Insurance,bidresults,5.88
+P-NE-005,Northeast,John Doe,CA Insurance,bidreview,3.63
+P-NE-005,Northeast,John Doe,CA Insurance,compliance,30.1
+P-NE-005,Northeast,John Doe,CA Insurance,estimating,29.9
+P-NE-005,Northeast,John Doe,Cost,bidresults,7.11
+P-NE-005,Northeast,John Doe,Cost,bidreview,12.94
+P-NE-005,Northeast,John Doe,Cost,compliance,25.36
+P-NE-005,Northeast,John Doe,Cost,estimating,26.56
+P-NE-005,Northeast,John Doe,GL Insurance,bidresults,41.16
+P-NE-005,Northeast,John Doe,GL Insurance,bidreview,4.02
+P-NE-005,Northeast,John Doe,GL Insurance,compliance,4.78
+P-NE-005,Northeast,John Doe,GL Insurance,estimating,16.97
+P-NE-005,Northeast,John Doe,Safety,bidresults,17.97
+P-NE-005,Northeast,John Doe,Safety,bidreview,25.4
+P-NE-005,Northeast,John Doe,Safety,compliance,25.92
+P-NE-005,Northeast,John Doe,Safety,estimating,18.26
+P-NE-005,Northeast,John Doe,Schedule,bidresults,30.6
+P-NE-005,Northeast,John Doe,Schedule,bidreview,18.02
+P-NE-005,Northeast,John Doe,Schedule,compliance,32.03
+P-NE-005,Northeast,John Doe,Schedule,estimating,7.07
+P-NE-005,Northeast,John Doe,WC Insurance,bidresults,3.14
+P-NE-005,Northeast,John Doe,WC Insurance,bidreview,33.51
+P-NE-005,Northeast,John Doe,WC Insurance,compliance,12.38
+P-NE-005,Northeast,John Doe,WC Insurance,estimating,31.77
+P-SE-006,Southeast,Jane Smith,BR Insurance,bidresults,21.82
+P-SE-006,Southeast,Jane Smith,BR Insurance,bidreview,2.63
+P-SE-006,Southeast,Jane Smith,BR Insurance,compliance,6.27
+P-SE-006,Southeast,Jane Smith,BR Insurance,estimating,15.52
+P-SE-006,Southeast,Jane Smith,CA Insurance,bidresults,18.39
+P-SE-006,Southeast,Jane Smith,CA Insurance,bidreview,23.35
+P-SE-006,Southeast,Jane Smith,CA Insurance,compliance,7.19
+P-SE-006,Southeast,Jane Smith,CA Insurance,estimating,2.84
+P-SE-006,Southeast,Jane Smith,Cost,bidresults,21.44
+P-SE-006,Southeast,Jane Smith,Cost,bidreview,12.85
+P-SE-006,Southeast,Jane Smith,Cost,compliance,16.1
+P-SE-006,Southeast,Jane Smith,Cost,estimating,6.93
+P-SE-006,Southeast,Jane Smith,GL Insurance,bidresults,7.97
+P-SE-006,Southeast,Jane Smith,GL Insurance,bidreview,14.58
+P-SE-006,Southeast,Jane Smith,GL Insurance,compliance,4.75
+P-SE-006,Southeast,Jane Smith,GL Insurance,estimating,17.04
+P-SE-006,Southeast,Jane Smith,Safety,bidresults,14.0
+P-SE-006,Southeast,Jane Smith,Safety,bidreview,5.02
+P-SE-006,Southeast,Jane Smith,Safety,compliance,20.9
+P-SE-006,Southeast,Jane Smith,Safety,estimating,7.23
+P-SE-006,Southeast,Jane Smith,Schedule,bidresults,20.19
+P-SE-006,Southeast,Jane Smith,Schedule,bidreview,11.46
+P-SE-006,Southeast,Jane Smith,Schedule,compliance,6.83
+P-SE-006,Southeast,Jane Smith,Schedule,estimating,13.1
+P-SE-006,Southeast,Jane Smith,WC Insurance,bidresults,6.51
+P-SE-006,Southeast,Jane Smith,WC Insurance,bidreview,9.45
+P-SE-006,Southeast,Jane Smith,WC Insurance,compliance,6.75
+P-SE-006,Southeast,Jane Smith,WC Insurance,estimating,15.71
+P-NE-007,Northeast,John Doe,BR Insurance,bidresults,20.14
+P-NE-007,Northeast,John Doe,BR Insurance,bidreview,16.61
+P-NE-007,Northeast,John Doe,BR Insurance,compliance,25.88
+P-NE-007,Northeast,John Doe,BR Insurance,estimating,26.94
+P-NE-007,Northeast,John Doe,CA Insurance,bidresults,46.45
+P-NE-007,Northeast,John Doe,CA Insurance,bidreview,21.99
+P-NE-007,Northeast,John Doe,CA Insurance,compliance,29.73
+P-NE-007,Northeast,John Doe,CA Insurance,estimating,48.93
+P-NE-007,Northeast,John Doe,Cost,bidresults,21.62
+P-NE-007,Northeast,John Doe,Cost,bidreview,32.91
+P-NE-007,Northeast,John Doe,Cost,compliance,46.3
+P-NE-007,Northeast,John Doe,Cost,estimating,45.38
+P-NE-007,Northeast,John Doe,GL Insurance,bidresults,20.94
+P-NE-007,Northeast,John Doe,GL Insurance,bidreview,46.16
+P-NE-007,Northeast,John Doe,GL Insurance,compliance,56.37
+P-NE-007,Northeast,John Doe,GL Insurance,estimating,43.93
+P-NE-007,Northeast,John Doe,Safety,bidresults,24.68
+P-NE-007,Northeast,John Doe,Safety,bidreview,9.88
+P-NE-007,Northeast,John Doe,Safety,compliance,22.94
+P-NE-007,Northeast,John Doe,Safety,estimating,23.24
+P-NE-007,Northeast,John Doe,Schedule,bidresults,30.84
+P-NE-007,Northeast,John Doe,Schedule,bidreview,16.57
+P-NE-007,Northeast,John Doe,Schedule,compliance,45.42
+P-NE-007,Northeast,John Doe,Schedule,estimating,13.29
+P-NE-007,Northeast,John Doe,WC Insurance,bidresults,20.95
+P-NE-007,Northeast,John Doe,WC Insurance,bidreview,27.1
+P-NE-007,Northeast,John Doe,WC Insurance,compliance,45.47
+P-NE-007,Northeast,John Doe,WC Insurance,estimating,24.57
+P-SE-008,Southeast,Jane Smith,BR Insurance,bidresults,9.9
+P-SE-008,Southeast,Jane Smith,BR Insurance,bidreview,17.67
+P-SE-008,Southeast,Jane Smith,BR Insurance,compliance,5.64
+P-SE-008,Southeast,Jane Smith,BR Insurance,estimating,22.55
+P-SE-008,Southeast,Jane Smith,CA Insurance,bidresults,25.68
+P-SE-008,Southeast,Jane Smith,CA Insurance,bidreview,32.97
+P-SE-008,Southeast,Jane Smith,CA Insurance,compliance,18.89
+P-SE-008,Southeast,Jane Smith,CA Insurance,estimating,20.11
+P-SE-008,Southeast,Jane Smith,Cost,bidresults,6.82
+P-SE-008,Southeast,Jane Smith,Cost,bidreview,34.91
+P-SE-008,Southeast,Jane Smith,Cost,compliance,30.7
+P-SE-008,Southeast,Jane Smith,Cost,estimating,33.42
+P-SE-008,Southeast,Jane Smith,GL Insurance,bidresults,30.79
+P-SE-008,Southeast,Jane Smith,GL Insurance,bidreview,15.4
+P-SE-008,Southeast,Jane Smith,GL Insurance,compliance,11.08
+P-SE-008,Southeast,Jane Smith,GL Insurance,estimating,38.44
+P-SE-008,Southeast,Jane Smith,Safety,bidresults,2.58
+P-SE-008,Southeast,Jane Smith,Safety,bidreview,14.11
+P-SE-008,Southeast,Jane Smith,Safety,compliance,11.83
+P-SE-008,Southeast,Jane Smith,Safety,estimating,6.77
+P-SE-008,Southeast,Jane Smith,Schedule,bidresults,25.24
+P-SE-008,Southeast,Jane Smith,Schedule,bidreview,16.96
+P-SE-008,Southeast,Jane Smith,Schedule,compliance,29.98
+P-SE-008,Southeast,Jane Smith,Schedule,estimating,2.47
+P-SE-008,Southeast,Jane Smith,WC Insurance,bidresults,32.85
+P-SE-008,Southeast,Jane Smith,WC Insurance,bidreview,15.56
+P-SE-008,Southeast,Jane Smith,WC Insurance,compliance,31.63
+P-SE-008,Southeast,Jane Smith,WC Insurance,estimating,14.54
+P-MW-009,Midwest,Mike Johnson,BR Insurance,bidresults,18.83
+P-MW-009,Midwest,Mike Johnson,BR Insurance,bidreview,11.17
+P-MW-009,Midwest,Mike Johnson,BR Insurance,compliance,12.55
+P-MW-009,Midwest,Mike Johnson,BR Insurance,estimating,31.65
+P-MW-009,Midwest,Mike Johnson,CA Insurance,bidresults,36.07
+P-MW-009,Midwest,Mike Johnson,CA Insurance,bidreview,32.87
+P-MW-009,Midwest,Mike Johnson,CA Insurance,compliance,18.65
+P-MW-009,Midwest,Mike Johnson,CA Insurance,estimating,18.0
+P-MW-009,Midwest,Mike Johnson,Cost,bidresults,15.43
+P-MW-009,Midwest,Mike Johnson,Cost,bidreview,14.3
+P-MW-009,Midwest,Mike Johnson,Cost,compliance,11.2
+P-MW-009,Midwest,Mike Johnson,Cost,estimating,46.43
+P-MW-009,Midwest,Mike Johnson,GL Insurance,bidresults,35.78
+P-MW-009,Midwest,Mike Johnson,GL Insurance,bidreview,46.61
+P-MW-009,Midwest,Mike Johnson,GL Insurance,compliance,34.78
+P-MW-009,Midwest,Mike Johnson,GL Insurance,estimating,20.85
+P-MW-009,Midwest,Mike Johnson,Safety,bidresults,5.68
+P-MW-009,Midwest,Mike Johnson,Safety,bidreview,24.21
+P-MW-009,Midwest,Mike Johnson,Safety,compliance,10.17
+P-MW-009,Midwest,Mike Johnson,Safety,estimating,27.33
+P-MW-009,Midwest,Mike Johnson,Schedule,bidresults,36.11
+P-MW-009,Midwest,Mike Johnson,Schedule,bidreview,4.29
+P-MW-009,Midwest,Mike Johnson,Schedule,compliance,22.11
+P-MW-009,Midwest,Mike Johnson,Schedule,estimating,25.37
+P-MW-009,Midwest,Mike Johnson,WC Insurance,bidresults,42.39
+P-MW-009,Midwest,Mike Johnson,WC Insurance,bidreview,21.77
+P-MW-009,Midwest,Mike Johnson,WC Insurance,compliance,25.91
+P-MW-009,Midwest,Mike Johnson,WC Insurance,estimating,28.35
+P-WE-010,West,Alice Brown,BR Insurance,bidresults,4.12
+P-WE-010,West,Alice Brown,BR Insurance,bidreview,18.91
+P-WE-010,West,Alice Brown,BR Insurance,compliance,4.63
+P-WE-010,West,Alice Brown,BR Insurance,estimating,26.35
+P-WE-010,West,Alice Brown,CA Insurance,bidresults,19.14
+P-WE-010,West,Alice Brown,CA Insurance,bidreview,4.21
+P-WE-010,West,Alice Brown,CA Insurance,compliance,9.17
+P-WE-010,West,Alice Brown,CA Insurance,estimating,17.6
+P-WE-010,West,Alice Brown,Cost,bidresults,30.86
+P-WE-010,West,Alice Brown,Cost,bidreview,3.34
+P-WE-010,West,Alice Brown,Cost,compliance,9.49
+P-WE-010,West,Alice Brown,Cost,estimating,7.82
+P-WE-010,West,Alice Brown,GL Insurance,bidresults,35.55
+P-WE-010,West,Alice Brown,GL Insurance,bidreview,30.18
+P-WE-010,West,Alice Brown,GL Insurance,compliance,22.41
+P-WE-010,West,Alice Brown,GL Insurance,estimating,25.62
+P-WE-010,West,Alice Brown,Safety,bidresults,4.79
+P-WE-010,West,Alice Brown,Safety,bidreview,22.14
+P-WE-010,West,Alice Brown,Safety,compliance,9.87
+P-WE-010,West,Alice Brown,Safety,estimating,22.1
+P-WE-010,West,Alice Brown,Schedule,bidresults,26.9
+P-WE-010,West,Alice Brown,Schedule,bidreview,2.89
+P-WE-010,West,Alice Brown,Schedule,compliance,26.96
+P-WE-010,West,Alice Brown,Schedule,estimating,12.92
+P-WE-010,West,Alice Brown,WC Insurance,bidresults,9.68
+P-WE-010,West,Alice Brown,WC Insurance,bidreview,19.97
+P-WE-010,West,Alice Brown,WC Insurance,compliance,24.7
+P-WE-010,West,Alice Brown,WC Insurance,estimating,1.23
+P-NE-011,Northeast,John Doe,BR Insurance,bidresults,34.3
+P-NE-011,Northeast,John Doe,BR Insurance,bidreview,47.16
+P-NE-011,Northeast,John Doe,BR Insurance,compliance,44.38
+P-NE-011,Northeast,John Doe,BR Insurance,estimating,32.82
+P-NE-011,Northeast,John Doe,CA Insurance,bidresults,49.96
+P-NE-011,Northeast,John Doe,CA Insurance,bidreview,19.92
+P-NE-011,Northeast,John Doe,CA Insurance,compliance,26.33
+P-NE-011,Northeast,John Doe,CA Insurance,estimating,19.1
+P-NE-011,Northeast,John Doe,Cost,bidresults,19.69
+P-NE-011,Northeast,John Doe,Cost,bidreview,35.54
+P-NE-011,Northeast,John Doe,Cost,compliance,49.84
+P-NE-011,Northeast,John Doe,Cost,estimating,52.21
+P-NE-011,Northeast,John Doe,GL Insurance,bidresults,41.07
+P-NE-011,Northeast,John Doe,GL Insurance,bidreview,44.48
+P-NE-011,Northeast,John Doe,GL Insurance,compliance,48.65
+P-NE-011,Northeast,John Doe,GL Insurance,estimating,29.48
+P-NE-011,Northeast,John Doe,Safety,bidresults,38.84
+P-NE-011,Northeast,John Doe,Safety,bidreview,24.94
+P-NE-011,Northeast,John Doe,Safety,compliance,8.14
+P-NE-011,Northeast,John Doe,Safety,estimating,19.07
+P-NE-011,Northeast,John Doe,Schedule,bidresults,20.56
+P-NE-011,Northeast,John Doe,Schedule,bidreview,38.7
+P-NE-011,Northeast,John Doe,Schedule,compliance,35.37
+P-NE-011,Northeast,John Doe,Schedule,estimating,18.14
+P-NE-011,Northeast,John Doe,WC Insurance,bidresults,48.32
+P-NE-011,Northeast,John Doe,WC Insurance,bidreview,30.11
+P-NE-011,Northeast,John Doe,WC Insurance,compliance,16.01
+P-NE-011,Northeast,John Doe,WC Insurance,estimating,13.39
+P-SE-012,Southeast,Jane Smith,BR Insurance,bidresults,7.94
+P-SE-012,Southeast,Jane Smith,BR Insurance,bidreview,21.86
+P-SE-012,Southeast,Jane Smith,BR Insurance,compliance,22.08
+P-SE-012,Southeast,Jane Smith,BR Insurance,estimating,23.47
+P-SE-012,Southeast,Jane Smith,CA Insurance,bidresults,25.9
+P-SE-012,Southeast,Jane Smith,CA Insurance,bidreview,23.83
+P-SE-012,Southeast,Jane Smith,CA Insurance,compliance,26.29
+P-SE-012,Southeast,Jane Smith,CA Insurance,estimating,4.13
+P-SE-012,Southeast,Jane Smith,Cost,bidresults,28.41
+P-SE-012,Southeast,Jane Smith,Cost,bidreview,8.74
+P-SE-012,Southeast,Jane Smith,Cost,compliance,25.18
+P-SE-012,Southeast,Jane Smith,Cost,estimating,4.19
+P-SE-012,Southeast,Jane Smith,GL Insurance,bidresults,30.97
+P-SE-012,Southeast,Jane Smith,GL Insurance,bidreview,30.4
+P-SE-012,Southeast,Jane Smith,GL Insurance,compliance,28.57
+P-SE-012,Southeast,Jane Smith,GL Insurance,estimating,34.19
+P-SE-012,Southeast,Jane Smith,Safety,bidresults,22.39
+P-SE-012,Southeast,Jane Smith,Safety,bidreview,10.35
+P-SE-012,Southeast,Jane Smith,Safety,compliance,4.55
+P-SE-012,Southeast,Jane Smith,Safety,estimating,15.28
+P-SE-012,Southeast,Jane Smith,Schedule,bidresults,6.25
+P-SE-012,Southeast,Jane Smith,Schedule,bidreview,20.9
+P-SE-012,Southeast,Jane Smith,Schedule,compliance,23.47
+P-SE-012,Southeast,Jane Smith,Schedule,estimating,22.52
+P-SE-012,Southeast,Jane Smith,WC Insurance,bidresults,27.06
+P-SE-012,Southeast,Jane Smith,WC Insurance,bidreview,1.69
+P-SE-012,Southeast,Jane Smith,WC Insurance,compliance,10.3
+P-SE-012,Southeast,Jane Smith,WC Insurance,estimating,21.62
+P-MW-013,Midwest,Mike Johnson,BR Insurance,bidresults,23.38
+P-MW-013,Midwest,Mike Johnson,BR Insurance,bidreview,44.5
+P-MW-013,Midwest,Mike Johnson,BR Insurance,compliance,10.34
+P-MW-013,Midwest,Mike Johnson,BR Insurance,estimating,16.62
+P-MW-013,Midwest,Mike Johnson,CA Insurance,bidresults,29.46
+P-MW-013,Midwest,Mike Johnson,CA Insurance,bidreview,38.14
+P-MW-013,Midwest,Mike Johnson,CA Insurance,compliance,33.25
+P-MW-013,Midwest,Mike Johnson,CA Insurance,estimating,21.55
+P-MW-013,Midwest,Mike Johnson,Cost,bidresults,18.73
+P-MW-013,Midwest,Mike Johnson,Cost,bidreview,42.81
+P-MW-013,Midwest,Mike Johnson,Cost,compliance,11.95
+P-MW-013,Midwest,Mike Johnson,Cost,estimating,20.1
+P-MW-013,Midwest,Mike Johnson,GL Insurance,bidresults,35.45
+P-MW-013,Midwest,Mike Johnson,GL Insurance,bidreview,39.66
+P-MW-013,Midwest,Mike Johnson,GL Insurance,compliance,53.25
+P-MW-013,Midwest,Mike Johnson,GL Insurance,estimating,29.99
+P-MW-013,Midwest,Mike Johnson,Safety,bidresults,14.16
+P-MW-013,Midwest,Mike Johnson,Safety,bidreview,16.13
+P-MW-013,Midwest,Mike Johnson,Safety,compliance,41.68
+P-MW-013,Midwest,Mike Johnson,Safety,estimating,37.57
+P-MW-013,Midwest,Mike Johnson,Schedule,bidresults,17.21
+P-MW-013,Midwest,Mike Johnson,Schedule,bidreview,13.9
+P-MW-013,Midwest,Mike Johnson,Schedule,compliance,23.41
+P-MW-013,Midwest,Mike Johnson,Schedule,estimating,37.66
+P-MW-013,Midwest,Mike Johnson,WC Insurance,bidresults,15.14
+P-MW-013,Midwest,Mike Johnson,WC Insurance,bidreview,45.57
+P-MW-013,Midwest,Mike Johnson,WC Insurance,compliance,46.82
+P-MW-013,Midwest,Mike Johnson,WC Insurance,estimating,12.61
+P-WE-014,West,Alice Brown,BR Insurance,bidresults,9.41
+P-WE-014,West,Alice Brown,BR Insurance,bidreview,9.05
+P-WE-014,West,Alice Brown,BR Insurance,compliance,3.55
+P-WE-014,West,Alice Brown,BR Insurance,estimating,6.91
+P-WE-014,West,Alice Brown,CA Insurance,bidresults,15.16
+P-WE-014,West,Alice Brown,CA Insurance,bidreview,22.63
+P-WE-014,West,Alice Brown,CA Insurance,compliance,21.76
+P-WE-014,West,Alice Brown,CA Insurance,estimating,16.58
+P-WE-014,West,Alice Brown,Cost,bidresults,18.99
+P-WE-014,West,Alice Brown,Cost,bidreview,1.04
+P-WE-014,West,Alice Brown,Cost,compliance,14.46
+P-WE-014,West,Alice Brown,Cost,estimating,24.14
+P-WE-014,West,Alice Brown,GL Insurance,bidresults,24.74
+P-WE-014,West,Alice Brown,GL Insurance,bidreview,19.6
+P-WE-014,West,Alice Brown,GL Insurance,compliance,9.79
+P-WE-014,West,Alice Brown,GL Insurance,estimating,10.25
+P-WE-014,West,Alice Brown,Safety,bidresults,2.4
+P-WE-014,West,Alice Brown,Safety,bidreview,15.84
+P-WE-014,West,Alice Brown,Safety,compliance,8.28
+P-WE-014,West,Alice Brown,Safety,estimating,14.41
+P-WE-014,West,Alice Brown,Schedule,bidresults,15.18
+P-WE-014,West,Alice Brown,Schedule,bidreview,8.7
+P-WE-014,West,Alice Brown,Schedule,compliance,6.09
+P-WE-014,West,Alice Brown,Schedule,estimating,12.53
+P-WE-014,West,Alice Brown,WC Insurance,bidresults,9.98
+P-WE-014,West,Alice Brown,WC Insurance,bidreview,16.83
+P-WE-014,West,Alice Brown,WC Insurance,compliance,7.8
+P-WE-014,West,Alice Brown,WC Insurance,estimating,7.61
+P-NE-015,Northeast,John Doe,BR Insurance,bidresults,1.78
+P-NE-015,Northeast,John Doe,BR Insurance,bidreview,22.53
+P-NE-015,Northeast,John Doe,BR Insurance,compliance,7.37
+P-NE-015,Northeast,John Doe,BR Insurance,estimating,8.19
+P-NE-015,Northeast,John Doe,CA Insurance,bidresults,3.55
+P-NE-015,Northeast,John Doe,CA Insurance,bidreview,9.57
+P-NE-015,Northeast,John Doe,CA Insurance,compliance,30.74
+P-NE-015,Northeast,John Doe,CA Insurance,estimating,17.63
+P-NE-015,Northeast,John Doe,Cost,bidresults,18.2
+P-NE-015,Northeast,John Doe,Cost,bidreview,16.91
+P-NE-015,Northeast,John Doe,Cost,compliance,25.22
+P-NE-015,Northeast,John Doe,Cost,estimating,22.46
+P-NE-015,Northeast,John Doe,GL Insurance,bidresults,21.62
+P-NE-015,Northeast,John Doe,GL Insurance,bidreview,32.84
+P-NE-015,Northeast,John Doe,GL Insurance,compliance,4.39
+P-NE-015,Northeast,John Doe,GL Insurance,estimating,7.79
+P-NE-015,Northeast,John Doe,Safety,bidresults,27.13
+P-NE-015,Northeast,John Doe,Safety,bidreview,13.82
+P-NE-015,Northeast,John Doe,Safety,compliance,14.72
+P-NE-015,Northeast,John Doe,Safety,estimating,7.2
+P-NE-015,Northeast,John Doe,Schedule,bidresults,9.89
+P-NE-015,Northeast,John Doe,Schedule,bidreview,10.33
+P-NE-015,Northeast,John Doe,Schedule,compliance,1.01
+P-NE-015,Northeast,John Doe,Schedule,estimating,17.99
+P-NE-015,Northeast,John Doe,WC Insurance,bidresults,26.54
+P-NE-015,Northeast,John Doe,WC Insurance,bidreview,22.52
+P-NE-015,Northeast,John Doe,WC Insurance,compliance,28.83
+P-NE-015,Northeast,John Doe,WC Insurance,estimating,12.4
+P-SE-016,Southeast,Jane Smith,BR Insurance,bidresults,40.0
+P-SE-016,Southeast,Jane Smith,BR Insurance,bidreview,28.7
+P-SE-016,Southeast,Jane Smith,BR Insurance,compliance,25.82
+P-SE-016,Southeast,Jane Smith,BR Insurance,estimating,41.52
+P-SE-016,Southeast,Jane Smith,CA Insurance,bidresults,25.19
+P-SE-016,Southeast,Jane Smith,CA Insurance,bidreview,40.66
+P-SE-016,Southeast,Jane Smith,CA Insurance,compliance,33.77
+P-SE-016,Southeast,Jane Smith,CA Insurance,estimating,29.51
+P-SE-016,Southeast,Jane Smith,Cost,bidresults,7.22
+P-SE-016,Southeast,Jane Smith,Cost,bidreview,26.78
+P-SE-016,Southeast,Jane Smith,Cost,compliance,33.24
+P-SE-016,Southeast,Jane Smith,Cost,estimating,16.76
+P-SE-016,Southeast,Jane Smith,GL Insurance,bidresults,12.01
+P-SE-016,Southeast,Jane Smith,GL Insurance,bidreview,17.04
+P-SE-016,Southeast,Jane Smith,GL Insurance,compliance,30.72
+P-SE-016,Southeast,Jane Smith,GL Insurance,estimating,48.32
+P-SE-016,Southeast,Jane Smith,Safety,bidresults,17.16
+P-SE-016,Southeast,Jane Smith,Safety,bidreview,29.54
+P-SE-016,Southeast,Jane Smith,Safety,compliance,5.05
+P-SE-016,Southeast,Jane Smith,Safety,estimating,30.26
+P-SE-016,Southeast,Jane Smith,Schedule,bidresults,28.85
+P-SE-016,Southeast,Jane Smith,Schedule,bidreview,17.58
+P-SE-016,Southeast,Jane Smith,Schedule,compliance,8.78
+P-SE-016,Southeast,Jane Smith,Schedule,estimating,26.19
+P-SE-016,Southeast,Jane Smith,WC Insurance,bidresults,36.06
+P-SE-016,Southeast,Jane Smith,WC Insurance,bidreview,13.97
+P-SE-016,Southeast,Jane Smith,WC Insurance,compliance,22.26
+P-SE-016,Southeast,Jane Smith,WC Insurance,estimating,37.93
+P-MW-017,Midwest,Mike Johnson,BR Insurance,bidresults,12.94
+P-MW-017,Midwest,Mike Johnson,BR Insurance,bidreview,16.54
+P-MW-017,Midwest,Mike Johnson,BR Insurance,compliance,9.97
+P-MW-017,Midwest,Mike Johnson,BR Insurance,estimating,2.41
+P-MW-017,Midwest,Mike Johnson,CA Insurance,bidresults,23.62
+P-MW-017,Midwest,Mike Johnson,CA Insurance,bidreview,11.39
+P-MW-017,Midwest,Mike Johnson,CA Insurance,compliance,11.5
+P-MW-017,Midwest,Mike Johnson,CA Insurance,estimating,6.17
+P-MW-017,Midwest,Mike Johnson,Cost,bidresults,18.22
+P-MW-017,Midwest,Mike Johnson,Cost,bidreview,13.82
+P-MW-017,Midwest,Mike Johnson,Cost,compliance,7.68
+P-MW-017,Midwest,Mike Johnson,Cost,estimating,8.0
+P-MW-017,Midwest,Mike Johnson,GL Insurance,bidresults,10.59
+P-MW-017,Midwest,Mike Johnson,GL Insurance,bidreview,3.32
+P-MW-017,Midwest,Mike Johnson,GL Insurance,compliance,9.15
+P-MW-017,Midwest,Mike Johnson,GL Insurance,estimating,9.57
+P-MW-017,Midwest,Mike Johnson,Safety,bidresults,6.49
+P-MW-017,Midwest,Mike Johnson,Safety,bidreview,16.32
+P-MW-017,Midwest,Mike Johnson,Safety,compliance,13.53
+P-MW-017,Midwest,Mike Johnson,Safety,estimating,11.43
+P-MW-017,Midwest,Mike Johnson,Schedule,bidresults,16.62
+P-MW-017,Midwest,Mike Johnson,Schedule,bidreview,18.44
+P-MW-017,Midwest,Mike Johnson,Schedule,compliance,19.84
+P-MW-017,Midwest,Mike Johnson,Schedule,estimating,12.51
+P-MW-017,Midwest,Mike Johnson,WC Insurance,bidresults,17.65
+P-MW-017,Midwest,Mike Johnson,WC Insurance,bidreview,13.96
+P-MW-017,Midwest,Mike Johnson,WC Insurance,compliance,6.55
+P-MW-017,Midwest,Mike Johnson,WC Insurance,estimating,4.32
+P-WE-018,West,Alice Brown,BR Insurance,bidresults,13.11
+P-WE-018,West,Alice Brown,BR Insurance,bidreview,24.17
+P-WE-018,West,Alice Brown,BR Insurance,compliance,26.7
+P-WE-018,West,Alice Brown,BR Insurance,estimating,14.6
+P-WE-018,West,Alice Brown,CA Insurance,bidresults,33.58
+P-WE-018,West,Alice Brown,CA Insurance,bidreview,35.89
+P-WE-018,West,Alice Brown,CA Insurance,compliance,26.76
+P-WE-018,West,Alice Brown,CA Insurance,estimating,12.08
+P-WE-018,West,Alice Brown,Cost,bidresults,43.14
+P-WE-018,West,Alice Brown,Cost,bidreview,28.22
+P-WE-018,West,Alice Brown,Cost,compliance,27.07
+P-WE-018,West,Alice Brown,Cost,estimating,13.24
+P-WE-018,West,Alice Brown,GL Insurance,bidresults,24.78
+P-WE-018,West,Alice Brown,GL Insurance,bidreview,37.85
+P-WE-018,West,Alice Brown,GL Insurance,compliance,24.82
+P-WE-018,West,Alice Brown,GL Insurance,estimating,40.13
+P-WE-018,West,Alice Brown,Safety,bidresults,34.9
+P-WE-018,West,Alice Brown,Safety,bidreview,39.14
+P-WE-018,West,Alice Brown,Safety,compliance,21.76
+P-WE-018,West,Alice Brown,Safety,estimating,43.14
+P-WE-018,West,Alice Brown,Schedule,bidresults,37.62
+P-WE-018,West,Alice Brown,Schedule,bidreview,30.36
+P-WE-018,West,Alice Brown,Schedule,compliance,41.27
+P-WE-018,West,Alice Brown,Schedule,estimating,34.82
+P-WE-018,West,Alice Brown,WC Insurance,bidresults,37.17
+P-WE-018,West,Alice Brown,WC Insurance,bidreview,27.43
+P-WE-018,West,Alice Brown,WC Insurance,compliance,23.45
+P-WE-018,West,Alice Brown,WC Insurance,estimating,11.16
+P-NE-019,Northeast,John Doe,BR Insurance,bidresults,7.78
+P-NE-019,Northeast,John Doe,BR Insurance,bidreview,23.16
+P-NE-019,Northeast,John Doe,BR Insurance,compliance,33.29
+P-NE-019,Northeast,John Doe,BR Insurance,estimating,26.64
+P-NE-019,Northeast,John Doe,CA Insurance,bidresults,25.77
+P-NE-019,Northeast,John Doe,CA Insurance,bidreview,1.75
+P-NE-019,Northeast,John Doe,CA Insurance,compliance,5.67
+P-NE-019,Northeast,John Doe,CA Insurance,estimating,6.64
+P-NE-019,Northeast,John Doe,Cost,bidresults,13.75
+P-NE-019,Northeast,John Doe,Cost,bidreview,2.96
+P-NE-019,Northeast,John Doe,Cost,compliance,9.25
+P-NE-019,Northeast,John Doe,Cost,estimating,15.79
+P-NE-019,Northeast,John Doe,GL Insurance,bidresults,24.58
+P-NE-019,Northeast,John Doe,GL Insurance,bidreview,13.09
+P-NE-019,Northeast,John Doe,GL Insurance,compliance,3.78
+P-NE-019,Northeast,John Doe,GL Insurance,estimating,6.28
+P-NE-019,Northeast,John Doe,Safety,bidresults,26.79
+P-NE-019,Northeast,John Doe,Safety,bidreview,24.6
+P-NE-019,Northeast,John Doe,Safety,compliance,24.31
+P-NE-019,Northeast,John Doe,Safety,estimating,12.75
+P-NE-019,Northeast,John Doe,Schedule,bidresults,16.24
+P-NE-019,Northeast,John Doe,Schedule,bidreview,1.89
+P-NE-019,Northeast,John Doe,Schedule,compliance,5.48
+P-NE-019,Northeast,John Doe,Schedule,estimating,22.21
+P-NE-019,Northeast,John Doe,WC Insurance,bidresults,29.12
+P-NE-019,Northeast,John Doe,WC Insurance,bidreview,37.0
+P-NE-019,Northeast,John Doe,WC Insurance,compliance,24.41
+P-NE-019,Northeast,John Doe,WC Insurance,estimating,13.6
+P-SE-020,Southeast,Jane Smith,BR Insurance,bidresults,18.41
+P-SE-020,Southeast,Jane Smith,BR Insurance,bidreview,3.96
+P-SE-020,Southeast,Jane Smith,BR Insurance,compliance,25.66
+P-SE-020,Southeast,Jane Smith,BR Insurance,estimating,23.4
+P-SE-020,Southeast,Jane Smith,CA Insurance,bidresults,12.11
+P-SE-020,Southeast,Jane Smith,CA Insurance,bidreview,4.87
+P-SE-020,Southeast,Jane Smith,CA Insurance,compliance,26.04
+P-SE-020,Southeast,Jane Smith,CA Insurance,estimating,32.48
+P-SE-020,Southeast,Jane Smith,Cost,bidresults,4.89
+P-SE-020,Southeast,Jane Smith,Cost,bidreview,6.7
+P-SE-020,Southeast,Jane Smith,Cost,compliance,26.43
+P-SE-020,Southeast,Jane Smith,Cost,estimating,21.65
+P-SE-020,Southeast,Jane Smith,GL Insurance,bidresults,15.68
+P-SE-020,Southeast,Jane Smith,GL Insurance,bidreview,12.54
+P-SE-020,Southeast,Jane Smith,GL Insurance,compliance,36.45
+P-SE-020,Southeast,Jane Smith,GL Insurance,estimating,26.06
+P-SE-020,Southeast,Jane Smith,Safety,bidresults,1.67
+P-SE-020,Southeast,Jane Smith,Safety,bidreview,22.3
+P-SE-020,Southeast,Jane Smith,Safety,compliance,3.81
+P-SE-020,Southeast,Jane Smith,Safety,estimating,26.08
+P-SE-020,Southeast,Jane Smith,Schedule,bidresults,22.47
+P-SE-020,Southeast,Jane Smith,Schedule,bidreview,16.79
+P-SE-020,Southeast,Jane Smith,Schedule,compliance,20.59
+P-SE-020,Southeast,Jane Smith,Schedule,estimating,7.1
+P-SE-020,Southeast,Jane Smith,WC Insurance,bidresults,20.44
+P-SE-020,Southeast,Jane Smith,WC Insurance,bidreview,23.17
+P-SE-020,Southeast,Jane Smith,WC Insurance,compliance,22.41
+P-SE-020,Southeast,Jane Smith,WC Insurance,estimating,3.36
+P-MW-021,Midwest,Mike Johnson,BR Insurance,bidresults,8.47
+P-MW-021,Midwest,Mike Johnson,BR Insurance,bidreview,15.74
+P-MW-021,Midwest,Mike Johnson,BR Insurance,compliance,38.23
+P-MW-021,Midwest,Mike Johnson,BR Insurance,estimating,39.07
+P-MW-021,Midwest,Mike Johnson,CA Insurance,bidresults,32.41
+P-MW-021,Midwest,Mike Johnson,CA Insurance,bidreview,43.27
+P-MW-021,Midwest,Mike Johnson,CA Insurance,compliance,26.59
+P-MW-021,Midwest,Mike Johnson,CA Insurance,estimating,17.75
+P-MW-021,Midwest,Mike Johnson,Cost,bidresults,48.43
+P-MW-021,Midwest,Mike Johnson,Cost,bidreview,43.98
+P-MW-021,Midwest,Mike Johnson,Cost,compliance,14.22
+P-MW-021,Midwest,Mike Johnson,Cost,estimating,42.89
+P-MW-021,Midwest,Mike Johnson,GL Insurance,bidresults,45.33
+P-MW-021,Midwest,Mike Johnson,GL Insurance,bidreview,42.35
+P-MW-021,Midwest,Mike Johnson,GL Insurance,compliance,23.8
+P-MW-021,Midwest,Mike Johnson,GL Insurance,estimating,51.62
+P-MW-021,Midwest,Mike Johnson,Safety,bidresults,19.42
+P-MW-021,Midwest,Mike Johnson,Safety,bidreview,27.42
+P-MW-021,Midwest,Mike Johnson,Safety,compliance,30.29
+P-MW-021,Midwest,Mike Johnson,Safety,estimating,35.15
+P-MW-021,Midwest,Mike Johnson,Schedule,bidresults,17.65
+P-MW-021,Midwest,Mike Johnson,Schedule,bidreview,21.14
+P-MW-021,Midwest,Mike Johnson,Schedule,compliance,24.24
+P-MW-021,Midwest,Mike Johnson,Schedule,estimating,18.82
+P-MW-021,Midwest,Mike Johnson,WC Insurance,bidresults,36.24
+P-MW-021,Midwest,Mike Johnson,WC Insurance,bidreview,28.53
+P-MW-021,Midwest,Mike Johnson,WC Insurance,compliance,24.42
+P-MW-021,Midwest,Mike Johnson,WC Insurance,estimating,26.34
+P-WE-022,West,Alice Brown,BR Insurance,bidresults,72.94
+P-WE-022,West,Alice Brown,BR Insurance,bidreview,64.63
+P-WE-022,West,Alice Brown,BR Insurance,compliance,87.98
+P-WE-022,West,Alice Brown,BR Insurance,estimating,69.64
+P-WE-022,West,Alice Brown,CA Insurance,bidresults,79.32
+P-WE-022,West,Alice Brown,CA Insurance,bidreview,84.94
+P-WE-022,West,Alice Brown,CA Insurance,compliance,83.11
+P-WE-022,West,Alice Brown,CA Insurance,estimating,81.04
+P-WE-022,West,Alice Brown,Cost,bidresults,95.93
+P-WE-022,West,Alice Brown,Cost,bidreview,73.21
+P-WE-022,West,Alice Brown,Cost,compliance,77.57
+P-WE-022,West,Alice Brown,Cost,estimating,93.13
+P-WE-022,West,Alice Brown,GL Insurance,bidresults,92.5
+P-WE-022,West,Alice Brown,GL Insurance,bidreview,71.65
+P-WE-022,West,Alice Brown,GL Insurance,compliance,84.15
+P-WE-022,West,Alice Brown,GL Insurance,estimating,91.32
+P-WE-022,West,Alice Brown,Safety,bidresults,95.92
+P-WE-022,West,Alice Brown,Safety,bidreview,86.05
+P-WE-022,West,Alice Brown,Safety,compliance,58.41
+P-WE-022,West,Alice Brown,Safety,estimating,69.05
+P-WE-022,West,Alice Brown,Schedule,bidresults,67.27
+P-WE-022,West,Alice Brown,Schedule,bidreview,75.16
+P-WE-022,West,Alice Brown,Schedule,compliance,94.04
+P-WE-022,West,Alice Brown,Schedule,estimating,61.15
+P-WE-022,West,Alice Brown,WC Insurance,bidresults,92.34
+P-WE-022,West,Alice Brown,WC Insurance,bidreview,88.55
+P-WE-022,West,Alice Brown,WC Insurance,compliance,81.16
+P-WE-022,West,Alice Brown,WC Insurance,estimating,86.9
+P-NE-023,Northeast,John Doe,BR Insurance,bidresults,6.49
+P-NE-023,Northeast,John Doe,BR Insurance,bidreview,4.59
+P-NE-023,Northeast,John Doe,BR Insurance,compliance,11.68
+P-NE-023,Northeast,John Doe,BR Insurance,estimating,1.28
+P-NE-023,Northeast,John Doe,CA Insurance,bidresults,3.78
+P-NE-023,Northeast,John Doe,CA Insurance,bidreview,22.43
+P-NE-023,Northeast,John Doe,CA Insurance,compliance,16.34
+P-NE-023,Northeast,John Doe,CA Insurance,estimating,13.17
+P-NE-023,Northeast,John Doe,Cost,bidresults,3.87
+P-NE-023,Northeast,John Doe,Cost,bidreview,7.03
+P-NE-023,Northeast,John Doe,Cost,compliance,5.62
+P-NE-023,Northeast,John Doe,Cost,estimating,3.9
+P-NE-023,Northeast,John Doe,GL Insurance,bidresults,15.17
+P-NE-023,Northeast,John Doe,GL Insurance,bidreview,14.07
+P-NE-023,Northeast,John Doe,GL Insurance,compliance,27.37
+P-NE-023,Northeast,John Doe,GL Insurance,estimating,20.56
+P-NE-023,Northeast,John Doe,Safety,bidresults,5.33
+P-NE-023,Northeast,John Doe,Safety,bidreview,11.72
+P-NE-023,Northeast,John Doe,Safety,compliance,4.7
+P-NE-023,Northeast,John Doe,Safety,estimating,16.24
+P-NE-023,Northeast,John Doe,Schedule,bidresults,6.42
+P-NE-023,Northeast,John Doe,Schedule,bidreview,15.92
+P-NE-023,Northeast,John Doe,Schedule,compliance,15.06
+P-NE-023,Northeast,John Doe,Schedule,estimating,7.62
+P-NE-023,Northeast,John Doe,WC Insurance,bidresults,5.78
+P-NE-023,Northeast,John Doe,WC Insurance,bidreview,6.94
+P-NE-023,Northeast,John Doe,WC Insurance,compliance,5.08
+P-NE-023,Northeast,John Doe,WC Insurance,estimating,3.11
+P-SE-024,Southeast,Jane Smith,BR Insurance,bidresults,23.03
+P-SE-024,Southeast,Jane Smith,BR Insurance,bidreview,44.58
+P-SE-024,Southeast,Jane Smith,BR Insurance,compliance,45.63
+P-SE-024,Southeast,Jane Smith,BR Insurance,estimating,38.25
+P-SE-024,Southeast,Jane Smith,CA Insurance,bidresults,51.41
+P-SE-024,Southeast,Jane Smith,CA Insurance,bidreview,37.9
+P-SE-024,Southeast,Jane Smith,CA Insurance,compliance,34.71
+P-SE-024,Southeast,Jane Smith,CA Insurance,estimating,35.02
+P-SE-024,Southeast,Jane Smith,Cost,bidresults,21.06
+P-SE-024,Southeast,Jane Smith,Cost,bidreview,37.78
+P-SE-024,Southeast,Jane Smith,Cost,compliance,26.37
+P-SE-024,Southeast,Jane Smith,Cost,estimating,36.62
+P-SE-024,Southeast,Jane Smith,GL Insurance,bidresults,27.97
+P-SE-024,Southeast,Jane Smith,GL Insurance,bidreview,24.96
+P-SE-024,Southeast,Jane Smith,GL Insurance,compliance,24.14
+P-SE-024,Southeast,Jane Smith,GL Insurance,estimating,47.18
+P-SE-024,Southeast,Jane Smith,Safety,bidresults,27.03
+P-SE-024,Southeast,Jane Smith,Safety,bidreview,48.64
+P-SE-024,Southeast,Jane Smith,Safety,compliance,43.88
+P-SE-024,Southeast,Jane Smith,Safety,estimating,30.11
+P-SE-024,Southeast,Jane Smith,Schedule,bidresults,35.96
+P-SE-024,Southeast,Jane Smith,Schedule,bidreview,47.74
+P-SE-024,Southeast,Jane Smith,Schedule,compliance,47.91
+P-SE-024,Southeast,Jane Smith,Schedule,estimating,32.64
+P-SE-024,Southeast,Jane Smith,WC Insurance,bidresults,20.74
+P-SE-024,Southeast,Jane Smith,WC Insurance,bidreview,38.51
+P-SE-024,Southeast,Jane Smith,WC Insurance,compliance,55.76
+P-SE-024,Southeast,Jane Smith,WC Insurance,estimating,28.15
+P-MW-025,Midwest,Mike Johnson,BR Insurance,bidresults,25.38
+P-MW-025,Midwest,Mike Johnson,BR Insurance,bidreview,27.81
+P-MW-025,Midwest,Mike Johnson,BR Insurance,compliance,31.73
+P-MW-025,Midwest,Mike Johnson,BR Insurance,estimating,37.03
+P-MW-025,Midwest,Mike Johnson,CA Insurance,bidresults,24.78
+P-MW-025,Midwest,Mike Johnson,CA Insurance,bidreview,29.45
+P-MW-025,Midwest,Mike Johnson,CA Insurance,compliance,20.01
+P-MW-025,Midwest,Mike Johnson,CA Insurance,estimating,40.35
+P-MW-025,Midwest,Mike Johnson,Cost,bidresults,13.44
+P-MW-025,Midwest,Mike Johnson,Cost,bidreview,34.6
+P-MW-025,Midwest,Mike Johnson,Cost,compliance,13.31
+P-MW-025,Midwest,Mike Johnson,Cost,estimating,42.9
+P-MW-025,Midwest,Mike Johnson,GL Insurance,bidresults,19.65
+P-MW-025,Midwest,Mike Johnson,GL Insurance,bidreview,8.11
+P-MW-025,Midwest,Mike Johnson,GL Insurance,compliance,31.75
+P-MW-025,Midwest,Mike Johnson,GL Insurance,estimating,26.02
+P-MW-025,Midwest,Mike Johnson,Safety,bidresults,3.7
+P-MW-025,Midwest,Mike Johnson,Safety,bidreview,24.78
+P-MW-025,Midwest,Mike Johnson,Safety,compliance,7.26
+P-MW-025,Midwest,Mike Johnson,Safety,estimating,6.65
+P-MW-025,Midwest,Mike Johnson,Schedule,bidresults,24.17
+P-MW-025,Midwest,Mike Johnson,Schedule,bidreview,38.62
+P-MW-025,Midwest,Mike Johnson,Schedule,compliance,24.6
+P-MW-025,Midwest,Mike Johnson,Schedule,estimating,12.6
+P-MW-025,Midwest,Mike Johnson,WC Insurance,bidresults,20.16
+P-MW-025,Midwest,Mike Johnson,WC Insurance,bidreview,11.26
+P-MW-025,Midwest,Mike Johnson,WC Insurance,compliance,30.12
+P-MW-025,Midwest,Mike Johnson,WC Insurance,estimating,30.28
+P-WE-026,West,Alice Brown,BR Insurance,bidresults,72.01
+P-WE-026,West,Alice Brown,BR Insurance,bidreview,52.65
+P-WE-026,West,Alice Brown,BR Insurance,compliance,82.44
+P-WE-026,West,Alice Brown,BR Insurance,estimating,87.48
+P-WE-026,West,Alice Brown,CA Insurance,bidresults,62.78
+P-WE-026,West,Alice Brown,CA Insurance,bidreview,90.03
+P-WE-026,West,Alice Brown,CA Insurance,compliance,78.89
+P-WE-026,West,Alice Brown,CA Insurance,estimating,91.98
+P-WE-026,West,Alice Brown,Cost,bidresults,76.77
+P-WE-026,West,Alice Brown,Cost,bidreview,60.64
+P-WE-026,West,Alice Brown,Cost,compliance,83.96
+P-WE-026,West,Alice Brown,Cost,estimating,66.3
+P-WE-026,West,Alice Brown,GL Insurance,bidresults,60.22
+P-WE-026,West,Alice Brown,GL Insurance,bidreview,94.71
+P-WE-026,West,Alice Brown,GL Insurance,compliance,76.75
+P-WE-026,West,Alice Brown,GL Insurance,estimating,77.02
+P-WE-026,West,Alice Brown,Safety,bidresults,73.99
+P-WE-026,West,Alice Brown,Safety,bidreview,57.54
+P-WE-026,West,Alice Brown,Safety,compliance,73.55
+P-WE-026,West,Alice Brown,Safety,estimating,50.97
+P-WE-026,West,Alice Brown,Schedule,bidresults,50.86
+P-WE-026,West,Alice Brown,Schedule,bidreview,73.91
+P-WE-026,West,Alice Brown,Schedule,compliance,81.07
+P-WE-026,West,Alice Brown,Schedule,estimating,84.34
+P-WE-026,West,Alice Brown,WC Insurance,bidresults,61.01
+P-WE-026,West,Alice Brown,WC Insurance,bidreview,52.59
+P-WE-026,West,Alice Brown,WC Insurance,compliance,63.89
+P-WE-026,West,Alice Brown,WC Insurance,estimating,68.28
+P-NE-027,Northeast,John Doe,BR Insurance,bidresults,54.81
+P-NE-027,Northeast,John Doe,BR Insurance,bidreview,34.19
+P-NE-027,Northeast,John Doe,BR Insurance,compliance,28.93
+P-NE-027,Northeast,John Doe,BR Insurance,estimating,28.58
+P-NE-027,Northeast,John Doe,CA Insurance,bidresults,45.31
+P-NE-027,Northeast,John Doe,CA Insurance,bidreview,35.17
+P-NE-027,Northeast,John Doe,CA Insurance,compliance,58.52
+P-NE-027,Northeast,John Doe,CA Insurance,estimating,39.58
+P-NE-027,Northeast,John Doe,Cost,bidresults,46.39
+P-NE-027,Northeast,John Doe,Cost,bidreview,57.64
+P-NE-027,Northeast,John Doe,Cost,compliance,44.41
+P-NE-027,Northeast,John Doe,Cost,estimating,28.26
+P-NE-027,Northeast,John Doe,GL Insurance,bidresults,51.75
+P-NE-027,Northeast,John Doe,GL Insurance,bidreview,50.81
+P-NE-027,Northeast,John Doe,GL Insurance,compliance,37.19
+P-NE-027,Northeast,John Doe,GL Insurance,estimating,58.31
+P-NE-027,Northeast,John Doe,Safety,bidresults,26.33
+P-NE-027,Northeast,John Doe,Safety,bidreview,32.67
+P-NE-027,Northeast,John Doe,Safety,compliance,26.92
+P-NE-027,Northeast,John Doe,Safety,estimating,16.65
+P-NE-027,Northeast,John Doe,Schedule,bidresults,41.06
+P-NE-027,Northeast,John Doe,Schedule,bidreview,16.61
+P-NE-027,Northeast,John Doe,Schedule,compliance,33.82
+P-NE-027,Northeast,John Doe,Schedule,estimating,45.25
+P-NE-027,Northeast,John Doe,WC Insurance,bidresults,40.0
+P-NE-027,Northeast,John Doe,WC Insurance,bidreview,29.53
+P-NE-027,Northeast,John Doe,WC Insurance,compliance,50.54
+P-NE-027,Northeast,John Doe,WC Insurance,estimating,55.81
+P-SE-028,Southeast,Jane Smith,BR Insurance,bidresults,14.7
+P-SE-028,Southeast,Jane Smith,BR Insurance,bidreview,49.69
+P-SE-028,Southeast,Jane Smith,BR Insurance,compliance,28.46
+P-SE-028,Southeast,Jane Smith,BR Insurance,estimating,46.52
+P-SE-028,Southeast,Jane Smith,CA Insurance,bidresults,33.35
+P-SE-028,Southeast,Jane Smith,CA Insurance,bidreview,46.29
+P-SE-028,Southeast,Jane Smith,CA Insurance,compliance,41.66
+P-SE-028,Southeast,Jane Smith,CA Insurance,estimating,32.94
+P-SE-028,Southeast,Jane Smith,Cost,bidresults,23.14
+P-SE-028,Southeast,Jane Smith,Cost,bidreview,45.26
+P-SE-028,Southeast,Jane Smith,Cost,compliance,45.4
+P-SE-028,Southeast,Jane Smith,Cost,estimating,40.02
+P-SE-028,Southeast,Jane Smith,GL Insurance,bidresults,27.57
+P-SE-028,Southeast,Jane Smith,GL Insurance,bidreview,22.86
+P-SE-028,Southeast,Jane Smith,GL Insurance,compliance,42.35
+P-SE-028,Southeast,Jane Smith,GL Insurance,estimating,56.93
+P-SE-028,Southeast,Jane Smith,Safety,bidresults,34.93
+P-SE-028,Southeast,Jane Smith,Safety,bidreview,28.97
+P-SE-028,Southeast,Jane Smith,Safety,compliance,24.52
+P-SE-028,Southeast,Jane Smith,Safety,estimating,44.11
+P-SE-028,Southeast,Jane Smith,Schedule,bidresults,23.47
+P-SE-028,Southeast,Jane Smith,Schedule,bidreview,30.7
+P-SE-028,Southeast,Jane Smith,Schedule,compliance,16.5
+P-SE-028,Southeast,Jane Smith,Schedule,estimating,25.53
+P-SE-028,Southeast,Jane Smith,WC Insurance,bidresults,15.73
+P-SE-028,Southeast,Jane Smith,WC Insurance,bidreview,18.34
+P-SE-028,Southeast,Jane Smith,WC Insurance,compliance,34.09
+P-SE-028,Southeast,Jane Smith,WC Insurance,estimating,34.03
+P-MW-029,Midwest,Mike Johnson,BR Insurance,bidresults,52.8
+P-MW-029,Midwest,Mike Johnson,BR Insurance,bidreview,58.59
+P-MW-029,Midwest,Mike Johnson,BR Insurance,compliance,60.54
+P-MW-029,Midwest,Mike Johnson,BR Insurance,estimating,44.94
+P-MW-029,Midwest,Mike Johnson,CA Insurance,bidresults,54.87
+P-MW-029,Midwest,Mike Johnson,CA Insurance,bidreview,64.08
+P-MW-029,Midwest,Mike Johnson,CA Insurance,compliance,60.21
+P-MW-029,Midwest,Mike Johnson,CA Insurance,estimating,63.74
+P-MW-029,Midwest,Mike Johnson,Cost,bidresults,64.33
+P-MW-029,Midwest,Mike Johnson,Cost,bidreview,66.05
+P-MW-029,Midwest,Mike Johnson,Cost,compliance,80.87
+P-MW-029,Midwest,Mike Johnson,Cost,estimating,59.34
+P-MW-029,Midwest,Mike Johnson,GL Insurance,bidresults,79.82
+P-MW-029,Midwest,Mike Johnson,GL Insurance,bidreview,63.6
+P-MW-029,Midwest,Mike Johnson,GL Insurance,compliance,67.31
+P-MW-029,Midwest,Mike Johnson,GL Insurance,estimating,84.37
+P-MW-029,Midwest,Mike Johnson,Safety,bidresults,67.6
+P-MW-029,Midwest,Mike Johnson,Safety,bidreview,71.17
+P-MW-029,Midwest,Mike Johnson,Safety,compliance,47.05
+P-MW-029,Midwest,Mike Johnson,Safety,estimating,70.56
+P-MW-029,Midwest,Mike Johnson,Schedule,bidresults,47.75
+P-MW-029,Midwest,Mike Johnson,Schedule,bidreview,48.94
+P-MW-029,Midwest,Mike Johnson,Schedule,compliance,77.21
+P-MW-029,Midwest,Mike Johnson,Schedule,estimating,71.39
+P-MW-029,Midwest,Mike Johnson,WC Insurance,bidresults,80.96
+P-MW-029,Midwest,Mike Johnson,WC Insurance,bidreview,52.31
+P-MW-029,Midwest,Mike Johnson,WC Insurance,compliance,64.48
+P-MW-029,Midwest,Mike Johnson,WC Insurance,estimating,52.94
+P-WE-030,West,Alice Brown,BR Insurance,bidresults,47.4
+P-WE-030,West,Alice Brown,BR Insurance,bidreview,52.04
+P-WE-030,West,Alice Brown,BR Insurance,compliance,59.9
+P-WE-030,West,Alice Brown,BR Insurance,estimating,49.28
+P-WE-030,West,Alice Brown,CA Insurance,bidresults,72.77
+P-WE-030,West,Alice Brown,CA Insurance,bidreview,60.19
+P-WE-030,West,Alice Brown,CA Insurance,compliance,52.78
+P-WE-030,West,Alice Brown,CA Insurance,estimating,40.17
+P-WE-030,West,Alice Brown,Cost,bidresults,64.21
+P-WE-030,West,Alice Brown,Cost,bidreview,67.02
+P-WE-030,West,Alice Brown,Cost,compliance,65.79
+P-WE-030,West,Alice Brown,Cost,estimating,37.75
+P-WE-030,West,Alice Brown,GL Insurance,bidresults,59.09
+P-WE-030,West,Alice Brown,GL Insurance,bidreview,78.23
+P-WE-030,West,Alice Brown,GL Insurance,compliance,40.48
+P-WE-030,West,Alice Brown,GL Insurance,estimating,58.81
+P-WE-030,West,Alice Brown,Safety,bidresults,60.83
+P-WE-030,West,Alice Brown,Safety,bidreview,60.46
+P-WE-030,West,Alice Brown,Safety,compliance,54.55
+P-WE-030,West,Alice Brown,Safety,estimating,43.44
+P-WE-030,West,Alice Brown,Schedule,bidresults,39.34
+P-WE-030,West,Alice Brown,Schedule,bidreview,37.55
+P-WE-030,West,Alice Brown,Schedule,compliance,52.87
+P-WE-030,West,Alice Brown,Schedule,estimating,57.9
+P-WE-030,West,Alice Brown,WC Insurance,bidresults,50.61
+P-WE-030,West,Alice Brown,WC Insurance,bidreview,56.61
+P-WE-030,West,Alice Brown,WC Insurance,compliance,67.97
+P-WE-030,West,Alice Brown,WC Insurance,estimating,67.79
+P-NE-031,Northeast,John Doe,BR Insurance,bidresults,60.14
+P-NE-031,Northeast,John Doe,BR Insurance,bidreview,58.9
+P-NE-031,Northeast,John Doe,BR Insurance,compliance,51.76
+P-NE-031,Northeast,John Doe,BR Insurance,estimating,41.75
+P-NE-031,Northeast,John Doe,CA Insurance,bidresults,41.99
+P-NE-031,Northeast,John Doe,CA Insurance,bidreview,28.84
+P-NE-031,Northeast,John Doe,CA Insurance,compliance,38.73
+P-NE-031,Northeast,John Doe,CA Insurance,estimating,58.85
+P-NE-031,Northeast,John Doe,Cost,bidresults,41.67
+P-NE-031,Northeast,John Doe,Cost,bidreview,63.09
+P-NE-031,Northeast,John Doe,Cost,compliance,44.2
+P-NE-031,Northeast,John Doe,Cost,estimating,63.37
+P-NE-031,Northeast,John Doe,GL Insurance,bidresults,71.9
+P-NE-031,Northeast,John Doe,GL Insurance,bidreview,34.74
+P-NE-031,Northeast,John Doe,GL Insurance,compliance,68.84
+P-NE-031,Northeast,John Doe,GL Insurance,estimating,57.25
+P-NE-031,Northeast,John Doe,Safety,bidresults,22.44
+P-NE-031,Northeast,John Doe,Safety,bidreview,49.75
+P-NE-031,Northeast,John Doe,Safety,compliance,55.9
+P-NE-031,Northeast,John Doe,Safety,estimating,51.38
+P-NE-031,Northeast,John Doe,Schedule,bidresults,57.07
+P-NE-031,Northeast,John Doe,Schedule,bidreview,36.54
+P-NE-031,Northeast,John Doe,Schedule,compliance,48.99
+P-NE-031,Northeast,John Doe,Schedule,estimating,50.71
+P-NE-031,Northeast,John Doe,WC Insurance,bidresults,51.35
+P-NE-031,Northeast,John Doe,WC Insurance,bidreview,55.87
+P-NE-031,Northeast,John Doe,WC Insurance,compliance,29.94
+P-NE-031,Northeast,John Doe,WC Insurance,estimating,43.36
+P-SE-032,Southeast,Jane Smith,BR Insurance,bidresults,20.97
+P-SE-032,Southeast,Jane Smith,BR Insurance,bidreview,17.82
+P-SE-032,Southeast,Jane Smith,BR Insurance,compliance,29.56
+P-SE-032,Southeast,Jane Smith,BR Insurance,estimating,27.5
+P-SE-032,Southeast,Jane Smith,CA Insurance,bidresults,22.39
+P-SE-032,Southeast,Jane Smith,CA Insurance,bidreview,17.0
+P-SE-032,Southeast,Jane Smith,CA Insurance,compliance,14.97
+P-SE-032,Southeast,Jane Smith,CA Insurance,estimating,40.81
+P-SE-032,Southeast,Jane Smith,Cost,bidresults,33.79
+P-SE-032,Southeast,Jane Smith,Cost,bidreview,15.8
+P-SE-032,Southeast,Jane Smith,Cost,compliance,43.83
+P-SE-032,Southeast,Jane Smith,Cost,estimating,12.16
+P-SE-032,Southeast,Jane Smith,GL Insurance,bidresults,44.19
+P-SE-032,Southeast,Jane Smith,GL Insurance,bidreview,22.16
+P-SE-032,Southeast,Jane Smith,GL Insurance,compliance,12.38
+P-SE-032,Southeast,Jane Smith,GL Insurance,estimating,22.21
+P-SE-032,Southeast,Jane Smith,Safety,bidresults,19.45
+P-SE-032,Southeast,Jane Smith,Safety,bidreview,10.63
+P-SE-032,Southeast,Jane Smith,Safety,compliance,6.72
+P-SE-032,Southeast,Jane Smith,Safety,estimating,37.51
+P-SE-032,Southeast,Jane Smith,Schedule,bidresults,34.7
+P-SE-032,Southeast,Jane Smith,Schedule,bidreview,8.82
+P-SE-032,Southeast,Jane Smith,Schedule,compliance,25.64
+P-SE-032,Southeast,Jane Smith,Schedule,estimating,24.25
+P-SE-032,Southeast,Jane Smith,WC Insurance,bidresults,23.67
+P-SE-032,Southeast,Jane Smith,WC Insurance,bidreview,42.05
+P-SE-032,Southeast,Jane Smith,WC Insurance,compliance,12.32
+P-SE-032,Southeast,Jane Smith,WC Insurance,estimating,33.1
+P-MW-033,Midwest,Mike Johnson,BR Insurance,bidresults,89.67
+P-MW-033,Midwest,Mike Johnson,BR Insurance,bidreview,86.55
+P-MW-033,Midwest,Mike Johnson,BR Insurance,compliance,88.08
+P-MW-033,Midwest,Mike Johnson,BR Insurance,estimating,85.97
+P-MW-033,Midwest,Mike Johnson,CA Insurance,bidresults,96.72
+P-MW-033,Midwest,Mike Johnson,CA Insurance,bidreview,88.41
+P-MW-033,Midwest,Mike Johnson,CA Insurance,compliance,87.36
+P-MW-033,Midwest,Mike Johnson,CA Insurance,estimating,94.5
+P-MW-033,Midwest,Mike Johnson,Cost,bidresults,89.06
+P-MW-033,Midwest,Mike Johnson,Cost,bidreview,99.77
+P-MW-033,Midwest,Mike Johnson,Cost,compliance,99.29
+P-MW-033,Midwest,Mike Johnson,Cost,estimating,77.45
+P-MW-033,Midwest,Mike Johnson,GL Insurance,bidresults,97.22
+P-MW-033,Midwest,Mike Johnson,GL Insurance,bidreview,72.42
+P-MW-033,Midwest,Mike Johnson,GL Insurance,compliance,85.41
+P-MW-033,Midwest,Mike Johnson,GL Insurance,estimating,88.59
+P-MW-033,Midwest,Mike Johnson,Safety,bidresults,89.79
+P-MW-033,Midwest,Mike Johnson,Safety,bidreview,70.98
+P-MW-033,Midwest,Mike Johnson,Safety,compliance,87.43
+P-MW-033,Midwest,Mike Johnson,Safety,estimating,82.64
+P-MW-033,Midwest,Mike Johnson,Schedule,bidresults,83.84
+P-MW-033,Midwest,Mike Johnson,Schedule,bidreview,80.36
+P-MW-033,Midwest,Mike Johnson,Schedule,compliance,83.73
+P-MW-033,Midwest,Mike Johnson,Schedule,estimating,71.01
+P-MW-033,Midwest,Mike Johnson,WC Insurance,bidresults,77.33
+P-MW-033,Midwest,Mike Johnson,WC Insurance,bidreview,75.02
+P-MW-033,Midwest,Mike Johnson,WC Insurance,compliance,86.25
+P-MW-033,Midwest,Mike Johnson,WC Insurance,estimating,92.96
+P-WE-034,West,Alice Brown,BR Insurance,bidresults,31.63
+P-WE-034,West,Alice Brown,BR Insurance,bidreview,39.55
+P-WE-034,West,Alice Brown,BR Insurance,compliance,64.52
+P-WE-034,West,Alice Brown,BR Insurance,estimating,30.61
+P-WE-034,West,Alice Brown,CA Insurance,bidresults,68.2
+P-WE-034,West,Alice Brown,CA Insurance,bidreview,67.66
+P-WE-034,West,Alice Brown,CA Insurance,compliance,57.97
+P-WE-034,West,Alice Brown,CA Insurance,estimating,63.41
+P-WE-034,West,Alice Brown,Cost,bidresults,60.9
+P-WE-034,West,Alice Brown,Cost,bidreview,60.29
+P-WE-034,West,Alice Brown,Cost,compliance,42.8
+P-WE-034,West,Alice Brown,Cost,estimating,34.61
+P-WE-034,West,Alice Brown,GL Insurance,bidresults,44.28
+P-WE-034,West,Alice Brown,GL Insurance,bidreview,55.23
+P-WE-034,West,Alice Brown,GL Insurance,compliance,67.22
+P-WE-034,West,Alice Brown,GL Insurance,estimating,70.54
+P-WE-034,West,Alice Brown,Safety,bidresults,61.86
+P-WE-034,West,Alice Brown,Safety,bidreview,30.03
+P-WE-034,West,Alice Brown,Safety,compliance,44.58
+P-WE-034,West,Alice Brown,Safety,estimating,28.29
+P-WE-034,West,Alice Brown,Schedule,bidresults,48.18
+P-WE-034,West,Alice Brown,Schedule,bidreview,50.85
+P-WE-034,West,Alice Brown,Schedule,compliance,42.63
+P-WE-034,West,Alice Brown,Schedule,estimating,37.36
+P-WE-034,West,Alice Brown,WC Insurance,bidresults,57.86
+P-WE-034,West,Alice Brown,WC Insurance,bidreview,60.99
+P-WE-034,West,Alice Brown,WC Insurance,compliance,60.26
+P-WE-034,West,Alice Brown,WC Insurance,estimating,47.27
+P-NE-035,Northeast,John Doe,BR Insurance,bidresults,16.52
+P-NE-035,Northeast,John Doe,BR Insurance,bidreview,32.31
+P-NE-035,Northeast,John Doe,BR Insurance,compliance,12.48
+P-NE-035,Northeast,John Doe,BR Insurance,estimating,35.56
+P-NE-035,Northeast,John Doe,CA Insurance,bidresults,21.7
+P-NE-035,Northeast,John Doe,CA Insurance,bidreview,7.59
+P-NE-035,Northeast,John Doe,CA Insurance,compliance,14.17
+P-NE-035,Northeast,John Doe,CA Insurance,estimating,39.85
+P-NE-035,Northeast,John Doe,Cost,bidresults,30.91
+P-NE-035,Northeast,John Doe,Cost,bidreview,4.56
+P-NE-035,Northeast,John Doe,Cost,compliance,22.19
+P-NE-035,Northeast,John Doe,Cost,estimating,25.46
+P-NE-035,Northeast,John Doe,GL Insurance,bidresults,42.37
+P-NE-035,Northeast,John Doe,GL Insurance,bidreview,11.33
+P-NE-035,Northeast,John Doe,GL Insurance,compliance,8.0
+P-NE-035,Northeast,John Doe,GL Insurance,estimating,16.35
+P-NE-035,Northeast,John Doe,Safety,bidresults,33.91
+P-NE-035,Northeast,John Doe,Safety,bidreview,24.53
+P-NE-035,Northeast,John Doe,Safety,compliance,29.78
+P-NE-035,Northeast,John Doe,Safety,estimating,21.46
+P-NE-035,Northeast,John Doe,Schedule,bidresults,30.26
+P-NE-035,Northeast,John Doe,Schedule,bidreview,36.79
+P-NE-035,Northeast,John Doe,Schedule,compliance,14.53
+P-NE-035,Northeast,John Doe,Schedule,estimating,30.77
+P-NE-035,Northeast,John Doe,WC Insurance,bidresults,3.53
+P-NE-035,Northeast,John Doe,WC Insurance,bidreview,23.46
+P-NE-035,Northeast,John Doe,WC Insurance,compliance,9.85
+P-NE-035,Northeast,John Doe,WC Insurance,estimating,37.61
+P-SE-036,Southeast,Jane Smith,BR Insurance,bidresults,51.11
+P-SE-036,Southeast,Jane Smith,BR Insurance,bidreview,15.97
+P-SE-036,Southeast,Jane Smith,BR Insurance,compliance,33.78
+P-SE-036,Southeast,Jane Smith,BR Insurance,estimating,39.43
+P-SE-036,Southeast,Jane Smith,CA Insurance,bidresults,19.89
+P-SE-036,Southeast,Jane Smith,CA Insurance,bidreview,29.35
+P-SE-036,Southeast,Jane Smith,CA Insurance,compliance,22.59
+P-SE-036,Southeast,Jane Smith,CA Insurance,estimating,30.93
+P-SE-036,Southeast,Jane Smith,Cost,bidresults,33.77
+P-SE-036,Southeast,Jane Smith,Cost,bidreview,43.82
+P-SE-036,Southeast,Jane Smith,Cost,compliance,54.84
+P-SE-036,Southeast,Jane Smith,Cost,estimating,46.73
+P-SE-036,Southeast,Jane Smith,GL Insurance,bidresults,21.31
+P-SE-036,Southeast,Jane Smith,GL Insurance,bidreview,39.57
+P-SE-036,Southeast,Jane Smith,GL Insurance,compliance,58.06
+P-SE-036,Southeast,Jane Smith,GL Insurance,estimating,36.32
+P-SE-036,Southeast,Jane Smith,Safety,bidresults,12.96
+P-SE-036,Southeast,Jane Smith,Safety,bidreview,38.69
+P-SE-036,Southeast,Jane Smith,Safety,compliance,25.6
+P-SE-036,Southeast,Jane Smith,Safety,estimating,15.18
+P-SE-036,Southeast,Jane Smith,Schedule,bidresults,29.15
+P-SE-036,Southeast,Jane Smith,Schedule,bidreview,14.89
+P-SE-036,Southeast,Jane Smith,Schedule,compliance,16.43
+P-SE-036,Southeast,Jane Smith,Schedule,estimating,46.49
+P-SE-036,Southeast,Jane Smith,WC Insurance,bidresults,48.22
+P-SE-036,Southeast,Jane Smith,WC Insurance,bidreview,28.82
+P-SE-036,Southeast,Jane Smith,WC Insurance,compliance,52.02
+P-SE-036,Southeast,Jane Smith,WC Insurance,estimating,31.74
+P-MW-037,Midwest,Mike Johnson,BR Insurance,bidresults,42.98
+P-MW-037,Midwest,Mike Johnson,BR Insurance,bidreview,41.79
+P-MW-037,Midwest,Mike Johnson,BR Insurance,compliance,46.03
+P-MW-037,Midwest,Mike Johnson,BR Insurance,estimating,41.2
+P-MW-037,Midwest,Mike Johnson,CA Insurance,bidresults,70.6
+P-MW-037,Midwest,Mike Johnson,CA Insurance,bidreview,65.44
+P-MW-037,Midwest,Mike Johnson,CA Insurance,compliance,39.59
+P-MW-037,Midwest,Mike Johnson,CA Insurance,estimating,40.03
+P-MW-037,Midwest,Mike Johnson,Cost,bidresults,50.74
+P-MW-037,Midwest,Mike Johnson,Cost,bidreview,64.89
+P-MW-037,Midwest,Mike Johnson,Cost,compliance,72.47
+P-MW-037,Midwest,Mike Johnson,Cost,estimating,41.85
+P-MW-037,Midwest,Mike Johnson,GL Insurance,bidresults,57.14
+P-MW-037,Midwest,Mike Johnson,GL Insurance,bidreview,52.29
+P-MW-037,Midwest,Mike Johnson,GL Insurance,compliance,78.79
+P-MW-037,Midwest,Mike Johnson,GL Insurance,estimating,52.64
+P-MW-037,Midwest,Mike Johnson,Safety,bidresults,63.61
+P-MW-037,Midwest,Mike Johnson,Safety,bidreview,38.04
+P-MW-037,Midwest,Mike Johnson,Safety,compliance,35.74
+P-MW-037,Midwest,Mike Johnson,Safety,estimating,55.58
+P-MW-037,Midwest,Mike Johnson,Schedule,bidresults,60.67
+P-MW-037,Midwest,Mike Johnson,Schedule,bidreview,68.92
+P-MW-037,Midwest,Mike Johnson,Schedule,compliance,61.51
+P-MW-037,Midwest,Mike Johnson,Schedule,estimating,53.19
+P-MW-037,Midwest,Mike Johnson,WC Insurance,bidresults,72.34
+P-MW-037,Midwest,Mike Johnson,WC Insurance,bidreview,43.9
+P-MW-037,Midwest,Mike Johnson,WC Insurance,compliance,38.11
+P-MW-037,Midwest,Mike Johnson,WC Insurance,estimating,74.02
+P-WE-038,West,Alice Brown,BR Insurance,bidresults,72.61
+P-WE-038,West,Alice Brown,BR Insurance,bidreview,72.16
+P-WE-038,West,Alice Brown,BR Insurance,compliance,80.44
+P-WE-038,West,Alice Brown,BR Insurance,estimating,69.06
+P-WE-038,West,Alice Brown,CA Insurance,bidresults,80.33
+P-WE-038,West,Alice Brown,CA Insurance,bidreview,92.39
+P-WE-038,West,Alice Brown,CA Insurance,compliance,59.23
+P-WE-038,West,Alice Brown,CA Insurance,estimating,58.94
+P-WE-038,West,Alice Brown,Cost,bidresults,77.05
+P-WE-038,West,Alice Brown,Cost,bidreview,87.67
+P-WE-038,West,Alice Brown,Cost,compliance,87.83
+P-WE-038,West,Alice Brown,Cost,estimating,79.04
+P-WE-038,West,Alice Brown,GL Insurance,bidresults,94.81
+P-WE-038,West,Alice Brown,GL Insurance,bidreview,97.87
+P-WE-038,West,Alice Brown,GL Insurance,compliance,91.55
+P-WE-038,West,Alice Brown,GL Insurance,estimating,62.69
+P-WE-038,West,Alice Brown,Safety,bidresults,70.15
+P-WE-038,West,Alice Brown,Safety,bidreview,81.12
+P-WE-038,West,Alice Brown,Safety,compliance,54.36
+P-WE-038,West,Alice Brown,Safety,estimating,70.53
+P-WE-038,West,Alice Brown,Schedule,bidresults,54.1
+P-WE-038,West,Alice Brown,Schedule,bidreview,61.52
+P-WE-038,West,Alice Brown,Schedule,compliance,58.97
+P-WE-038,West,Alice Brown,Schedule,estimating,64.95
+P-WE-038,West,Alice Brown,WC Insurance,bidresults,57.43
+P-WE-038,West,Alice Brown,WC Insurance,bidreview,75.86
+P-WE-038,West,Alice Brown,WC Insurance,compliance,93.56
+P-WE-038,West,Alice Brown,WC Insurance,estimating,73.32
+P-NE-039,Northeast,John Doe,BR Insurance,bidresults,44.6
+P-NE-039,Northeast,John Doe,BR Insurance,bidreview,34.64
+P-NE-039,Northeast,John Doe,BR Insurance,compliance,35.07
+P-NE-039,Northeast,John Doe,BR Insurance,estimating,21.8
+P-NE-039,Northeast,John Doe,CA Insurance,bidresults,23.69
+P-NE-039,Northeast,John Doe,CA Insurance,bidreview,35.97
+P-NE-039,Northeast,John Doe,CA Insurance,compliance,57.92
+P-NE-039,Northeast,John Doe,CA Insurance,estimating,27.11
+P-NE-039,Northeast,John Doe,Cost,bidresults,41.15
+P-NE-039,Northeast,John Doe,Cost,bidreview,36.01
+P-NE-039,Northeast,John Doe,Cost,compliance,44.22
+P-NE-039,Northeast,John Doe,Cost,estimating,62.79
+P-NE-039,Northeast,John Doe,GL Insurance,bidresults,34.6
+P-NE-039,Northeast,John Doe,GL Insurance,bidreview,52.04
+P-NE-039,Northeast,John Doe,GL Insurance,compliance,54.83
+P-NE-039,Northeast,John Doe,GL Insurance,estimating,56.76
+P-NE-039,Northeast,John Doe,Safety,bidresults,49.11
+P-NE-039,Northeast,John Doe,Safety,bidreview,39.22
+P-NE-039,Northeast,John Doe,Safety,compliance,43.07
+P-NE-039,Northeast,John Doe,Safety,estimating,18.97
+P-NE-039,Northeast,John Doe,Schedule,bidresults,38.93
+P-NE-039,Northeast,John Doe,Schedule,bidreview,19.63
+P-NE-039,Northeast,John Doe,Schedule,compliance,42.32
+P-NE-039,Northeast,John Doe,Schedule,estimating,28.0
+P-NE-039,Northeast,John Doe,WC Insurance,bidresults,38.14
+P-NE-039,Northeast,John Doe,WC Insurance,bidreview,38.06
+P-NE-039,Northeast,John Doe,WC Insurance,compliance,33.56
+P-NE-039,Northeast,John Doe,WC Insurance,estimating,29.14
+P-SE-040,Southeast,Jane Smith,BR Insurance,bidresults,61.81
+P-SE-040,Southeast,Jane Smith,BR Insurance,bidreview,54.27
+P-SE-040,Southeast,Jane Smith,BR Insurance,compliance,32.33
+P-SE-040,Southeast,Jane Smith,BR Insurance,estimating,36.97
+P-SE-040,Southeast,Jane Smith,CA Insurance,bidresults,63.29
+P-SE-040,Southeast,Jane Smith,CA Insurance,bidreview,45.7
+P-SE-040,Southeast,Jane Smith,CA Insurance,compliance,53.96
+P-SE-040,Southeast,Jane Smith,CA Insurance,estimating,61.5
+P-SE-040,Southeast,Jane Smith,Cost,bidresults,55.46
+P-SE-040,Southeast,Jane Smith,Cost,bidreview,65.47
+P-SE-040,Southeast,Jane Smith,Cost,compliance,56.46
+P-SE-040,Southeast,Jane Smith,Cost,estimating,55.25
+P-SE-040,Southeast,Jane Smith,GL Insurance,bidresults,74.74
+P-SE-040,Southeast,Jane Smith,GL Insurance,bidreview,66.01
+P-SE-040,Southeast,Jane Smith,GL Insurance,compliance,64.84
+P-SE-040,Southeast,Jane Smith,GL Insurance,estimating,70.72
+P-SE-040,Southeast,Jane Smith,Safety,bidresults,51.61
+P-SE-040,Southeast,Jane Smith,Safety,bidreview,38.19
+P-SE-040,Southeast,Jane Smith,Safety,compliance,39.14
+P-SE-040,Southeast,Jane Smith,Safety,estimating,29.89
+P-SE-040,Southeast,Jane Smith,Schedule,bidresults,56.55
+P-SE-040,Southeast,Jane Smith,Schedule,bidreview,60.27
+P-SE-040,Southeast,Jane Smith,Schedule,compliance,30.86
+P-SE-040,Southeast,Jane Smith,Schedule,estimating,30.73
+P-SE-040,Southeast,Jane Smith,WC Insurance,bidresults,38.51
+P-SE-040,Southeast,Jane Smith,WC Insurance,bidreview,54.02
+P-SE-040,Southeast,Jane Smith,WC Insurance,compliance,53.12
+P-SE-040,Southeast,Jane Smith,WC Insurance,estimating,44.07
+P-MW-041,Midwest,Mike Johnson,BR Insurance,bidresults,46.64
+P-MW-041,Midwest,Mike Johnson,BR Insurance,bidreview,62.84
+P-MW-041,Midwest,Mike Johnson,BR Insurance,compliance,49.79
+P-MW-041,Midwest,Mike Johnson,BR Insurance,estimating,41.61
+P-MW-041,Midwest,Mike Johnson,CA Insurance,bidresults,58.7
+P-MW-041,Midwest,Mike Johnson,CA Insurance,bidreview,50.8
+P-MW-041,Midwest,Mike Johnson,CA Insurance,compliance,67.07
+P-MW-041,Midwest,Mike Johnson,CA Insurance,estimating,64.86
+P-MW-041,Midwest,Mike Johnson,Cost,bidresults,71.18
+P-MW-041,Midwest,Mike Johnson,Cost,bidreview,63.71
+P-MW-041,Midwest,Mike Johnson,Cost,compliance,75.16
+P-MW-041,Midwest,Mike Johnson,Cost,estimating,39.05
+P-MW-041,Midwest,Mike Johnson,GL Insurance,bidresults,63.65
+P-MW-041,Midwest,Mike Johnson,GL Insurance,bidreview,54.59
+P-MW-041,Midwest,Mike Johnson,GL Insurance,compliance,75.79
+P-MW-041,Midwest,Mike Johnson,GL Insurance,estimating,41.24
+P-MW-041,Midwest,Mike Johnson,Safety,bidresults,42.36
+P-MW-041,Midwest,Mike Johnson,Safety,bidreview,40.7
+P-MW-041,Midwest,Mike Johnson,Safety,compliance,58.11
+P-MW-041,Midwest,Mike Johnson,Safety,estimating,37.22
+P-MW-041,Midwest,Mike Johnson,Schedule,bidresults,56.54
+P-MW-041,Midwest,Mike Johnson,Schedule,bidreview,65.81
+P-MW-041,Midwest,Mike Johnson,Schedule,compliance,64.74
+P-MW-041,Midwest,Mike Johnson,Schedule,estimating,70.98
+P-MW-041,Midwest,Mike Johnson,WC Insurance,bidresults,36.23
+P-MW-041,Midwest,Mike Johnson,WC Insurance,bidreview,51.03
+P-MW-041,Midwest,Mike Johnson,WC Insurance,compliance,60.33
+P-MW-041,Midwest,Mike Johnson,WC Insurance,estimating,40.67
+P-WE-042,West,Alice Brown,BR Insurance,bidresults,26.49
+P-WE-042,West,Alice Brown,BR Insurance,bidreview,21.31
+P-WE-042,West,Alice Brown,BR Insurance,compliance,29.45
+P-WE-042,West,Alice Brown,BR Insurance,estimating,33.06
+P-WE-042,West,Alice Brown,CA Insurance,bidresults,53.88
+P-WE-042,West,Alice Brown,CA Insurance,bidreview,34.22
+P-WE-042,West,Alice Brown,CA Insurance,compliance,24.31
+P-WE-042,West,Alice Brown,CA Insurance,estimating,37.12
+P-WE-042,West,Alice Brown,Cost,bidresults,45.43
+P-WE-042,West,Alice Brown,Cost,bidreview,52.96
+P-WE-042,West,Alice Brown,Cost,compliance,52.48
+P-WE-042,West,Alice Brown,Cost,estimating,36.88
+P-WE-042,West,Alice Brown,GL Insurance,bidresults,48.47
+P-WE-042,West,Alice Brown,GL Insurance,bidreview,46.2
+P-WE-042,West,Alice Brown,GL Insurance,compliance,56.14
+P-WE-042,West,Alice Brown,GL Insurance,estimating,40.33
+P-WE-042,West,Alice Brown,Safety,bidresults,22.55
+P-WE-042,West,Alice Brown,Safety,bidreview,35.68
+P-WE-042,West,Alice Brown,Safety,compliance,48.2
+P-WE-042,West,Alice Brown,Safety,estimating,28.93
+P-WE-042,West,Alice Brown,Schedule,bidresults,44.71
+P-WE-042,West,Alice Brown,Schedule,bidreview,23.4
+P-WE-042,West,Alice Brown,Schedule,compliance,26.3
+P-WE-042,West,Alice Brown,Schedule,estimating,22.1
+P-WE-042,West,Alice Brown,WC Insurance,bidresults,46.97
+P-WE-042,West,Alice Brown,WC Insurance,bidreview,49.69
+P-WE-042,West,Alice Brown,WC Insurance,compliance,38.81
+P-WE-042,West,Alice Brown,WC Insurance,estimating,24.82
+P-NE-043,Northeast,John Doe,BR Insurance,bidresults,44.53
+P-NE-043,Northeast,John Doe,BR Insurance,bidreview,65.73
+P-NE-043,Northeast,John Doe,BR Insurance,compliance,77.79
+P-NE-043,Northeast,John Doe,BR Insurance,estimating,74.28
+P-NE-043,Northeast,John Doe,CA Insurance,bidresults,64.96
+P-NE-043,Northeast,John Doe,CA Insurance,bidreview,77.78
+P-NE-043,Northeast,John Doe,CA Insurance,compliance,67.55
+P-NE-043,Northeast,John Doe,CA Insurance,estimating,53.73
+P-NE-043,Northeast,John Doe,Cost,bidresults,80.47
+P-NE-043,Northeast,John Doe,Cost,bidreview,79.33
+P-NE-043,Northeast,John Doe,Cost,compliance,48.88
+P-NE-043,Northeast,John Doe,Cost,estimating,78.25
+P-NE-043,Northeast,John Doe,GL Insurance,bidresults,65.71
+P-NE-043,Northeast,John Doe,GL Insurance,bidreview,72.03
+P-NE-043,Northeast,John Doe,GL Insurance,compliance,77.38
+P-NE-043,Northeast,John Doe,GL Insurance,estimating,71.94
+P-NE-043,Northeast,John Doe,Safety,bidresults,72.48
+P-NE-043,Northeast,John Doe,Safety,bidreview,39.69
+P-NE-043,Northeast,John Doe,Safety,compliance,74.85
+P-NE-043,Northeast,John Doe,Safety,estimating,38.75
+P-NE-043,Northeast,John Doe,Schedule,bidresults,60.01
+P-NE-043,Northeast,John Doe,Schedule,bidreview,47.03
+P-NE-043,Northeast,John Doe,Schedule,compliance,68.15
+P-NE-043,Northeast,John Doe,Schedule,estimating,55.21
+P-NE-043,Northeast,John Doe,WC Insurance,bidresults,75.05
+P-NE-043,Northeast,John Doe,WC Insurance,bidreview,47.61
+P-NE-043,Northeast,John Doe,WC Insurance,compliance,55.99
+P-NE-043,Northeast,John Doe,WC Insurance,estimating,43.83
+P-SE-044,Southeast,Jane Smith,BR Insurance,bidresults,65.4
+P-SE-044,Southeast,Jane Smith,BR Insurance,bidreview,65.91
+P-SE-044,Southeast,Jane Smith,BR Insurance,compliance,65.18
+P-SE-044,Southeast,Jane Smith,BR Insurance,estimating,54.76
+P-SE-044,Southeast,Jane Smith,CA Insurance,bidresults,63.41
+P-SE-044,Southeast,Jane Smith,CA Insurance,bidreview,55.96
+P-SE-044,Southeast,Jane Smith,CA Insurance,compliance,60.58
+P-SE-044,Southeast,Jane Smith,CA Insurance,estimating,74.97
+P-SE-044,Southeast,Jane Smith,Cost,bidresults,60.4
+P-SE-044,Southeast,Jane Smith,Cost,bidreview,46.73
+P-SE-044,Southeast,Jane Smith,Cost,compliance,44.56
+P-SE-044,Southeast,Jane Smith,Cost,estimating,60.42
+P-SE-044,Southeast,Jane Smith,GL Insurance,bidresults,50.89
+P-SE-044,Southeast,Jane Smith,GL Insurance,bidreview,75.6
+P-SE-044,Southeast,Jane Smith,GL Insurance,compliance,48.86
+P-SE-044,Southeast,Jane Smith,GL Insurance,estimating,52.45
+P-SE-044,Southeast,Jane Smith,Safety,bidresults,64.76
+P-SE-044,Southeast,Jane Smith,Safety,bidreview,68.24
+P-SE-044,Southeast,Jane Smith,Safety,compliance,61.1
+P-SE-044,Southeast,Jane Smith,Safety,estimating,45.98
+P-SE-044,Southeast,Jane Smith,Schedule,bidresults,47.32
+P-SE-044,Southeast,Jane Smith,Schedule,bidreview,49.83
+P-SE-044,Southeast,Jane Smith,Schedule,compliance,47.58
+P-SE-044,Southeast,Jane Smith,Schedule,estimating,46.41
+P-SE-044,Southeast,Jane Smith,WC Insurance,bidresults,44.09
+P-SE-044,Southeast,Jane Smith,WC Insurance,bidreview,61.1
+P-SE-044,Southeast,Jane Smith,WC Insurance,compliance,63.22
+P-SE-044,Southeast,Jane Smith,WC Insurance,estimating,67.41
+P-MW-045,Midwest,Mike Johnson,BR Insurance,bidresults,40.99
+P-MW-045,Midwest,Mike Johnson,BR Insurance,bidreview,45.17
+P-MW-045,Midwest,Mike Johnson,BR Insurance,compliance,58.84
+P-MW-045,Midwest,Mike Johnson,BR Insurance,estimating,54.67
+P-MW-045,Midwest,Mike Johnson,CA Insurance,bidresults,45.03
+P-MW-045,Midwest,Mike Johnson,CA Insurance,bidreview,58.39
+P-MW-045,Midwest,Mike Johnson,CA Insurance,compliance,38.86
+P-MW-045,Midwest,Mike Johnson,CA Insurance,estimating,52.07
+P-MW-045,Midwest,Mike Johnson,Cost,bidresults,38.99
+P-MW-045,Midwest,Mike Johnson,Cost,bidreview,30.73
+P-MW-045,Midwest,Mike Johnson,Cost,compliance,40.11
+P-MW-045,Midwest,Mike Johnson,Cost,estimating,45.69
+P-MW-045,Midwest,Mike Johnson,GL Insurance,bidresults,65.57
+P-MW-045,Midwest,Mike Johnson,GL Insurance,bidreview,33.28
+P-MW-045,Midwest,Mike Johnson,GL Insurance,compliance,34.07
+P-MW-045,Midwest,Mike Johnson,GL Insurance,estimating,64.27
+P-MW-045,Midwest,Mike Johnson,Safety,bidresults,38.08
+P-MW-045,Midwest,Mike Johnson,Safety,bidreview,22.25
+P-MW-045,Midwest,Mike Johnson,Safety,compliance,32.42
+P-MW-045,Midwest,Mike Johnson,Safety,estimating,40.29
+P-MW-045,Midwest,Mike Johnson,Schedule,bidresults,28.04
+P-MW-045,Midwest,Mike Johnson,Schedule,bidreview,46.98
+P-MW-045,Midwest,Mike Johnson,Schedule,compliance,47.09
+P-MW-045,Midwest,Mike Johnson,Schedule,estimating,56.57
+P-MW-045,Midwest,Mike Johnson,WC Insurance,bidresults,43.51
+P-MW-045,Midwest,Mike Johnson,WC Insurance,bidreview,59.21
+P-MW-045,Midwest,Mike Johnson,WC Insurance,compliance,45.28
+P-MW-045,Midwest,Mike Johnson,WC Insurance,estimating,49.6
+P-WE-046,West,Alice Brown,BR Insurance,bidresults,49.37
+P-WE-046,West,Alice Brown,BR Insurance,bidreview,40.64
+P-WE-046,West,Alice Brown,BR Insurance,compliance,65.14
+P-WE-046,West,Alice Brown,BR Insurance,estimating,41.78
+P-WE-046,West,Alice Brown,CA Insurance,bidresults,75.93
+P-WE-046,West,Alice Brown,CA Insurance,bidreview,69.95
+P-WE-046,West,Alice Brown,CA Insurance,compliance,77.25
+P-WE-046,West,Alice Brown,CA Insurance,estimating,67.26
+P-WE-046,West,Alice Brown,Cost,bidresults,49.9
+P-WE-046,West,Alice Brown,Cost,bidreview,56.74
+P-WE-046,West,Alice Brown,Cost,compliance,63.18
+P-WE-046,West,Alice Brown,Cost,estimating,71.57
+P-WE-046,West,Alice Brown,GL Insurance,bidresults,62.35
+P-WE-046,West,Alice Brown,GL Insurance,bidreview,52.35
+P-WE-046,West,Alice Brown,GL Insurance,compliance,57.32
+P-WE-046,West,Alice Brown,GL Insurance,estimating,60.91
+P-WE-046,West,Alice Brown,Safety,bidresults,55.91
+P-WE-046,West,Alice Brown,Safety,bidreview,44.91
+P-WE-046,West,Alice Brown,Safety,compliance,52.58
+P-WE-046,West,Alice Brown,Safety,estimating,52.51
+P-WE-046,West,Alice Brown,Schedule,bidresults,72.97
+P-WE-046,West,Alice Brown,Schedule,bidreview,43.03
+P-WE-046,West,Alice Brown,Schedule,compliance,41.14
+P-WE-046,West,Alice Brown,Schedule,estimating,39.47
+P-WE-046,West,Alice Brown,WC Insurance,bidresults,65.89
+P-WE-046,West,Alice Brown,WC Insurance,bidreview,53.53
+P-WE-046,West,Alice Brown,WC Insurance,compliance,71.57
+P-WE-046,West,Alice Brown,WC Insurance,estimating,63.92
+P-NE-047,Northeast,John Doe,BR Insurance,bidresults,33.57
+P-NE-047,Northeast,John Doe,BR Insurance,bidreview,39.47
+P-NE-047,Northeast,John Doe,BR Insurance,compliance,32.21
+P-NE-047,Northeast,John Doe,BR Insurance,estimating,39.5
+P-NE-047,Northeast,John Doe,CA Insurance,bidresults,33.5
+P-NE-047,Northeast,John Doe,CA Insurance,bidreview,65.91
+P-NE-047,Northeast,John Doe,CA Insurance,compliance,37.06
+P-NE-047,Northeast,John Doe,CA Insurance,estimating,47.45
+P-NE-047,Northeast,John Doe,Cost,bidresults,53.8
+P-NE-047,Northeast,John Doe,Cost,bidreview,68.71
+P-NE-047,Northeast,John Doe,Cost,compliance,45.68
+P-NE-047,Northeast,John Doe,Cost,estimating,57.94
+P-NE-047,Northeast,John Doe,GL Insurance,bidresults,62.55
+P-NE-047,Northeast,John Doe,GL Insurance,bidreview,65.53
+P-NE-047,Northeast,John Doe,GL Insurance,compliance,66.16
+P-NE-047,Northeast,John Doe,GL Insurance,estimating,59.8
+P-NE-047,Northeast,John Doe,Safety,bidresults,53.67
+P-NE-047,Northeast,John Doe,Safety,bidreview,59.52
+P-NE-047,Northeast,John Doe,Safety,compliance,37.07
+P-NE-047,Northeast,John Doe,Safety,estimating,34.38
+P-NE-047,Northeast,John Doe,Schedule,bidresults,37.99
+P-NE-047,Northeast,John Doe,Schedule,bidreview,37.33
+P-NE-047,Northeast,John Doe,Schedule,compliance,29.66
+P-NE-047,Northeast,John Doe,Schedule,estimating,47.31
+P-NE-047,Northeast,John Doe,WC Insurance,bidresults,43.94
+P-NE-047,Northeast,John Doe,WC Insurance,bidreview,54.42
+P-NE-047,Northeast,John Doe,WC Insurance,compliance,52.84
+P-NE-047,Northeast,John Doe,WC Insurance,estimating,48.06
+P-SE-048,Southeast,Jane Smith,BR Insurance,bidresults,60.96
+P-SE-048,Southeast,Jane Smith,BR Insurance,bidreview,60.77
+P-SE-048,Southeast,Jane Smith,BR Insurance,compliance,72.94
+P-SE-048,Southeast,Jane Smith,BR Insurance,estimating,54.4
+P-SE-048,Southeast,Jane Smith,CA Insurance,bidresults,64.76
+P-SE-048,Southeast,Jane Smith,CA Insurance,bidreview,67.36
+P-SE-048,Southeast,Jane Smith,CA Insurance,compliance,78.34
+P-SE-048,Southeast,Jane Smith,CA Insurance,estimating,58.38
+P-SE-048,Southeast,Jane Smith,Cost,bidresults,61.47
+P-SE-048,Southeast,Jane Smith,Cost,bidreview,81.4
+P-SE-048,Southeast,Jane Smith,Cost,compliance,49.51
+P-SE-048,Southeast,Jane Smith,Cost,estimating,83.35
+P-SE-048,Southeast,Jane Smith,GL Insurance,bidresults,57.62
+P-SE-048,Southeast,Jane Smith,GL Insurance,bidreview,84.25
+P-SE-048,Southeast,Jane Smith,GL Insurance,compliance,83.36
+P-SE-048,Southeast,Jane Smith,GL Insurance,estimating,81.84
+P-SE-048,Southeast,Jane Smith,Safety,bidresults,46.49
+P-SE-048,Southeast,Jane Smith,Safety,bidreview,70.65
+P-SE-048,Southeast,Jane Smith,Safety,compliance,55.07
+P-SE-048,Southeast,Jane Smith,Safety,estimating,45.24
+P-SE-048,Southeast,Jane Smith,Schedule,bidresults,72.83
+P-SE-048,Southeast,Jane Smith,Schedule,bidreview,45.09
+P-SE-048,Southeast,Jane Smith,Schedule,compliance,46.05
+P-SE-048,Southeast,Jane Smith,Schedule,estimating,75.78
+P-SE-048,Southeast,Jane Smith,WC Insurance,bidresults,54.5
+P-SE-048,Southeast,Jane Smith,WC Insurance,bidreview,62.51
+P-SE-048,Southeast,Jane Smith,WC Insurance,compliance,72.05
+P-SE-048,Southeast,Jane Smith,WC Insurance,estimating,61.43
+P-MW-049,Midwest,Mike Johnson,BR Insurance,bidresults,25.89
+P-MW-049,Midwest,Mike Johnson,BR Insurance,bidreview,50.52
+P-MW-049,Midwest,Mike Johnson,BR Insurance,compliance,56.21
+P-MW-049,Midwest,Mike Johnson,BR Insurance,estimating,30.91
+P-MW-049,Midwest,Mike Johnson,CA Insurance,bidresults,41.05
+P-MW-049,Midwest,Mike Johnson,CA Insurance,bidreview,40.5
+P-MW-049,Midwest,Mike Johnson,CA Insurance,compliance,31.88
+P-MW-049,Midwest,Mike Johnson,CA Insurance,estimating,60.86
+P-MW-049,Midwest,Mike Johnson,Cost,bidresults,46.1
+P-MW-049,Midwest,Mike Johnson,Cost,bidreview,43.47
+P-MW-049,Midwest,Mike Johnson,Cost,compliance,40.27
+P-MW-049,Midwest,Mike Johnson,Cost,estimating,36.27
+P-MW-049,Midwest,Mike Johnson,GL Insurance,bidresults,50.18
+P-MW-049,Midwest,Mike Johnson,GL Insurance,bidreview,38.0
+P-MW-049,Midwest,Mike Johnson,GL Insurance,compliance,62.96
+P-MW-049,Midwest,Mike Johnson,GL Insurance,estimating,53.65
+P-MW-049,Midwest,Mike Johnson,Safety,bidresults,22.54
+P-MW-049,Midwest,Mike Johnson,Safety,bidreview,55.65
+P-MW-049,Midwest,Mike Johnson,Safety,compliance,49.05
+P-MW-049,Midwest,Mike Johnson,Safety,estimating,49.68
+P-MW-049,Midwest,Mike Johnson,Schedule,bidresults,58.38
+P-MW-049,Midwest,Mike Johnson,Schedule,bidreview,52.4
+P-MW-049,Midwest,Mike Johnson,Schedule,compliance,56.89
+P-MW-049,Midwest,Mike Johnson,Schedule,estimating,33.71
+P-MW-049,Midwest,Mike Johnson,WC Insurance,bidresults,33.4
+P-MW-049,Midwest,Mike Johnson,WC Insurance,bidreview,26.1
+P-MW-049,Midwest,Mike Johnson,WC Insurance,compliance,56.05
+P-MW-049,Midwest,Mike Johnson,WC Insurance,estimating,55.84
+P-WE-050,West,Alice Brown,BR Insurance,bidresults,61.95
+P-WE-050,West,Alice Brown,BR Insurance,bidreview,43.17
+P-WE-050,West,Alice Brown,BR Insurance,compliance,73.4
+P-WE-050,West,Alice Brown,BR Insurance,estimating,50.24
+P-WE-050,West,Alice Brown,CA Insurance,bidresults,54.52
+P-WE-050,West,Alice Brown,CA Insurance,bidreview,72.09
+P-WE-050,West,Alice Brown,CA Insurance,compliance,47.45
+P-WE-050,West,Alice Brown,CA Insurance,estimating,64.11
+P-WE-050,West,Alice Brown,Cost,bidresults,46.13
+P-WE-050,West,Alice Brown,Cost,bidreview,54.43
+P-WE-050,West,Alice Brown,Cost,compliance,60.0
+P-WE-050,West,Alice Brown,Cost,estimating,84.78
+P-WE-050,West,Alice Brown,GL Insurance,bidresults,75.84
+P-WE-050,West,Alice Brown,GL Insurance,bidreview,53.5
+P-WE-050,West,Alice Brown,GL Insurance,compliance,81.19
+P-WE-050,West,Alice Brown,GL Insurance,estimating,59.48
+P-WE-050,West,Alice Brown,Safety,bidresults,68.66
+P-WE-050,West,Alice Brown,Safety,bidreview,74.23
+P-WE-050,West,Alice Brown,Safety,compliance,63.0
+P-WE-050,West,Alice Brown,Safety,estimating,70.57
+P-WE-050,West,Alice Brown,Schedule,bidresults,59.08
+P-WE-050,West,Alice Brown,Schedule,bidreview,52.98
+P-WE-050,West,Alice Brown,Schedule,compliance,41.13
+P-WE-050,West,Alice Brown,Schedule,estimating,40.07
+P-WE-050,West,Alice Brown,WC Insurance,bidresults,42.21
+P-WE-050,West,Alice Brown,WC Insurance,bidreview,47.55
+P-WE-050,West,Alice Brown,WC Insurance,compliance,59.94
+P-WE-050,West,Alice Brown,WC Insurance,estimating,70.22

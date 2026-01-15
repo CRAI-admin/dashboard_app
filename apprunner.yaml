@@ -1,0 +1,25 @@
+version: 1.0
+runtime: python311
+build:
+  commands:
+    pre-build:
+      - echo "Installing dependencies..."
+    build:
+      - pip install -r requirements.txt
+    post-build:
+      - echo "Build complete"
+run:
+  runtime-version: 3.11
+  command: streamlit run streamlit_app.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+  network:
+    port: 8501
+    env: APP_PORT
+  env:
+    - name: STREAMLIT_SERVER_PORT
+      value: "8501"
+    - name: STREAMLIT_SERVER_ADDRESS
+      value: "0.0.0.0"
+    - name: STREAMLIT_SERVER_HEADLESS
+      value: "true"
+    - name: DASHBOARD_PASSWORD
+      value: "DemoPassword2026!"

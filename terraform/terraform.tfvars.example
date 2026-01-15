@@ -1,0 +1,42 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# TERRAFORM CONFIGURATION FILE
+# Copy this to terraform.tfvars and fill in your actual values
+# ═══════════════════════════════════════════════════════════════════════════
+
+# AWS Configuration
+aws_region  = "us-east-1"
+environment = "demo"
+app_name    = "crscore-dashboard-construction"
+
+# GitHub Configuration
+# Format: https://github.com/OWNER/REPO
+github_repo_url    = "https://github.com/CRAI-admin/dashboard_app"
+github_branch      = "main"
+
+# IMPORTANT: Create GitHub connection first!
+# 1. Go to: AWS Console → App Runner → GitHub connections
+# 2. Click "Add connection"
+# 3. Follow the prompts to connect your GitHub account
+# 4. Copy the connection ARN and paste it below
+# Example: "arn:aws:apprunner:us-east-1:123456789012:connection/your-connection-name/abc123"
+github_connection_arn = "YOUR_GITHUB_CONNECTION_ARN_HERE"
+
+# Dashboard Password
+# This is the password users will enter to access the dashboard
+dashboard_password = "DemoPassword2026!"
+
+# Resource Configuration (adjust for cost/performance)
+cpu    = "1024"  # 1 vCPU (options: 256, 512, 1024, 2048, 4096)
+memory = "2048"  # 2 GB (options: 512, 1024, 2048, 3072, 4096, 6144, 8192, 10240, 12288)
+
+# Auto Scaling (keep low for cost control with 2 users)
+auto_scaling_max_concurrency = 10  # Max concurrent requests per instance
+auto_scaling_max_size        = 2   # Max number of instances
+auto_scaling_min_size        = 1   # Min number of instances (set to 0 to pause when not in use)
+
+# Additional Tags (optional)
+tags = {
+  Owner       = "Construction Risk AI"
+  CostCenter  = "Engineering"
+  Demo        = "true"
+}
