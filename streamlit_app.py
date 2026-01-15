@@ -7,7 +7,7 @@ import copy
 import re
 
 # --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
-st.set_page_config(page_title="CR-Score Dashboard (Construction View)", layout="wide")
+st.set_page_config(page_title="CR-Score Dashboard (Insurance View)", layout="wide")
 
 # --- AUTHENTICATION LAYER ---
 def check_password():
@@ -35,7 +35,7 @@ def check_password():
     st.markdown("""
     <div style="text-align: center; padding: 2rem 0;">
         <h1>🔒 CR-Score Dashboard</h1>
-        <h3>Construction View - Demo Access</h3>
+        <h3>Insurance View - Demo Access</h3>
     </div>
     """, unsafe_allow_html=True)
     
@@ -70,7 +70,7 @@ if not check_password():
 # --- App Configuration ---
 
 # --- Define the specific categories for this version of the dashboard ---
-ALLOWED_IMPACT_CATEGORIES = ['Schedule', 'Cost', 'Safety']
+ALLOWED_IMPACT_CATEGORIES = ['GL Insurance', 'WC Insurance', 'BR Insurance', 'CA Insurance']
 
 PHASE_PROCESS_MAPPING = {
     "bidding": ["bidreview", "estimating", "compliance", "bidresults"],
@@ -105,31 +105,36 @@ PHASE_DESCRIPTIONS = {
 
 # --- Filter the configuration dictionaries to match the allowed categories ---
 IMPACT_CATEGORY_CONFIG = {
-    "Schedule": {"multiplier": 0.40, "suffix": "improvement"},
-    "Cost": {"multiplier": 0.20, "suffix": "improvement"},
-    "Safety": {"multiplier": 0.80, "suffix": "improvement"}
+    "GL Insurance": {"multiplier": 0.50, "suffix": "lower risk"},
+    "WC Insurance": {"multiplier": 0.60, "suffix": "lower risk"},
+    "BR Insurance": {"multiplier": 0.40, "suffix": "lower risk"},
+    "CA Insurance": {"multiplier": 0.30, "suffix": "lower risk"}
 }
 
 PHASE_IMPACT_CONFIG = {
     "bidding": {
-        "Schedule": {"multiplier": 0.02, "suffix": "improvement"},
-        "Cost": {"multiplier": 0.06, "suffix": "improvement"},
-        "Safety": {"multiplier": 0.08, "suffix": "improvement"}
+        "GL Insurance": {"multiplier": 0.04, "suffix": "lower risk"},
+        "WC Insurance": {"multiplier": 0.03, "suffix": "lower risk"},
+        "BR Insurance": {"multiplier": 0.015, "suffix": "lower risk"},
+        "CA Insurance": {"multiplier": 0.02, "suffix": "lower risk"}
     },
     "preconstruction": {
-        "Schedule": {"multiplier": 0.16, "suffix": "improvement"},
-        "Cost": {"multiplier": 0.05, "suffix": "improvement"},
-        "Safety": {"multiplier": 0.20, "suffix": "improvement"}
+        "GL Insurance": {"multiplier": 0.10, "suffix": "lower risk"},
+        "WC Insurance": {"multiplier": 0.12, "suffix": "lower risk"},
+        "BR Insurance": {"multiplier": 0.075, "suffix": "lower risk"},
+        "CA Insurance": {"multiplier": 0.08, "suffix": "lower risk"}
     },
     "construction": {
-        "Schedule": {"multiplier": 0.20, "suffix": "improvement"},
-        "Cost": {"multiplier": 0.08, "suffix": "improvement"},
-        "Safety": {"multiplier": 0.48, "suffix": "improvement"}
+        "GL Insurance": {"multiplier": 0.20, "suffix": "lower risk"},
+        "WC Insurance": {"multiplier": 0.42, "suffix": "lower risk"},
+        "BR Insurance": {"multiplier": 0.18, "suffix": "lower risk"},
+        "CA Insurance": {"multiplier": 0.24, "suffix": "lower risk"}
     },
     "closeout": {
-        "Schedule": {"multiplier": 0.02, "suffix": "improvement"},
-        "Cost": {"multiplier": 0.01, "suffix": "improvement"},
-        "Safety": {"multiplier": 0.04, "suffix": "improvement"}
+        "GL Insurance": {"multiplier": 0.06, "suffix": "lower risk"},
+        "WC Insurance": {"multiplier": 0.03, "suffix": "lower risk"},
+        "BR Insurance": {"multiplier": 0.03, "suffix": "lower risk"},
+        "CA Insurance": {"multiplier": 0.06, "suffix": "lower risk"}
     }
 }
 
@@ -300,7 +305,7 @@ def load_data():
 
 # --- Display Functions ---
 def display_executive_summary(data, summary_for_impact_calc, impact_category_filter):
-    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>CR-Score Card</h1>", unsafe_allow_html=True); st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem;'>Company ABC (Construction View)</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>CR-Score Card</h1>", unsafe_allow_html=True); st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem;'>Company ABC (Insurance View)</h2>", unsafe_allow_html=True)
     
     summary_df = data['executive_summary']
     all_kpis_df = pd.DataFrame()
@@ -450,8 +455,8 @@ def main():
         project_ids, regions, pms, impact_categories = [], [], [], []
 
     default_index = 0
-    if impact_categories and 'Schedule' in impact_categories:
-        default_index = impact_categories.index('Schedule')
+    if impact_categories and 'BR Insurance' in impact_categories:
+        default_index = impact_categories.index('BR Insurance')
     elif impact_categories:
         default_index = 0
 
