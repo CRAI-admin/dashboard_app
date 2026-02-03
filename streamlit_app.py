@@ -9,64 +9,6 @@ import re
 # --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
 st.set_page_config(page_title="CR-Score Dashboard (Insurance View)", layout="wide")
 
-# --- AUTHENTICATION LAYER ---
-def check_password():
-    """Returns `True` if the user entered the correct password."""
-    
-    def password_entered():
-        """Checks whether a password entered by the user is correct."""
-        # Get password from Streamlit secrets (works locally and in Streamlit Cloud)
-        try:
-            correct_password = st.secrets.get("DASHBOARD_PASSWORD", os.environ.get("DASHBOARD_PASSWORD", "DemoPassword2026!"))
-        except:
-            correct_password = os.environ.get("DASHBOARD_PASSWORD", "DemoPassword2026!")
-        
-        if st.session_state["password"] == correct_password:
-            st.session_state["password_correct"] = True
-            del st.session_state["password"]  # Don't store password
-        else:
-            st.session_state["password_correct"] = False
-
-    # Return True if password is already validated
-    if st.session_state.get("password_correct", False):
-        return True
-
-    # Show login form
-    st.markdown("""
-    <div style="text-align: center; padding: 2rem 0;">
-        <h1>🔒 CR-Score Dashboard</h1>
-        <h3>Insurance View - Demo Access</h3>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    col1, col2, col3 = st.columns([1, 2, 1])
-    
-    with col2:
-        st.text_input(
-            "Enter Password",
-            type="password",
-            on_change=password_entered,
-            key="password",
-            placeholder="Enter your password"
-        )
-
-        if "password_correct" in st.session_state and not st.session_state["password_correct"]:
-            st.error("😕 Password incorrect. Please try again.")
-        
-        st.markdown("""
-        <div style="text-align: center; margin-top: 2rem; color: #666;">
-            <p>For access, please contact your Construction Risk AI representative.</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    return False
-
-# Check authentication before showing the dashboard
-if not check_password():
-    st.stop()
-
-# --- DASHBOARD CODE (ONLY RUNS IF AUTHENTICATED) ---
-
 # --- App Configuration ---
 
 # --- Define the specific categories for this version of the dashboard ---
@@ -95,6 +37,7 @@ PHASE_INFO = {
     "closeout": {"title": "Closeout Phase Summary", "score_col": "phaseScore_closeout"}
 }
 
+# --- FIX: Added the missing PHASE_DESCRIPTIONS dictionary ---
 PHASE_DESCRIPTIONS = {
     "bidding": "Represents the adoption of Best Practices for all KPIs across 4 key processes of the Bidding Phase.",
     "preconstruction": "Represents the adoption of Best Practices for all KPIs across 4 key processes of the Preconstruction Phase.",
@@ -105,7 +48,7 @@ PHASE_DESCRIPTIONS = {
 
 # --- Filter the configuration dictionaries to match the allowed categories ---
 IMPACT_CATEGORY_CONFIG = {
-    "GL Insurance": {"multiplier": 0.50, "suffix": "lower risk"},
+    "GL Insurance": {"multiplier": 0.60, "suffix": "lower risk"},
     "WC Insurance": {"multiplier": 0.60, "suffix": "lower risk"},
     "BR Insurance": {"multiplier": 0.40, "suffix": "lower risk"},
     "CA Insurance": {"multiplier": 0.30, "suffix": "lower risk"}
@@ -113,82 +56,28 @@ IMPACT_CATEGORY_CONFIG = {
 
 PHASE_IMPACT_CONFIG = {
     "bidding": {
-        "GL Insurance": {"multiplier": 0.04, "suffix": "lower risk"},
+        "GL Insurance": {"multiplier": 0.06, "suffix": "lower risk"},
         "WC Insurance": {"multiplier": 0.03, "suffix": "lower risk"},
         "BR Insurance": {"multiplier": 0.015, "suffix": "lower risk"},
         "CA Insurance": {"multiplier": 0.02, "suffix": "lower risk"}
     },
     "preconstruction": {
-        "GL Insurance": {"multiplier": 0.10, "suffix": "lower risk"},
+        "GL Insurance": {"multiplier": 0.15, "suffix": "lower risk"},
         "WC Insurance": {"multiplier": 0.12, "suffix": "lower risk"},
         "BR Insurance": {"multiplier": 0.075, "suffix": "lower risk"},
         "CA Insurance": {"multiplier": 0.08, "suffix": "lower risk"}
     },
     "construction": {
-        "GL Insurance": {"multiplier": 0.20, "suffix": "lower risk"},
+        "GL Insurance": {"multiplier": 0.30, "suffix": "lower risk"},
         "WC Insurance": {"multiplier": 0.42, "suffix": "lower risk"},
         "BR Insurance": {"multiplier": 0.18, "suffix": "lower risk"},
         "CA Insurance": {"multiplier": 0.24, "suffix": "lower risk"}
     },
     "closeout": {
-        "GL Insurance": {"multiplier": 0.06, "suffix": "lower risk"},
+        "GL Insurance": {"multiplier": 0.09, "suffix": "lower risk"},
         "WC Insurance": {"multiplier": 0.03, "suffix": "lower risk"},
         "BR Insurance": {"multiplier": 0.03, "suffix": "lower risk"},
         "CA Insurance": {"multiplier": 0.06, "suffix": "lower risk"}
-    }
-}
-
-# --- NEW: Dummy data for the new "Top Priority Action Items" section ---
-DUMMY_ACTION_ITEMS = {
-    "executive_summary": {
-        "headers": ["Phase", "Item", "Required Action"],
-        "items": [
-            ("Construction", "RFI #103 - Structural", "High risk, needs immediate response"),
-            ("Bidding", "Bid Pkg #01-456 - Concrete", "Waiting on 3 sub quotes"),
-            ("Preconstruction", "Permits", "Awaiting city approval for foundation"),
-            ("Closeout", "Punch #08 - HVAC", "High risk item outstanding"),
-            ("Construction", "Submittal #45 - Glazing", "Late and pending approval")
-        ]
-    },
-    "bidding": {
-        "headers": ["Bid Package Number", "Item Name", "Required Action"],
-        "items": [
-            ("01-456", "Concrete", "Waiting on quotes from subs"),
-            ("02-789", "Structural Steel", "Finalize compliance items"),
-            ("00-123", "Site Work", "Bid is 2 days late"),
-            ("03-101", "Plumbing", "Needs final review before submission"),
-            ("04-112", "Electrical", "Awaiting GC approval")
-        ]
-    },
-    "preconstruction": {
-        "headers": ["Item", "Required Action"],
-        "items": [
-            ("Permits", "Finalize and submit foundation permit"),
-            ("Budget", "Needs to be completed and approved"),
-            ("Prime Contract", "Legal review pending"),
-            ("BIM Clash Detection", "12 clashes in sector A need resolution"),
-            ("Structural Steel Subcontract", "Scope of work requires clarification")
-        ]
-    },
-    "construction": {
-        "headers": ["Item", "Required Action"],
-        "items": [
-            ("RFI #103 - Structural", "High risk RFI, needs immediate response"),
-            ("Submittal #45 - Glazing", "Late and pending approval"),
-            ("Observation #212 - Safety", "High risk observation, needs to be closed"),
-            ("Change Order #12", "High value change order needs client approval"),
-            ("Invoice - Trade Partner X", "Invoice for May is late")
-        ]
-    },
-    "closeout": {
-        "headers": ["Item", "Required Action"],
-        "items": [
-            ("Punch #08 - HVAC", "High risk punch item outstanding"),
-            ("Final Payment - Prime", "Awaiting client final payment"),
-            ("Final Payment - Elec. Sub", "Awaiting final invoice from subcontractor"),
-            ("As-Built Drawings", "Need to be finalized and submitted"),
-            ("O&M Manuals", "Incomplete, awaiting vendor data")
-        ]
     }
 }
 
@@ -210,6 +99,24 @@ def horizontal_risk_bar_html(score, height='1.25rem', font_size='0.9rem', top_of
         </div>
         <span style="position: absolute; top: 100%; margin-top: 1px; font-size: 0.65rem; color: #777;">0</span>
         <span style="position: absolute; top: 100%; right: 0%; transform: translateX(50%);">100</span>
+    </div>
+    """
+    return html_content
+
+def risk_reduction_bar_html(value, max_value, height='1.0rem', font_size='0.8rem'):
+    """Create a horizontal bar chart for risk reduction percentages"""
+    value = float(value) if pd.notna(value) else 0
+    percentage = (value / max_value) * 100 if max_value > 0 else 0
+    percentage = min(percentage, 100)  # Cap at 100%
+    
+    html_content = f"""
+    <div style="width: 100%; position: relative; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+        <div style="width: 100%; background-color: #e5e7eb; border-radius: 4px; height: {height}; position: relative;">
+            <div style="width: {percentage}%; height: 100%; background-color: #93c5fd; border-radius: 4px;"></div>
+            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black; font-weight: bold; font-size: {font_size}; white-space: nowrap;">
+                {value:.1f}%
+            </span>
+        </div>
     </div>
     """
     return html_content
@@ -237,44 +144,26 @@ def display_kpi_table(kpi_df):
 
     with st.container(border=True):
         header_cols = st.columns([0.4, 0.2, 0.15, 0.1, 0.15])
-        header_cols[0].markdown("**KPI Name**"); header_cols[1].markdown("**Best Practice**")
-        header_cols[2].markdown("**Actual (Avg)**" if is_averaged else "**Actual**"); header_cols[3].markdown("**Score**"); header_cols[4].markdown("**Potential**")
+        header_cols[0].markdown("<span style='font-size: 1.5rem;'><strong>KPI Name</strong></span>", unsafe_allow_html=True)
+        header_cols[1].markdown("<span style='font-size: 1.5rem;'><strong>Best Practice</strong></span>", unsafe_allow_html=True)
+        header_cols[2].markdown("<span style='font-size: 1.5rem;'><strong>Actual (Avg)</strong></span>" if is_averaged else "<span style='font-size: 1.5rem;'><strong>Actual</strong></span>", unsafe_allow_html=True)
+        header_cols[3].markdown("<span style='font-size: 1.5rem;'><strong>Score</strong></span>", unsafe_allow_html=True)
+        header_cols[4].markdown("<span style='font-size: 1.5rem;'><strong>Potential</strong></span>", unsafe_allow_html=True)
         
         for _, row in display_df.iterrows():
             row_cols = st.columns([0.4, 0.2, 0.15, 0.1, 0.15])
             actual_val = row['actual_numeric']
             unit = row.get('unit', '')
             actual_display = f"{actual_val:.0%}" if unit == '%' else f"{actual_val:.1f}"
-            row_cols[0].write(html.escape(str(row.get('kpi_name', 'N/A'))))
-            row_cols[1].write(html.escape(str(row.get('bp_range_display', 'N/A'))))
-            row_cols[2].write(actual_display); row_cols[3].write(f"{row.get('score', 0):.0f}"); row_cols[4].write(f"+{row.get('unrealized_value', 0):.1f}")
+            row_cols[0].markdown(f"<span style='font-size: 1.5rem;'>{html.escape(str(row.get('kpi_name', 'N/A')))}</span>", unsafe_allow_html=True)
+            row_cols[1].markdown(f"<span style='font-size: 1.5rem;'>{html.escape(str(row.get('bp_range_display', 'N/A')))}</span>", unsafe_allow_html=True)
+            row_cols[2].markdown(f"<span style='font-size: 1.5rem;'>{actual_display}</span>", unsafe_allow_html=True)
+            row_cols[3].markdown(f"<span style='font-size: 1.5rem;'>{row.get('score', 0):.0f}</span>", unsafe_allow_html=True)
+            row_cols[4].markdown(f"<span style='font-size: 1.5rem;'>+{row.get('unrealized_value', 0):.1f}</span>", unsafe_allow_html=True)
 
 def format_process_name(name):
     if name in PROCESS_DISPLAY_NAMES: return PROCESS_DISPLAY_NAMES[name]
     return re.sub(r"(\w)([A-Z])", r"\1 \2", name).title()
-
-def display_top_action_items(page_key):
-    """Displays the new 'Top Priority Action Items' section with dummy data."""
-    action_item_data = DUMMY_ACTION_ITEMS.get(page_key)
-    if not action_item_data:
-        return
-
-    st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem; margin-top: 1.5rem;'>Top Priority Action Items</h2>", unsafe_allow_html=True)
-    
-    with st.container(border=True):
-        headers = action_item_data["headers"]
-        items = action_item_data["items"]
-        
-        # Create dynamic columns based on the number of headers
-        header_cols = st.columns(len(headers))
-        for col, header in zip(header_cols, headers):
-            col.markdown(f"**{header}**")
-        
-        for item in items:
-            item_cols = st.columns(len(item))
-            for col, value in zip(item_cols, item):
-                col.write(html.escape(str(value)))
-
 
 # --- Data Loading Function ---
 @st.cache_data
@@ -317,11 +206,11 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
     st.markdown("<hr style='margin-top: 0.5rem; margin-bottom: 1rem;'>", unsafe_allow_html=True)
     col_cr_score, col_impact_categories = st.columns(2)
     with col_cr_score:
-        st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>CR-Score</h2>", unsafe_allow_html=True); st.markdown("<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 0.5rem auto; font-size:1.08em;'>Represents the adoption of Best Practices for all KPIs across all 4 Phases of Operations.</p>", unsafe_allow_html=True)
-        st.markdown(f"<div style='margin-top: 2.0rem;'>{horizontal_risk_bar_html(summary_df['score'].mean(), height='1.3rem', font_size='1.8rem', top_offset='-2.1rem', width_percentage=90)}</div>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>CR-Score</h2>", unsafe_allow_html=True); st.markdown("<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 0.5rem auto; font-size:1.62em;'>Represents the adoption of Best Practices for all KPIs across all 4 Phases of Operations.</p>", unsafe_allow_html=True)
+        st.markdown(f"<div style='margin-top: 3.0rem;'>{horizontal_risk_bar_html(summary_df['score'].mean(), height='1.95rem', font_size='2.7rem', top_offset='-3.15rem', width_percentage=90)}</div>", unsafe_allow_html=True)
     
     with col_impact_categories:
-        st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>CR-Score Impact Categories</h2>", unsafe_allow_html=True); st.markdown(f"<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 1.5rem auto; font-size:1.08em;'>The estimated correlation between the CR-Score and key business outcomes.</p>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>CR-Score Impact Categories</h2>", unsafe_allow_html=True); st.markdown(f"<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 1.5rem auto; font-size:1.62em;'>The estimated correlation between the CR-Score and key business outcomes.</p>", unsafe_allow_html=True)
         
         impact_scores = summary_for_impact_calc.groupby('impact_category')['score'].mean()
 
@@ -330,9 +219,9 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
             percentage_value = score * config['multiplier']
             text_col1, text_col2 = st.columns([0.5, 0.5])
             with text_col1:
-                st.markdown(f"<p style='text-align: right; margin-bottom: 0.1rem; font-size: 1.08rem;'>{html.escape(category)}:</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='text-align: right; margin-bottom: 0.1rem; font-size: 1.62rem;'>{html.escape(category)}:</p>", unsafe_allow_html=True)
             with text_col2:
-                st.markdown(f"<p style='font-weight: 600; color: #2563eb; text-align: left; margin-bottom: 0.1rem; font-size: 1.08rem;'>{percentage_value:.1f}% {html.escape(config['suffix'])}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-weight: 600; color: #2563eb; text-align: left; margin-bottom: 0.1rem; font-size: 1.62rem;'>{percentage_value:.1f}% {html.escape(config['suffix'])}</p>", unsafe_allow_html=True)
     
     st.markdown("<hr style='margin-top: 1rem; margin-bottom: 0.75rem;'>", unsafe_allow_html=True)
     col_components, col_actions = st.columns(2)
@@ -340,26 +229,35 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
         st.markdown("<h2 style='text-align: center; margin-bottom: 0.1rem; font-size: 1.5rem;'>CR-Score Components</h2>", unsafe_allow_html=True); st.markdown("<h3 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem;'>4 Phases of Operations</h3>", unsafe_allow_html=True)
         phase_definitions = {"Bidding": {"col": "phaseScore_bidding", "desc": "selecting what jobs to bid on and building estimates"},"Precon": {"col": "phaseScore_precon", "desc": "For bids that are won, all the project preparation"},"Construction": {"col": "phaseScore_construction", "desc": "executing the plan and completing the project"},"Closeout": {"col": "phaseScore_closeout", "desc": "wrap up of all work and handoff to the customer"}}
         for name, info in phase_definitions.items():
-            st.markdown(f"<div style='font-size: 1.0rem;'><strong>{html.escape(name)}</strong> - <em>{html.escape(info['desc'])}</em></div>", unsafe_allow_html=True)
-            st.markdown(horizontal_risk_bar_html(summary_df[info["col"]].mean(), width_percentage=90, height='1.1rem', font_size='0.8rem', top_offset='-1.2rem'), unsafe_allow_html=True)
+            st.markdown(f"<div style='font-size: 1.5rem; margin-bottom: 1.5rem;'><strong>{html.escape(name)}</strong> - <em>{html.escape(info['desc'])}</em></div>", unsafe_allow_html=True)
+            st.markdown(horizontal_risk_bar_html(summary_df[info["col"]].mean(), width_percentage=90, height='1.65rem', font_size='1.2rem', top_offset='-1.8rem'), unsafe_allow_html=True)
     with col_actions:
-        # --- UPDATED: Renamed section ---
-        st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>Top Priority KPIs to Improve</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>Top Priority KPIs</h2>", unsafe_allow_html=True)
         if not all_kpis_df.empty:
             kpis_for_actions = all_kpis_df[all_kpis_df['impact_category'] == impact_category_filter]
-            action_items = kpis_for_actions.groupby(['kpi_name'])['phase_level_unrealized_value'].mean().nlargest(5).reset_index()
+            
+            action_items = kpis_for_actions.groupby(['kpi_name', 'phase', 'process_name'])['phase_level_unrealized_value'].mean().reset_index()
+            action_items = action_items.sort_values(by='phase_level_unrealized_value', ascending=False).head(5).reset_index(drop=True)
+            
             with st.container(border=True):
                 if action_items.empty or action_items['phase_level_unrealized_value'].sum() == 0:
-                    st.markdown("<p style='text-align:center; color:#555;'>No action items found.</p>", unsafe_allow_html=True)
+                    st.markdown("<p style='text-align:center; color:#555; font-size: 1.5rem;'>No KPIs found.</p>", unsafe_allow_html=True)
                 else:
-                    header_cols = st.columns([0.15, 0.55, 0.3]); header_cols[0].markdown("**Rank**"); header_cols[1].markdown("**KPI to Improve**"); header_cols[2].markdown("**Potential CR-Score Increase**")
+                    header_cols = st.columns([0.1, 0.2, 0.25, 0.25, 0.2])
+                    header_cols[0].markdown("<span style='font-size: 1.5rem;'><strong>Rank</strong></span>", unsafe_allow_html=True)
+                    header_cols[1].markdown("<span style='font-size: 1.5rem;'><strong>Phase</strong></span>", unsafe_allow_html=True)
+                    header_cols[2].markdown("<span style='font-size: 1.5rem;'><strong>Process</strong></span>", unsafe_allow_html=True)
+                    header_cols[3].markdown("<span style='font-size: 1.5rem;'><strong>KPI to Improve</strong></span>", unsafe_allow_html=True)
+                    header_cols[4].markdown("<span style='font-size: 1.5rem;'><strong>Potential CR-Score Increase</strong></span>", unsafe_allow_html=True)
+
                     for i, row in action_items.iterrows():
-                        row_cols = st.columns([0.15, 0.55, 0.3]); row_cols[0].markdown(f"**{i+1}**"); row_cols[1].markdown(html.escape(row['kpi_name'])); row_cols[2].markdown(f"**+{row['phase_level_unrealized_value']:.1f}**")
+                        row_cols = st.columns([0.1, 0.2, 0.25, 0.25, 0.2])
+                        row_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{i+1}</strong></span>", unsafe_allow_html=True)
+                        row_cols[1].markdown(f"<span style='font-size: 1.5rem;'>{html.escape(row['phase'])}</span>", unsafe_allow_html=True)
+                        row_cols[2].markdown(f"<span style='font-size: 1.5rem;'>{format_process_name(row['process_name'])}</span>", unsafe_allow_html=True)
+                        row_cols[3].markdown(f"<span style='font-size: 1.5rem;'>{html.escape(row['kpi_name'])}</span>", unsafe_allow_html=True)
+                        row_cols[4].markdown(f"<span style='font-size: 1.5rem;'><strong>+{row['phase_level_unrealized_value']:.1f}</strong></span>", unsafe_allow_html=True)
         else: st.info("No KPI data for current selection.")
-
-        # --- NEW: Display the new Action Items section ---
-        display_top_action_items("executive_summary")
-
 
 def display_phase_summary_page(phase_key, data, impact_category_filter):
     if phase_key not in data:
@@ -372,23 +270,27 @@ def display_phase_summary_page(phase_key, data, impact_category_filter):
     st.markdown(f"<h1 style='text-align: center; color: #333333;'>{info['title']}</h1>", unsafe_allow_html=True)
     
     summary_df = data['executive_summary']
+    
+    # --- FIX: Filter processes by project/pm/region first, then calculate scores ---
     processes_df_all_categories = data[phase_key]['processes']
+    process_scores = processes_df_all_categories.groupby('process_name')['score'].mean()
+    
+    # Now filter kpis by impact category
     kpis_df = data[phase_key]['kpis'][data[phase_key]['kpis']['impact_category'] == impact_category_filter]
     
     if summary_df.empty: st.info("No project data matches the selected filters."); return
 
     phase_score = summary_df[info['score_col']].mean()
-    process_scores = processes_df_all_categories.groupby('process_name')['score'].mean()
     
     col1, col2 = st.columns(2)
     with col1:
         st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{phase_key.capitalize()} Phase Score</h2>", unsafe_allow_html=True)
-        st.markdown(f"<p style='text-align: center; font-size:1.08em;'>{PHASE_DESCRIPTIONS.get(phase_key, '')}</p>", unsafe_allow_html=True)
-        st.markdown(horizontal_risk_bar_html(phase_score, height='1.3rem', font_size='1.8rem', top_offset='-2.1rem', width_percentage=90), unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align: center; font-size:1.62em;'>{PHASE_DESCRIPTIONS.get(phase_key, '')}</p>", unsafe_allow_html=True)
+        st.markdown(f"<div style='margin-top: 2.0rem;'>{horizontal_risk_bar_html(phase_score, height='1.95rem', font_size='2.7rem', top_offset='-3.15rem', width_percentage=90)}</div>", unsafe_allow_html=True)
     
     with col2:
         st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>Impact Categories</h2>", unsafe_allow_html=True)
-        st.markdown(f"<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 1.5rem auto; font-size:1.08em;'>The estimated correlation between the {phase_key.capitalize()} Score and key business outcomes.</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 1.5rem auto; font-size:1.62em;'>The estimated correlation between the {phase_key.capitalize()} Score and key business outcomes.</p>", unsafe_allow_html=True)
         config_for_phase = PHASE_IMPACT_CONFIG.get(phase_key, {})
         if not config_for_phase:
             st.info("No impact category configuration for this phase.")
@@ -397,9 +299,9 @@ def display_phase_summary_page(phase_key, data, impact_category_filter):
                 percentage_value = phase_score * config['multiplier']
                 text_col1, text_col2 = st.columns([0.5, 0.5])
                 with text_col1:
-                    st.markdown(f"<p style='text-align: right; margin-bottom: 0.1rem; font-size: 1.08rem;'>{html.escape(category)}:</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='text-align: right; margin-bottom: 0.1rem; font-size: 1.62rem;'>{html.escape(category)}:</p>", unsafe_allow_html=True)
                 with text_col2:
-                    st.markdown(f"<p style='font-weight: 600; color: #2563eb; text-align: left; margin-bottom: 0.1rem; font-size: 1.08rem;'>{percentage_value:.1f}% {html.escape(config['suffix'])}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='font-weight: 600; color: #2563eb; text-align: left; margin-bottom: 0.1rem; font-size: 1.62rem;'>{percentage_value:.1f}% {html.escape(config['suffix'])}</p>", unsafe_allow_html=True)
 
     st.markdown("<hr>", unsafe_allow_html=True)
     
@@ -414,30 +316,140 @@ def display_phase_summary_page(phase_key, data, impact_category_filter):
             
             p_col1, p_col2 = st.columns([0.75, 0.25])
             with p_col1:
-                st.markdown(f"<strong>{process_display_name}</strong>", unsafe_allow_html=True)
-                st.markdown(horizontal_risk_bar_html(score, width_percentage=95, height='1.1rem', font_size='0.8rem', top_offset='-1.2rem'), unsafe_allow_html=True)
+                st.markdown(f"<span style='font-size: 1.5rem;'><strong>{process_display_name}</strong></span>", unsafe_allow_html=True)
+                st.markdown(horizontal_risk_bar_html(score, width_percentage=95, height='1.65rem', font_size='1.2rem', top_offset='-1.8rem'), unsafe_allow_html=True)
             with p_col2:
                 st.button(button_label, key=f"btn_{state_key}", on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, False)}), use_container_width=True)
             if st.session_state.get(state_key, False):
                 display_kpi_table(kpis_df[kpis_df['process_name'] == process_key])
 
     with col_actions:
-        # --- UPDATED: Renamed section ---
-        st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>Top Priority KPIs to Improve</h2>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>Top {phase_key.capitalize()} KPIs</h2>", unsafe_allow_html=True)
         if not kpis_df.empty:
             action_items = kpis_df.groupby('kpi_name')['process_level_unrealized_value'].mean().nlargest(5).reset_index()
             with st.container(border=True):
                 if action_items.empty or action_items['process_level_unrealized_value'].sum() == 0:
-                    st.markdown("<p style='text-align:center; color:#555;'>No action items found.</p>", unsafe_allow_html=True)
+                    st.markdown("<p style='text-align:center; color:#555; font-size: 1.5rem;'>No KPIs found.</p>", unsafe_allow_html=True)
                 else:
-                    header_cols = st.columns([0.15, 0.55, 0.3]); header_cols[0].markdown("**Rank**"); header_cols[1].markdown("**KPI to Improve**"); header_cols[2].markdown("**Potential Score Increase**")
+                    header_cols = st.columns([0.15, 0.55, 0.3])
+                    header_cols[0].markdown("<span style='font-size: 1.5rem;'><strong>Rank</strong></span>", unsafe_allow_html=True)
+                    header_cols[1].markdown("<span style='font-size: 1.5rem;'><strong>KPI to Improve</strong></span>", unsafe_allow_html=True)
+                    header_cols[2].markdown("<span style='font-size: 1.5rem;'><strong>Potential Score Increase</strong></span>", unsafe_allow_html=True)
                     for i, row in action_items.iterrows():
                         potential_gain = row['process_level_unrealized_value']
-                        row_cols = st.columns([0.15, 0.55, 0.3]); row_cols[0].markdown(f"**{i+1}**"); row_cols[1].markdown(html.escape(row['kpi_name'])); row_cols[2].markdown(f"**+{potential_gain:.1f}**")
+                        row_cols = st.columns([0.15, 0.55, 0.3])
+                        row_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{i+1}</strong></span>", unsafe_allow_html=True)
+                        row_cols[1].markdown(f"<span style='font-size: 1.5rem;'>{html.escape(row['kpi_name'])}</span>", unsafe_allow_html=True)
+                        row_cols[2].markdown(f"<span style='font-size: 1.5rem;'><strong>+{potential_gain:.1f}</strong></span>", unsafe_allow_html=True)
         else: st.info("No KPI data for current selection.")
 
-        # --- NEW: Display the new Action Items section ---
-        display_top_action_items(phase_key)
+def display_scoreboard(summary_for_impact_calc):
+    """Display portfolio scoreboard with segment analysis"""
+    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Portfolio Scoreboard</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem;'>Segment Performance Analysis</h2>", unsafe_allow_html=True)
+    
+    if summary_for_impact_calc.empty:
+        st.info("No portfolio data available.")
+        return
+    
+    st.markdown("<hr style='margin-top: 0.5rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    
+    # Segment selector
+    col_selector, col_spacer = st.columns([0.3, 0.7])
+    with col_selector:
+        segment_by = st.selectbox(
+            "Segment Portfolio By:",
+            ["Project", "Region", "Project Manager"],
+            help="Select how to group the portfolio for analysis"
+        )
+    
+    # Map selection to column name
+    segment_column_map = {
+        "Project": "projectId",
+        "Region": "region",
+        "Project Manager": "projectManager"
+    }
+    segment_col = segment_column_map[segment_by]
+    
+    # Calculate scoreboard data
+    scoreboard_data = []
+    
+    for segment_value in sorted(summary_for_impact_calc[segment_col].unique()):
+        segment_df = summary_for_impact_calc[summary_for_impact_calc[segment_col] == segment_value]
+        
+        # Calculate average score
+        avg_score = segment_df['score'].mean()
+        
+        # Calculate risk reduction by category
+        gl_reduction = 0
+        wc_reduction = 0
+        br_reduction = 0
+        ca_reduction = 0
+        
+        for category in ALLOWED_IMPACT_CATEGORIES:
+            category_data = segment_df[segment_df['impact_category'] == category]
+            if not category_data.empty:
+                category_score = category_data['score'].mean()
+                multiplier = IMPACT_CATEGORY_CONFIG[category]['multiplier']
+                reduction = category_score * multiplier
+                
+                if category == 'GL Insurance':
+                    gl_reduction = reduction
+                elif category == 'WC Insurance':
+                    wc_reduction = reduction
+                elif category == 'BR Insurance':
+                    br_reduction = reduction
+                elif category == 'CA Insurance':
+                    ca_reduction = reduction
+        
+        scoreboard_data.append({
+            'Segment': segment_value,
+            'CR-Score': avg_score,
+            'GL Risk Reduction': gl_reduction,
+            'WC Risk Reduction': wc_reduction,
+            'BR Risk Reduction': br_reduction,
+            'CA Risk Reduction': ca_reduction
+        })
+    
+    # Create DataFrame and sort by CR-Score (highest first)
+    scoreboard_df = pd.DataFrame(scoreboard_data)
+    
+    if scoreboard_df.empty:
+        st.info("No data available for selected segment.")
+        return
+    
+    # Sort by CR-Score descending (highest first)
+    scoreboard_df = scoreboard_df.sort_values(by='CR-Score', ascending=False).reset_index(drop=True)
+    
+    # Display scoreboard table
+    st.markdown(f"<h3 style='text-align: center; margin-bottom: 1rem;'>Portfolio Segmented by {segment_by}</h3>", unsafe_allow_html=True)
+    
+    with st.container(border=True):
+        # Header row
+        header_cols = st.columns([0.20, 0.20, 0.15, 0.15, 0.15, 0.15])
+        header_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{segment_by}</strong></span>", unsafe_allow_html=True)
+        header_cols[1].markdown("<span style='font-size: 1.5rem;'><strong>CR-Score</strong></span>", unsafe_allow_html=True)
+        header_cols[2].markdown("<span style='font-size: 1.5rem;'><strong>GL Risk Reduction</strong></span>", unsafe_allow_html=True)
+        header_cols[3].markdown("<span style='font-size: 1.5rem;'><strong>WC Risk Reduction</strong></span>", unsafe_allow_html=True)
+        header_cols[4].markdown("<span style='font-size: 1.5rem;'><strong>BR Risk Reduction</strong></span>", unsafe_allow_html=True)
+        header_cols[5].markdown("<span style='font-size: 1.5rem;'><strong>CA Risk Reduction</strong></span>", unsafe_allow_html=True)
+        
+        # Data rows
+        for _, row in scoreboard_df.iterrows():
+            row_cols = st.columns([0.20, 0.20, 0.15, 0.15, 0.15, 0.15])
+            
+            # Segment name
+            row_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{html.escape(str(row['Segment']))}</strong></span>", unsafe_allow_html=True)
+            
+            # Score with horizontal risk bar (increased font size from 0.85rem to 1.275rem)
+            score = row['CR-Score']
+            row_cols[1].markdown(horizontal_risk_bar_html(score, height='1.65rem', font_size='1.275rem', top_offset='-1.8rem', width_percentage=95), unsafe_allow_html=True)
+            
+            # Risk reduction bars with appropriate max values (increased font size from 0.8rem to 1.2rem, height from 1.0rem to 1.5rem)
+            row_cols[2].markdown(risk_reduction_bar_html(row['GL Risk Reduction'], 60, height='1.5rem', font_size='1.2rem'), unsafe_allow_html=True)
+            row_cols[3].markdown(risk_reduction_bar_html(row['WC Risk Reduction'], 60, height='1.5rem', font_size='1.2rem'), unsafe_allow_html=True)
+            row_cols[4].markdown(risk_reduction_bar_html(row['BR Risk Reduction'], 40, height='1.5rem', font_size='1.2rem'), unsafe_allow_html=True)
+            row_cols[5].markdown(risk_reduction_bar_html(row['CA Risk Reduction'], 30, height='1.5rem', font_size='1.2rem'), unsafe_allow_html=True)
 
 # --- Main Application ---
 def main():
@@ -488,11 +500,13 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.title("Navigation")
     
-    nav_options = ["Executive Summary", "Bidding", "Preconstruction", "Construction", "Closeout"]
+    nav_options = ["Executive Summary", "Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout"]
     page_selection = st.sidebar.radio("Page Navigation", nav_options, label_visibility="collapsed")
 
     if page_selection == "Executive Summary":
         display_executive_summary(filtered_data, summary_for_impact_calc, filters['impact_category'])
+    elif page_selection == "Scoreboard":
+        display_scoreboard(summary_for_impact_calc)
     else:
         display_phase_summary_page(page_selection.lower(), filtered_data, filters['impact_category'])
 
