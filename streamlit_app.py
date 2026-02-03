@@ -611,20 +611,15 @@ def display_loss_control(filtered_data, impact_category_filter):
         with col_left if idx % 2 == 0 else col_right:
             st.markdown(f"""
             <div style='background: #f8f9fa; padding: 0.8rem; border-radius: 0.3rem; border-left: 3px solid #3b82f6; margin-bottom: 0.8rem;'>
-                <div style='display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;'>
-                    <span style='font-weight: bold; font-size: 1.05rem; color: #1e40af;'>{kpi['name']}</span>
-                    <span style='background: #3b82f6; color: white; padding: 0.2rem 0.5rem; border-radius: 0.2rem; font-weight: bold; font-size: 0.9rem;'>{kpi['score_increase']}</span>
+                <div style='display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem;'>
+                    <span style='font-weight: bold; font-size: 1.05rem; color: #1e40af;'>{kpi['name']} - <span style='font-weight: normal; font-style: italic; color: #666;'>{kpi['definition']}</span></span>
+                    <span style='background: #3b82f6; color: white; padding: 0.2rem 0.5rem; border-radius: 0.2rem; font-weight: bold; font-size: 0.9rem; white-space: nowrap; margin-left: 0.5rem;'>{kpi['score_increase']}</span>
                 </div>
-                <div style='font-size: 0.85rem; color: #666; margin-bottom: 0.4rem; font-style: italic;'>{kpi['definition']}</div>
-                <div style='font-size: 0.85rem; color: #333; font-weight: 600; margin-bottom: 0.2rem;'>Prescribed Actions:</div>
+                <div style='font-size: 0.85rem; color: #333; margin-top: 0.5rem;'>
+                    <span style='font-weight: 600;'>Prescribed Actions:</span> {kpi['actions'][0]}; {kpi['actions'][1]}
+                </div>
             </div>
             """, unsafe_allow_html=True)
-            
-            # Actions as bullet points using native markdown
-            for action in kpi['actions']:
-                st.markdown(f"<div style='font-size: 0.82rem; color: #555; margin-left: 1rem; margin-bottom: 0.2rem;'>• {action}</div>", unsafe_allow_html=True)
-            
-            st.markdown("<div style='margin-bottom: 0.5rem;'></div>", unsafe_allow_html=True)
 
 # --- Main Application ---
 def main():
