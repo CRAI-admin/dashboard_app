@@ -605,15 +605,19 @@ def display_loss_control(filtered_data, impact_category_filter):
     
     # Display KPIs in a clean format
     for kpi in kpis:
-        col1, col2 = st.columns([3, 1])
+        # First line: KPI name - definition ... score increase
+        col1, col2 = st.columns([4, 1])
         with col1:
-            st.markdown(f"**#{kpi['rank']} - {kpi['name']}**")
-            st.markdown(f"*{kpi['definition']}*")
-            st.markdown("**Prescribed Actions:**")
-            for action in kpi['actions']:
-                st.markdown(f"- {action}")
+            st.markdown(f"**{kpi['name']}** - {kpi['definition']}")
         with col2:
-            st.markdown(f"**{kpi['score_increase']}** Score Increase")
+            st.markdown(f"**{kpi['score_increase']}**")
+        
+        # Prescribed actions indented below
+        st.markdown("&nbsp;&nbsp;&nbsp;&nbsp;**Prescribed Actions for Improvement:**", unsafe_allow_html=True)
+        for action in kpi['actions']:
+            st.markdown(f"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {action}", unsafe_allow_html=True)
+        
+        st.markdown("")  # Add spacing between KPIs
 
 # --- Main Application ---
 def main():
