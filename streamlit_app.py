@@ -551,11 +551,56 @@ def display_loss_control(filtered_data, impact_category_filter):
     
     # KPI data
     kpis = [
-        {"rank": 1, "name": "Submittal Rate", "definition": "Submittal Count divided by number of project days", "score_increase": "+8.5"},
-        {"rank": 2, "name": "Observation Close Out Rate", "definition": "Observations closed out divided by Observation count", "score_increase": "+7.2"},
-        {"rank": 3, "name": "RFI Response Time", "definition": "Average days between RFI creation and RFI close out", "score_increase": "+6.8"},
-        {"rank": 4, "name": "Subcontractor Prequal Rate", "definition": "Count of Subs with preferable Prequal characteristics divided by total Count of Subs", "score_increase": "+5.4"},
-        {"rank": 5, "name": "Change Order Documentation Quality", "definition": "Average percent of critical details included with Change Orders", "score_increase": "+4.9"}
+        {
+            "rank": 1, 
+            "name": "Submittal Rate", 
+            "definition": "Submittal Count divided by number of project days", 
+            "score_increase": "+8.5",
+            "actions": [
+                "Require submittals to be entered in Proj Mgmt system and reject submittals created outside Proj Mgmt system",
+                "Allow subcontractors to create submittals directly in Proj Mgmt system"
+            ]
+        },
+        {
+            "rank": 2, 
+            "name": "Observation Close Out Rate", 
+            "definition": "Observations closed out divided by Observation count", 
+            "score_increase": "+7.2",
+            "actions": [
+                "Configure the Proj Mgmt system to require every Observation to have a single named owner",
+                "Configure the Proj Mgmt system to flag any observations over 20 days open to the Project Manager"
+            ]
+        },
+        {
+            "rank": 3, 
+            "name": "RFI Response Time", 
+            "definition": "Average days between RFI creation and RFI close out", 
+            "score_increase": "+6.8",
+            "actions": [
+                "Configure the Proj Mgmt system to set the Due Date on every RFI created to 7 days",
+                "Configure the Proj Mgmt system to flag any RFI over 20 days open to the Project Manager"
+            ]
+        },
+        {
+            "rank": 4, 
+            "name": "Subcontractor Prequal Rate", 
+            "definition": "Count of Subs with preferable Prequal characteristics divided by total Count of Subs", 
+            "score_increase": "+5.4",
+            "actions": [
+                "Require Prequal details with every Bid",
+                "Assign a single owner to this KPI (Precon Mgr, Trade Mgr, Risk/Compliance Mgr)"
+            ]
+        },
+        {
+            "rank": 5, 
+            "name": "Change Order Documentation Quality", 
+            "definition": "Average percent of critical details included with Change Orders", 
+            "score_increase": "+4.9",
+            "actions": [
+                "Configure the Proj Mgmt system to require every CO to include description",
+                "Configure the Proj Mgmt system to require every CO to include Owner"
+            ]
+        }
     ]
     
     # Display KPIs in a clean format
@@ -564,6 +609,9 @@ def display_loss_control(filtered_data, impact_category_filter):
         with col1:
             st.markdown(f"**#{kpi['rank']} - {kpi['name']}**")
             st.markdown(f"*{kpi['definition']}*")
+            st.markdown("**Prescribed Actions:**")
+            for action in kpi['actions']:
+                st.markdown(f"- {action}")
         with col2:
             st.markdown(f"**{kpi['score_increase']}** Score Increase")
 
