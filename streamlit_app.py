@@ -603,23 +603,19 @@ def display_loss_control(filtered_data, impact_category_filter):
         }
     ]
     
-    # Display KPIs in two columns for better space usage
-    col_left, col_right = st.columns(2)
-    
+    # Display KPIs in a single column vertically
     for idx, kpi in enumerate(kpis):
-        # Alternate between left and right columns
-        with col_left if idx % 2 == 0 else col_right:
-            st.markdown(f"""
-            <div style='background: #f8f9fa; padding: 0.8rem; border-radius: 0.3rem; border-left: 3px solid #3b82f6; margin-bottom: 0.8rem;'>
-                <div style='display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem;'>
-                    <span style='font-weight: bold; font-size: 1.05rem; color: #1e40af;'>{kpi['name']} - <span style='font-weight: normal; font-style: italic; color: #666;'>{kpi['definition']}</span></span>
-                    <span style='background: #3b82f6; color: white; padding: 0.2rem 0.5rem; border-radius: 0.2rem; font-weight: bold; font-size: 0.9rem; white-space: nowrap; margin-left: 0.5rem;'>{kpi['score_increase']}</span>
-                </div>
-                <div style='font-size: 0.85rem; color: #333; margin-top: 0.5rem;'>
-                    <span style='font-weight: 600;'>Prescribed Actions:</span> {kpi['actions'][0]}; {kpi['actions'][1]}
-                </div>
+        st.markdown(f"""
+        <div style='background: #f8f9fa; padding: 0.8rem; border-radius: 0.3rem; border-left: 3px solid #3b82f6; margin-bottom: 0.8rem;'>
+            <div style='display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem;'>
+                <span style='font-weight: bold; font-size: 1.05rem; color: #1e40af;'>{kpi['name']} - <span style='font-weight: normal; font-style: italic; color: #666;'>{kpi['definition']}</span></span>
+                <span style='background: #3b82f6; color: white; padding: 0.2rem 0.5rem; border-radius: 0.2rem; font-weight: bold; font-size: 0.9rem; white-space: nowrap; margin-left: 0.5rem;'>{kpi['score_increase']}</span>
             </div>
-            """, unsafe_allow_html=True)
+            <div style='font-size: 0.85rem; color: #333; margin-top: 0.5rem;'>
+                <span style='font-weight: 600;'>Prescribed Actions:</span> {kpi['actions'][0]}; {kpi['actions'][1]}
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
 # --- Main Application ---
 def main():
