@@ -537,7 +537,7 @@ def display_loss_control(filtered_data, impact_category_filter):
     
     # Display score with label - more compact
     st.markdown("<h3 style='text-align: center; margin-bottom: 0.3rem; font-size: 1.3rem;'>Operational Performance Score</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; margin-bottom: 1.5rem; font-size: 1rem; color: #666;'>Current portfolio risk assessment</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; margin-bottom: 2.5rem; font-size: 1rem; color: #666;'>Current portfolio risk assessment</p>", unsafe_allow_html=True)
     
     # Center the score bar - smaller
     col1, col2, col3 = st.columns([0.15, 0.7, 0.15])
