@@ -469,7 +469,7 @@ def display_uw_report(original_data):
     
     # Display score with label
     st.markdown("<h2 style='text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem;'>Operational Performance Score</h2>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; margin-bottom: 1.5rem; font-size: 1.2rem; color: #666;'>Overall portfolio risk assessment based on operational best practices</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; margin-bottom: 3.5rem; font-size: 1.2rem; color: #666;'>Overall portfolio risk assessment based on operational best practices</p>", unsafe_allow_html=True)
     
     # Center the score bar
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
@@ -486,10 +486,10 @@ def display_uw_report(original_data):
     
     with col_low:
         st.markdown("""
-        <div style='background: linear-gradient(135deg, #fca5a5 0%, #f87171 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
-            <h3 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 0-20</h3>
-            <h4 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Average Risk</h4>
-            <p style='color: white; font-size: 1.1rem; line-height: 1.6;'>
+        <div style='background: linear-gradient(135deg, #fde047 0%, #facc15 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
+            <h3 style='color: #1f2937; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 0-20</h3>
+            <h4 style='color: #1f2937; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Average Risk</h4>
+            <p style='color: #1f2937; font-size: 1.1rem; line-height: 1.6;'>
                 <strong>Profile:</strong> Industry standard performance<br><br>
                 <strong>Recommendation:</strong> Standard coverage limits, deductibles, and pricing. Monitor closely for improvement opportunities.
             </p>
@@ -498,7 +498,7 @@ def display_uw_report(original_data):
     
     with col_mid:
         st.markdown("""
-        <div style='background: linear-gradient(135deg, #fde047 0%, #facc15 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
+        <div style='background: linear-gradient(135deg, #86efac 0%, #4ade80 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
             <h3 style='color: #1f2937; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 20-50</h3>
             <h4 style='color: #1f2937; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Good Performance</h4>
             <p style='color: #1f2937; font-size: 1.1rem; line-height: 1.6;'>
@@ -510,7 +510,7 @@ def display_uw_report(original_data):
     
     with col_high:
         st.markdown("""
-        <div style='background: linear-gradient(135deg, #86efac 0%, #22c55e 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
+        <div style='background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
             <h3 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 50-100</h3>
             <h4 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Best-in-Class</h4>
             <p style='color: white; font-size: 1.1rem; line-height: 1.6;'>
