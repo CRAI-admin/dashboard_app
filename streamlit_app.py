@@ -520,6 +520,96 @@ def display_uw_report(original_data):
         </div>
         """, unsafe_allow_html=True)
 
+def display_loss_control(filtered_data, impact_category_filter):
+    """Display Loss Control page with filtered operational score and top KPIs to improve"""
+    st.markdown("<h1 style='text-align: center; margin-bottom: 1rem;'>Loss Control</h1>", unsafe_allow_html=True)
+    
+    summary_df = filtered_data.get('executive_summary', pd.DataFrame())
+    
+    if summary_df.empty:
+        st.info("No project data matches the selected filters.")
+        return
+    
+    # Calculate filtered portfolio score
+    filtered_score = summary_df['score'].mean()
+    
+    st.markdown("<hr style='margin-top: 0.5rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    
+    # Display score with label
+    st.markdown("<h2 style='text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem;'>Operational Performance Score</h2>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; margin-bottom: 3.5rem; font-size: 1.2rem; color: #666;'>Current portfolio risk assessment based on operational best practices</p>", unsafe_allow_html=True)
+    
+    # Center the score bar
+    col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
+    with col2:
+        st.markdown(horizontal_risk_bar_html(filtered_score, height='2.5rem', font_size='3.0rem', top_offset='-3.8rem', width_percentage=100), unsafe_allow_html=True)
+    
+    st.markdown("<hr style='margin-top: 2rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    
+    # Top 5 KPIs to improve
+    st.markdown("<h2 style='text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem;'>Top 5 Priority KPIs for Improvement</h2>", unsafe_allow_html=True)
+    
+    # Generic KPI data for demo purposes
+    demo_kpis = [
+        {
+            "rank": 1,
+            "name": "Schedule Variance Tracking",
+            "definition": "Percentage of projects tracking schedule variance weekly and taking corrective action when variance exceeds 5%",
+            "guidance": "Implement weekly schedule review meetings with project teams. Use project management software to track critical path activities. Document variance causes and corrective actions in a centralized system.",
+            "potential_improvement": "+8.5"
+        },
+        {
+            "rank": 2,
+            "name": "Safety Observation Close-Out Rate",
+            "definition": "Percentage of safety observations closed within 72 hours of identification",
+            "guidance": "Establish clear ownership protocols for safety observations. Set up automated reminders for open observations. Conduct daily safety huddles to review and prioritize outstanding items.",
+            "potential_improvement": "+7.2"
+        },
+        {
+            "rank": 3,
+            "name": "RFI Response Time",
+            "definition": "Average time in days to respond to Requests for Information from project teams",
+            "guidance": "Create an RFI review committee with defined response timelines. Implement a digital RFI tracking system. Prioritize RFIs by impact to schedule and cost. Target response time under 3 days.",
+            "potential_improvement": "+6.8"
+        },
+        {
+            "rank": 4,
+            "name": "Subcontractor Prequalification Rate",
+            "definition": "Percentage of subcontractors that complete prequalification process before bid submission",
+            "guidance": "Develop standardized prequalification criteria and checklist. Require prequalification 2 weeks before bid date. Maintain database of prequalified subcontractors by trade and review annually.",
+            "potential_improvement": "+5.4"
+        },
+        {
+            "rank": 5,
+            "name": "Change Order Documentation Completeness",
+            "definition": "Percentage of change orders with complete documentation (cost breakdown, schedule impact, and client approval) before work begins",
+            "guidance": "Create change order checklist and approval workflow. Require sign-off from PM and client before work authorization. Use digital forms to ensure all required fields are completed.",
+            "potential_improvement": "+4.9"
+        }
+    ]
+    
+    # Display KPIs as individual cards
+    for kpi in demo_kpis:
+        with st.container():
+            st.markdown(f"""
+            <div style='background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 1.5rem; border-radius: 0.5rem; border-left: 5px solid #3b82f6; margin-bottom: 1.5rem;'>
+                <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;'>
+                    <h3 style='color: #1e40af; margin: 0; font-size: 1.4rem;'>#{kpi['rank']} - {html.escape(kpi['name'])}</h3>
+                    <span style='background: #3b82f6; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: bold; font-size: 1.2rem;'>{kpi['potential_improvement']} Score Increase</span>
+                </div>
+                
+                <div style='margin-bottom: 1rem;'>
+                    <h4 style='color: #475569; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>Definition:</h4>
+                    <p style='color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;'>{html.escape(kpi['definition'])}</p>
+                </div>
+                
+                <div>
+                    <h4 style='color: #475569; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>Improvement Guidance:</h4>
+                    <p style='color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;'>{html.escape(kpi['guidance'])}</p>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
 # --- Main Application ---
 def main():
     original_data = load_data()
@@ -569,7 +659,7 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.title("Navigation")
     
-    nav_options = ["Executive Summary", "Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout", "UW Report"]
+    nav_options = ["Executive Summary", "Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout", "UW Report", "Loss Control"]
     page_selection = st.sidebar.radio("Page Navigation", nav_options, label_visibility="collapsed")
 
     if page_selection == "Executive Summary":
@@ -578,6 +668,8 @@ def main():
         display_scoreboard(summary_for_impact_calc)
     elif page_selection == "UW Report":
         display_uw_report(original_data)
+    elif page_selection == "Loss Control":
+        display_loss_control(filtered_data, filters['impact_category'])
     else:
         display_phase_summary_page(page_selection.lower(), filtered_data, filters['impact_category'])
 
