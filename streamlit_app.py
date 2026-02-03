@@ -451,6 +451,75 @@ def display_scoreboard(summary_for_impact_calc):
             row_cols[4].markdown(risk_reduction_bar_html(row['BR Risk Reduction'], 40, height='1.5rem', font_size='1.2rem'), unsafe_allow_html=True)
             row_cols[5].markdown(risk_reduction_bar_html(row['CA Risk Reduction'], 30, height='1.5rem', font_size='1.2rem'), unsafe_allow_html=True)
 
+def display_uw_report(original_data):
+    """Display Underwriter Report with full portfolio score and risk guidance"""
+    st.markdown("<h1 style='text-align: center; margin-bottom: 1rem;'>Underwriter Report</h1>", unsafe_allow_html=True)
+    
+    # Get full portfolio CR-Score (no filters applied)
+    full_portfolio_df = original_data.get('executive_summary', pd.DataFrame())
+    
+    if full_portfolio_df.empty:
+        st.info("No portfolio data available.")
+        return
+    
+    # Calculate overall portfolio score
+    portfolio_score = full_portfolio_df['score'].mean()
+    
+    st.markdown("<hr style='margin-top: 0.5rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    
+    # Display score with label
+    st.markdown("<h2 style='text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem;'>Operational Performance Score</h2>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; margin-bottom: 1.5rem; font-size: 1.2rem; color: #666;'>Overall portfolio risk assessment based on operational best practices</p>", unsafe_allow_html=True)
+    
+    # Center the score bar
+    col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
+    with col2:
+        st.markdown(horizontal_risk_bar_html(portfolio_score, height='2.5rem', font_size='3.0rem', top_offset='-3.8rem', width_percentage=100), unsafe_allow_html=True)
+    
+    st.markdown("<hr style='margin-top: 2rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    
+    # Risk guidance with color-coded sections
+    st.markdown("<h2 style='text-align: center; margin-bottom: 1rem; font-size: 1.8rem;'>Underwriting Risk Guidance</h2>", unsafe_allow_html=True)
+    
+    # Color-coded risk guidance boxes
+    col_low, col_mid, col_high = st.columns(3)
+    
+    with col_low:
+        st.markdown("""
+        <div style='background: linear-gradient(135deg, #fca5a5 0%, #f87171 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
+            <h3 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 0-20</h3>
+            <h4 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Average Risk</h4>
+            <p style='color: white; font-size: 1.1rem; line-height: 1.6;'>
+                <strong>Profile:</strong> Industry standard performance<br><br>
+                <strong>Recommendation:</strong> Standard coverage limits, deductibles, and pricing. Monitor closely for improvement opportunities.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col_mid:
+        st.markdown("""
+        <div style='background: linear-gradient(135deg, #fde047 0%, #facc15 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
+            <h3 style='color: #1f2937; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 20-50</h3>
+            <h4 style='color: #1f2937; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Good Performance</h4>
+            <p style='color: #1f2937; font-size: 1.1rem; line-height: 1.6;'>
+                <strong>Profile:</strong> Above industry average, demonstrates good operational controls<br><br>
+                <strong>Recommendation:</strong> Consider improved coverage limits, lower deductibles, and favorable pricing terms.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col_high:
+        st.markdown("""
+        <div style='background: linear-gradient(135deg, #86efac 0%, #22c55e 100%); padding: 1.5rem; border-radius: 0.5rem; height: 280px;'>
+            <h3 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.5rem;'>Score: 50-100</h3>
+            <h4 style='color: white; text-align: center; margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 600;'>Best-in-Class</h4>
+            <p style='color: white; font-size: 1.1rem; line-height: 1.6;'>
+                <strong>Profile:</strong> Industry leading performance, lowest risk profile<br><br>
+                <strong>Recommendation:</strong> Offer best available coverage limits, lowest deductibles, and most competitive pricing.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
 # --- Main Application ---
 def main():
     original_data = load_data()
@@ -500,13 +569,15 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.title("Navigation")
     
-    nav_options = ["Executive Summary", "Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout"]
+    nav_options = ["Executive Summary", "Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout", "UW Report"]
     page_selection = st.sidebar.radio("Page Navigation", nav_options, label_visibility="collapsed")
 
     if page_selection == "Executive Summary":
         display_executive_summary(filtered_data, summary_for_impact_calc, filters['impact_category'])
     elif page_selection == "Scoreboard":
         display_scoreboard(summary_for_impact_calc)
+    elif page_selection == "UW Report":
+        display_uw_report(original_data)
     else:
         display_phase_summary_page(page_selection.lower(), filtered_data, filters['impact_category'])
 
