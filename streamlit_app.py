@@ -551,18 +551,19 @@ def display_loss_control(filtered_data, impact_category_filter):
     
     # KPI data
     kpis = [
-        {"rank": 1, "name": "Submittal Rate", "score_increase": "+8.5"},
-        {"rank": 2, "name": "Observation Close Out Rate", "score_increase": "+7.2"},
-        {"rank": 3, "name": "RFI Response Time", "score_increase": "+6.8"},
-        {"rank": 4, "name": "Subcontractor Prequal Rate", "score_increase": "+5.4"},
-        {"rank": 5, "name": "Change Order Documentation Quality", "score_increase": "+4.9"}
+        {"rank": 1, "name": "Submittal Rate", "definition": "Submittal Count divided by number of project days", "score_increase": "+8.5"},
+        {"rank": 2, "name": "Observation Close Out Rate", "definition": "Observations closed out divided by Observation count", "score_increase": "+7.2"},
+        {"rank": 3, "name": "RFI Response Time", "definition": "Average days between RFI creation and RFI close out", "score_increase": "+6.8"},
+        {"rank": 4, "name": "Subcontractor Prequal Rate", "definition": "Count of Subs with preferable Prequal characteristics divided by total Count of Subs", "score_increase": "+5.4"},
+        {"rank": 5, "name": "Change Order Documentation Quality", "definition": "Average percent of critical details included with Change Orders", "score_increase": "+4.9"}
     ]
     
-    # Display KPIs in a clean table format
+    # Display KPIs in a clean format
     for kpi in kpis:
         col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown(f"**#{kpi['rank']} - {kpi['name']}**")
+            st.markdown(f"*{kpi['definition']}*")
         with col2:
             st.markdown(f"**{kpi['score_increase']}** Score Increase")
 
