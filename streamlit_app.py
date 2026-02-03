@@ -522,7 +522,7 @@ def display_uw_report(original_data):
 
 def display_loss_control(filtered_data, impact_category_filter):
     """Display Loss Control page with filtered operational score and top KPIs to improve"""
-    st.markdown("<h1 style='text-align: center; margin-bottom: 1rem;'>Loss Control</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; margin-bottom: 0.5rem;'>Loss Control</h1>", unsafe_allow_html=True)
     
     summary_df = filtered_data.get('executive_summary', pd.DataFrame())
     
@@ -533,21 +533,21 @@ def display_loss_control(filtered_data, impact_category_filter):
     # Calculate filtered portfolio score
     filtered_score = summary_df['score'].mean()
     
-    st.markdown("<hr style='margin-top: 0.5rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    st.markdown("<hr style='margin-top: 0.3rem; margin-bottom: 0.8rem;'>", unsafe_allow_html=True)
     
-    # Display score with label
-    st.markdown("<h2 style='text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem;'>Operational Performance Score</h2>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; margin-bottom: 3.5rem; font-size: 1.2rem; color: #666;'>Current portfolio risk assessment based on operational best practices</p>", unsafe_allow_html=True)
+    # Display score with label - more compact
+    st.markdown("<h3 style='text-align: center; margin-bottom: 0.3rem; font-size: 1.3rem;'>Operational Performance Score</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; margin-bottom: 1.5rem; font-size: 1rem; color: #666;'>Current portfolio risk assessment</p>", unsafe_allow_html=True)
     
-    # Center the score bar
-    col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
+    # Center the score bar - smaller
+    col1, col2, col3 = st.columns([0.15, 0.7, 0.15])
     with col2:
-        st.markdown(horizontal_risk_bar_html(filtered_score, height='2.5rem', font_size='3.0rem', top_offset='-3.8rem', width_percentage=100), unsafe_allow_html=True)
+        st.markdown(horizontal_risk_bar_html(filtered_score, height='2rem', font_size='2.2rem', top_offset='-3.2rem', width_percentage=100), unsafe_allow_html=True)
     
-    st.markdown("<hr style='margin-top: 2rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
+    st.markdown("<hr style='margin-top: 1.5rem; margin-bottom: 1rem;'>", unsafe_allow_html=True)
     
-    # Top 5 KPIs to improve
-    st.markdown("<h2 style='text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem;'>Top 5 Priority KPIs for Improvement</h2>", unsafe_allow_html=True)
+    # Top 5 KPIs to improve - compact header
+    st.markdown("<h3 style='text-align: center; margin-bottom: 1rem; font-size: 1.3rem;'>Top 5 Priority KPIs for Improvement</h3>", unsafe_allow_html=True)
     
     # KPI data
     kpis = [
@@ -603,21 +603,28 @@ def display_loss_control(filtered_data, impact_category_filter):
         }
     ]
     
-    # Display KPIs in a clean format
-    for kpi in kpis:
-        # First line: KPI name - definition ... score increase
-        col1, col2 = st.columns([4, 1])
-        with col1:
-            st.markdown(f"**{kpi['name']}** - {kpi['definition']}")
-        with col2:
-            st.markdown(f"**{kpi['score_increase']}**")
-        
-        # Prescribed actions indented below
-        st.markdown("&nbsp;&nbsp;&nbsp;&nbsp;**Prescribed Actions for Improvement:**", unsafe_allow_html=True)
-        for action in kpi['actions']:
-            st.markdown(f"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {action}", unsafe_allow_html=True)
-        
-        st.markdown("")  # Add spacing between KPIs
+    # Display KPIs in two columns for better space usage
+    col_left, col_right = st.columns(2)
+    
+    for idx, kpi in enumerate(kpis):
+        # Alternate between left and right columns
+        with col_left if idx % 2 == 0 else col_right:
+            st.markdown(f"""
+            <div style='background: #f8f9fa; padding: 0.8rem; border-radius: 0.3rem; border-left: 3px solid #3b82f6; margin-bottom: 0.8rem;'>
+                <div style='display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;'>
+                    <span style='font-weight: bold; font-size: 1.05rem; color: #1e40af;'>{kpi['name']}</span>
+                    <span style='background: #3b82f6; color: white; padding: 0.2rem 0.5rem; border-radius: 0.2rem; font-weight: bold; font-size: 0.9rem;'>{kpi['score_increase']}</span>
+                </div>
+                <div style='font-size: 0.85rem; color: #666; margin-bottom: 0.4rem; font-style: italic;'>{kpi['definition']}</div>
+                <div style='font-size: 0.85rem; color: #333; font-weight: 600; margin-bottom: 0.2rem;'>Prescribed Actions:</div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # Actions as bullet points using native markdown
+            for action in kpi['actions']:
+                st.markdown(f"<div style='font-size: 0.82rem; color: #555; margin-left: 1rem; margin-bottom: 0.2rem;'>• {action}</div>", unsafe_allow_html=True)
+            
+            st.markdown("<div style='margin-bottom: 0.5rem;'></div>", unsafe_allow_html=True)
 
 # --- Main Application ---
 def main():
