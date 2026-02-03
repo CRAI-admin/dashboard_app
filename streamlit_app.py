@@ -606,7 +606,7 @@ def display_loss_control(filtered_data, impact_category_filter):
     # Display KPIs in a single column vertically with centered content
     for idx, kpi in enumerate(kpis):
         # Center the cards with narrower width
-        col1, col2, col3 = st.columns([0.5, 3, 0.5])
+        col1, col2, col3 = st.columns([1, 2.5, 1])
         with col2:
             st.markdown(f"""
             <div style='background: #f8f9fa; padding: 0.8rem; border-radius: 0.3rem; border-left: 3px solid #3b82f6; margin-bottom: 0.8rem;'>
@@ -614,10 +614,12 @@ def display_loss_control(filtered_data, impact_category_filter):
                     <span style='font-weight: bold; font-size: 1.05rem; color: #1e40af;'>{kpi['name']} - <span style='font-weight: normal; font-style: italic; color: #666;'>{kpi['definition']}</span></span>
                     <span style='background: #3b82f6; color: white; padding: 0.2rem 0.5rem; border-radius: 0.2rem; font-weight: bold; font-size: 0.9rem; white-space: nowrap; margin-left: 0.8rem;'>{kpi['score_increase']}</span>
                 </div>
-                <div style='font-size: 0.85rem; color: #333; margin-top: 0.5rem;'>
-                    <span style='font-weight: 600;'>Prescribed Actions:</span><br>
-                    <span style='margin-left: 0.5rem;'>- {kpi['actions'][0]}</span><br>
-                    <span style='margin-left: 0.5rem;'>- {kpi['actions'][1]}</span>
+                <div style='font-size: 0.85rem; color: #333; margin-top: 0.5rem; display: flex;'>
+                    <span style='font-weight: 600; white-space: nowrap; margin-right: 0.5rem;'>Prescribed Actions:</span>
+                    <div>
+                        <div>- {kpi['actions'][0]}</div>
+                        <div>- {kpi['actions'][1]}</div>
+                    </div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
