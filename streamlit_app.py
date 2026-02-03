@@ -590,25 +590,24 @@ def display_loss_control(filtered_data, impact_category_filter):
     
     # Display KPIs as individual cards
     for kpi in demo_kpis:
-        with st.container():
-            st.markdown(f"""
-            <div style='background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 1.5rem; border-radius: 0.5rem; border-left: 5px solid #3b82f6; margin-bottom: 1.5rem;'>
-                <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;'>
-                    <h3 style='color: #1e40af; margin: 0; font-size: 1.4rem;'>#{kpi['rank']} - {html.escape(kpi['name'])}</h3>
-                    <span style='background: #3b82f6; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: bold; font-size: 1.2rem;'>{kpi['potential_improvement']} Score Increase</span>
-                </div>
-                
-                <div style='margin-bottom: 1rem;'>
-                    <h4 style='color: #475569; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>Definition:</h4>
-                    <p style='color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;'>{html.escape(kpi['definition'])}</p>
-                </div>
-                
-                <div>
-                    <h4 style='color: #475569; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>Improvement Guidance:</h4>
-                    <p style='color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;'>{html.escape(kpi['guidance'])}</p>
-                </div>
+        st.markdown(f"""
+        <div style='background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 1.5rem; border-radius: 0.5rem; border-left: 5px solid #3b82f6; margin-bottom: 1.5rem;'>
+            <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;'>
+                <h3 style='color: #1e40af; margin: 0; font-size: 1.4rem;'>#{kpi['rank']} - {html.escape(kpi['name'])}</h3>
+                <span style='background: #3b82f6; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: bold; font-size: 1.2rem;'>{kpi['potential_improvement']} Score Increase</span>
             </div>
-            """, unsafe_allow_html=True)
+            
+            <div style='margin-bottom: 1rem;'>
+                <h4 style='color: #475569; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>Definition:</h4>
+                <p style='color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;'>{html.escape(kpi['definition'])}</p>
+            </div>
+            
+            <div>
+                <h4 style='color: #475569; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>Improvement Guidance:</h4>
+                <p style='color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;'>{html.escape(kpi['guidance'])}</p>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
 # --- Main Application ---
 def main():
