@@ -5,10 +5,10 @@ on:
     branches: [main]
     paths:
       - 'streamlit_app_*.py'
-  - 'Dockerfile'
+      - 'Dockerfile'
       - 'requirements_streamlit.txt'
       - '.github/workflows/deploy.yml'
-  
+
   workflow_dispatch:
     inputs:
       environment:
@@ -19,11 +19,6 @@ on:
         options:
           - dev
           - prod
-      force_deploy:
-        description: 'Force new deployment (even without code changes)'
-        required: false
-        default: false
-        type: boolean
 
 env:
   AWS_REGION: us-east-1
