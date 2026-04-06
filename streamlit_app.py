@@ -710,6 +710,14 @@ def load_data():
 
 # --- Display Functions ---
 def display_executive_summary(data, summary_for_impact_calc, impact_category_filter):
+    st.markdown(
+        """<div style="display:flex;justify-content:center;margin-bottom:1rem;">
+        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="75" cy="75" r="70" fill="red" />
+          <text x="75" y="80" text-anchor="middle" fill="white" font-size="14" font-weight="bold">TEST CIRCLE</text>
+        </svg></div>""",
+        unsafe_allow_html=True
+    )
     st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>CR-Score Card</h1>", unsafe_allow_html=True); st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem;'>Company ABC (Construction View)</h2>", unsafe_allow_html=True)
     
     summary_df = data['executive_summary']
