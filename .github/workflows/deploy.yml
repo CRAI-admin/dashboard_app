@@ -76,7 +76,7 @@ jobs:
         IMAGE_TAG: ${{ steps.target.outputs.image_tag }}
       run: |
         echo "Building image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-  docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         
         # Also tag as latest for the environment
         if [ "${{ steps.target.outputs.environment }}" = "prod" ]; then
