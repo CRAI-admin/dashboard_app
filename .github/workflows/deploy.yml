@@ -5,10 +5,10 @@ on:
     branches: [main]
     paths:
       - 'streamlit_app_*.py'
-  - 'Dockerfile'
+      - 'Dockerfile'
       - 'requirements_streamlit.txt'
       - '.github/workflows/deploy.yml'
-  
+
   workflow_dispatch:
     inputs:
       environment:
@@ -19,8 +19,8 @@ on:
         options:
           - dev
           - prod
-      force_deploy:
-        description: 'Force new deployment (even without code changes)'
+      destroy:
+        description: 'Destroy infrastructure instead of deploy'
         required: false
         default: false
         type: boolean
@@ -37,6 +37,7 @@ jobs:
   deploy:
     name: Deploy to ${{ github.event.inputs.environment || 'dev' }}
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.destroy != 'true' }}
     
     steps:
     - name: Checkout code
@@ -175,3 +176,37 @@ jobs:
         else
           echo "🔗 Prod URL: https://dev.cr-ai-dashboard.com"
         fi
+
+  destroy:
+    name: Destroy infrastructure (${{ github.event.inputs.environment || 'dev' }})
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.destroy == 'true' }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Destroy ECS service
+      env:
+        ENVIRONMENT: ${{ github.event.inputs.environment || 'dev' }}
+      run: |
+        if [ "$ENVIRONMENT" = "prod" ]; then
+          CLUSTER="${{ env.PROD_CLUSTER_NAME }}"
+          SERVICE="${{ env.PROD_SERVICE_NAME }}"
+        else
+          CLUSTER="${{ env.DEV_CLUSTER_NAME }}"
+          SERVICE="${{ env.DEV_SERVICE_NAME }}"
+        fi
+        echo "Scaling down ECS service: $SERVICE in cluster: $CLUSTER"
+        aws ecs update-service \
+          --cluster $CLUSTER \
+          --service $SERVICE \
+          --desired-count 0
+        echo "✅ Service scaled to 0. Infrastructure teardown complete for $ENVIRONMENT."
