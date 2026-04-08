@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import datetime
 import os
@@ -14,6 +15,12 @@ st.set_page_config(page_title="CR-Score Dashboard (Construction View)", layout="
 st.markdown(
     """
     <style>
+    div[data-testid="stAppViewContainer"] > section[data-testid="stMain"] > div[data-testid="stMainBlockContainer"] {
+        padding-top: 1rem !important;
+    }
+    .block-container {
+        padding-top: 1rem !important;
+    }
     div.stButton > button[kind="primary"] {
         background-color: #1d4ed8;
         color: white;
@@ -152,22 +159,23 @@ DUMMY_ACTION_ITEMS = {
 
 
 # --- UI Helper Functions ---
-def horizontal_risk_bar_html(score, height='1.25rem', font_size='0.9rem', top_offset='-1.3rem', width_percentage=100):
+def horizontal_risk_bar_html(score, height='1.65rem', font_size='1.2rem', top_offset='-1.8rem', width_percentage=100, box_height=None):
     score = int(score) if pd.notna(score) else 0
     indicator_position = f"{score}%"
     gradient = "linear-gradient(to right, #ef4444 0%, #facc15 50%, #16a34a 100%)"
     score_color = "black"
+    box_height_style = f"height: {box_height}; line-height: 1; overflow: visible;" if box_height else ""
     html_content = f"""
     <div style="width: {width_percentage}%; position: relative; margin-top: 0.75rem; margin-bottom: 1.2rem;">
         <div style="width: 100%; background-color: #e5e7eb; border-radius: 9999px; height: {height}; position: relative;">
             <div style="height: 100%; border-radius: 9999px; background: {gradient};"></div>
             <div style="position: absolute; top: 0; bottom: 0; left: {indicator_position}; width: 3px; background-color: black; transform: translateX(-50%); z-index: 10;"></div>
-            <span style="position: absolute; top: {top_offset}; left: {indicator_position}; transform: translateX(-50%); color: {score_color}; font-weight: bold; font-size: {font_size}; white-space: nowrap; z-index: 20; background-color: white; padding: 0 0.3rem; border-radius: 0.25rem;">
+            <span style="position: absolute; top: {top_offset}; left: {indicator_position}; transform: translateX(-50%); color: {score_color}; font-weight: bold; font-size: {font_size}; white-space: nowrap; z-index: 20; background-color: white; padding: 0 0.3rem; border-radius: 0.25rem; border: 1px solid #d1d5db; display: inline-flex; align-items: center; justify-content: center; {box_height_style}">
                 {html.escape(str(score))}
             </span>
         </div>
-        <span style="position: absolute; top: 100%; margin-top: 1px; font-size: 0.65rem; color: #777;">0</span>
-        <span style="position: absolute; top: 100%; right: 0%; transform: translateX(50%);">100</span>
+        <span style="position: absolute; top: 100%; left: 0; margin-top: 1px; font-weight:700;">0</span>
+        <span style="position: absolute; top: 100%; right: 0%; transform: translateX(50%); font-weight:700;">100</span>
     </div>
     """
     return html_content
@@ -215,7 +223,7 @@ def circular_score_meter_html(score, size=220):
     needle_x, needle_y = polar_to_cartesian(cx, cy, radius - 22, needle_angle)
 
     html_content = f"""
-    <div style="display:flex; justify-content:center; align-items:center; width:100%; margin:1rem 0 0.5rem 0;">
+    <div style="display:flex; justify-content:center; align-items:center; width:100%; margin:0.25rem 0 0 0;">
         <svg width="{size}" height="{int(size * 0.82)}" viewBox="0 0 220 220">
             {''.join(segment_paths)}
             {''.join(tick_labels)}
@@ -463,94 +471,221 @@ def build_top_priority_kpis(kpi_df):
         priority_metric=('priority_metric', 'mean')
     ).sort_values('priority_metric', ascending=False).head(5).reset_index(drop=True)
 
-def render_kpi_summary_section(title, rows_df, detail_func, detail_header, state_key=None):
+def render_kpi_summary_section(title, rows_df, detail_func, detail_header, state_key=None, subtitle=None, accent_color=None):
+    marker_class = f"kpi-accent-{''.join(c for c in (accent_color or 'default') if c.isalnum())}"
+    if accent_color:
+        h = accent_color.lstrip('#')
+        r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+        title_bg = f"rgba({r},{g},{b},0.30)"
+        header_sep = f"rgba({r},{g},{b},0.3)"
+    else:
+        title_bg = "transparent"
+        header_sep = "#e5e7eb"
+    badge_color = accent_color or "#6b7280"
+    tbl_class = f"kpi-tbl-{marker_class}"
     with st.container(border=True):
+        if accent_color and not state_key:
+            st.markdown(f"""<style>
+                div[data-testid="stVerticalBlockBorderWrapper"]:has(.{marker_class}) {{
+                    border-top: 4px solid {accent_color} !important;
+                    border-radius: 0.5rem !important;
+                }}
+                div[data-testid="stVerticalBlockBorderWrapper"]:has(.{marker_class}) > div[data-testid="stVerticalBlock"] {{
+                    padding-top: 0 !important;
+                }}
+            </style><span class='{marker_class}' style='display:none;'></span>""", unsafe_allow_html=True)
+
+        title_color = "#111"
         if state_key:
-            title_col, button_col = st.columns([0.72, 0.28])
-            with title_col:
-                st.markdown(f"<h2 style='text-align: left; font-size: 1.5rem; margin-bottom: 0.5rem;'>{title}</h2>", unsafe_allow_html=True)
-            with button_col:
-                button_label = "Hide Details" if st.session_state.get(state_key, False) else "Show Details"
-                st.button(button_label, key=f"btn_{state_key}", on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, False)}), use_container_width=False, type="primary")
-            if not st.session_state.get(state_key, False):
+            btn_key = f"btn_{state_key}"
+            st.markdown(f"""<style>
+                div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-{btn_key}) {{
+                    border-top: 4px solid {accent_color} !important;
+                    border-radius: 0.5rem !important;
+                    background: {title_bg} !important;
+                    padding-bottom: 0 !important;
+                    overflow-x: hidden !important;
+                    overflow-y: visible !important;
+                }}
+                div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] {{
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                    gap: 0 !important;
+                    background: transparent !important;
+                }}
+                div.st-key-{btn_key} {{
+                    margin-top: -3.2rem !important;
+                    margin-bottom: -0.7rem !important;
+                    display: flex !important;
+                    justify-content: flex-end !important;
+                    padding-right: 0.5rem !important;
+                    padding-bottom: 0.4rem !important;
+                    width: 100% !important;
+                    flex-shrink: 0 !important;
+                }}
+                div.st-key-{btn_key} > div[data-testid="stButton"] {{
+                    width: fit-content !important;
+                    margin-bottom: 0 !important;
+                    flex-shrink: 0 !important;
+                    white-space: nowrap !important;
+                }}
+                div.st-key-{btn_key} > div[data-testid="stButton"] > button {{
+                    width: fit-content !important;
+                    margin-bottom: 0 !important;
+                    white-space: nowrap !important;
+                }}
+            </style>""", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; font-size: clamp(1rem, 3vw, 1.8rem); font-weight: 700; margin: -2rem -1rem 0 -1rem; padding: 0.748rem 9rem 0.748rem 1rem; background: {title_bg}; color: #111; border-radius: 0.5rem 0.5rem 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>{title}</h2>", unsafe_allow_html=True)
+            button_label = "Hide Details" if st.session_state.get(state_key, True) else "Show Details"
+            st.button(button_label, key=btn_key, on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, True)}), type="primary")
+            if not st.session_state.get(state_key, True):
                 return
         else:
-            st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{title}</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; font-size: 1.8rem; font-weight: 700; margin: -2rem -1rem 0.748rem -1rem; padding: 0.748rem 1rem; background: {title_bg}; color: #111; border-radius: 0.5rem 0.5rem 0 0;'>{title}</h2>", unsafe_allow_html=True)
 
         if rows_df.empty:
             st.info("No KPI data for current selection.")
             return
 
-        header_cols = st.columns([0.12, 0.30, 0.58])
-        header_cols[0].markdown("<span style='font-size: 1.5rem;'><strong>Rank</strong></span>", unsafe_allow_html=True)
-        header_cols[1].markdown("<span style='font-size: 1.5rem;'><strong>KPI Name</strong></span>", unsafe_allow_html=True)
-        header_cols[2].markdown(f"<span style='font-size: 1.5rem;'><strong>{detail_header}</strong></span>", unsafe_allow_html=True)
+        st.markdown(f"""<style>
+            .{tbl_class} {{ width:100%; border-collapse:separate; border-spacing:0 0.35rem; font-size:0.95rem; }}
+            div[data-testid="stVerticalBlockBorderWrapper"]:has(.{tbl_class}) {{
+                padding-top: 0 !important;
+            }}
+            div[data-testid="stVerticalBlockBorderWrapper"]:has(.{tbl_class}) > div[data-testid="stVerticalBlock"] {{
+                padding-top: 0 !important;
+                gap: 0 !important;
+            }}
+            .{tbl_class} th {{ text-align:left; padding:0.5rem 0.6rem; background:#f3f4f6; color:#374151; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; border-bottom:none; }}
+            .{tbl_class} th:not(:last-child) {{ border-right:1px solid {header_sep}; }}
+            .{tbl_class} th:first-child {{ border-radius:0.375rem 0 0 0.375rem; }}
+            .{tbl_class} th:last-child  {{ border-radius:0 0.375rem 0.375rem 0; }}
+            .{tbl_class} td {{ padding:0.6rem 0.6rem; background:#f9fafb; vertical-align:top; border-right:none; height:4.5rem; }}
+            .{tbl_class} td:first-child {{ border-radius:0.375rem 0 0 0.375rem; }}
+            .{tbl_class} td:last-child  {{ border-radius:0 0.375rem 0.375rem 0; }}
+            .{tbl_class} td.rank {{ width:3rem; }}
+            .{tbl_class} td.kpi-name {{ font-weight:700; text-transform:uppercase; color:#111; width:28%; vertical-align:middle; text-align:center; }}
+            .{tbl_class} td.guidance {{ color:#374151; }}
+            .{tbl_class} .kpi-badge {{ display:inline-flex; align-items:center; justify-content:center; width:1.8rem; height:1.8rem; background:{badge_color}; color:white; border-radius:0.3rem; font-weight:700; font-size:0.9rem; }}
+            /* Equal height KPI boxes */
+            div[data-testid="stHorizontalBlock"]:has(.{tbl_class}) {{ align-items:stretch !important; }}
+            div[data-testid="stHorizontalBlock"]:has(.{tbl_class}) > div[data-testid="stColumn"] {{ display:flex !important; flex-direction:column !important; }}
+            div[data-testid="stHorizontalBlock"]:has(.{tbl_class}) > div[data-testid="stColumn"] > div[data-testid="stVerticalBlock"] {{ flex:1 !important; display:flex; flex-direction:column; }}
+            div[data-testid="stHorizontalBlock"]:has(.{tbl_class}) > div[data-testid="stColumn"] > div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlockBorderWrapper"] {{ flex:1; display:flex; flex-direction:column; }}
+            div[data-testid="stHorizontalBlock"]:has(.{tbl_class}) > div[data-testid="stColumn"] > div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlockBorderWrapper"] > div[data-testid="stVerticalBlock"] {{ flex:1; }}
+        </style>""", unsafe_allow_html=True)
+
+        rows_html = ""
         for i, row in rows_df.iterrows():
-            kpi_name_display = format_kpi_name(row['kpi_name'])
-            detail_text = detail_func(row['kpi_name'])
-            row_cols = st.columns([0.12, 0.30, 0.58])
-            row_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{i+1}</strong></span>", unsafe_allow_html=True)
-            row_cols[1].markdown(f"<span style='font-size: 1.5rem;'>{html.escape(kpi_name_display)}</span>", unsafe_allow_html=True)
-            row_cols[2].markdown(f"<span style='font-size: 1.2rem;'>{html.escape(detail_text)}</span>", unsafe_allow_html=True)
+            kpi_name_display = html.escape(format_kpi_name(row['kpi_name']))
+            detail_text = html.escape(detail_func(row['kpi_name']))
+            rows_html += f"""<tr>
+                <td class='rank'><span class='kpi-badge'>{i+1}</span></td>
+                <td class='kpi-name'>{kpi_name_display}</td>
+                <td class='guidance'>{detail_text}</td>
+            </tr>"""
+
+        st.markdown(f"""<div style='overflow-x: auto;'><table class='{tbl_class}'>
+            <thead><tr>
+                <th>Rank</th><th>KPI Name</th><th>{html.escape(detail_header)}</th>
+            </tr></thead>
+            <tbody>{rows_html}</tbody>
+        </table></div>""", unsafe_allow_html=True)
 
 def build_kpi_tooltip(kpi_name):
     name = str(kpi_name or "").strip()
     lowered = name.lower()
 
     definition_overrides = {
-        '% of bids targeted': 'Percentage of identified opportunities that are intentionally pursued through the bid pipeline.',
-        'as-built drawing accuracy': 'Degree to which final as-built drawings match installed field conditions.',
-        'budgets create date': 'Elapsed time to create the baseline project budget after project kickoff.',
-        'client training completion': 'Percentage of required owner/end-user training sessions completed before handover.',
-        'daily logs rate': 'Frequency and consistency of daily field log completion.',
-        'daily logs delay': 'Lag between field activity date and daily log submission date.',
-        'meetings documentation': 'Completeness and timeliness of meeting records, decisions, and assigned actions.',
-        'meetings rate': 'Frequency of planned coordination/production meetings held on schedule.',
-        'photos usage': 'Rate of required photo documentation captured and attached to records.',
-        'drawings usage': 'Extent to which current drawing sets are actively used by project teams in execution.',
-        'specifications usage': 'Extent to which teams reference and apply technical specifications during execution.',
-        'gantt chart completion rate': 'Rate of required schedule updates and task status completion in the master plan.',
-        'o&m manuals submitted timely': 'Percentage of O&M manuals submitted by required turnover deadlines.'
+        # Bidding - bidresults
+        'bid win rate': 'Percentage of submitted bids that result in a contract award. Reflects the effectiveness of targeting, estimating, and proposal quality.',
+        'cost variance': 'Difference between estimated and actual project costs. Persistent variance signals estimation gaps, scope creep, or poor cost control.',
+        'profit variance': 'Difference between projected and actual profit margin. Reveals how well pricing and cost controls held up through execution.',
+        'schedule variance': 'Difference between planned and actual project completion timeline. Indicates schedule discipline and execution predictability.',
+        # Bidding - bidreview
+        '% of bids targeted': 'Percentage of identified opportunities intentionally pursued. High targeting rates signal disciplined go/no-go decision-making.',
+        'avg days to submit bid': 'Average elapsed time from bid invitation to submission. Shorter cycles with quality output indicate an efficient estimating process.',
+        'avg time to submit bid': 'Average elapsed time from bid invitation to completed submission. Tracks estimating team responsiveness and capacity under deadline pressure.',
+        'bid rate per $1m of acv': 'Number of bids submitted per $1M of annual contract value. Balances bid volume against revenue targets to avoid over- or under-bidding.',
+        # Bidding - compliance
+        'bid package completeness rate': 'Percentage of bid packages submitted with all required documents. Incomplete packages risk disqualification and signal process gaps.',
+        'compliance matrix completion rate': 'Percentage of compliance checklist items completed per bid. Tracks adherence to internal and client bidding requirements.',
+        'licensing & certification compliance rate': 'Percentage of required licenses and certifications held and current across the team. Non-compliance creates legal, safety, and operational risk.',
+        'sub prequal rate': 'Percentage of subcontractors that have passed prequalification screening. Higher rates reduce execution risk from unvetted or underqualified partners.',
+        # Bidding - estimating
+        'avg number of sub quotes per trade': 'Average number of competitive subcontractor bids received per trade. More quotes improve pricing accuracy and reduce cost and risk exposure.',
+        'avg selected sub emr': 'Average Experience Modification Rate of selected subcontractors. Lower EMR indicates a safer, less risky subcontractor pool with better safety track records.',
+        'avg sub quote variance': 'Spread between the highest and lowest subcontractor quotes per trade. High variance signals unclear scope, inconsistent takeoffs, or market uncertainty.',
+        'avg sub response rate': 'Percentage of subcontractors invited to bid who actually submit a quote. Low response rates may indicate scope issues, timing conflicts, or weak relationships.',
+        # Preconstruction - compliance
+        'avg insurance acquired cycle': 'Average days to obtain required insurance certificates after contract award. Delays can hold up project start and create uninsured liability gaps.',
+        'avg permit approval cycle': 'Average days from permit submission to regulatory approval. Longer cycles delay project start and indicate scope complexity or process inefficiency.',
+        'avg sub coi received time': 'Average time to receive Certificates of Insurance from subcontractors after request. Slow COI receipt exposes the project to periods of uninsured risk.',
+        'permit submission timeliness': 'Percentage of permits submitted within the required timeframe ahead of planned start. Late submissions cascade into downstream schedule risk.',
+        # Preconstruction - designReview
+        'clash detection rate': 'Frequency of design clashes identified during BIM or drawing coordination. Early detection prevents costly field conflicts and rework during construction.',
+        'drawings usage': 'Extent to which current drawing sets are actively referenced by project teams. Low usage signals document control gaps or teams working off outdated information.',
+        'photos usage': 'Rate of photo documentation captured and attached to field records. Supports accountability, dispute resolution, and quality verification throughout the project.',
+        'specifications usage': 'Extent to which technical specifications are actively referenced during work. Low usage increases risk of non-compliant installations and failed inspections.',
+        # Preconstruction - financialSetup
+        'budget to bid variance': 'Difference between the awarded contract amount and the internal project budget. Large gaps indicate estimation errors or scope changes made post-award.',
+        'contingency adequacy': 'Assessment of whether the contingency reserve is sized appropriately for the project risk profile. Underfunded contingency is a leading predictor of budget overruns.',
+        'days until sub contracts executed': 'Average days from subcontractor award to fully executed subcontract agreements. Delays leave scope, pricing, and liability undefined during early mobilization.',
+        'prime contract to budget variance': 'Difference between the prime contract value and the internal cost budget. Tracks whether margin integrity is preserved from contract execution through planning.',
+        # Preconstruction - subcontractorPlanning
+        'equipment cost variance': 'Difference between planned and actual equipment costs at close. Identifies gaps in equipment planning assumptions or unexpected field conditions.',
+        'gantt chart completion rate': 'Percentage of scheduled tasks marked complete on time in the master schedule. Reflects schedule discipline and the accuracy of preconstruction planning.',
+        'labor cost variance': 'Difference between planned and actual labor costs. Persistent variance signals productivity shortfalls, scope creep, or inaccurate labor estimating.',
+        'materials cost variance': 'Difference between planned and actual materials costs. High variance indicates procurement inefficiency, price escalation, or uncontrolled scope changes.',
+        'schedule to bid variance': 'Difference between the bid schedule duration and the actual execution schedule at completion. Tracks whether initial timeline commitments were realistic and maintained.',
+        # Construction - communication
+        'daily logs rate': 'Frequency and consistency of daily field log completion by site supervisors. Gaps in logging create accountability, documentation, and dispute risk.',
+        'daily logs delay': 'Lag between the field activity date and the daily log submission date. Delayed logs reduce accuracy and limit the ability to reconstruct events accurately.',
+        'meetings documentation': 'Completeness and timeliness of meeting records, decisions, and assigned actions. Poor documentation leads to unresolved issues, missed commitments, and disputes.',
+        'meetings rate': 'Frequency of planned coordination and production meetings held on schedule. Consistent meetings drive issue resolution, alignment, and proactive risk management.',
+        # Construction - financial
+        'budgets create date': 'Elapsed time to create the baseline project budget after project kickoff. Late budget creation delays cost control visibility and performance benchmarking.',
+        'budgets usage rate': 'Frequency with which project budgets are actively accessed and updated during execution. Low usage suggests cost tracking is disconnected from daily field operations.',
+        'change order time to close': 'Average days to fully execute a change order from identification to written approval. Slow closure ties up cash flow and allows scope ambiguity to persist.',
+        'change order to budget ratio': 'Total change order value relative to the original budget. High ratios indicate scope instability, owner-driven changes, or ineffective change management.',
+        'contract to budget ratio (deviation)': 'Deviation between contract value and the working cost budget. Reveals whether the project is being managed within its contracted and estimated scope.',
+        'invoice to contract ratio (deviation)': 'Deviation between amounts invoiced and contract values over time. Persistent over- or under-invoicing signals billing process breakdowns or disputes.',
+        'payments to invoices ratio (deviation)': 'Deviation between payments received and invoices submitted. Tracks cash flow health and whether the client is paying in accordance with contract terms.',
+        # Construction - operations
+        'rfis closed on time': 'Percentage of Requests for Information resolved within the required response window. Delays in RFI closure directly stall field productivity and sequence downstream work.',
+        'rfis lead time': 'Average elapsed time from RFI submission to design team response. Long lead times indicate design bottlenecks, unclear scope, or insufficient staffing.',
+        'rfis rate': 'Number of RFIs generated per unit of project time. Elevated rates may signal design gaps, scope ambiguity, or inadequate preconstruction coordination.',
+        'submittals closed on time': 'Percentage of submittals reviewed and approved within the required timeframe. Late approvals constrain procurement schedules and delay material deliveries.',
+        'submittals lead time': 'Average time from submittal submission to design team review completion. Long cycles compress the procurement schedule and create installation delays.',
+        'submittals rate': 'Frequency of submittals generated and processed per time period. Tracks whether the submittal pipeline is aligned with and supporting the construction schedule.',
+        # Construction - quality
+        'observation rate': 'Frequency of quality observations logged per project day by field supervisors. Higher rates reflect proactive quality monitoring and a culture of continuous inspection.',
+        'observations closed on time': 'Percentage of quality observations resolved and closed within the required timeframe. Unresolved items accumulate and increase the probability of rework and defects.',
+        'quality insp. attach. rate': 'Percentage of quality inspections with supporting photos or documents attached. Attachments validate compliance, support approvals, and protect against disputes.',
+        'quality inspection rate': 'Frequency of formal quality inspections conducted per project day. Consistent inspections catch defects early when correction costs are lowest.',
+        # Construction - safety
+        'incident detail quality': 'Completeness and accuracy of incident report documentation. Poor quality reports limit root cause analysis, corrective action, and regulatory compliance.',
+        'incident rate': 'Number of recordable safety incidents per hours worked on site. A key lagging indicator of safety culture, site conditions, and hazard control effectiveness.',
+        'near miss detail quality': 'Quality and completeness of near-miss event documentation. Well-documented near misses enable pattern recognition and prevention of future incidents.',
+        'near miss rate': 'Frequency of near-miss events reported per project period. Higher reporting rates often reflect a stronger safety culture where workers feel safe raising concerns.',
+        'safety insp. attach. rate': 'Percentage of safety inspections with supporting photos or documents attached. Documentation provides evidence of hazard identification and corrective action taken.',
+        'safety inspection rate': 'Frequency of formal safety inspections per project day. Regular inspections identify hazards before they escalate into recordable incidents.',
+        'safety training': 'Percentage of required safety training completed by field personnel on time. Undertrained workers are at significantly higher risk of incident involvement.',
+        # Closeout - clientHandover
+        'client satisfaction score': 'Client-rated satisfaction score collected at project completion. Reflects overall delivery quality, communication, and relationship management throughout the project.',
+        'client training completion': 'Percentage of required owner and end-user training sessions completed before handover. Incomplete training increases post-handover support burden and client frustration.',
+        # Closeout - finalDocumentation
+        'as-built drawing accuracy': 'Degree to which final as-built drawings match actual installed field conditions. Inaccurate as-builts create long-term facility management and renovation risk for the owner.',
+        'o&m manuals submitted timely': 'Percentage of Operations & Maintenance manuals submitted by required turnover deadlines. Late delivery delays the client\'s ability to operate and maintain the facility.',
+        # Closeout - financialReconciliation
+        'final payment received time': 'Days elapsed from project completion milestone to receipt of final payment. Delays indicate unresolved disputes, billing errors, or client cash flow issues.',
+        'subcontractor final payments': 'Percentage of subcontractors paid in full within required timeframes after closeout. Delayed final payments damage subcontractor relationships and create lien exposure.',
+        # Closeout - punchlistCompletion
+        'avg time to close punch item': 'Average days to resolve and formally close a punch list item. Long resolution times delay final acceptance, certificate of occupancy, and final payment.',
+        'punch list items closed rate': 'Percentage of punch list items closed relative to total items identified. Low rates signal resource constraints, scope disputes, or poor closeout planning.',
     }
 
-    def infer_definition(metric_name, metric_lower):
-        if metric_lower in definition_overrides:
-            return definition_overrides[metric_lower]
-        if 'lead time' in metric_lower:
-            return 'Time between the create date and the due date for the item.'
-        if 'closed on time' in metric_lower:
-            return 'Percent of items closed before the due date (on time).'
-        if 'detail quality' in metric_lower:
-            return 'Quality and completeness of item documentation details entered by users.'
-        if 'rate' in metric_lower:
-            return 'Count of items divided by the number of project days.'
-        if 'lead time' in metric_lower:
-            return f"Average elapsed time to complete {metric_name}."
-        if 'time to close' in metric_lower:
-            return f"Average time required to close {metric_name.replace('Time to Close', '').strip()} items."
-        if 'rate' in metric_lower:
-            return f"Percentage/frequency metric showing how consistently {metric_name} is achieved."
-        if 'variance' in metric_lower:
-            return f"Difference between planned and actual outcomes for {metric_name}."
-        if 'ratio' in metric_lower:
-            return f"Relative relationship between two linked quantities in {metric_name}."
-        if 'cycle' in metric_lower:
-            return f"Average cycle duration for {metric_name}."
-        if 'completion' in metric_lower or 'closed on time' in metric_lower:
-            return f"Share of required items completed on time for {metric_name}."
-        if 'compliance' in metric_lower:
-            return f"Extent to which required standards are satisfied for {metric_name}."
-        if 'score' in metric_lower:
-            return f"Composite performance score for {metric_name}."
-        return f"Operational performance metric for {metric_name}."
-
-    if lowered in KPI_GUIDANCE_MAP:
-        definition = infer_definition(name, lowered)
-        return f"Definition: {definition} Why it matters: {KPI_GUIDANCE_MAP[lowered]}"
-
-    fallback_definition = infer_definition(name, lowered)
-    fallback_why = "Helps teams detect performance drift early and prioritize actions before schedule, cost, quality, or safety risk worsens."
-    return f"Definition: {fallback_definition} Why it matters: {fallback_why}"
+    return definition_overrides.get(lowered, f"Operational performance metric tracking {name} across projects.")
 
 def display_kpi_table(kpi_df):
     if kpi_df.empty:
@@ -577,14 +712,12 @@ def display_kpi_table(kpi_df):
         n = len(df)
         if n == 0:
             return labels
-
         if n >= 5:
             high_count, low_count = 2, 2
         elif n >= 2:
             high_count, low_count = 1, 1
         else:
             high_count, low_count = 1, 0
-
         for i in range(high_count):
             labels[i] = 'High'
         for i in range(low_count):
@@ -593,39 +726,88 @@ def display_kpi_table(kpi_df):
 
     display_df['impact_label'] = assign_impact_labels(display_df)
 
-    def impact_badge_html(label):
-        style_map = {
-            'High': 'background:#dcfce7; color:#166534;',
-            'Average': 'background:#ecfccb; color:#3f6212;',
-            'Low': 'background:#fef9c3; color:#854d0e;'
-        }
-        style = style_map.get(label, style_map['Average'])
-        return f"<span style='display:inline-block; min-width:5.5rem; text-align:center; padding:0.2rem 0.6rem; border-radius:9999px; font-size:1.25rem; font-weight:700; {style}'>{label}</span>"
+    priority_styles = {
+        'High': 'background:#dcfce7; color:#166534;',
+        'Average': 'background:#ecfccb; color:#3f6212;',
+        'Low': 'background:#fef9c3; color:#854d0e;'
+    }
 
-    with st.container(border=True):
-        header_cols = st.columns([0.4, 0.2, 0.15, 0.1, 0.15])
-        header_cols[0].markdown("<span style='font-size: 1.5rem;'><strong>KPI Name</strong></span>", unsafe_allow_html=True)
-        header_cols[1].markdown("<div style='text-align:center; font-size: 1.5rem;'><strong>Best Practice</strong></div>", unsafe_allow_html=True)
-        header_cols[2].markdown("<div style='text-align:center; font-size: 1.5rem;'><strong>Actual (Avg)</strong></div>" if is_averaged else "<div style='text-align:center; font-size: 1.5rem;'><strong>Actual</strong></div>", unsafe_allow_html=True)
-        header_cols[3].markdown("<div style='text-align:center; font-size: 1.5rem;'><strong>Score</strong></div>", unsafe_allow_html=True)
-        header_cols[4].markdown("<span style='font-size: 1.5rem;'><strong>Priority</strong></span>", unsafe_allow_html=True)
-        
-        for _, row in display_df.iterrows():
-            row_cols = st.columns([0.4, 0.2, 0.15, 0.1, 0.15])
-            actual_val = row['actual_numeric']
-            unit = row.get('unit', '')
-            actual_display = f"{actual_val:.0%}" if unit == '%' else f"{actual_val:.1f}"
-            kpi_name = str(row.get('kpi_name', 'N/A'))
-            kpi_name_display = format_kpi_name(kpi_name)
-            tooltip_text = build_kpi_tooltip(kpi_name)
-            row_cols[0].markdown(
-                f"<span style='font-size: 1.5rem; cursor: help;' title=\"{html.escape(tooltip_text, quote=True)}\">{html.escape(kpi_name_display)} <span style='font-size: 1.05rem; color:#6b7280;'>[?]</span></span>",
-                unsafe_allow_html=True
-            )
-            row_cols[1].markdown(f"<div style='text-align:center; font-size: 1.5rem;'>{html.escape(str(row.get('bp_range_display', 'N/A')))}</div>", unsafe_allow_html=True)
-            row_cols[2].markdown(f"<div style='text-align:center; font-size: 1.5rem;'>{actual_display}</div>", unsafe_allow_html=True)
-            row_cols[3].markdown(f"<div style='text-align:center; font-size: 1.5rem;'>{row.get('score', 0):.0f}</div>", unsafe_allow_html=True)
-            row_cols[4].markdown(impact_badge_html(row.get('impact_label', 'Average')), unsafe_allow_html=True)
+    actual_header = "Actual (Avg)" if is_averaged else "Actual"
+    tbl_id = f"proc-tbl-{id(kpi_df)}"
+
+    rows_html = ""
+    for _, row in display_df.iterrows():
+        actual_val = row['actual_numeric']
+        unit = row.get('unit', '')
+        actual_display = f"{actual_val:.0%}" if unit == '%' else f"{actual_val:.1f}"
+        kpi_name = str(row.get('kpi_name', 'N/A'))
+        kpi_name_display = html.escape(format_kpi_name(kpi_name))
+        tooltip_text = html.escape(build_kpi_tooltip(kpi_name), quote=True)
+        priority_label = row.get('impact_label', 'Average')
+        priority_style = priority_styles.get(priority_label, priority_styles['Average'])
+        rows_html += f"""<tr>
+            <td style='padding:0.6rem; background:#f9fafb; border-radius:0.375rem 0 0 0.375rem; font-size:1.235rem;'>
+                {kpi_name_display} <span class='kpi-tip-wrap'><span style='font-size:1.04rem; color:#6b7280; font-weight:600;'>[?]</span><span class='kpi-tip-box'>{tooltip_text}</span></span>
+            </td>
+            <td style='padding:0.6rem; background:#f9fafb; text-align:center; font-size:1.235rem;'>{html.escape(str(row.get('bp_range_display', 'N/A')))}</td>
+            <td style='padding:0.6rem; background:#f9fafb; text-align:center; font-size:1.235rem;'>{actual_display}</td>
+            <td style='padding:0.6rem; background:#f9fafb; text-align:center; font-size:1.235rem;'>{row.get('score', 0):.0f}</td>
+            <td style='padding:0.6rem; background:#f9fafb; border-radius:0 0.375rem 0.375rem 0; text-align:center;'>
+                <span style='display:inline-block; min-width:5rem; text-align:center; padding:0.2rem 0.6rem; border-radius:9999px; font-size:1.1rem; font-weight:700; {priority_style}'>{priority_label}</span>
+            </td>
+        </tr>"""
+
+    st.markdown(f"""<style>
+        .{tbl_id} {{ width:100%; border-collapse:separate; border-spacing:0 0.35rem; font-size:1.235rem; }}
+        .{tbl_id} th {{ text-align:left; padding:0.5rem 0.6rem; background:#f3f4f6; color:#374151; font-weight:700; font-size:1.04rem; text-transform:uppercase; letter-spacing:0.05em; }}
+        .{tbl_id} th:first-child {{ border-radius:0.375rem 0 0 0.375rem; }}
+        .{tbl_id} th:last-child  {{ border-radius:0 0.375rem 0.375rem 0; }}
+        .{tbl_id} th:not(:last-child) {{ border-right:1px solid #e5e7eb; }}
+        .{tbl_id} th:nth-child(2), .{tbl_id} th:nth-child(3), .{tbl_id} th:nth-child(4), .{tbl_id} th:nth-child(5) {{ text-align:center; }}
+        .kpi-tip-wrap {{ display:inline-block; cursor:help; }}
+        .kpi-tip-box {{ display:none; position:fixed; background:#1e293b; color:#f8fafc; padding:0.55rem 0.8rem; border-radius:0.4rem; font-size:1.23rem; font-weight:400; line-height:1.5; width:420px; z-index:99999; pointer-events:none; white-space:normal; box-shadow:0 4px 12px rgba(0,0,0,0.3); }}
+    </style>""", unsafe_allow_html=True)
+    components.html("""<script>
+    (function() {
+        function initTooltips() {
+            var doc = window.parent.document;
+            doc.querySelectorAll('.kpi-tip-wrap').forEach(function(wrap) {
+                if (wrap._tipInit) return;
+                wrap._tipInit = true;
+                var box = wrap.querySelector('.kpi-tip-box');
+                if (!box) return;
+                wrap.addEventListener('mouseenter', function() {
+                    box.style.display = 'block';
+                    var rect = wrap.getBoundingClientRect();
+                    var tipH = box.offsetHeight;
+                    var tipW = box.offsetWidth;
+                    var top = rect.top - tipH - 8;
+                    if (top < 8) top = rect.bottom + 8;
+                    var left = rect.left;
+                    if (left + tipW > window.innerWidth - 8) left = window.innerWidth - tipW - 8;
+                    if (left < 8) left = 8;
+                    box.style.top = top + 'px';
+                    box.style.left = left + 'px';
+                });
+                wrap.addEventListener('mouseleave', function() {
+                    box.style.display = 'none';
+                });
+            });
+        }
+        initTooltips();
+        new MutationObserver(initTooltips).observe(window.parent.document.body, { childList: true, subtree: true });
+    })();
+    </script>""", height=0)
+    st.markdown(f"""<div style='overflow-x: auto;'><table class='{tbl_id}'>
+        <thead><tr>
+            <th>KPI Name</th>
+            <th>Best Practice</th>
+            <th>{actual_header}</th>
+            <th>Score</th>
+            <th>Priority</th>
+        </tr></thead>
+        <tbody>{rows_html}</tbody>
+    </table></div>""", unsafe_allow_html=True)
 
 def format_process_name(name):
     if name in PROCESS_DISPLAY_NAMES: return PROCESS_DISPLAY_NAMES[name]
@@ -710,14 +892,6 @@ def load_data():
 
 # --- Display Functions ---
 def display_executive_summary(data, summary_for_impact_calc, impact_category_filter):
-    st.markdown(
-        """<div style="display:flex;justify-content:center;margin-bottom:1rem;">
-        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="75" cy="75" r="70" fill="red" />
-          <text x="75" y="80" text-anchor="middle" fill="white" font-size="14" font-weight="bold">TEST CIRCLE</text>
-        </svg></div>""",
-        unsafe_allow_html=True
-    )
     st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>CR-Score Card</h1>", unsafe_allow_html=True); st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem;'>Company ABC (Construction View)</h2>", unsafe_allow_html=True)
     
     summary_df = data['executive_summary']
@@ -733,33 +907,95 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
     schedule_estimate = (cr_score / 100.0) * 0.30 * 100
     safety_estimate = (cr_score / 100.0) * 0.60 * 100
 
+    def _ratio_color(actual, possible):
+        ratio = actual / possible if possible else 0
+        if ratio < 0.2: return "#ef4444"
+        elif ratio < 0.4: return "#f97316"
+        elif ratio < 0.6: return "#fbbf24"
+        elif ratio < 0.8: return "#86efac"
+        else: return "#16a34a"
+
+    cost_color = "#2563eb"
+    schedule_color = "#2563eb"
+    safety_color = "#2563eb"
+
     top_row_left, top_row_right = st.columns(2)
     with top_row_left:
         with st.container(border=True):
-            st.markdown("<h2 style='text-align: center; margin-bottom: 0.25rem; font-size: 1.5rem;'>CR-Score</h2>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; max-width: 100%; margin: 0.25rem auto 0.5rem auto; font-size:1.62em;'>Represents the adoption of Best Practices for all KPIs across all 4 Phases of Operations.</p>", unsafe_allow_html=True)
-            st.markdown(circular_score_meter_html(cr_score, size=330), unsafe_allow_html=True)
+            st.markdown("<h2 style='display:block; width:100%; text-align: center; margin-bottom: 0.25rem; font-size: 1.8rem; font-weight: 700; color: #111; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.375rem;'>CR-Score</h2>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; max-width: 100%; margin: 0.1rem auto 0.15rem auto; font-size:1.25rem; color:#6b7280; font-weight:400;'>Represents the adoption of Best Practices for all KPIs across all 4 Phases of Operations.</p>", unsafe_allow_html=True)
+            st.markdown(circular_score_meter_html(cr_score, size=420), unsafe_allow_html=True)
 
         with st.container(border=True):
-            st.markdown("<h3 style='text-align: center; margin-bottom: 0.5rem; font-size: 1.4rem;'>Estimated Impact of Operational Performance</h3>", unsafe_allow_html=True)
-            est_col1, est_col2 = st.columns([0.5, 0.5])
-            with est_col1:
-                st.markdown("<p style='text-align: right; margin-bottom: 0.2rem; font-size: 1.4rem;'>Improvement in Project Costs:</p>", unsafe_allow_html=True)
-                st.markdown("<p style='text-align: right; margin-bottom: 0.2rem; font-size: 1.4rem;'>Improvement in Project Timeline:</p>", unsafe_allow_html=True)
-                st.markdown("<p style='text-align: right; margin-bottom: 0.2rem; font-size: 1.4rem;'>Reduction in Incidents:</p>", unsafe_allow_html=True)
-            with est_col2:
-                st.markdown(f"<p style='font-weight: 700; color: #2563eb; margin-bottom: 0.2rem; font-size: 1.4rem;'>{cost_estimate:.1f}% out of 18.0% possible</p>", unsafe_allow_html=True)
-                st.markdown(f"<p style='font-weight: 700; color: #2563eb; margin-bottom: 0.2rem; font-size: 1.4rem;'>{schedule_estimate:.1f}% out of 30.0% possible</p>", unsafe_allow_html=True)
-                st.markdown(f"<p style='font-weight: 700; color: #2563eb; margin-bottom: 0.2rem; font-size: 1.4rem;'>{safety_estimate:.1f}% out of 60.0% possible</p>", unsafe_allow_html=True)
+            st.markdown("<h3 style='display:block; width:100%; text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: 700; color: #111; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.375rem;'>Estimated Impact of Operational Performance</h3>", unsafe_allow_html=True)
+            st.markdown(f"""
+            <div style='font-size:1.4rem; display:table; width:100%; border-spacing:0 0.3rem; border-collapse:separate;'>
+                <div style='display:table-row;'>
+                    <span style='display:table-cell; text-align:right; padding:0.45rem 0.75rem 0.45rem 0; width:50%;'>Improvement in Project Costs:</span>
+                    <span style='display:table-cell; text-align:left; padding:0.45rem 0 0.45rem 0.75rem; width:50%;'><span style='color:{cost_color}; font-weight:700;'>{cost_estimate:.1f}%</span> out of <span style='color:#2563eb; font-weight:700;'>18.0%</span> possible</span>
+                </div>
+                <div style='display:table-row;'>
+                    <span style='display:table-cell; text-align:right; padding:0.45rem 0.75rem 0.45rem 0;'>Improvement in Project Timeline:</span>
+                    <span style='display:table-cell; text-align:left; padding:0.45rem 0 0.45rem 0.75rem;'><span style='color:{schedule_color}; font-weight:700;'>{schedule_estimate:.1f}%</span> out of <span style='color:#2563eb; font-weight:700;'>30.0%</span> possible</span>
+                </div>
+                <div style='display:table-row;'>
+                    <span style='display:table-cell; text-align:right; padding:0.45rem 0.75rem 0.45rem 0;'>Reduction in Incidents:</span>
+                    <span style='display:table-cell; text-align:left; padding:0.45rem 0 0.45rem 0.75rem;'><span style='color:{safety_color}; font-weight:700;'>{safety_estimate:.1f}%</span> out of <span style='color:#2563eb; font-weight:700;'>60.0%</span> possible</span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
 
     with top_row_right:
-        with st.container(border=True):
-            st.markdown("<h2 style='text-align: center; margin-bottom: 0.1rem; font-size: 1.5rem;'>CR-Score Components</h2>", unsafe_allow_html=True)
-            st.markdown("<h3 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem;'>4 Phases of Operations</h3>", unsafe_allow_html=True)
-            phase_definitions = {"Bidding": {"col": "phaseScore_bidding", "desc": "selecting what jobs to bid on and building estimates"},"Precon": {"col": "phaseScore_precon", "desc": "For bids that are won, all the project preparation"},"Construction": {"col": "phaseScore_construction", "desc": "executing the plan and completing the project"},"Closeout": {"col": "phaseScore_closeout", "desc": "wrap up of all work and handoff to the customer"}}
-            for name, info in phase_definitions.items():
-                st.markdown(f"<div style='font-size: 1.5rem; margin-bottom: 1.5rem;'><strong>{html.escape(name)}</strong> - <em>{html.escape(info['desc'])}</em></div>", unsafe_allow_html=True)
-                st.markdown(horizontal_risk_bar_html(summary_df[info["col"]].mean(), width_percentage=90, height='1.65rem', font_size='1.2rem', top_offset='-1.8rem'), unsafe_allow_html=True)
+        phase_definitions = {"Bidding": {"col": "phaseScore_bidding", "desc": "selecting what jobs to bid on and building estimates"},"Precon": {"col": "phaseScore_precon", "desc": "For bids that are won, all the project preparation"},"Construction": {"col": "phaseScore_construction", "desc": "executing the plan and completing the project"},"Closeout": {"col": "phaseScore_closeout", "desc": "wrap up of all work and handoff to the customer"}}
+        phases_html = ""
+        for name, info in phase_definitions.items():
+            bar = horizontal_risk_bar_html(summary_df[info["col"]].mean(), width_percentage=95, height='1.65rem', font_size='1.2rem', top_offset='-1.8rem')
+            phases_html += f"""
+            <div style="text-align:center; margin-bottom:1rem;">
+                <div style="font-size:1.5rem; margin-bottom:2rem; font-family:inherit;">
+                    <strong>{html.escape(name)}</strong> - <em>{html.escape(info['desc'])}</em>
+                </div>
+                {bar}
+            </div>"""
+        st.html(f"""
+        <div id="cr-box" style="
+            border: 1px solid rgba(49,51,63,0.2);
+            border-radius: 0.5rem;
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            box-sizing: border-box;
+            min-height: 100%;
+        ">
+            <h2 style="display:block; width:100%; text-align:center; font-size:1.8rem; font-weight:700; color:#111; margin:0 0 0.375rem 0; padding-bottom:0.375rem; border-bottom:1px solid #e5e7eb; font-family:inherit;">CR-Score Components</h2>
+            <h3 style="text-align:center; font-size:1.17rem; margin:0 0 1.5rem 0; font-weight:600; font-family:inherit;">4 Phases of Operations</h3>
+            <div style="width:100%;">{phases_html}</div>
+        </div>
+        <script>
+        (function() {{
+            function fitToLeftColumn() {{
+                try {{
+                    var parentDoc = window.parent.document;
+                    var columns = parentDoc.querySelectorAll('[data-testid="stColumn"]');
+                    if (columns.length >= 2) {{
+                        var leftColHeight = columns[0].offsetHeight;
+                        if (leftColHeight > 0) {{
+                            var box = document.getElementById('cr-box');
+                            box.style.minHeight = leftColHeight + 'px';
+                            document.body.style.minHeight = leftColHeight + 'px';
+                        }}
+                    }}
+                }} catch(e) {{}}
+            }}
+            window.addEventListener('load', fitToLeftColumn);
+            setTimeout(fitToLeftColumn, 200);
+            setTimeout(fitToLeftColumn, 600);
+        }})();
+        </script>
+        """)
 
     kpis_for_actions = all_kpis_df[all_kpis_df['impact_category'] == impact_category_filter] if not all_kpis_df.empty else pd.DataFrame()
     executive_top_performing = build_top_performing_kpis(kpis_for_actions)
@@ -768,9 +1004,9 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
     st.markdown("<hr style='margin-top: 1rem; margin-bottom: 0.75rem;'>", unsafe_allow_html=True)
     bottom_left, bottom_right = st.columns(2)
     with bottom_left:
-        render_kpi_summary_section("Top Performing KPIs", executive_top_performing, get_kpi_strength_detail, "Details")
+        render_kpi_summary_section("Top Performing KPIs", executive_top_performing, get_kpi_strength_detail, "Details", accent_color="#16a34a")
     with bottom_right:
-        render_kpi_summary_section("Top Priority KPIs to Improve", executive_top_priority, get_kpi_guidance, "Guidance")
+        render_kpi_summary_section("Top Priority KPIs to Improve", executive_top_priority, get_kpi_guidance, "Guidance", accent_color="#ef4444")
 
 
 def display_phase_summary_page(phase_key, data, impact_category_filter, summary_for_impact_calc):
@@ -794,19 +1030,21 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
     process_scores = processes_df_all_categories.groupby('process_name')['score'].mean()
 
     with st.container(border=True):
-        st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{phase_key.capitalize()} Phase Score</h2>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='display:block; width:100%; text-align: center; font-size: 1.8rem; font-weight: 700; color: #111; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.375rem;'>{phase_key.capitalize()} Phase Score</h2>", unsafe_allow_html=True)
         st.markdown(f"<p style='text-align: center; font-size:1.62em;'>{PHASE_DESCRIPTIONS.get(phase_key, '')}</p>", unsafe_allow_html=True)
-        st.markdown(f"<div style='margin-top: 2.0rem;'>{horizontal_risk_bar_html(phase_score, height='1.95rem', font_size='2.7rem', top_offset='-3.15rem', width_percentage=90)}</div>", unsafe_allow_html=True)
+        _, bar_col, _ = st.columns([0.05, 0.90, 0.05])
+        with bar_col:
+            st.markdown(f"<div style='margin-top: 2.0rem; padding-bottom: 1.5rem;'>{horizontal_risk_bar_html(phase_score, height='1.46rem', font_size='2.025rem', top_offset='-2.9rem', width_percentage=100)}</div>", unsafe_allow_html=True)
 
     top_performing_df = build_top_performing_kpis(phase_kpis_all)
     top_priority_df = build_top_priority_kpis(phase_kpis_all)
 
     col_top_performing, col_top_priority = st.columns(2)
     with col_top_performing:
-        render_kpi_summary_section("Top Performing KPIs", top_performing_df, get_kpi_strength_detail, "Details", state_key=f"{phase_key}_top_performing")
+        render_kpi_summary_section("Top Performing KPIs", top_performing_df, get_kpi_strength_detail, "Details", state_key=f"{phase_key}_top_performing", accent_color="#16a34a")
 
     with col_top_priority:
-        render_kpi_summary_section("Top Priority KPIs to Improve", top_priority_df, get_kpi_guidance, "Guidance", state_key=f"{phase_key}_top_priority")
+        render_kpi_summary_section("Top Priority KPIs to Improve", top_priority_df, get_kpi_guidance, "Guidance", state_key=f"{phase_key}_top_priority", accent_color="#ef4444")
 
     st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -816,39 +1054,68 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
         process_display_name = format_process_name(process_key)
         state_key = f"show_kpis_{phase_key}_{process_key}"
         button_label = "Hide KPIs" if st.session_state.get(state_key, False) else "Show KPIs"
+        btn_key = f"btn_{state_key}"
 
-        process_header_col, _ = st.columns([0.34, 0.66])
-        with process_header_col:
-            name_col, btn_col = st.columns([0.62, 0.38])
-            with name_col:
-                st.markdown(f"<span style='font-size: 1.5rem;'><strong>{process_display_name}</strong></span>", unsafe_allow_html=True)
-            with btn_col:
-                st.button(button_label, key=f"btn_{state_key}", on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, False)}), use_container_width=False, type="primary")
+        st.markdown(f"""<style>
+            div[data-testid="stColumn"]:has(div.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] {{
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 0.75rem !important;
+            }}
+            div[data-testid="stColumn"]:has(div.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] > div {{
+                width: auto !important;
+                flex-shrink: 0 !important;
+            }}
+            div.st-key-{btn_key} > div[data-testid="stButton"] > button {{
+                white-space: nowrap !important;
+            }}
+        </style>""", unsafe_allow_html=True)
+        proc_col, _ = st.columns([0.5, 0.5])
+        with proc_col:
+            st.markdown(f"<span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span>", unsafe_allow_html=True)
+            st.button(button_label, key=btn_key, on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, False)}), use_container_width=False, type="primary")
 
-        st.markdown(horizontal_risk_bar_html(score, width_percentage=100, height='1.65rem', font_size='1.2rem', top_offset='-1.8rem'), unsafe_allow_html=True)
+        st.markdown(horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem'), unsafe_allow_html=True)
         if st.session_state.get(state_key, False):
             display_kpi_table(kpis_df[kpis_df['process_name'] == process_key])
 
 def display_scoreboard(summary_for_impact_calc, data):
     """Display portfolio scoreboard with segment analysis"""
-    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Portfolio Scoreboard</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem;'>Segment Performance Analysis</h2>", unsafe_allow_html=True)
-    
+
     if summary_for_impact_calc.empty:
         st.info("No portfolio data available.")
         return
-    
-    st.markdown("<hr style='margin-top: 0.5rem; margin-bottom: 1.5rem;'>", unsafe_allow_html=True)
-    
-    # Segment selector
-    col_selector, col_spacer = st.columns([0.3, 0.7])
-    with col_selector:
+
+    search_key = 'scoreboard_search'
+    if search_key not in st.session_state:
+        st.session_state[search_key] = ''
+
+    filter_col, title_col, spacer_col = st.columns([0.25, 0.5, 0.25])
+    with filter_col:
+        st.markdown("<h3 style='text-align:left; margin-top:1.5rem; margin-bottom:0.25rem; font-size:1.56rem;'>Segment Portfolio By:</h3><style>h3 a { display: none !important; }</style>", unsafe_allow_html=True)
         segment_by = st.selectbox(
             "Segment Portfolio By:",
             ["Project", "Region", "Project Manager"],
-            help="Select how to group the portfolio for analysis"
+            help="Select how to group the portfolio for analysis",
+            label_visibility="collapsed"
         )
-    
+        st.markdown("<h3 style='text-align:left; margin-top:-0.8rem; margin-bottom:0.1rem; font-size:1.56rem;'>Search:</h3>", unsafe_allow_html=True)
+        st.text_input(
+            "Search",
+            key=search_key,
+            placeholder="\U0001F50D Search by name...",
+            label_visibility="collapsed",
+            on_change=lambda: st.session_state.update({'scoreboard_page': 0})
+        )
+    st.markdown("""<style>
+        div.st-key-sc_search_input { margin-top: -1.2rem !important; }
+        div.st-key-sc_search_input input { font-size: 0.95rem !important; padding: 0.35rem 0.6rem !important; }
+    </style>""", unsafe_allow_html=True)
+    with title_col:
+        st.markdown("<h1 style='text-align:center; margin-bottom:0;'>Portfolio Scoreboard</h1><style>h1 a, h2 a { display: none !important; }</style>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align:center; margin-top:0; margin-bottom:0.5rem; font-size:1.5rem;'>Segment Performance Analysis</h2>", unsafe_allow_html=True)
+
     # Map selection to column name
     segment_column_map = {
         "Project": "projectId",
@@ -913,10 +1180,13 @@ def display_scoreboard(summary_for_impact_calc, data):
     
     sort_col_key = 'scoreboard_sort_column'
     sort_dir_key = 'scoreboard_sort_direction'
+    page_key = 'scoreboard_page'
     if sort_col_key not in st.session_state:
         st.session_state[sort_col_key] = 'CR-Score'
     if sort_dir_key not in st.session_state:
         st.session_state[sort_dir_key] = 'desc'
+    if page_key not in st.session_state:
+        st.session_state[page_key] = 0
 
     def toggle_sort(column_name):
         current_col = st.session_state[sort_col_key]
@@ -926,10 +1196,27 @@ def display_scoreboard(summary_for_impact_calc, data):
         else:
             st.session_state[sort_col_key] = column_name
             st.session_state[sort_dir_key] = 'desc'
+        st.session_state[page_key] = 0
 
     sort_column = st.session_state[sort_col_key]
     sort_ascending = st.session_state[sort_dir_key] == 'asc'
     scoreboard_df = scoreboard_df.sort_values(by=sort_column, ascending=sort_ascending, na_position='last').reset_index(drop=True)
+
+    # Apply name search filter
+    search_term = st.session_state.get(search_key, '').strip()
+    if search_term:
+        scoreboard_df = scoreboard_df[scoreboard_df['Segment'].str.contains(search_term, case=False, na=False)].reset_index(drop=True)
+
+    rows_per_page = 50
+    total_rows = len(scoreboard_df)
+    total_pages = max(1, math.ceil(total_rows / rows_per_page))
+    # Clamp page in case data changed
+    if st.session_state[page_key] >= total_pages:
+        st.session_state[page_key] = total_pages - 1
+    current_page = st.session_state[page_key]
+    page_start = current_page * rows_per_page
+    page_end = min(page_start + rows_per_page, total_rows)
+    paged_df = scoreboard_df.iloc[page_start:page_end]
 
     def format_currency(value):
         if pd.isna(value):
@@ -946,32 +1233,225 @@ def display_scoreboard(summary_for_impact_calc, data):
             return label
         return f"{label} {'↑' if st.session_state[sort_dir_key] == 'asc' else '↓'}"
 
-    st.markdown(f"<h3 style='text-align: center; margin-bottom: 1rem; font-size: 1.56rem;'>Portfolio Segmented by {segment_by}</h3>", unsafe_allow_html=True)
-
+    # Sort buttons targeted directly by st-key-* CSS classes — no marker needed.
+    # This means col 0 has exactly ONE element (just its button), so all columns are aligned.
+    st.markdown(f"""<style>
+        div[data-testid="stHorizontalBlock"]:has(.st-key-sc_sort_segment) {{
+            gap: 0 !important; margin-bottom: 0 !important;
+        }}
+        div.st-key-sc_sort_segment button,
+        div.st-key-sc_sort_cr button,
+        div.st-key-sc_sort_value button,
+        div.st-key-sc_sort_start button,
+        div.st-key-sc_sort_end button {{
+            background: #f3f4f6 !important; color: #374151 !important;
+            border: none !important; border-right: 1px solid #e5e7eb !important;
+            border-radius: 0 !important;
+            box-shadow: none !important; outline: none !important;
+            font-size: 0.8rem !important; font-weight: 700 !important;
+            text-transform: uppercase !important; letter-spacing: 0.05em !important;
+            padding: 0.5rem 0.6rem !important; transition: none !important;
+        }}
+        div.st-key-sc_sort_segment button:hover,
+        div.st-key-sc_sort_cr button:hover,
+        div.st-key-sc_sort_value button:hover,
+        div.st-key-sc_sort_start button:hover,
+        div.st-key-sc_sort_end button:hover {{
+            background: #e5e7eb !important; color: #111 !important;
+        }}
+        div.st-key-sc_sort_segment button:focus:not(:active),
+        div.st-key-sc_sort_cr button:focus:not(:active),
+        div.st-key-sc_sort_value button:focus:not(:active),
+        div.st-key-sc_sort_start button:focus:not(:active),
+        div.st-key-sc_sort_end button:focus:not(:active) {{
+            box-shadow: none !important;
+        }}
+        div.st-key-sc_sort_segment button {{ border-radius: 0.375rem 0 0 0.375rem !important; }}
+        div.st-key-sc_sort_end button     {{ border-radius: 0 0.375rem 0.375rem 0 !important; border-right: none !important; }}
+        .sc-tbl {{ width:100%; border-collapse:separate; border-spacing:0 0.35rem; font-size:0.95rem; }}
+        .sc-tbl td {{ padding:0.6rem 0.6rem; background:#f9fafb; vertical-align:middle; border:none; }}
+        .sc-tbl td:first-child {{ border-radius:0.375rem 0 0 0.375rem; }}
+        .sc-tbl td:last-child  {{ border-radius:0 0.375rem 0.375rem 0; }}
+        .sc-tbl td.seg-name    {{ font-weight:700; color:#111; width:20%; font-size:1.19rem; }}
+        .sc-tbl td.cr-score   {{ width:22%; padding-top:0.6rem; }}
+        .sc-tbl td.proj-value {{ text-align:center; width:20%; font-size:1.19rem; }}
+        .sc-tbl td.proj-date  {{ text-align:center; width:19%; font-size:1.19rem; }}
+        .sc-tbl .sc-bar-wrap span {{ padding: 0.1rem 0.30rem !important; line-height: 1 !important; }}
+        div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-sc_sort_segment) {{ margin-top: -1.5rem !important; }}
+    </style>""", unsafe_allow_html=True)
     with st.container(border=True):
-        header_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
-        header_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{segment_by}</strong></span>", unsafe_allow_html=True)
-        with header_cols[1]:
-            st.button(sort_label('CR-Score', 'CR-Score'), key='sort_cr_score', on_click=lambda: toggle_sort('CR-Score'), use_container_width=True, type='primary')
-        with header_cols[2]:
-            st.button(sort_label('Estimated Project Value', 'Estimated Project Value'), key='sort_est_value', on_click=lambda: toggle_sort('Estimated Project Value'), use_container_width=True, type='primary')
-        with header_cols[3]:
-            st.button(sort_label('Est Proj Start Date', 'Est Proj Start Date'), key='sort_est_start', on_click=lambda: toggle_sort('Est Proj Start Date'), use_container_width=True, type='primary')
-        with header_cols[4]:
-            st.button(sort_label('Est Proj End Date', 'Est Proj End Date'), key='sort_est_end', on_click=lambda: toggle_sort('Est Proj End Date'), use_container_width=True, type='primary')
+        hdr_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
+        with hdr_cols[0]:
+            segment_header_label = {"Project": "Project Name", "Region": "Region Name", "Project Manager": "Manager Name"}.get(segment_by, "Project Name")
+            st.button(sort_label('Segment', segment_header_label), key='sc_sort_segment', on_click=lambda: toggle_sort('Segment'), use_container_width=True, type='secondary')
+        with hdr_cols[1]:
+            st.button(sort_label('CR-Score', 'CR-Score'), key='sc_sort_cr', on_click=lambda: toggle_sort('CR-Score'), use_container_width=True, type='secondary')
+        with hdr_cols[2]:
+            st.button(sort_label('Estimated Project Value', 'Estimated Value'), key='sc_sort_value', on_click=lambda: toggle_sort('Estimated Project Value'), use_container_width=True, type='secondary')
+        with hdr_cols[3]:
+            st.button(sort_label('Est Proj Start Date', 'Start Date'), key='sc_sort_start', on_click=lambda: toggle_sort('Est Proj Start Date'), use_container_width=True, type='secondary')
+        with hdr_cols[4]:
+            st.button(sort_label('Est Proj End Date', 'End Date'), key='sc_sort_end', on_click=lambda: toggle_sort('Est Proj End Date'), use_container_width=True, type='secondary')
+        rows_html = ""
+        for _, row in paged_df.iterrows():
+            bar = horizontal_risk_bar_html(row['CR-Score'], height='0.7rem', font_size='0.975rem', top_offset='-1.1rem', width_percentage=92)
+            rows_html += f"""<tr>
+                <td class='seg-name'>{html.escape(str(row['Segment']))}</td>
+                <td class='cr-score'><div class='sc-bar-wrap'>{bar}</div></td>
+                <td class='proj-value'>{html.escape(format_currency(row['Estimated Project Value']))}</td>
+                <td class='proj-date'>{html.escape(format_date(row['Est Proj Start Date']))}</td>
+                <td class='proj-date'>{html.escape(format_date(row['Est Proj End Date']))}</td>
+            </tr>"""
+        st.html(f"<table class='sc-tbl'><tbody>{rows_html}</tbody></table>")
 
-        for _, row in scoreboard_df.iterrows():
-            row_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
-            row_cols[0].markdown(f"<span style='font-size: 1.5rem;'><strong>{html.escape(str(row['Segment']))}</strong></span>", unsafe_allow_html=True)
-            row_cols[1].markdown(horizontal_risk_bar_html(row['CR-Score'], height='1.45rem', font_size='1.1rem', top_offset='-1.5rem', width_percentage=92), unsafe_allow_html=True)
-            row_cols[2].markdown(f"<div style='text-align:right; font-size: 1.5rem;'>{format_currency(row['Estimated Project Value'])}</div>", unsafe_allow_html=True)
-            row_cols[3].markdown(f"<div style='text-align:center; font-size: 1.5rem;'>{format_date(row['Est Proj Start Date'])}</div>", unsafe_allow_html=True)
-            row_cols[4].markdown(f"<div style='text-align:center; font-size: 1.5rem;'>{format_date(row['Est Proj End Date'])}</div>", unsafe_allow_html=True)
+    # Pagination controls
+    if True:
+        st.markdown("""<style>
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_pg_first) {
+                margin-top: -0.5rem !important;
+                gap: 0.5rem !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important;
+                min-width: max-content !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_pg_first) > div[data-testid="stColumn"] {
+                flex: 0 0 auto !important;
+                width: auto !important;
+                min-width: 0 !important;
+                overflow: visible !important;
+            }
+            div.st-key-sc_pg_first button, div.st-key-sc_pg_prev button,
+            div.st-key-sc_pg_next button, div.st-key-sc_pg_last button {
+                background: #f3f4f6 !important; color: #000 !important;
+                border: 1px solid #e5e7eb !important; border-radius: 0.375rem !important;
+                font-size: 2.55rem !important; font-weight: 700 !important;
+                padding: 0 0.4rem !important; box-shadow: none !important;
+                height: 2.0rem !important; min-height: 0 !important; width: auto !important;
+                line-height: 1 !important; overflow: visible !important;
+                display: flex !important; align-items: center !important;
+                justify-content: center !important;
+            }
+            div.st-key-sc_pg_first button p, div.st-key-sc_pg_prev button p,
+            div.st-key-sc_pg_next button p, div.st-key-sc_pg_last button p {
+                font-size: 2.55rem !important; font-weight: 700 !important;
+                color: #000 !important; line-height: 1 !important; margin: 0 !important;
+                padding: 0 !important; display: flex !important;
+                align-items: center !important; justify-content: center !important;
+            }
+            div.st-key-sc_pg_first button:hover, div.st-key-sc_pg_prev button:hover,
+            div.st-key-sc_pg_next button:hover, div.st-key-sc_pg_last button:hover {
+                background: #e5e7eb !important; color: #000 !important;
+            }
+            div.st-key-sc_pg_first button:disabled, div.st-key-sc_pg_prev button:disabled,
+            div.st-key-sc_pg_next button:disabled, div.st-key-sc_pg_last button:disabled {
+                opacity: 1 !important; cursor: default !important;
+            }
+            div.st-key-sc_pg_first button:disabled p, div.st-key-sc_pg_prev button:disabled p,
+            div.st-key-sc_pg_next button:disabled p, div.st-key-sc_pg_last button:disabled p {
+                color: #bbb !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_pg_first) {
+                margin-top: -0.5rem !important;
+                margin-bottom: 0 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                gap: 0.5rem !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important;
+                width: max-content !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_pg_first) > div[data-testid="stColumn"] {
+                flex: 0 0 auto !important;
+                width: auto !important;
+                min-width: 0 !important;
+                overflow: visible !important;
+            }
+        </style>""", unsafe_allow_html=True)
+        c1, c2, c3, c4, c5 = st.columns([1, 1, 2, 1, 1])
+        with c1:
+            st.button("«", key='sc_pg_first', on_click=lambda: st.session_state.update({page_key: 0}), disabled=(current_page == 0), use_container_width=True)
+        with c2:
+            st.button("‹", key='sc_pg_prev', on_click=lambda: st.session_state.update({page_key: max(0, current_page - 1)}), disabled=(current_page == 0), use_container_width=True)
+        with c3:
+            st.markdown(f"<p style='text-align:center; margin:0; margin-top:-0.4rem; padding:0 1.5rem; font-weight:700; font-size:1.3rem; width:100%; white-space:nowrap; display:flex; align-items:center; justify-content:center; height:2.0rem;'>Page {current_page + 1} of {total_pages}</p>", unsafe_allow_html=True)
+        with c4:
+            st.button("›", key='sc_pg_next', on_click=lambda: st.session_state.update({page_key: min(total_pages - 1, current_page + 1)}), disabled=(current_page == total_pages - 1), use_container_width=True)
+        with c5:
+            st.button("»", key='sc_pg_last', on_click=lambda: st.session_state.update({page_key: total_pages - 1}), disabled=(current_page == total_pages - 1), use_container_width=True)
+
+        st.markdown("""<style>
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_goto_input) {
+                margin-top: 0 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                width: max-content !important;
+                align-items: center !important;
+                gap: 0.4rem !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_goto_input) + div,
+            div[data-testid="stVerticalBlock"] > div:has(div[data-testid="stHorizontalBlock"]:has(.st-key-sc_goto_input)) {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            div[data-testid="stVerticalBlock"] > div:has(+ div > div[data-testid="stHorizontalBlock"]:has(.st-key-sc_goto_input)) {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            div.st-key-sc_goto_input, div.st-key-sc_goto_input > div, div.st-key-sc_goto_input > div > div {
+                min-height: 0 !important; height: auto !important;
+                margin-bottom: 0 !important; padding-bottom: 0 !important;
+            }
+            div.st-key-sc_goto_input input {
+                width: 3.0rem !important; text-align: center !important;
+                height: 2.0rem !important; min-height: 0 !important;
+                padding-top: 0 !important; padding-bottom: 0 !important;
+                padding-left: 0.4rem !important; padding-right: 0.4rem !important;
+                font-size: 1.3rem !important; font-weight: 700 !important;
+                line-height: normal !important; box-sizing: border-box !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_goto_input) > div[data-testid="stColumn"]:first-child {
+                flex: 0 0 max-content !important; width: max-content !important;
+                display: flex !important; align-items: center !important;
+            }
+            div[data-testid="stHorizontalBlock"]:has(.st-key-sc_goto_input) > div[data-testid="stColumn"]:last-child {
+                flex: 0 0 auto !important; width: auto !important;
+                display: flex !important; align-items: center !important;
+            }
+            div.st-key-sc_goto_btn button {
+                background: #f3f4f6 !important; color: #000 !important;
+                border: 1px solid #e5e7eb !important; border-radius: 0.375rem !important;
+                font-size: 0.85rem !important; font-weight: 600 !important;
+                padding: 0.3rem 0.7rem !important; box-shadow: none !important;
+            }
+        </style>""", unsafe_allow_html=True)
+
+        def go_to_page():
+            val = st.session_state.get('sc_goto_input', '#')
+            try:
+                page_num = int(val)
+                st.session_state[page_key] = max(0, min(total_pages - 1, page_num - 1))
+            except (ValueError, TypeError):
+                pass
+
+        gl, gi = st.columns([1, 1])
+        with gl:
+            st.markdown("<p style='font-size:1.3rem;font-weight:700;margin:0;display:flex;align-items:center;height:2.0rem;white-space:nowrap;'>Go to Page</p>", unsafe_allow_html=True)
+        with gi:
+            st.text_input("Go to page", value="#", key='sc_goto_input',
+                          label_visibility='collapsed', on_change=go_to_page)
 
 # --- Main Application ---
 def main():
     original_data = load_data()
     if not original_data: st.stop()
+
+    st.markdown("""<style>
+        section[data-testid="stSidebar"] label,
+        section[data-testid="stSidebar"] .stSelectbox label,
+        section[data-testid="stSidebar"] .stSlider label,
+        section[data-testid="stSidebar"] .stRadio label:first-of-type,
+        section[data-testid="stSidebar"] p { font-weight: 700 !important; }
+    </style>""", unsafe_allow_html=True)
 
     # Build project metadata for additional global filters.
     project_meta = pd.DataFrame(columns=['projectId', 'ProjValue_numeric', 'startDate_parsed'])
@@ -1011,6 +1491,16 @@ def main():
         date_min = project_meta['startDate_parsed'].min().date()
         date_max = project_meta['startDate_parsed'].max().date()
     
+    import base64 as _b64
+    with open("static/cr_ai_logo.png", "rb") as _f:
+        _logo_b64 = _b64.b64encode(_f.read()).decode()
+    st.sidebar.markdown(f"""<style>
+        section[data-testid='stSidebar'] > div:first-child {{ padding-top: 0 !important; }}
+        section[data-testid='stSidebar'] .stSidebarContent {{ padding-top: 0 !important; }}
+        section[data-testid='stSidebar'] [data-testid='stSidebarContent'] {{ padding-top: 0 !important; }}
+        [data-testid='stSidebarHeader'] {{ height: 2rem !important; min-height: 0 !important; padding: 0 !important; }}
+    </style><div style='text-align:center;padding-top:0.5rem;margin-bottom:0;'><img src='data:image/png;base64,{_logo_b64}' width='100'></div>""", unsafe_allow_html=True)
+    st.sidebar.markdown("<style>section[data-testid='stSidebar'] h1:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }</style>", unsafe_allow_html=True)
     st.sidebar.title("Global Filters")
     unfiltered_summary_df = original_data.get('executive_summary', pd.DataFrame())
     if not unfiltered_summary_df.empty:
@@ -1113,12 +1603,12 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.title("Navigation")
     
-    nav_options = ["Executive Summary", "Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout"]
+    nav_options = ["Executive Summary", "Portfolio Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout"]
     page_selection = st.sidebar.radio("Page Navigation", nav_options, label_visibility="collapsed")
 
     if page_selection == "Executive Summary":
         display_executive_summary(filtered_data, summary_for_impact_calc, filters['impact_category'])
-    elif page_selection == "Scoreboard":
+    elif page_selection == "Portfolio Scoreboard":
         display_scoreboard(summary_for_impact_calc, original_data)
     else:
         display_phase_summary_page(page_selection.lower(), filtered_data, filters['impact_category'], summary_for_impact_calc)
