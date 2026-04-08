@@ -482,7 +482,7 @@ def build_top_performing_kpis(kpi_df):
         score_weighted=('score_weighted', 'mean')
     ).sort_values('score_weighted', ascending=False).head(5).reset_index(drop=True)
 
-def build_top_priority_kpis(kpi_df):
+def build_top_priority_kpis(kpi_df, exclude_kpis=None):
     if kpi_df.empty:
         return pd.DataFrame(columns=['kpi_name', 'priority_metric'])
     metric_col = next((c for c in ['process_level_unrealized_value', 'phase_level_unrealized_value', 'unrealized_value'] if c in kpi_df.columns), None)
@@ -490,9 +490,13 @@ def build_top_priority_kpis(kpi_df):
         return pd.DataFrame(columns=['kpi_name', 'priority_metric'])
     working_df = kpi_df.copy()
     working_df['priority_metric'] = pd.to_numeric(working_df[metric_col], errors='coerce').fillna(0)
-    return working_df.groupby('kpi_name', as_index=False).agg(
+    sorted_df = working_df.groupby('kpi_name', as_index=False).agg(
         priority_metric=('priority_metric', 'mean')
-    ).sort_values('priority_metric', ascending=False).head(5).reset_index(drop=True)
+    ).sort_values('priority_metric', ascending=False)
+    if exclude_kpis:
+        exclude_lower = [k.lower() for k in exclude_kpis]
+        sorted_df = sorted_df[~sorted_df['kpi_name'].str.lower().isin(exclude_lower)]
+    return sorted_df.head(5).reset_index(drop=True)
 
 def render_kpi_summary_section(title, rows_df, detail_func, detail_header, state_key=None, subtitle=None, accent_color=None):
     marker_class = f"kpi-accent-{''.join(c for c in (accent_color or 'default') if c.isalnum())}"
@@ -826,7 +830,7 @@ def display_kpi_table(kpi_df):
             <th>KPI Name</th>
             <th>Best Practice</th>
             <th>{actual_header}</th>
-            <th>Score</th>
+            <th>Score/100</th>
             <th>Priority</th>
         </tr></thead>
         <tbody>{rows_html}</tbody>
@@ -1022,7 +1026,7 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
 
     kpis_for_actions = all_kpis_df[all_kpis_df['impact_category'] == impact_category_filter] if not all_kpis_df.empty else pd.DataFrame()
     executive_top_performing = build_top_performing_kpis(kpis_for_actions)
-    executive_top_priority = build_top_priority_kpis(kpis_for_actions)
+    executive_top_priority = build_top_priority_kpis(kpis_for_actions, exclude_kpis=executive_top_performing['kpi_name'].tolist())
 
     st.markdown("<hr style='margin-top: 1rem; margin-bottom: 0.75rem;'>", unsafe_allow_html=True)
     bottom_left, bottom_right = st.columns(2)
@@ -1060,7 +1064,7 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
             st.markdown(f"<div style='margin-top: 2.0rem; padding-bottom: 1.5rem; max-width: 1200px; margin-left: auto; margin-right: auto;'>{horizontal_risk_bar_html(phase_score, height='1.46rem', font_size='2.025rem', top_offset='-2.9rem', width_percentage=100)}</div>", unsafe_allow_html=True)
 
     top_performing_df = build_top_performing_kpis(phase_kpis_all)
-    top_priority_df = build_top_priority_kpis(phase_kpis_all)
+    top_priority_df = build_top_priority_kpis(phase_kpis_all, exclude_kpis=top_performing_df['kpi_name'].tolist())
 
     col_top_performing, col_top_priority = st.columns(2)
     with col_top_performing:
@@ -1090,15 +1094,10 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
             }}
         </style>""", unsafe_allow_html=True)
 
-        # Row 1: Process name (left) | empty (right)
-        title_col, _ = st.columns([0.35, 0.65])
-        with title_col:
-            st.markdown(f"<div style='max-width: 425px; padding-right: 16px;'><span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span></div>", unsafe_allow_html=True)
-
-        # Row 2: Bar + description (fixed 425px left) | KPI table (right fills remainder)
+        # Single row: process name + bar + description (fixed 425px left) | KPI table (right fills remainder)
         left_col, right_col = st.columns([0.35, 0.65])
         with left_col:
-            st.markdown(f"<div class='proc-left-{proc_key}' style='max-width: 425px; padding-right: 16px; margin-top: 2.2rem;'>{horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem')}<p style='font-size:1.0rem; color:#4b5563; margin-top:2.25rem;'>{process_desc}</p></div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='proc-left-{proc_key}' style='max-width: 425px; padding-right: 16px; margin-top: 1.5rem;'><div style='margin-bottom: 2.2rem;'><span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span></div>{horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem')}<p style='font-size:1.0rem; color:#4b5563; margin-top:2.25rem;'>{process_desc}</p></div>", unsafe_allow_html=True)
         with right_col:
             display_kpi_table(kpis_df[kpis_df['process_name'] == process_key])
 
