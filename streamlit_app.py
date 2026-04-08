@@ -9,7 +9,7 @@ import re
 import math
 
 # --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
-st.set_page_config(page_title="CR-Score Dashboard", layout="wide")
+st.set_page_config(page_title="CR-Score Dashboard (Construction View)", layout="wide")
 
 # Style primary buttons as professional blue with bold labels.
 st.markdown(
@@ -58,29 +58,6 @@ PROCESS_DISPLAY_NAMES = {
     "clientHandover": "Client Handover & Satisfaction"
 }
 
-PROCESS_DESCRIPTIONS = {
-    # Bidding
-    "bidreview": "Go/no-go rigor and scope discipline at the bid review stage directly shape downstream project margins. Indicators here reflect how thoroughly opportunities are vetted before resources are committed.",
-    "bidresults": "Winning the right work at the right price is central to sustainable growth. Performance here reveals how accurately bid estimates translate into profitable outcomes across win rate, cost variance, and margin.",
-    "estimating": "Estimate accuracy is a leading indicator of project financial health. Coverage of sub-trade pricing and variance across trades signal whether scope is fully understood before submission.",
-    "compliance": "Unqualified subcontractors introduce legal, financial, and safety exposure across the project. Licensing, insurance, and prequalification adherence across the sub pool is measured here.",
-    # Preconstruction
-    "financialSetup": "A project's financial trajectory is largely set before a shovel hits the ground. How closely preconstruction budgets align with original bids — and whether contingency reserves are adequately established — are measured here.",
-    "designReview": "Coordination conflicts caught in preconstruction cost a fraction of what they cost in the field. Clash detection rates, BIM alignment, and drawing standardization reflect coordination effectiveness before construction begins.",
-    "subcontractorPlanning": "Delayed contract execution cascades into mobilization setbacks and compounding schedule risk. Speed from awarded scope to signed contracts and field-ready subcontractors is what this section quantifies.",
-    # Construction
-    "operations": "Slow field coordination compounds schedule pressure and raises the risk of costly rework. RFI and submittal cycle times, observation completion rates, and overall field responsiveness are measured here.",
-    "quality": "Quality deficiencies caught late are exponentially more expensive to correct. Inspection frequency, punch list trends, and adherence to quality control protocols on active sites are reflected in this score.",
-    "safety": "A proactive safety culture prevents incidents before they occur. Leading indicators — inspection rates, near-miss documentation, and hazard identification frequency — are weighted alongside lagging incident data here.",
-    "financial": "Financial performance on active projects hinges on timely change order processing and invoice cycle discipline. Cost control effectiveness and cash flow management during construction are assessed in this section.",
-    "communication": "Consistent documentation is the backbone of defensible project management. Reliability of daily field logs, meeting records, and internal reporting cadence are reflected here.",
-    # Closeout
-    "finalDocumentation": "Complete closeout documentation protects the owner and reduces post-occupancy risk. How thoroughly as-built drawings, O&M manuals, and project records are assembled before final handover is measured here.",
-    "punchlistCompletion": "An unresolved punch list is a direct barrier to final payment and owner acceptance. Efficiency in identifying, assigning, and closing outstanding items prior to substantial completion is quantified in this section.",
-    "financialReconciliation": "Closing financial obligations cleanly is a hallmark of well-run projects. Promptness of final invoice receipt and subcontractor payment issuance following project completion are assessed here.",
-    "clientHandover": "The owner's experience at handover shapes long-term relationship value and future referrals. Satisfaction at turnover and the completeness of operational training delivered before the team demobilizes are reflected in this score."
-}
-
 PHASE_INFO = {
     "bidding": {"title": "Bidding Phase Summary", "score_col": "phaseScore_bidding"},
     "preconstruction": {"title": "Preconstruction Phase Summary", "score_col": "phaseScore_precon"},
@@ -100,29 +77,29 @@ PHASE_DESCRIPTIONS = {
 IMPACT_CATEGORY_CONFIG = {
     "Schedule": {"multiplier": 0.61, "suffix": "Avg reduction in Schedule overrage"},
     "Cost": {"multiplier": 0.65, "suffix": "Avg reduction in Cost overrage"},
-    "Safety": {"multiplier": 0.70, "suffix": "Avg reduction in Incidents and Insurance Risk (GL & WC)"}
+    "Safety": {"multiplier": 0.70, "suffix": "Avg reduction in Incidents"}
 }
 
 PHASE_IMPACT_CONFIG = {
     "bidding": {
         "Schedule": {"multiplier": 0.02, "suffix": "Avg reduction in Schedule overrage"},
         "Cost": {"multiplier": 0.06, "suffix": "Avg reduction in Cost overrage"},
-        "Safety": {"multiplier": 0.08, "suffix": "Avg reduction in Incidents and Insurance Risk (GL & WC)"}
+        "Safety": {"multiplier": 0.08, "suffix": "Avg reduction in Incidents"}
     },
     "preconstruction": {
         "Schedule": {"multiplier": 0.16, "suffix": "Avg reduction in Schedule overrage"},
         "Cost": {"multiplier": 0.05, "suffix": "Avg reduction in Cost overrage"},
-        "Safety": {"multiplier": 0.20, "suffix": "Avg reduction in Incidents and Insurance Risk (GL & WC)"}
+        "Safety": {"multiplier": 0.20, "suffix": "Avg reduction in Incidents"}
     },
     "construction": {
         "Schedule": {"multiplier": 0.20, "suffix": "Avg reduction in Schedule overrage"},
         "Cost": {"multiplier": 0.08, "suffix": "Avg reduction in Cost overrage"},
-        "Safety": {"multiplier": 0.48, "suffix": "Avg reduction in Incidents and Insurance Risk (GL & WC)"}
+        "Safety": {"multiplier": 0.48, "suffix": "Avg reduction in Incidents"}
     },
     "closeout": {
         "Schedule": {"multiplier": 0.02, "suffix": "Avg reduction in Schedule overrage"},
         "Cost": {"multiplier": 0.01, "suffix": "Avg reduction in Cost overrage"},
-        "Safety": {"multiplier": 0.04, "suffix": "Avg reduction in Incidents and Insurance Risk (GL & WC)"}
+        "Safety": {"multiplier": 0.04, "suffix": "Avg reduction in Incidents"}
     }
 }
 
@@ -482,7 +459,7 @@ def build_top_performing_kpis(kpi_df):
         score_weighted=('score_weighted', 'mean')
     ).sort_values('score_weighted', ascending=False).head(5).reset_index(drop=True)
 
-def build_top_priority_kpis(kpi_df, exclude_kpis=None):
+def build_top_priority_kpis(kpi_df):
     if kpi_df.empty:
         return pd.DataFrame(columns=['kpi_name', 'priority_metric'])
     metric_col = next((c for c in ['process_level_unrealized_value', 'phase_level_unrealized_value', 'unrealized_value'] if c in kpi_df.columns), None)
@@ -490,13 +467,9 @@ def build_top_priority_kpis(kpi_df, exclude_kpis=None):
         return pd.DataFrame(columns=['kpi_name', 'priority_metric'])
     working_df = kpi_df.copy()
     working_df['priority_metric'] = pd.to_numeric(working_df[metric_col], errors='coerce').fillna(0)
-    sorted_df = working_df.groupby('kpi_name', as_index=False).agg(
+    return working_df.groupby('kpi_name', as_index=False).agg(
         priority_metric=('priority_metric', 'mean')
-    ).sort_values('priority_metric', ascending=False)
-    if exclude_kpis:
-        exclude_lower = [k.lower() for k in exclude_kpis]
-        sorted_df = sorted_df[~sorted_df['kpi_name'].str.lower().isin(exclude_lower)]
-    return sorted_df.head(5).reset_index(drop=True)
+    ).sort_values('priority_metric', ascending=False).head(5).reset_index(drop=True)
 
 def render_kpi_summary_section(title, rows_df, detail_func, detail_header, state_key=None, subtitle=None, accent_color=None):
     marker_class = f"kpi-accent-{''.join(c for c in (accent_color or 'default') if c.isalnum())}"
@@ -825,7 +798,7 @@ def display_kpi_table(kpi_df):
         new MutationObserver(initTooltips).observe(window.parent.document.body, { childList: true, subtree: true });
     })();
     </script>""", height=0)
-    st.markdown(f"""<div style='overflow-x: auto; max-width: 1200px;'><table class='{tbl_id}'>
+    st.markdown(f"""<div style='overflow-x: auto;'><table class='{tbl_id}'>
         <thead><tr>
             <th>KPI Name</th>
             <th>Best Practice</th>
@@ -919,7 +892,7 @@ def load_data():
 
 # --- Display Functions ---
 def display_executive_summary(data, summary_for_impact_calc, impact_category_filter):
-    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>CR-Score Card</h1>", unsafe_allow_html=True); st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem;'>Company ABC</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>CR-Score Card</h1>", unsafe_allow_html=True); st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem;'>Company ABC (Construction View)</h2>", unsafe_allow_html=True)
     
     summary_df = data['executive_summary']
     all_kpis_df = pd.DataFrame()
@@ -966,8 +939,8 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
                     <span style='display:table-cell; text-align:left; padding:0.45rem 0 0.45rem 0.75rem;'><span style='color:{schedule_color}; font-weight:700;'>{schedule_estimate:.1f}%</span> out of <span style='color:#2563eb; font-weight:700;'>30.0%</span> possible</span>
                 </div>
                 <div style='display:table-row;'>
-                    <span style='display:table-cell; text-align:right; vertical-align:middle; padding:0.45rem 0.75rem 0.45rem 0;'>Reduction in Incidents and<br>Insurance Risk (GL &amp; WC):</span>
-                    <span style='display:table-cell; text-align:left; vertical-align:middle; padding:0.45rem 0 0.45rem 0.75rem;'><span style='color:{safety_color}; font-weight:700;'>{safety_estimate:.1f}%</span> out of <span style='color:#2563eb; font-weight:700;'>60.0%</span> possible</span>
+                    <span style='display:table-cell; text-align:right; padding:0.45rem 0.75rem 0.45rem 0;'>Reduction in Incidents:</span>
+                    <span style='display:table-cell; text-align:left; padding:0.45rem 0 0.45rem 0.75rem;'><span style='color:{safety_color}; font-weight:700;'>{safety_estimate:.1f}%</span> out of <span style='color:#2563eb; font-weight:700;'>60.0%</span> possible</span>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -1026,7 +999,7 @@ def display_executive_summary(data, summary_for_impact_calc, impact_category_fil
 
     kpis_for_actions = all_kpis_df[all_kpis_df['impact_category'] == impact_category_filter] if not all_kpis_df.empty else pd.DataFrame()
     executive_top_performing = build_top_performing_kpis(kpis_for_actions)
-    executive_top_priority = build_top_priority_kpis(kpis_for_actions, exclude_kpis=executive_top_performing['kpi_name'].tolist())
+    executive_top_priority = build_top_priority_kpis(kpis_for_actions)
 
     st.markdown("<hr style='margin-top: 1rem; margin-bottom: 0.75rem;'>", unsafe_allow_html=True)
     bottom_left, bottom_right = st.columns(2)
@@ -1059,12 +1032,12 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
     with st.container(border=True):
         st.markdown(f"<h2 style='display:block; width:100%; text-align: center; font-size: 1.8rem; font-weight: 700; color: #111; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.375rem;'>{phase_key.capitalize()} Phase Score</h2>", unsafe_allow_html=True)
         st.markdown(f"<p style='text-align: center; font-size:1.62em;'>{PHASE_DESCRIPTIONS.get(phase_key, '')}</p>", unsafe_allow_html=True)
-        _, bar_col, _ = st.columns([0.15, 0.70, 0.15])
+        _, bar_col, _ = st.columns([0.05, 0.90, 0.05])
         with bar_col:
-            st.markdown(f"<div style='margin-top: 2.0rem; padding-bottom: 1.5rem; max-width: 1200px; margin-left: auto; margin-right: auto;'>{horizontal_risk_bar_html(phase_score, height='1.46rem', font_size='2.025rem', top_offset='-2.9rem', width_percentage=100)}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='margin-top: 2.0rem; padding-bottom: 1.5rem;'>{horizontal_risk_bar_html(phase_score, height='1.46rem', font_size='2.025rem', top_offset='-2.9rem', width_percentage=100)}</div>", unsafe_allow_html=True)
 
     top_performing_df = build_top_performing_kpis(phase_kpis_all)
-    top_priority_df = build_top_priority_kpis(phase_kpis_all, exclude_kpis=top_performing_df['kpi_name'].tolist())
+    top_priority_df = build_top_priority_kpis(phase_kpis_all)
 
     col_top_performing, col_top_priority = st.columns(2)
     with col_top_performing:
@@ -1075,33 +1048,37 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
 
     st.markdown("<hr>", unsafe_allow_html=True)
 
-    st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{phase_key.capitalize()} Process and KPI Details</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{phase_key.capitalize()} Processes</h2>", unsafe_allow_html=True)
     for process_key in PHASE_PROCESS_MAPPING.get(phase_key, []):
         score = process_scores.get(process_key, 0)
         process_display_name = format_process_name(process_key)
-        proc_key = f"proc_{phase_key}_{process_key}"
-        process_desc = PROCESS_DESCRIPTIONS.get(process_key, "Tracks key performance indicators for this process and how they affect overall project outcomes.")
+        state_key = f"show_kpis_{phase_key}_{process_key}"
+        button_label = "Hide KPIs" if st.session_state.get(state_key, False) else "Show KPIs"
+        btn_key = f"btn_{state_key}"
 
         st.markdown(f"""<style>
-            div[data-testid="stHorizontalBlock"]:has(.proc-left-{proc_key}) > div[data-testid="stColumn"]:first-child {{
-                flex: 0 0 425px !important;
-                max-width: 425px !important;
-                min-width: 425px !important;
+            div[data-testid="stColumn"]:has(div.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] {{
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 0.75rem !important;
             }}
-            div[data-testid="stHorizontalBlock"]:has(.proc-left-{proc_key}) > div[data-testid="stColumn"]:last-child {{
-                flex: 1 1 auto !important;
-                min-width: 0 !important;
+            div[data-testid="stColumn"]:has(div.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] > div {{
+                width: auto !important;
+                flex-shrink: 0 !important;
+            }}
+            div.st-key-{btn_key} > div[data-testid="stButton"] > button {{
+                white-space: nowrap !important;
             }}
         </style>""", unsafe_allow_html=True)
+        proc_col, _ = st.columns([0.5, 0.5])
+        with proc_col:
+            st.markdown(f"<span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span>", unsafe_allow_html=True)
+            st.button(button_label, key=btn_key, on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, False)}), use_container_width=False, type="primary")
 
-        # Single row: process name + bar + description (fixed 425px left) | KPI table (right fills remainder)
-        left_col, right_col = st.columns([0.35, 0.65])
-        with left_col:
-            st.markdown(f"<div class='proc-left-{proc_key}' style='max-width: 425px; padding-right: 16px; margin-top: 1.5rem;'><div style='margin-bottom: 2.2rem;'><span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span></div>{horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem')}<p style='font-size:1.0rem; color:#4b5563; margin-top:2.25rem;'>{process_desc}</p></div>", unsafe_allow_html=True)
-        with right_col:
+        st.markdown(horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem'), unsafe_allow_html=True)
+        if st.session_state.get(state_key, False):
             display_kpi_table(kpis_df[kpis_df['process_name'] == process_key])
-
-        st.markdown("<hr style='margin: 0.5rem 0;'>", unsafe_allow_html=True)
 
 def display_scoreboard(summary_for_impact_calc, data):
     """Display portfolio scoreboard with segment analysis"""
@@ -1109,6 +1086,10 @@ def display_scoreboard(summary_for_impact_calc, data):
     if summary_for_impact_calc.empty:
         st.info("No portfolio data available.")
         return
+
+    search_key = 'scoreboard_search'
+    if search_key not in st.session_state:
+        st.session_state[search_key] = ''
 
     filter_col, title_col, spacer_col = st.columns([0.25, 0.5, 0.25])
     with filter_col:
@@ -1119,6 +1100,18 @@ def display_scoreboard(summary_for_impact_calc, data):
             help="Select how to group the portfolio for analysis",
             label_visibility="collapsed"
         )
+        st.markdown("<h3 style='text-align:left; margin-top:-0.8rem; margin-bottom:0.1rem; font-size:1.56rem;'>Search:</h3>", unsafe_allow_html=True)
+        st.text_input(
+            "Search",
+            key=search_key,
+            placeholder="\U0001F50D Search by name...",
+            label_visibility="collapsed",
+            on_change=lambda: st.session_state.update({'scoreboard_page': 0})
+        )
+    st.markdown("""<style>
+        div.st-key-sc_search_input { margin-top: -1.2rem !important; }
+        div.st-key-sc_search_input input { font-size: 0.95rem !important; padding: 0.35rem 0.6rem !important; }
+    </style>""", unsafe_allow_html=True)
     with title_col:
         st.markdown("<h1 style='text-align:center; margin-bottom:0;'>Portfolio Scoreboard</h1><style>h1 a, h2 a { display: none !important; }</style>", unsafe_allow_html=True)
         st.markdown("<h2 style='text-align:center; margin-top:0; margin-bottom:0.5rem; font-size:1.5rem;'>Segment Performance Analysis</h2>", unsafe_allow_html=True)
@@ -1209,6 +1202,11 @@ def display_scoreboard(summary_for_impact_calc, data):
     sort_ascending = st.session_state[sort_dir_key] == 'asc'
     scoreboard_df = scoreboard_df.sort_values(by=sort_column, ascending=sort_ascending, na_position='last').reset_index(drop=True)
 
+    # Apply name search filter
+    search_term = st.session_state.get(search_key, '').strip()
+    if search_term:
+        scoreboard_df = scoreboard_df[scoreboard_df['Segment'].str.contains(search_term, case=False, na=False)].reset_index(drop=True)
+
     rows_per_page = 50
     total_rows = len(scoreboard_df)
     total_pages = max(1, math.ceil(total_rows / rows_per_page))
@@ -1281,31 +1279,9 @@ def display_scoreboard(summary_for_impact_calc, data):
         .sc-tbl .sc-bar-wrap span {{ padding: 0.1rem 0.30rem !important; line-height: 1 !important; }}
         div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-sc_sort_segment) {{ margin-top: -1.5rem !important; }}
     </style>""", unsafe_allow_html=True)
-
     with st.container(border=True):
         hdr_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
         with hdr_cols[0]:
-            segment_header_label = {"Project": "Project Name", "Region": "Region Name", "Project Manager": "Manager Name"}.get(segment_by, "Project Name")
-            st.button(sort_label('Segment', segment_header_label), key='sc_sort_segment', on_click=lambda: toggle_sort('Segment'), use_container_width=True, type='secondary')
-        with hdr_cols[1]:
-            st.button(sort_label('CR-Score', 'CR-Score'), key='sc_sort_cr', on_click=lambda: toggle_sort('CR-Score'), use_container_width=True, type='secondary')
-        with hdr_cols[2]:
-            st.button(sort_label('Estimated Project Value', 'Estimated Value'), key='sc_sort_value', on_click=lambda: toggle_sort('Estimated Project Value'), use_container_width=True, type='secondary')
-        with hdr_cols[3]:
-            st.button(sort_label('Est Proj Start Date', 'Start Date'), key='sc_sort_start', on_click=lambda: toggle_sort('Est Proj Start Date'), use_container_width=True, type='secondary')
-        with hdr_cols[4]:
-            st.button(sort_label('Est Proj End Date', 'End Date'), key='sc_sort_end', on_click=lambda: toggle_sort('Est Proj End Date'), use_container_width=True, type='secondary')
-        rows_html = ""
-        for _, row in paged_df.iterrows():
-            bar = horizontal_risk_bar_html(row['CR-Score'], height='0.7rem', font_size='0.975rem', top_offset='-1.1rem', width_percentage=92)
-            rows_html += f"""<tr>
-                <td class='seg-name'>{html.escape(str(row['Segment']))}</td>
-                <td class='cr-score'><div class='sc-bar-wrap'>{bar}</div></td>
-                <td class='proj-value'>{html.escape(format_currency(row['Estimated Project Value']))}</td>
-                <td class='proj-date'>{html.escape(format_date(row['Est Proj Start Date']))}</td>
-                <td class='proj-date'>{html.escape(format_date(row['Est Proj End Date']))}</td>
-            </tr>"""
-        st.html(f"<table class='sc-tbl'><tbody>{rows_html}</tbody></table>")
 
     # Pagination controls
     if True:
@@ -1514,11 +1490,17 @@ def main():
     else:
         project_ids, regions, pms, impact_categories = [], [], [], []
 
+    default_index = 0
+    if impact_categories and 'Schedule' in impact_categories:
+        default_index = impact_categories.index('Schedule')
+    elif impact_categories:
+        default_index = 0
+
     filters = {
         "project": st.sidebar.selectbox("Select Project", ['All Projects'] + project_ids),
         "region": st.sidebar.selectbox("Select Region", ['All Regions'] + regions),
         "pm": st.sidebar.selectbox("Select Project Manager", ['All PMs'] + pms),
-        "impact_category": "Cost"
+        "impact_category": st.sidebar.selectbox("Select Impact Category", impact_categories, index=default_index)
     }
 
     value_range_labels = st.sidebar.select_slider(
