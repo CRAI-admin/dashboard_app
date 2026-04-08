@@ -1282,27 +1282,6 @@ def display_scoreboard(summary_for_impact_calc, data):
         .sc-tbl .sc-bar-wrap span {{ padding: 0.1rem 0.30rem !important; line-height: 1 !important; }}
         div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-sc_sort_segment) {{ margin-top: -1.5rem !important; }}
     </style>""", unsafe_allow_html=True)
-    # Compute summary stats across all filtered rows (not just current page)
-    summary_avg_score = scoreboard_df['CR-Score'].mean() if not scoreboard_df.empty else None
-    summary_total_value = scoreboard_df['Estimated Project Value'].sum(min_count=1) if not scoreboard_df.empty else None
-    summary_earliest_start = scoreboard_df['Est Proj Start Date'].min() if not scoreboard_df.empty else None
-    summary_latest_end = scoreboard_df['Est Proj End Date'].max() if not scoreboard_df.empty else None
-    summary_bar = horizontal_risk_bar_html(summary_avg_score if summary_avg_score is not None else 0, height='0.7rem', font_size='0.975rem', top_offset='-1.1rem', width_percentage=92)
-    th_style = "background:#1e3a5f; color:#f0f6ff; padding:0.5rem 0.6rem; font-weight:700; font-size:1.0rem; text-transform:uppercase; letter-spacing:0.05em;"
-    summary_row_html = f"""<table class='sc-tbl sc-summary-tbl'><thead><tr>
-        <th style='{th_style} border-radius:0.375rem 0 0 0.375rem; width:20%;'>Project Count</th>
-        <th style='{th_style} width:22%; text-align:center;'>Average CR-Score</th>
-        <th style='{th_style} width:20%; text-align:center;'>Total Estimated Value</th>
-        <th style='{th_style} width:19%; text-align:center;'>Earliest Start Date</th>
-        <th style='{th_style} border-radius:0 0.375rem 0.375rem 0; width:19%; text-align:center;'>Latest End Date</th>
-    </tr></thead><tbody><tr>
-        <td class='seg-name'>{len(scoreboard_df)} {segment_by.lower()}{'s' if len(scoreboard_df) != 1 else ''}</td>
-        <td class='cr-score'><div class='sc-bar-wrap'>{summary_bar}</div></td>
-        <td class='proj-value'>{html.escape(format_currency(summary_total_value))}</td>
-        <td class='proj-date'>{html.escape(format_date(summary_earliest_start))}</td>
-        <td class='proj-date'>{html.escape(format_date(summary_latest_end))}</td>
-    </tr></tbody></table>"""
-    st.html(summary_row_html)
 
     with st.container(border=True):
         hdr_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
