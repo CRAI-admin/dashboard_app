@@ -72,6 +72,29 @@ PHASE_DESCRIPTIONS = {
     "closeout": "Represents the adoption of Best Practices for all KPIs across 4 key processes of the Closeout Phase."
 }
 
+PROCESS_DESCRIPTIONS = {
+    # Bidding
+    "bidreview": "Go/no-go rigor and scope discipline at the bid review stage directly shape downstream project margins. Indicators here reflect how thoroughly opportunities are vetted before resources are committed.",
+    "bidresults": "Winning the right work at the right price is central to sustainable growth. Performance here reveals how accurately bid estimates translate into profitable outcomes across win rate, cost variance, and margin.",
+    "estimating": "Estimate accuracy is a leading indicator of project financial health. Coverage of sub-trade pricing and variance across trades signal whether scope is fully understood before submission.",
+    "compliance": "Unqualified subcontractors introduce legal, financial, and safety exposure across the project. Licensing, insurance, and prequalification adherence across the sub pool is measured here.",
+    # Preconstruction
+    "financialSetup": "A project's financial trajectory is largely set before a shovel hits the ground. How closely preconstruction budgets align with original bids — and whether contingency reserves are adequately established — are measured here.",
+    "designReview": "Coordination conflicts caught in preconstruction cost a fraction of what they cost in the field. Clash detection rates, BIM alignment, and drawing standardization reflect coordination effectiveness before construction begins.",
+    "subcontractorPlanning": "Delayed contract execution cascades into mobilization setbacks and compounding schedule risk. Speed from awarded scope to signed contracts and field-ready subcontractors is what this section quantifies.",
+    # Construction
+    "operations": "Slow field coordination compounds schedule pressure and raises the risk of costly rework. RFI and submittal cycle times, observation completion rates, and overall field responsiveness are measured here.",
+    "quality": "Quality deficiencies caught late are exponentially more expensive to correct. Inspection frequency, punch list trends, and adherence to quality control protocols on active sites are reflected in this score.",
+    "safety": "A proactive safety culture prevents incidents before they occur. Leading indicators — inspection rates, near-miss documentation, and hazard identification frequency — are weighted alongside lagging incident data here.",
+    "financial": "Financial performance on active projects hinges on timely change order processing and invoice cycle discipline. Cost control effectiveness and cash flow management during construction are assessed in this section.",
+    "communication": "Consistent documentation is the backbone of defensible project management. Reliability of daily field logs, meeting records, and internal reporting cadence are reflected here.",
+    # Closeout
+    "finalDocumentation": "Complete closeout documentation protects the owner and reduces post-occupancy risk. How thoroughly as-built drawings, O&M manuals, and project records are assembled before final handover is measured here.",
+    "punchlistCompletion": "An unresolved punch list is a direct barrier to final payment and owner acceptance. Efficiency in identifying, assigning, and closing outstanding items prior to substantial completion is quantified in this section.",
+    "financialReconciliation": "Closing financial obligations cleanly is a hallmark of well-run projects. Promptness of final invoice receipt and subcontractor payment issuance following project completion are assessed here.",
+    "clientHandover": "The owner's experience at handover shapes long-term relationship value and future referrals. Satisfaction at turnover and the completeness of operational training delivered before the team demobilizes are reflected in this score."
+}
+
 
 # --- Filter the configuration dictionaries to match the allowed categories ---
 IMPACT_CATEGORY_CONFIG = {
@@ -1048,37 +1071,32 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
 
     st.markdown("<hr>", unsafe_allow_html=True)
 
-    st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{phase_key.capitalize()} Processes</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align: center; font-size: 1.5rem;'>{phase_key.capitalize()} Process and KPI Details</h2>", unsafe_allow_html=True)
     for process_key in PHASE_PROCESS_MAPPING.get(phase_key, []):
         score = process_scores.get(process_key, 0)
         process_display_name = format_process_name(process_key)
-        state_key = f"show_kpis_{phase_key}_{process_key}"
-        button_label = "Hide KPIs" if st.session_state.get(state_key, False) else "Show KPIs"
-        btn_key = f"btn_{state_key}"
+        proc_key = f"proc_{phase_key}_{process_key}"
+        process_desc = PROCESS_DESCRIPTIONS.get(process_key, "Tracks key performance indicators for this process and how they affect overall project outcomes.")
 
         st.markdown(f"""<style>
-            div[data-testid="stColumn"]:has(div.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] {{
-                display: flex !important;
-                flex-direction: row !important;
-                align-items: center !important;
-                gap: 0.75rem !important;
+            div[data-testid="stHorizontalBlock"]:has(.proc-left-{proc_key}) > div[data-testid="stColumn"]:first-child {{
+                flex: 0 0 425px !important;
+                max-width: 425px !important;
+                min-width: 425px !important;
             }}
-            div[data-testid="stColumn"]:has(div.st-key-{btn_key}) > div[data-testid="stVerticalBlock"] > div {{
-                width: auto !important;
-                flex-shrink: 0 !important;
-            }}
-            div.st-key-{btn_key} > div[data-testid="stButton"] > button {{
-                white-space: nowrap !important;
+            div[data-testid="stHorizontalBlock"]:has(.proc-left-{proc_key}) > div[data-testid="stColumn"]:last-child {{
+                flex: 1 1 auto !important;
+                min-width: 0 !important;
             }}
         </style>""", unsafe_allow_html=True)
-        proc_col, _ = st.columns([0.5, 0.5])
-        with proc_col:
-            st.markdown(f"<span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span>", unsafe_allow_html=True)
-            st.button(button_label, key=btn_key, on_click=lambda s_key=state_key: st.session_state.update({s_key: not st.session_state.get(s_key, False)}), use_container_width=False, type="primary")
 
-        st.markdown(horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem'), unsafe_allow_html=True)
-        if st.session_state.get(state_key, False):
+        left_col, right_col = st.columns([0.35, 0.65])
+        with left_col:
+            st.markdown(f"<div class='proc-left-{proc_key}' style='max-width: 425px; padding-right: 16px; margin-top: 1.5rem;'><div style='margin-bottom: 2.2rem;'><span style='font-size: 1.5rem; white-space: nowrap;'><strong>{process_display_name}</strong></span></div>{horizontal_risk_bar_html(score, width_percentage=100, height='1.02rem', font_size='1.42rem', top_offset='-2.03rem')}<p style='font-size:1.0rem; color:#4b5563; margin-top:2.25rem;'>{process_desc}</p></div>", unsafe_allow_html=True)
+        with right_col:
             display_kpi_table(kpis_df[kpis_df['process_name'] == process_key])
+
+        st.markdown("<hr style='margin: 0.5rem 0;'>", unsafe_allow_html=True)
 
 def display_scoreboard(summary_for_impact_calc, data):
     """Display portfolio scoreboard with segment analysis"""
