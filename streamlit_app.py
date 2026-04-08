@@ -803,7 +803,7 @@ def display_kpi_table(kpi_df):
             <th>KPI Name</th>
             <th>Best Practice</th>
             <th>{actual_header}</th>
-            <th>Score</th>
+            <th>Score/100</th>
             <th>Priority</th>
         </tr></thead>
         <tbody>{rows_html}</tbody>
