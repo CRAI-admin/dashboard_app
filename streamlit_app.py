@@ -1,4 +1,4 @@
-import streamlit as st
+﻿import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 import datetime
@@ -7,6 +7,7 @@ import html
 import copy
 import re
 import math
+import plotly.graph_objects as go
 
 # --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
 st.set_page_config(page_title="CR-Score Dashboard (Construction View)", layout="wide")
@@ -1098,6 +1099,278 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
 
         st.markdown("<hr style='margin: 0.5rem 0;'>", unsafe_allow_html=True)
 
+@st.cache_data(ttl=3600)
+def load_rfi_data():
+    """Load raw RFI data from S3 (dev profile), falling back to local CSV."""
+    try:
+        import boto3, io as _io
+        session = boto3.Session(profile_name='dev')
+        s3 = session.client('s3')
+        obj = s3.get_object(
+            Bucket='kroo-crai-dev',
+            Key='companies/Haugland Companies/procore/rfis.csv'
+        )
+        return pd.read_csv(_io.BytesIO(obj['Body'].read()))
+    except Exception:
+        local = os.path.join(
+            os.path.dirname(__file__),
+            '..', 'crai-data-pipeline', 'rfis_sample.csv'
+        )
+        fallback = r'C:\Users\jlwoo\Documents\CRAI\GitHub\local repository\crai-data-pipeline\rfis_sample.csv'
+        for path in [local, fallback]:
+            if os.path.exists(path):
+                return pd.read_csv(path)
+        return pd.DataFrame()
+
+
+def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
+    """
+    Compute monthly RFI KPI scores from raw RFI data.
+
+    Methodology per KPI:
+      % On Time          — grouped by created_at month; past-due unresolved RFIs = 0 (failed)
+      Lead Time          — grouped by created_at month; all RFIs with a due_date
+      Time to Resolution — grouped by time_resolved month; resolved RFIs only (actual close time is known)
+      Usage Rate         — grouped by created_at month; all RFIs (count/week)
+      Documentation Quality — grouped by created_at month; scored against 14-field checklist
+    """
+    if df_raw.empty:
+        return pd.DataFrame()
+
+    df = df_raw.copy()
+    df['created_at']    = pd.to_datetime(df['created_at'],    utc=True, errors='coerce')
+    df['due_date']      = pd.to_datetime(df['due_date'],      utc=True, errors='coerce')
+    df['time_resolved'] = pd.to_datetime(df['time_resolved'], utc=True, errors='coerce')
+    df = df.dropna(subset=['created_at'])
+
+    if project_id_filter:
+        df = df[df['project_id'].astype(str) == str(project_id_filter)]
+        if df.empty:
+            return pd.DataFrame()
+
+    now = pd.Timestamp.now(tz='UTC')
+    df['is_resolved'] = df['time_resolved'].notna()
+    df['has_due']     = df['due_date'].notna()
+    df['past_due']    = df['due_date'].notna() & (df['due_date'] < now)
+
+    # Days to close — clamped 0–60 per pipeline spec
+    df['days_to_close'] = (df['time_resolved'] - df['created_at']).dt.days.clip(0, 60)
+
+    # Lead time — clamped 0–60
+    df['lead_time_days'] = (df['due_date'] - df['created_at']).dt.days.clip(0, 60)
+
+    # % On Time logic:
+    #   resolved before/on due → 1
+    #   unresolved + past due   → 0  (penalised)
+    #   unresolved + not yet due → NaN (excluded — outcome unknown)
+    #   no due_date             → NaN (excluded)
+    df['on_time'] = float('nan')
+    df.loc[df['is_resolved'] & df['has_due'], 'on_time'] = (
+        (df.loc[df['is_resolved'] & df['has_due'], 'time_resolved'] <=
+         df.loc[df['is_resolved'] & df['has_due'], 'due_date']).astype(float)
+    )
+    df.loc[~df['is_resolved'] & df['past_due'], 'on_time'] = 0.0
+
+    # Documentation quality: count non-empty fields from the pipeline's 14-field checklist
+    doc_fields = [
+        'assignee_name', 'ball_in_court_name', 'ball_in_court_role', 'cost_code_name',
+        'cost_impact_status', 'drawing_number', 'due_date', 'location_name',
+        'received_from_name', 'reference', 'responsible_contractor_name',
+        'schedule_impact_status', 'specification_section_id', 'time_resolved'
+    ]
+    present = [f for f in doc_fields if f in df.columns]
+    df['doc_quality'] = df[present].notna().astype(bool).sum(axis=1) / 14.0
+
+    df['ym_created']  = df['created_at'].dt.to_period('M')
+    df_res = df[df['is_resolved']].copy()
+    df_res['ym_resolved'] = df_res['time_resolved'].dt.to_period('M')
+
+    records = []
+
+    # --- % On Time (created_at month, past-due failures included) ---
+    for ym, g in df[df['has_due']].groupby('ym_created'):
+        pct = g['on_time'].mean()
+        if pd.isna(pct):
+            continue
+        score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'RFI % On Time', 'score': score,
+                         'n': len(g), 'note': f"{int(g['is_resolved'].sum())}/{len(g)} resolved"})
+
+    # --- Lead Time (created_at month, all RFIs with due_date) ---
+    for ym, g in df[df['has_due']].groupby('ym_created'):
+        avg = g['lead_time_days'].mean()
+        if pd.isna(avg):
+            continue
+        score = round(max(0.0, min(1.0, (avg - 7) / 7)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'RFI Lead Time', 'score': score,
+                         'n': len(g), 'note': f"avg {avg:.1f} days"})
+
+    # --- Time to Resolution (resolved_at month, resolved RFIs only) ---
+    for ym, g in df_res.groupby('ym_resolved'):
+        avg = g['days_to_close'].mean()
+        if pd.isna(avg):
+            continue
+        score = round(max(0.0, min(1.0, (21 - avg) / 14)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'RFI Time to Resolution', 'score': score,
+                         'n': len(g), 'note': f"avg {avg:.1f} days"})
+
+    # --- Usage Rate (created_at month, all RFIs) ---
+    for ym, g in df.groupby('ym_created'):
+        weeks = ym.days_in_month / 7.0
+        rfis_per_week = len(g) / weeks
+        score = round(min(100.0, rfis_per_week * 100), 1)
+        records.append({'ym': str(ym), 'kpi_name': 'RFI Usage Rate', 'score': score,
+                         'n': len(g), 'note': f"{rfis_per_week:.2f}/week"})
+
+    # --- Documentation Quality (created_at month) ---
+    for ym, g in df.groupby('ym_created'):
+        avg = g['doc_quality'].mean()
+        if pd.isna(avg):
+            continue
+        score = round(max(0.0, min(1.0, avg / 0.6)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'RFI Documentation Quality', 'score': score,
+                         'n': len(g), 'note': f"avg {avg:.0%} of fields filled"})
+
+    return pd.DataFrame(records)
+
+
+def display_trends_page(filtered_data, filters):
+    """Display RFI monthly trend charts."""
+    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Trends</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem;'>Company ABC</h2>", unsafe_allow_html=True)
+
+    cfg = {
+        "desc": (
+            "Monthly RFI scores computed directly from raw submission data (May 2023 – present). "
+            "Each KPI uses the methodology that produces the most accurate result for that metric."
+        ),
+        "kpis": ["RFI % On Time", "RFI Lead Time", "RFI Time to Resolution", "RFI Usage Rate", "RFI Documentation Quality"],
+    }
+
+    selected_year = st.selectbox(
+        "Select Year",
+        options=["All Years", "2023", "2024", "2025", "2026"],
+        key="trend_year"
+    )
+    st.markdown(
+        f"<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>{cfg['desc']}</p>",
+        unsafe_allow_html=True
+    )
+
+
+    # =========================================================
+    # RFI Monthly Trends (raw S3 data, real timestamps)
+    # =========================================================
+    project_id_filter = None
+    if filters.get('project', 'All Projects') != 'All Projects':
+        project_id_filter = filters['project']
+
+    with st.spinner("Loading RFI data..."):
+        rfi_raw = load_rfi_data()
+
+    if rfi_raw.empty:
+        st.warning("RFI data could not be loaded from S3 or local fallback.")
+        return
+
+    rfi_scores = compute_rfi_monthly_scores(rfi_raw, project_id_filter=project_id_filter)
+
+    if rfi_scores.empty:
+        st.info("No RFI data available for the selected filters.")
+        return
+
+    rfi_scores['year'] = rfi_scores['ym'].str[:4]
+    if selected_year != "All Years":
+        rfi_scores = rfi_scores[rfi_scores['year'] == selected_year]
+
+    if rfi_scores.empty:
+        st.info(f"No RFI data for {selected_year}.")
+        return
+
+    rfi_scores = rfi_scores.sort_values('ym')
+    x_order = sorted(rfi_scores['ym'].unique())
+
+    fig = go.Figure()
+    KPI_COLORS = {
+        'RFI % On Time':             '#7c3aed',
+        'RFI Lead Time':             '#06b6d4',
+        'RFI Time to Resolution':    '#f97316',
+        'RFI Usage Rate':            '#10b981',
+        'RFI Documentation Quality': '#6366f1',
+    }
+    KPI_METHOD = {
+        'RFI % On Time':             'submission month; past-due open = failed',
+        'RFI Lead Time':             'submission month; all RFIs with due date',
+        'RFI Time to Resolution':    'resolution month; resolved RFIs only',
+        'RFI Usage Rate':            'submission month; RFIs per week',
+        'RFI Documentation Quality': 'submission month; 14-field checklist',
+    }
+
+    for kpi in cfg['kpis']:
+        kpi_df = rfi_scores[rfi_scores['kpi_name'] == kpi].sort_values('ym')
+        if kpi_df.empty:
+            continue
+        color = KPI_COLORS.get(kpi, '#94a3b8')
+        method = KPI_METHOD.get(kpi, '')
+        fig.add_trace(go.Scatter(
+            x=kpi_df['ym'],
+            y=kpi_df['score'],
+            mode='lines+markers',
+            name=kpi,
+            line=dict(color=color, width=2.5),
+            marker=dict(size=7, color=color),
+            customdata=kpi_df[['n', 'note']].values,
+            hovertemplate=(
+                f"<b>{kpi}</b><br>"
+                "Month: %{x}<br>"
+                "Score: %{y:.1f}/100<br>"
+                "n=%{customdata[0]} | %{customdata[1]}<br>"
+                f"<i style='color:#9ca3af'>{method}</i>"
+                "<extra></extra>"
+            )
+        ))
+
+    chart_title = "RFI Monthly Trends" if selected_year == "All Years" else f"RFI Monthly Trends - {selected_year}"
+    fig.update_layout(
+        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
+        xaxis=dict(
+            title="Month",
+            tickfont=dict(size=11),
+            title_font=dict(size=14),
+            showgrid=False,
+            categoryorder='array',
+            categoryarray=x_order,
+            tickangle=-45,
+        ),
+        yaxis=dict(
+            title="Score (0-100)",
+            tickfont=dict(size=13),
+            title_font=dict(size=14),
+            gridcolor='#f3f4f6',
+            range=[0, 105],
+        ),
+        legend=dict(
+            orientation='h', yanchor='bottom', y=-0.45,
+            xanchor='center', x=0.5, font=dict(size=12)
+        ),
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+        margin=dict(t=60, b=120, l=60, r=40),
+        height=500,
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.caption(
+        "Scoring methods: "
+        "**% On Time** - submission month, past-due open = failed  |  "
+        "**Lead Time** - submission month, all RFIs with due date  |  "
+        "**Time to Resolution** - resolution month, closed RFIs only  |  "
+        "**Usage Rate** - submission month, RFIs/week  |  "
+        "**Doc Quality** - submission month, 14-field pipeline checklist"
+    )
+    if project_id_filter:
+        st.caption(f"Filtered to project: {project_id_filter}")
+
+
 def display_scoreboard(summary_for_impact_calc, data):
     """Display portfolio scoreboard with segment analysis"""
 
@@ -1298,8 +1571,7 @@ def display_scoreboard(summary_for_impact_calc, data):
         div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-sc_sort_segment) {{ margin-top: -1.5rem !important; }}
     </style>""", unsafe_allow_html=True)
     with st.container(border=True):
-        hdr_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
-        with hdr_cols[0]:
+        pass
 
     # Pagination controls
     if True:
@@ -1600,13 +1872,15 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.title("Navigation")
     
-    nav_options = ["Executive Summary", "Portfolio Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout"]
+    nav_options = ["Executive Summary", "Portfolio Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout", "Trends"]
     page_selection = st.sidebar.radio("Page Navigation", nav_options, label_visibility="collapsed")
 
     if page_selection == "Executive Summary":
         display_executive_summary(filtered_data, summary_for_impact_calc, filters['impact_category'])
     elif page_selection == "Portfolio Scoreboard":
         display_scoreboard(summary_for_impact_calc, original_data)
+    elif page_selection == "Trends":
+        display_trends_page(filtered_data, filters)
     else:
         display_phase_summary_page(page_selection.lower(), filtered_data, filters['impact_category'], summary_for_impact_calc)
 
