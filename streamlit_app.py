@@ -1101,6 +1101,24 @@ def display_phase_summary_page(phase_key, data, impact_category_filter, summary_
         st.markdown("<hr style='margin: 0.5rem 0;'>", unsafe_allow_html=True)
 
 @st.cache_data(ttl=3600)
+def load_project_lookup() -> dict:
+    """Return {str(procore_id): display_name} from S3 projects.csv."""
+    try:
+        import boto3, io as _io
+        session = boto3.Session(profile_name='dev')
+        s3 = session.client('s3')
+        obj = s3.get_object(
+            Bucket='kroo-crai-dev',
+            Key='companies/Haugland Companies/procore/projects.csv'
+        )
+        df = pd.read_csv(_io.BytesIO(obj['Body'].read()), usecols=['procore_id', 'display_name'])
+        df = df.dropna(subset=['procore_id'])
+        return {str(int(row['procore_id'])): str(row['display_name']) for _, row in df.iterrows()}
+    except Exception:
+        return {}
+
+
+@st.cache_data(ttl=3600)
 def load_rfi_data():
     """Load raw RFI data from S3 (dev profile), falling back to local CSV."""
     try:
@@ -1206,7 +1224,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
         score = round(max(0.0, min(1.0, (avg - 7) / 7)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Lead Time', 'score': score,
                          'value': round(avg, 1), 'unit': 'days',
-                         'n': len(g), 'note': f"avg {avg:.1f} days"})
+                         'n': len(g), 'note': f"{len(g)} RFIs with due date"})
 
     # --- Time to Resolution (resolved_at month, resolved RFIs only) ---
     for ym, g in df_res.groupby('ym_resolved'):
@@ -1216,7 +1234,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
         score = round(max(0.0, min(1.0, (21 - avg) / 14)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Time to Resolution', 'score': score,
                          'value': round(avg, 1), 'unit': 'days',
-                         'n': len(g), 'note': f"avg {avg:.1f} days"})
+                         'n': len(g), 'note': f"{len(g)} resolved RFIs"})
 
     # --- Usage Rate (created_at month, all RFIs) ---
     for ym, g in df.groupby('ym_created'):
@@ -1225,7 +1243,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
         score = round(min(100.0, rfis_per_week * 100), 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Usage Rate', 'score': score,
                          'value': round(rfis_per_week, 2), 'unit': 'RFIs/week',
-                         'n': len(g), 'note': f"{rfis_per_week:.2f}/week"})
+                         'n': len(g), 'note': f"{len(g)} RFIs submitted"})
 
     # --- Documentation Quality (created_at month) ---
     for ym, g in df.groupby('ym_created'):
@@ -1235,7 +1253,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
         score = round(max(0.0, min(1.0, avg / 0.6)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Documentation Quality', 'score': score,
                          'value': round(avg * 100, 1), 'unit': '%',
-                         'n': len(g), 'note': f"avg {avg:.0%} of fields filled"})
+                         'n': len(g), 'note': f"{len(g)} RFIs scored"})
 
     return pd.DataFrame(records)
 
@@ -1325,7 +1343,7 @@ def compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=None):
             score = round(max(0.0, min(1.0, avg / 0.8)) * 100, 1)
             records.append({'ym': str(ym), 'kpi_name': 'Submittal Doc Quality', 'score': score,
                              'value': round(avg * 100, 1), 'unit': '%',
-                             'n': len(g), 'note': f"avg {avg:.0%} of fields filled"})
+                             'n': len(g), 'note': f"{len(g)} submittals scored"})
 
     # --- Approval Rate (returned_date month; from approvers table) ---
     if not app_raw.empty:
@@ -1417,9 +1435,10 @@ def compute_observation_monthly_scores(df_raw, project_id_filter=None):
                          'value': round(pct * 100, 1), 'unit': '%',
                          'n': len(g), 'note': f"{int(g['is_closed'].sum())}/{len(g)} closed"})
 
-    # --- Time to Close (created_at month; 0 days = 100, 30+ days = 0) ---
+    # --- Time to Close (closed_at month; grouped by when observation was resolved) ---
     df_closed = df[df['is_closed']].copy()
-    for ym, g in df_closed.groupby('ym'):
+    df_closed['ym_closed'] = df_closed['closed_at'].dt.to_period('M')
+    for ym, g in df_closed.groupby('ym_closed'):
         if len(g) < 3:
             continue
         avg = g['days_to_close'].mean()
@@ -1428,21 +1447,29 @@ def compute_observation_monthly_scores(df_raw, project_id_filter=None):
         score = round(max(0.0, min(1.0, (30.0 - avg) / 30.0)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'Obs Time to Close', 'score': score,
                          'value': round(avg, 1), 'unit': 'days',
-                         'n': len(g), 'note': f"avg {avg:.1f} days"})
+                         'n': len(g), 'note': f"{len(g)} closed · avg {avg:.1f} days"})
 
     return pd.DataFrame(records)
 
 
 def display_trends_page(filtered_data, filters):
     """Display monthly trend charts — RFI, Submittal, and Observation."""
-    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Trends</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem;'>Company ABC</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>KPI Trends</h1>", unsafe_allow_html=True)
+    st.caption("Trends use live Procore data from S3. The sidebar project filter applies to CRAI Score pages only; use the dropdown below to filter Trends by project.")
 
     _cutoff = (pd.Timestamp.now() - pd.DateOffset(months=12)).to_period('M')
 
-    project_id_filter = None
-    if filters.get('project', 'All Projects') != 'All Projects':
-        project_id_filter = filters['project']
+    # ── Project selector (populated from real S3 project IDs) ─
+    project_lookup = load_project_lookup()  # {str_id: display_name}
+    project_options = ['All Projects'] + sorted(project_lookup.values())
+    _id_by_name = {v: k for k, v in project_lookup.items()}
+
+    selected_project_name = st.selectbox(
+        "Select Project",
+        options=project_options,
+        key="trend_project_selector",
+    )
+    project_id_filter = None if selected_project_name == 'All Projects' else _id_by_name.get(selected_project_name)
 
     # ── Metric selector ──────────────────────────────────────
     METRIC_OPTIONS = ["RFIs", "Submittals", "Observations"]
@@ -1454,7 +1481,9 @@ def display_trends_page(filtered_data, filters):
 
     # ── Helper: render one full-width chart per KPI ──────────
     def _render_kpi_charts(scores_df, kpi_list):
-        """kpi_list: list of (kpi_name, color, method_note) tuples."""
+        """kpi_list: list of (kpi_name, color, method_note, benchmark, direction) tuples.
+        benchmark: numeric industry-avg value, or None to omit the line.
+        direction: '↑ higher is better', '↓ lower is better', or a custom note."""
         scores_df = scores_df[scores_df['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
         if scores_df.empty:
             st.info("No data in the past 12 months.")
@@ -1462,48 +1491,197 @@ def display_trends_page(filtered_data, filters):
         scores_df = scores_df.sort_values('ym')
         x_order = sorted(scores_df['ym'].unique())
 
-        for kpi, color, method in kpi_list:
+        # Format x labels as "Apr 2025" style
+        def _fmt_ym(ym_str):
+            try:
+                return pd.Period(ym_str, 'M').to_timestamp().strftime('%b %Y')
+            except Exception:
+                return ym_str
+        x_labels = [_fmt_ym(m) for m in x_order]
+
+        for kpi, color, method, benchmark, direction in kpi_list:
             kpi_df = scores_df[scores_df['kpi_name'] == kpi].sort_values('ym')
             if kpi_df.empty:
                 continue
             unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
+            x_vals = [_fmt_ym(m) for m in kpi_df['ym']]
+            y_vals = kpi_df['value'].tolist()
+            # Build customdata: [note, low_n_warning]
+            low_n_threshold = 5
+            notes = kpi_df['note'].fillna('').tolist()
+            ns = kpi_df['n'].tolist()
+            low_n_flags = [
+                f"<span style='color:#f97316'>⚠ Low sample (n={n}): interpret with caution</span>" if n < low_n_threshold else ''
+                for n in ns
+            ]
+            import numpy as _cd_np
+            customdata = _cd_np.array([[note, flag] for note, flag in zip(notes, low_n_flags)], dtype=object)
+
+            # Derive a translucent fill color from the line color
+            import re as _re
+            _hex = color.lstrip('#')
+            _r, _g, _b = (int(_hex[i:i+2], 16) for i in (0, 2, 4))
+            fill_color = f'rgba({_r},{_g},{_b},0.10)'
+            marker_color = f'rgba({_r},{_g},{_b},1)'
+
+            # Map trend KPI names to tooltip descriptions
+            _trend_kpi_desc = {
+                'RFI % On Time':             'Percentage of Requests for Information resolved within the required response window. Delays in RFI closure directly stall field productivity and sequence downstream work.',
+                'RFI Lead Time':             'Average number of days between RFI creation and its assigned due date. Longer values indicate more generous response windows were set; shorter windows increase the risk of missed deadlines.',
+                'RFI Time to Resolution':    'Average number of days from RFI submission to final resolution. Tracks end-to-end cycle time including design response and field acceptance.',
+                'RFI Usage Rate':            'Number of RFIs generated per unit of project time. Elevated rates may signal design gaps, scope ambiguity, or inadequate preconstruction coordination.',
+                'RFI Documentation Quality': 'Completeness of RFI records scored against a 14-field checklist. Poor documentation limits traceability, dispute resolution, and downstream coordination.',
+                'Submittal % On Time':       'Percentage of submittals reviewed and approved within the required timeframe. Late approvals constrain procurement schedules and delay material deliveries.',
+                'Submittal Approval Rate':   'Percentage of submittal decisions resulting in Approved or Approved as Noted. Low rates indicate design misalignment, specification gaps, or insufficient pre-coordination.',
+                'Submittal Revision Rate':   'Percentage of submittals requiring at least one revision cycle. High revision rates signal inadequate preparation, unclear specifications, or repeated rejections.',
+                'Submittal Doc Quality':     'Completeness of submittal records scored against a 3-field checklist. Incomplete submissions slow reviewer turnaround and increase the risk of re-submission cycles.',
+                'Obs % Closed On Time':      'Percentage of quality observations resolved and closed within the required timeframe. Unresolved items accumulate and increase the probability of rework and defects.',
+                'Obs Time to Close':         'Average days from observation creation to formal close, grouped by the month the observation was resolved. Long resolution times signal resource constraints, accountability gaps, or insufficient follow-through on field issues.',
+            }
+            desc = _trend_kpi_desc.get(kpi, '')
 
             st.markdown(
-                f"<h3 style='font-size:1.1rem; font-weight:600; color:#111827; "
-                f"margin-top:1.5rem; margin-bottom:0.25rem;'>{kpi}</h3>",
+                f"<h3 style='font-size:1.05rem; font-weight:700; color:#111827; "
+                f"margin-top:1.75rem; margin-bottom:0.1rem; letter-spacing:-0.01em;'>{kpi}"
+                f"<span style='font-size:0.8rem; font-weight:500; color:#6b7280; "
+                f"background:#f3f4f6; border-radius:4px; padding:2px 7px; margin-left:10px; "
+                f"vertical-align:middle;'>{direction}</span></h3>",
                 unsafe_allow_html=True,
             )
+            if desc:
+                st.markdown(
+                    f"<p style='font-size:17px; color:#6b7280; margin-top:0; margin-bottom:0.4rem; line-height:1.45;'>{desc}</p>",
+                    unsafe_allow_html=True,
+                )
             fig = go.Figure()
+
+            # Industry benchmark dashed line (no built-in annotation — we place it outside)
+            if benchmark is not None:
+                fig.add_hline(
+                    y=benchmark,
+                    line=dict(color='#111827', width=1.5, dash='dash'),
+                )
+                fig.add_annotation(
+                    x=1.01,
+                    y=benchmark,
+                    xref='paper',
+                    yref='y',
+                    text=f"<b>Industry Avg:</b><br>{benchmark:.1f} {unit}",
+                    showarrow=False,
+                    xanchor='left',
+                    yanchor='middle',
+                    font=dict(size=17, color='#111827'),
+                    align='left',
+                )
+
+            # Shaded area under the line
             fig.add_trace(go.Scatter(
-                x=kpi_df['ym'],
-                y=kpi_df['value'],
+                x=x_vals,
+                y=y_vals,
                 mode='lines+markers',
                 name=kpi,
                 showlegend=False,
-                line=dict(color=color, width=2.5),
-                marker=dict(size=7, color=color),
-                customdata=kpi_df[['n', 'note']].values,
+                fill='tozeroy',
+                fillcolor=fill_color,
+                line=dict(color=marker_color, width=2.5),
+                cliponaxis=False,
+                marker=dict(
+                    size=8,
+                    color='white',
+                    line=dict(color=marker_color, width=2.5),
+                ),
+                customdata=customdata,
                 hovertemplate=(
-                    f"<b>{kpi}</b><br>"
-                    "Month: %{x}<br>"
-                    f"Value: %{{y:.1f}} {unit}<br>"
-                    "n=%{customdata[0]} | %{customdata[1]}<br>"
-                    f"<i style='color:#9ca3af'>{method}</i>"
+                    f"<b>%{{x}}</b><br>"
+                    f"<b>{kpi}:</b> %{{y:.1f}} {unit}<br>"
+                    "%{customdata[0]}<br>"
+                    "%{customdata[1]}"
                     "<extra></extra>"
-                )
+                ),
             ))
+
+            import numpy as _np
+            y_min = min(y_vals)
+            y_max = max(y_vals)
+            effective_min = min(y_min, benchmark) if benchmark is not None else y_min
+            effective_max = max(y_max, benchmark) if benchmark is not None else y_max
+            if unit.startswith('%'):
+                # Smart floor: drop empty lower quarters so data fills the chart
+                data_floor = min(effective_min, benchmark) if benchmark is not None else effective_min
+                if data_floor >= 50:
+                    y_range = [50.0, 103.0]
+                    y_tick_vals = [50.0, 75.0, 100.0]
+                    y_tick_text = ['50', '75', '100']
+                elif data_floor >= 25:
+                    y_range = [25.0, 103.0]
+                    y_tick_vals = [25.0, 50.0, 75.0, 100.0]
+                    y_tick_text = ['25', '50', '75', '100']
+                else:
+                    y_range = [0.0, 103.0]
+                    y_tick_vals = [0.0, 25.0, 50.0, 75.0, 100.0]
+                    y_tick_text = ['0', '25', '50', '75', '100']
+            else:
+                y_pad = (effective_max - effective_min) * 0.12 if effective_max != effective_min else abs(effective_max) * 0.12 or 1
+                y_range = [max(0, effective_min - y_pad), effective_max + y_pad]
+                y_tick_vals = [round(v, 1) for v in _np.linspace(effective_min, effective_max, 5)]
+                y_tick_text = [f"{v:.1f}" for v in y_tick_vals]
+
             fig.update_layout(
                 xaxis=dict(
-                    showgrid=False, tickangle=-45, tickfont=dict(size=11),
-                    categoryorder='array', categoryarray=x_order,
+                    showgrid=False,
+                    tickangle=-40,
+                    tickfont=dict(size=17, color='#6b7280'),
+                    categoryorder='array',
+                    categoryarray=x_labels,
+                    tickvals=x_labels,
+                    ticktext=x_labels,
+                    showline=True,
+                    linecolor='#e5e7eb',
+                    linewidth=1,
+                    range=[-0.2, len(x_labels) - 0.8],
+                    ticks='outside',
+                    ticklen=8,
+                    tickwidth=2,
+                    tickcolor='#9ca3af',
+                    showspikes=True,
+                    spikemode='toaxis',
+                    spikesnap='data',
+                    spikecolor='#9ca3af',
+                    spikethickness=1,
+                    spikedash='dot',
                 ),
                 yaxis=dict(
-                    title=unit, gridcolor='#f3f4f6',
-                    tickfont=dict(size=11), title_font=dict(size=12),
+                    title=dict(
+                        text={
+                            '%':          'Completion Rate (%)',
+                            '% revised':  'Revision Rate (%)',
+                            'days':       'Avg Days',
+                            'RFIs/week':  'RFIs per Week',
+                        }.get(unit, unit),
+                        font=dict(size=17, color='#6b7280'),
+                    ),
+                    title_font=dict(size=17, color='#6b7280'),
+                    gridcolor='#e2e4e7',
+                    tickfont=dict(size=17, color='#6b7280'),
+                    tickvals=y_tick_vals,
+                    ticktext=y_tick_text,
+                    range=y_range,
+                    zeroline=False,
+                    showline=False,
                 ),
-                plot_bgcolor='white', paper_bgcolor='white',
-                margin=dict(t=20, b=40, l=60, r=30),
-                height=280,
+                plot_bgcolor='white',
+                paper_bgcolor='white',
+                hovermode='closest',
+                hoverdistance=100,
+                margin=dict(t=40, b=50, l=60, r=120),
+                height=520,
+                hoverlabel=dict(
+                    bgcolor='white',
+                    bordercolor='#e5e7eb',
+                    font=dict(size=15, color='#111827'),
+                    align='auto',
+                    namelength=0,
+                ),
             )
             st.plotly_chart(fig, use_container_width=True)
 
@@ -1522,11 +1700,11 @@ def display_trends_page(filtered_data, filters):
                 st.info("No RFI data available for the selected filters.")
             else:
                 _render_kpi_charts(rfi_scores, [
-                    ('RFI % On Time',             '#7c3aed', 'submission month; past-due open = failed'),
-                    ('RFI Lead Time',             '#06b6d4', 'submission month; all RFIs with due date'),
-                    ('RFI Time to Resolution',    '#f97316', 'resolution month; resolved RFIs only'),
-                    ('RFI Usage Rate',            '#10b981', 'submission month; RFIs per week'),
-                    ('RFI Documentation Quality', '#6366f1', 'submission month; 14-field checklist'),
+                    ('RFI % On Time',             '#7c3aed', 'submission month; past-due open = failed',  80.0,  '↑ higher is better'),
+                    ('RFI Lead Time',             '#06b6d4', 'submission month; all RFIs with due date',  14.0,  '↑ higher is better'),
+                    ('RFI Time to Resolution',    '#f97316', 'resolution month; resolved RFIs only',      10.0,  '↓ lower is better'),
+                    ('RFI Usage Rate',            '#10b981', 'submission month; RFIs per week',           None,  '↑ more usage = stronger adoption; interpret with project complexity'),
+                    ('RFI Documentation Quality', '#6366f1', 'submission month; 14-field checklist',      60.0,  '↑ higher is better'),
                 ])
 
     # ── Submittals ────────────────────────────────────────────
@@ -1541,10 +1719,10 @@ def display_trends_page(filtered_data, filters):
                 st.info("No Submittal data available for the selected filters.")
             else:
                 _render_kpi_charts(sub_scores, [
-                    ('Submittal % On Time',     '#7c3aed', 'submission month; issue_date ≤ submit_by deadline'),
-                    ('Submittal Approval Rate', '#10b981', 'response month; (Approved + Approved as Noted) / total decisions'),
-                    ('Submittal Revision Rate', '#ef4444', 'submission month; % of submittals on revision ≥ 1'),
-                    ('Submittal Doc Quality',   '#6366f1', 'submission month; 3-field completeness checklist'),
+                    ('Submittal % On Time',     '#7c3aed', 'submission month; issue_date ≤ submit_by deadline',                       85.0,  '↑ higher is better'),
+                    ('Submittal Approval Rate', '#10b981', 'response month; (Approved + Approved as Noted) / total decisions',        75.0,  '↑ higher is better'),
+                    ('Submittal Revision Rate', '#ef4444', 'submission month; % of submittals on revision ≥ 1',                       20.0,  '↓ lower is better'),
+                    ('Submittal Doc Quality',   '#6366f1', 'submission month; 3-field completeness checklist',                        80.0,  '↑ higher is better'),
                 ])
 
     # ── Observations ──────────────────────────────────────────
@@ -1559,8 +1737,8 @@ def display_trends_page(filtered_data, filters):
                 st.info("No Observation data available for the selected filters.")
             else:
                 _render_kpi_charts(obs_scores, [
-                    ('Obs % Closed On Time', '#7c3aed', 'creation month; past-due open = failed'),
-                    ('Obs Time to Close',    '#f97316', 'creation month; closed observations only'),
+                    ('Obs % Closed On Time', '#7c3aed', 'creation month; past-due open = failed',      80.0,  '↑ higher is better'),
+                    ('Obs Time to Close',    '#f97316', 'close month; closed observations only',        7.0,  '↓ lower is better'),
                 ])
 
 
@@ -2065,14 +2243,14 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.title("Navigation")
     
-    nav_options = ["Executive Summary", "Portfolio Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout", "Trends"]
+    nav_options = ["Executive Summary", "Portfolio Scoreboard", "Bidding", "Preconstruction", "Construction", "Closeout", "KPI Trends"]
     page_selection = st.sidebar.radio("Page Navigation", nav_options, label_visibility="collapsed")
 
     if page_selection == "Executive Summary":
         display_executive_summary(filtered_data, summary_for_impact_calc, filters['impact_category'])
     elif page_selection == "Portfolio Scoreboard":
         display_scoreboard(summary_for_impact_calc, original_data)
-    elif page_selection == "Trends":
+    elif page_selection == "KPI Trends":
         display_trends_page(filtered_data, filters)
     else:
         display_phase_summary_page(page_selection.lower(), filtered_data, filters['impact_category'], summary_for_impact_calc)
