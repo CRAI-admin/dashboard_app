@@ -1942,7 +1942,29 @@ def display_scoreboard(summary_for_impact_calc, data):
         div[data-testid="stVerticalBlockBorderWrapper"]:has(.st-key-sc_sort_segment) {{ margin-top: -1.5rem !important; }}
     </style>""", unsafe_allow_html=True)
     with st.container(border=True):
-        pass
+        hdr_cols = st.columns([0.20, 0.22, 0.20, 0.19, 0.19])
+        with hdr_cols[0]:
+            segment_header_label = {"Project": "Project Name", "Region": "Region Name", "Project Manager": "Manager Name"}.get(segment_by, "Project Name")
+            st.button(sort_label('Segment', segment_header_label), key='sc_sort_segment', on_click=lambda: toggle_sort('Segment'), use_container_width=True, type='secondary')
+        with hdr_cols[1]:
+            st.button(sort_label('CR-Score', 'CR-Score'), key='sc_sort_cr', on_click=lambda: toggle_sort('CR-Score'), use_container_width=True, type='secondary')
+        with hdr_cols[2]:
+            st.button(sort_label('Estimated Project Value', 'Estimated Value'), key='sc_sort_value', on_click=lambda: toggle_sort('Estimated Project Value'), use_container_width=True, type='secondary')
+        with hdr_cols[3]:
+            st.button(sort_label('Est Proj Start Date', 'Start Date'), key='sc_sort_start', on_click=lambda: toggle_sort('Est Proj Start Date'), use_container_width=True, type='secondary')
+        with hdr_cols[4]:
+            st.button(sort_label('Est Proj End Date', 'End Date'), key='sc_sort_end', on_click=lambda: toggle_sort('Est Proj End Date'), use_container_width=True, type='secondary')
+        rows_html = ""
+        for _, row in paged_df.iterrows():
+            bar = horizontal_risk_bar_html(row['CR-Score'], height='0.7rem', font_size='0.975rem', top_offset='-1.1rem', width_percentage=92)
+            rows_html += f"""<tr>
+                <td class='seg-name'>{html.escape(str(row['Segment']))}</td>
+                <td class='cr-score'><div class='sc-bar-wrap'>{bar}</div></td>
+                <td class='proj-value'>{html.escape(format_currency(row['Estimated Project Value']))}</td>
+                <td class='proj-date'>{html.escape(format_date(row['Est Proj Start Date']))}</td>
+                <td class='proj-date'>{html.escape(format_date(row['Est Proj End Date']))}</td>
+            </tr>"""
+        st.html(f"<table class='sc-tbl'><tbody>{rows_html}</tbody></table>")
 
     # Pagination controls
     if True:
