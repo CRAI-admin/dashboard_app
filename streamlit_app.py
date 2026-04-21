@@ -8,6 +8,7 @@ import copy
 import re
 import math
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 # --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
 st.set_page_config(page_title="CR-Score Dashboard (Construction View)", layout="wide")
@@ -1194,6 +1195,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI % On Time', 'score': score,
+                         'value': round(pct * 100, 1), 'unit': '%',
                          'n': len(g), 'note': f"{int(g['is_resolved'].sum())}/{len(g)} resolved"})
 
     # --- Lead Time (created_at month, all RFIs with due_date) ---
@@ -1203,6 +1205,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, (avg - 7) / 7)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Lead Time', 'score': score,
+                         'value': round(avg, 1), 'unit': 'days',
                          'n': len(g), 'note': f"avg {avg:.1f} days"})
 
     # --- Time to Resolution (resolved_at month, resolved RFIs only) ---
@@ -1212,6 +1215,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, (21 - avg) / 14)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Time to Resolution', 'score': score,
+                         'value': round(avg, 1), 'unit': 'days',
                          'n': len(g), 'note': f"avg {avg:.1f} days"})
 
     # --- Usage Rate (created_at month, all RFIs) ---
@@ -1220,6 +1224,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
         rfis_per_week = len(g) / weeks
         score = round(min(100.0, rfis_per_week * 100), 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Usage Rate', 'score': score,
+                         'value': round(rfis_per_week, 2), 'unit': 'RFIs/week',
                          'n': len(g), 'note': f"{rfis_per_week:.2f}/week"})
 
     # --- Documentation Quality (created_at month) ---
@@ -1229,6 +1234,7 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, avg / 0.6)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'RFI Documentation Quality', 'score': score,
+                         'value': round(avg * 100, 1), 'unit': '%',
                          'n': len(g), 'note': f"avg {avg:.0%} of fields filled"})
 
     return pd.DataFrame(records)
@@ -1292,6 +1298,7 @@ def compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'Submittal % On Time', 'score': score,
+                         'value': round(pct * 100, 1), 'unit': '%',
                          'n': len(g), 'note': f"{int(g['on_time'].sum())}/{len(g)} on time"})
 
     # --- Revision Rate (created_at month; inverted: 0% revision = 100, 25%+ = 0) ---
@@ -1303,6 +1310,7 @@ def compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=None):
                 continue
             score = round(max(0.0, min(1.0, 1.0 - (rev_rate / 0.25))) * 100, 1)
             records.append({'ym': str(ym), 'kpi_name': 'Submittal Revision Rate', 'score': score,
+                             'value': round(rev_rate * 100, 1), 'unit': '% revised',
                              'n': len(g), 'note': f"{int(g['_is_revision'].sum())}/{len(g)} revised"})
 
     # --- Doc Quality (created_at month; 3-field checklist) ---
@@ -1316,6 +1324,7 @@ def compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=None):
                 continue
             score = round(max(0.0, min(1.0, avg / 0.8)) * 100, 1)
             records.append({'ym': str(ym), 'kpi_name': 'Submittal Doc Quality', 'score': score,
+                             'value': round(avg * 100, 1), 'unit': '%',
                              'n': len(g), 'note': f"avg {avg:.0%} of fields filled"})
 
     # --- Approval Rate (returned_date month; from approvers table) ---
@@ -1337,6 +1346,7 @@ def compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=None):
                 continue
             score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
             records.append({'ym': str(ym), 'kpi_name': 'Submittal Approval Rate', 'score': score,
+                             'value': round(pct * 100, 1), 'unit': '%',
                              'n': len(g), 'note': f"{int(g['_approved'].sum())}/{len(g)} approved"})
 
     return pd.DataFrame(records)
@@ -1404,6 +1414,7 @@ def compute_observation_monthly_scores(df_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'Obs % Closed On Time', 'score': score,
+                         'value': round(pct * 100, 1), 'unit': '%',
                          'n': len(g), 'note': f"{int(g['is_closed'].sum())}/{len(g)} closed"})
 
     # --- Time to Close (created_at month; 0 days = 100, 30+ days = 0) ---
@@ -1416,6 +1427,7 @@ def compute_observation_monthly_scores(df_raw, project_id_filter=None):
             continue
         score = round(max(0.0, min(1.0, (30.0 - avg) / 30.0)) * 100, 1)
         records.append({'ym': str(ym), 'kpi_name': 'Obs Time to Close', 'score': score,
+                         'value': round(avg, 1), 'unit': 'days',
                          'n': len(g), 'note': f"avg {avg:.1f} days"})
 
     return pd.DataFrame(records)
@@ -1466,68 +1478,62 @@ def display_trends_page(filtered_data, filters):
                 else:
                     rfi_scores = rfi_scores.sort_values('ym')
                     x_order = sorted(rfi_scores['ym'].unique())
-                    fig = go.Figure()
-                    RFI_COLORS = {
-                        'RFI % On Time':             '#7c3aed',
-                        'RFI Lead Time':             '#06b6d4',
-                        'RFI Time to Resolution':    '#f97316',
-                        'RFI Usage Rate':            '#10b981',
-                        'RFI Documentation Quality': '#6366f1',
-                    }
-                    RFI_METHOD = {
-                        'RFI % On Time':             'submission month; past-due open = failed',
-                        'RFI Lead Time':             'submission month; all RFIs with due date',
-                        'RFI Time to Resolution':    'resolution month; resolved RFIs only',
-                        'RFI Usage Rate':            'submission month; RFIs per week',
-                        'RFI Documentation Quality': 'submission month; 14-field checklist',
-                    }
-                    for kpi in ["RFI % On Time", "RFI Lead Time", "RFI Time to Resolution", "RFI Usage Rate", "RFI Documentation Quality"]:
+                    RFI_KPIS = [
+                        ('RFI % On Time',             '#7c3aed', 'submission month; past-due open = failed'),
+                        ('RFI Lead Time',             '#06b6d4', 'submission month; all RFIs with due date'),
+                        ('RFI Time to Resolution',    '#f97316', 'resolution month; resolved RFIs only'),
+                        ('RFI Usage Rate',            '#10b981', 'submission month; RFIs per week'),
+                        ('RFI Documentation Quality', '#6366f1', 'submission month; 14-field checklist'),
+                    ]
+                    n_kpis = len(RFI_KPIS)
+                    ncols = 2
+                    nrows = -(-n_kpis // ncols)  # ceiling division
+                    subplot_titles = [k[0] for k in RFI_KPIS]
+                    fig = make_subplots(
+                        rows=nrows, cols=ncols,
+                        subplot_titles=subplot_titles,
+                        vertical_spacing=0.12,
+                        horizontal_spacing=0.10,
+                    )
+                    for idx, (kpi, color, method) in enumerate(RFI_KPIS):
+                        row = idx // ncols + 1
+                        col = idx % ncols + 1
                         kpi_df = rfi_scores[rfi_scores['kpi_name'] == kpi].sort_values('ym')
                         if kpi_df.empty:
                             continue
-                        color = RFI_COLORS.get(kpi, '#94a3b8')
-                        method = RFI_METHOD.get(kpi, '')
+                        unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
+                        y_label = unit
                         fig.add_trace(go.Scatter(
                             x=kpi_df['ym'],
-                            y=kpi_df['score'],
+                            y=kpi_df['value'],
                             mode='lines+markers',
                             name=kpi,
+                            showlegend=False,
                             line=dict(color=color, width=2.5),
                             marker=dict(size=7, color=color),
                             customdata=kpi_df[['n', 'note']].values,
                             hovertemplate=(
                                 f"<b>{kpi}</b><br>"
                                 "Month: %{x}<br>"
-                                "Score: %{y:.1f}/100<br>"
+                                f"Value: %{{y:.1f}} {unit}<br>"
                                 "n=%{customdata[0]} | %{customdata[1]}<br>"
                                 f"<i style='color:#9ca3af'>{method}</i>"
                                 "<extra></extra>"
                             )
-                        ))
+                        ), row=row, col=col)
+                        fig.update_yaxes(title_text=y_label, row=row, col=col,
+                                         gridcolor='#f3f4f6', tickfont=dict(size=11))
+                        fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
+                                         categoryorder='array', categoryarray=x_order,
+                                         row=row, col=col)
                     chart_title = "RFI Monthly Trends" if selected_year == "All Years" else f"RFI Monthly Trends — {selected_year}"
                     fig.update_layout(
                         title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-                        xaxis=dict(
-                            title="Month", tickfont=dict(size=11), title_font=dict(size=14),
-                            showgrid=False, categoryorder='array', categoryarray=x_order, tickangle=-45,
-                        ),
-                        yaxis=dict(
-                            title="Score (0-100)", tickfont=dict(size=13), title_font=dict(size=14),
-                            gridcolor='#f3f4f6', range=[0, 105],
-                        ),
-                        legend=dict(orientation='h', yanchor='bottom', y=-0.45, xanchor='center', x=0.5, font=dict(size=12)),
                         plot_bgcolor='white', paper_bgcolor='white',
-                        margin=dict(t=60, b=120, l=60, r=40), height=500,
+                        margin=dict(t=80, b=40, l=60, r=40),
+                        height=300 * nrows,
                     )
                     st.plotly_chart(fig, use_container_width=True)
-                    st.caption(
-                        "Scoring methods: "
-                        "**% On Time** - submission month, past-due open = failed  |  "
-                        "**Lead Time** - submission month, all RFIs with due date  |  "
-                        "**Time to Resolution** - resolution month, closed RFIs only  |  "
-                        "**Usage Rate** - submission month, RFIs/week  |  "
-                        "**Doc Quality** - submission month, 14-field pipeline checklist"
-                    )
                     if project_id_filter:
                         st.caption(f"Filtered to project: {project_id_filter}")
 
@@ -1558,65 +1564,59 @@ def display_trends_page(filtered_data, filters):
                 else:
                     sub_scores = sub_scores.sort_values('ym')
                     x_order = sorted(sub_scores['ym'].unique())
-                    fig = go.Figure()
-                    SUB_COLORS = {
-                        'Submittal % On Time':     '#7c3aed',
-                        'Submittal Approval Rate': '#10b981',
-                        'Submittal Revision Rate': '#ef4444',
-                        'Submittal Doc Quality':   '#6366f1',
-                    }
-                    SUB_METHOD = {
-                        'Submittal % On Time':     'submission month; issue_date ≤ submit_by deadline',
-                        'Submittal Approval Rate': 'response month; (Approved + Approved as Noted) / total decisions',
-                        'Submittal Revision Rate': 'submission month; inverted — lower revision % = higher score',
-                        'Submittal Doc Quality':   'submission month; 3-field completeness checklist',
-                    }
-                    for kpi in ["Submittal % On Time", "Submittal Approval Rate", "Submittal Revision Rate", "Submittal Doc Quality"]:
+                    SUB_KPIS = [
+                        ('Submittal % On Time',     '#7c3aed', 'submission month; issue_date ≤ submit_by deadline'),
+                        ('Submittal Approval Rate', '#10b981', 'response month; (Approved + Approved as Noted) / total decisions'),
+                        ('Submittal Revision Rate', '#ef4444', 'submission month; % of submittals on revision ≥ 1'),
+                        ('Submittal Doc Quality',   '#6366f1', 'submission month; 3-field completeness checklist'),
+                    ]
+                    n_kpis = len(SUB_KPIS)
+                    ncols = 2
+                    nrows = -(-n_kpis // ncols)
+                    fig = make_subplots(
+                        rows=nrows, cols=ncols,
+                        subplot_titles=[k[0] for k in SUB_KPIS],
+                        vertical_spacing=0.12,
+                        horizontal_spacing=0.10,
+                    )
+                    for idx, (kpi, color, method) in enumerate(SUB_KPIS):
+                        row = idx // ncols + 1
+                        col = idx % ncols + 1
                         kpi_df = sub_scores[sub_scores['kpi_name'] == kpi].sort_values('ym')
                         if kpi_df.empty:
                             continue
-                        color = SUB_COLORS.get(kpi, '#94a3b8')
-                        method = SUB_METHOD.get(kpi, '')
+                        unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
                         fig.add_trace(go.Scatter(
                             x=kpi_df['ym'],
-                            y=kpi_df['score'],
+                            y=kpi_df['value'],
                             mode='lines+markers',
                             name=kpi,
+                            showlegend=False,
                             line=dict(color=color, width=2.5),
                             marker=dict(size=7, color=color),
                             customdata=kpi_df[['n', 'note']].values,
                             hovertemplate=(
                                 f"<b>{kpi}</b><br>"
                                 "Month: %{x}<br>"
-                                "Score: %{y:.1f}/100<br>"
+                                f"Value: %{{y:.1f}} {unit}<br>"
                                 "n=%{customdata[0]} | %{customdata[1]}<br>"
                                 f"<i style='color:#9ca3af'>{method}</i>"
                                 "<extra></extra>"
                             )
-                        ))
+                        ), row=row, col=col)
+                        fig.update_yaxes(title_text=unit, row=row, col=col,
+                                         gridcolor='#f3f4f6', tickfont=dict(size=11))
+                        fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
+                                         categoryorder='array', categoryarray=x_order,
+                                         row=row, col=col)
                     chart_title = "Submittal Monthly Trends" if selected_year == "All Years" else f"Submittal Monthly Trends — {selected_year}"
                     fig.update_layout(
                         title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-                        xaxis=dict(
-                            title="Month", tickfont=dict(size=11), title_font=dict(size=14),
-                            showgrid=False, categoryorder='array', categoryarray=x_order, tickangle=-45,
-                        ),
-                        yaxis=dict(
-                            title="Score (0-100)", tickfont=dict(size=13), title_font=dict(size=14),
-                            gridcolor='#f3f4f6', range=[0, 105],
-                        ),
-                        legend=dict(orientation='h', yanchor='bottom', y=-0.45, xanchor='center', x=0.5, font=dict(size=12)),
                         plot_bgcolor='white', paper_bgcolor='white',
-                        margin=dict(t=60, b=120, l=60, r=40), height=500,
+                        margin=dict(t=80, b=40, l=60, r=40),
+                        height=300 * nrows,
                     )
                     st.plotly_chart(fig, use_container_width=True)
-                    st.caption(
-                        "Scoring methods: "
-                        "**% On Time** - submission month, issue_date ≤ submit_by  |  "
-                        "**Approval Rate** - response month, (Approved + Approved as Noted) / total decisions  |  "
-                        "**Revision Rate** - submission month, inverted: 0% revision = 100, 25%+ = 0  |  "
-                        "**Doc Quality** - submission month, 3-field completeness checklist"
-                    )
                     if project_id_filter:
                         st.caption(f"Filtered to project: {project_id_filter}")
 
@@ -1647,59 +1647,57 @@ def display_trends_page(filtered_data, filters):
                 else:
                     obs_scores = obs_scores.sort_values('ym')
                     x_order = sorted(obs_scores['ym'].unique())
-                    fig = go.Figure()
-                    OBS_COLORS = {
-                        'Obs % Closed On Time': '#7c3aed',
-                        'Obs Time to Close':    '#f97316',
-                    }
-                    OBS_METHOD = {
-                        'Obs % Closed On Time': 'creation month; past-due open = failed',
-                        'Obs Time to Close':    'creation month; closed only — 0 days = 100, 30+ days = 0',
-                    }
-                    for kpi in ["Obs % Closed On Time", "Obs Time to Close"]:
+                    OBS_KPIS = [
+                        ('Obs % Closed On Time', '#7c3aed', 'creation month; past-due open = failed'),
+                        ('Obs Time to Close',    '#f97316', 'creation month; closed observations only'),
+                    ]
+                    n_kpis = len(OBS_KPIS)
+                    ncols = 2
+                    nrows = -(-n_kpis // ncols)
+                    fig = make_subplots(
+                        rows=nrows, cols=ncols,
+                        subplot_titles=[k[0] for k in OBS_KPIS],
+                        vertical_spacing=0.12,
+                        horizontal_spacing=0.10,
+                    )
+                    for idx, (kpi, color, method) in enumerate(OBS_KPIS):
+                        row = idx // ncols + 1
+                        col = idx % ncols + 1
                         kpi_df = obs_scores[obs_scores['kpi_name'] == kpi].sort_values('ym')
                         if kpi_df.empty:
                             continue
-                        color = OBS_COLORS.get(kpi, '#94a3b8')
-                        method = OBS_METHOD.get(kpi, '')
+                        unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
                         fig.add_trace(go.Scatter(
                             x=kpi_df['ym'],
-                            y=kpi_df['score'],
+                            y=kpi_df['value'],
                             mode='lines+markers',
                             name=kpi,
+                            showlegend=False,
                             line=dict(color=color, width=2.5),
                             marker=dict(size=7, color=color),
                             customdata=kpi_df[['n', 'note']].values,
                             hovertemplate=(
                                 f"<b>{kpi}</b><br>"
                                 "Month: %{x}<br>"
-                                "Score: %{y:.1f}/100<br>"
+                                f"Value: %{{y:.1f}} {unit}<br>"
                                 "n=%{customdata[0]} | %{customdata[1]}<br>"
                                 f"<i style='color:#9ca3af'>{method}</i>"
                                 "<extra></extra>"
                             )
-                        ))
+                        ), row=row, col=col)
+                        fig.update_yaxes(title_text=unit, row=row, col=col,
+                                         gridcolor='#f3f4f6', tickfont=dict(size=11))
+                        fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
+                                         categoryorder='array', categoryarray=x_order,
+                                         row=row, col=col)
                     chart_title = "Observation Monthly Trends" if selected_year == "All Years" else f"Observation Monthly Trends — {selected_year}"
                     fig.update_layout(
                         title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-                        xaxis=dict(
-                            title="Month", tickfont=dict(size=11), title_font=dict(size=14),
-                            showgrid=False, categoryorder='array', categoryarray=x_order, tickangle=-45,
-                        ),
-                        yaxis=dict(
-                            title="Score (0-100)", tickfont=dict(size=13), title_font=dict(size=14),
-                            gridcolor='#f3f4f6', range=[0, 105],
-                        ),
-                        legend=dict(orientation='h', yanchor='bottom', y=-0.30, xanchor='center', x=0.5, font=dict(size=12)),
                         plot_bgcolor='white', paper_bgcolor='white',
-                        margin=dict(t=60, b=80, l=60, r=40), height=500,
+                        margin=dict(t=80, b=40, l=60, r=40),
+                        height=300 * nrows,
                     )
                     st.plotly_chart(fig, use_container_width=True)
-                    st.caption(
-                        "Scoring methods: "
-                        "**% Closed On Time** - creation month, past-due open = failed  |  "
-                        "**Time to Close** - creation month, closed observations only (0 days = 100, 30+ days = 0)"
-                    )
                     if project_id_filter:
                         st.caption(f"Filtered to project: {project_id_filter}")
 
