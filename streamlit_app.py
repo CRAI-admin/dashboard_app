@@ -1438,11 +1438,8 @@ def display_trends_page(filtered_data, filters):
     st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Trends</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem;'>Company ABC</h2>", unsafe_allow_html=True)
 
-    selected_year = st.selectbox(
-        "Select Year",
-        options=["All Years", "2023", "2024", "2025", "2026"],
-        key="trend_year"
-    )
+    import datetime as _dt
+    _cutoff = (pd.Timestamp.now() - pd.DateOffset(months=12)).to_period('M')
 
     project_id_filter = None
     if filters.get('project', 'All Projects') != 'All Projects':
@@ -1470,11 +1467,9 @@ def display_trends_page(filtered_data, filters):
             if rfi_scores.empty:
                 st.info("No RFI data available for the selected filters.")
             else:
-                rfi_scores['year'] = rfi_scores['ym'].str[:4]
-                if selected_year != "All Years":
-                    rfi_scores = rfi_scores[rfi_scores['year'] == selected_year]
+                rfi_scores = rfi_scores[rfi_scores['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
                 if rfi_scores.empty:
-                    st.info(f"No RFI data for {selected_year}.")
+                    st.info("No RFI data in the past 12 months.")
                 else:
                     rfi_scores = rfi_scores.sort_values('ym')
                     x_order = sorted(rfi_scores['ym'].unique())
@@ -1526,7 +1521,7 @@ def display_trends_page(filtered_data, filters):
                         fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
                                          categoryorder='array', categoryarray=x_order,
                                          row=row, col=col)
-                    chart_title = "RFI Monthly Trends" if selected_year == "All Years" else f"RFI Monthly Trends — {selected_year}"
+                    chart_title = "RFI Monthly Trends — Past 12 Months"
                     fig.update_layout(
                         title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
                         plot_bgcolor='white', paper_bgcolor='white',
@@ -1556,11 +1551,9 @@ def display_trends_page(filtered_data, filters):
             if sub_scores.empty:
                 st.info("No Submittal data available for the selected filters.")
             else:
-                sub_scores['year'] = sub_scores['ym'].str[:4]
-                if selected_year != "All Years":
-                    sub_scores = sub_scores[sub_scores['year'] == selected_year]
+                sub_scores = sub_scores[sub_scores['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
                 if sub_scores.empty:
-                    st.info(f"No Submittal data for {selected_year}.")
+                    st.info("No Submittal data in the past 12 months.")
                 else:
                     sub_scores = sub_scores.sort_values('ym')
                     x_order = sorted(sub_scores['ym'].unique())
@@ -1609,7 +1602,7 @@ def display_trends_page(filtered_data, filters):
                         fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
                                          categoryorder='array', categoryarray=x_order,
                                          row=row, col=col)
-                    chart_title = "Submittal Monthly Trends" if selected_year == "All Years" else f"Submittal Monthly Trends — {selected_year}"
+                    chart_title = "Submittal Monthly Trends — Past 12 Months"
                     fig.update_layout(
                         title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
                         plot_bgcolor='white', paper_bgcolor='white',
@@ -1639,11 +1632,9 @@ def display_trends_page(filtered_data, filters):
             if obs_scores.empty:
                 st.info("No Observation data available for the selected filters.")
             else:
-                obs_scores['year'] = obs_scores['ym'].str[:4]
-                if selected_year != "All Years":
-                    obs_scores = obs_scores[obs_scores['year'] == selected_year]
+                obs_scores = obs_scores[obs_scores['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
                 if obs_scores.empty:
-                    st.info(f"No Observation data for {selected_year}.")
+                    st.info("No Observation data in the past 12 months.")
                 else:
                     obs_scores = obs_scores.sort_values('ym')
                     x_order = sorted(obs_scores['ym'].unique())
@@ -1690,7 +1681,7 @@ def display_trends_page(filtered_data, filters):
                         fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
                                          categoryorder='array', categoryarray=x_order,
                                          row=row, col=col)
-                    chart_title = "Observation Monthly Trends" if selected_year == "All Years" else f"Observation Monthly Trends — {selected_year}"
+                    chart_title = "Observation Monthly Trends — Past 12 Months"
                     fig.update_layout(
                         title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
                         plot_bgcolor='white', paper_bgcolor='white',
