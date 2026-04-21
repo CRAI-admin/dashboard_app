@@ -1234,141 +1234,474 @@ def compute_rfi_monthly_scores(df_raw, project_id_filter=None):
     return pd.DataFrame(records)
 
 
+@st.cache_data(ttl=3600)
+def load_submittal_data():
+    """Load Submittal and Submittal Approver data from S3."""
+    try:
+        import boto3, io as _io
+        session = boto3.Session(profile_name='dev')
+        s3 = session.client('s3')
+        sub_obj = s3.get_object(
+            Bucket='kroo-crai-dev',
+            Key='companies/Haugland Companies/procore/submittals.csv'
+        )
+        sub_df = pd.read_csv(_io.BytesIO(sub_obj['Body'].read()))
+        app_obj = s3.get_object(
+            Bucket='kroo-crai-dev',
+            Key='companies/Haugland Companies/procore/submittal_approvers.csv'
+        )
+        app_df = pd.read_csv(_io.BytesIO(app_obj['Body'].read()))
+        return sub_df, app_df
+    except Exception:
+        return pd.DataFrame(), pd.DataFrame()
+
+
+def compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=None):
+    """
+    Compute monthly Submittal KPI scores.
+
+    KPIs:
+      % On Time       — grouped by created_at month; issue_date <= submit_by
+      Approval Rate   — grouped by returned_date month; (Approved + Approved as Noted) / total decisions
+      Revision Rate   — grouped by created_at month; % with revision >= 1 (inverted: lower = better)
+      Doc Quality     — grouped by created_at month; 3-field completeness checklist
+    """
+    if sub_raw.empty:
+        return pd.DataFrame()
+
+    df = sub_raw.copy()
+    df['created_at'] = pd.to_datetime(df['created_at'], utc=True, errors='coerce')
+    df['issue_date']  = pd.to_datetime(df['issue_date'],  utc=True, errors='coerce')
+    df['submit_by']   = pd.to_datetime(df['submit_by'],   utc=True, errors='coerce')
+    df = df.dropna(subset=['created_at'])
+
+    if project_id_filter:
+        df = df[df['project_id'].astype(str) == str(project_id_filter)]
+        if df.empty:
+            return pd.DataFrame()
+
+    df['ym'] = df['created_at'].dt.to_period('M')
+    records = []
+
+    # --- % On Time (created_at month; issue_date <= submit_by) ---
+    df_deadline = df[df['submit_by'].notna() & df['issue_date'].notna()].copy()
+    df_deadline['on_time'] = (df_deadline['issue_date'] <= df_deadline['submit_by']).astype(float)
+    for ym, g in df_deadline.groupby('ym'):
+        pct = g['on_time'].mean()
+        if pd.isna(pct):
+            continue
+        score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'Submittal % On Time', 'score': score,
+                         'n': len(g), 'note': f"{int(g['on_time'].sum())}/{len(g)} on time"})
+
+    # --- Revision Rate (created_at month; inverted: 0% revision = 100, 25%+ = 0) ---
+    if 'revision' in df.columns:
+        df['_is_revision'] = (pd.to_numeric(df['revision'], errors='coerce').fillna(0) >= 1).astype(float)
+        for ym, g in df.groupby('ym'):
+            rev_rate = g['_is_revision'].mean()
+            if pd.isna(rev_rate):
+                continue
+            score = round(max(0.0, min(1.0, 1.0 - (rev_rate / 0.25))) * 100, 1)
+            records.append({'ym': str(ym), 'kpi_name': 'Submittal Revision Rate', 'score': score,
+                             'n': len(g), 'note': f"{int(g['_is_revision'].sum())}/{len(g)} revised"})
+
+    # --- Doc Quality (created_at month; 3-field checklist) ---
+    doc_fields = ['specification_section_id', 'responsible_contractor_id', 'submittal_manager_id']
+    present = [f for f in doc_fields if f in df.columns]
+    if present:
+        df['_doc_q'] = df[present].notna().astype(bool).sum(axis=1) / len(present)
+        for ym, g in df.groupby('ym'):
+            avg = g['_doc_q'].mean()
+            if pd.isna(avg):
+                continue
+            score = round(max(0.0, min(1.0, avg / 0.8)) * 100, 1)
+            records.append({'ym': str(ym), 'kpi_name': 'Submittal Doc Quality', 'score': score,
+                             'n': len(g), 'note': f"avg {avg:.0%} of fields filled"})
+
+    # --- Approval Rate (returned_date month; from approvers table) ---
+    if not app_raw.empty:
+        app = app_raw.copy()
+        app['returned_date'] = pd.to_datetime(app['returned_date'], utc=True, errors='coerce')
+        if project_id_filter:
+            sub_ids = set(df['_id'].astype(str))
+            app = app[app['submittal_id'].astype(str).isin(sub_ids)]
+        final = ['Approved', 'Approved as Noted', 'Revise and Resubmit', 'Rejected']
+        app_final = app[app['response_name'].isin(final)].dropna(subset=['returned_date']).copy()
+        app_final['ym'] = app_final['returned_date'].dt.to_period('M')
+        app_final['_approved'] = app_final['response_name'].isin(['Approved', 'Approved as Noted']).astype(float)
+        for ym, g in app_final.groupby('ym'):
+            if len(g) < 5:
+                continue
+            pct = g['_approved'].mean()
+            if pd.isna(pct):
+                continue
+            score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
+            records.append({'ym': str(ym), 'kpi_name': 'Submittal Approval Rate', 'score': score,
+                             'n': len(g), 'note': f"{int(g['_approved'].sum())}/{len(g)} approved"})
+
+    return pd.DataFrame(records)
+
+
+@st.cache_data(ttl=3600)
+def load_observation_data():
+    """Load raw Observations data from S3."""
+    try:
+        import boto3, io as _io
+        session = boto3.Session(profile_name='dev')
+        s3 = session.client('s3')
+        obj = s3.get_object(
+            Bucket='kroo-crai-dev',
+            Key='companies/Haugland Companies/procore/observations.csv'
+        )
+        return pd.read_csv(_io.BytesIO(obj['Body'].read()))
+    except Exception:
+        return pd.DataFrame()
+
+
+def compute_observation_monthly_scores(df_raw, project_id_filter=None):
+    """
+    Compute monthly Observation KPI scores.
+
+    KPIs:
+      % Closed On Time — grouped by created_at month; past-due open = failed
+      Time to Close    — grouped by created_at month; closed observations only
+    """
+    if df_raw.empty:
+        return pd.DataFrame()
+
+    df = df_raw.copy()
+    df['created_at'] = pd.to_datetime(df['created_at'], utc=True, errors='coerce')
+    df['due_date']   = pd.to_datetime(df['due_date'],   utc=True, errors='coerce')
+    df['closed_at']  = pd.to_datetime(df['closed_at'],  utc=True, errors='coerce')
+    df = df.dropna(subset=['created_at'])
+
+    if project_id_filter:
+        df = df[df['project_id'].astype(str) == str(project_id_filter)]
+        if df.empty:
+            return pd.DataFrame()
+
+    now = pd.Timestamp.now(tz='UTC')
+    df['is_closed'] = df['closed_at'].notna()
+    df['has_due']   = df['due_date'].notna()
+    df['past_due']  = df['due_date'].notna() & (df['due_date'] < now)
+    df['days_to_close'] = (df['closed_at'] - df['created_at']).dt.days.clip(0, 365)
+
+    # % On Time: closed on/before due → 1; unresolved + past due → 0; unknown → NaN
+    df['on_time'] = float('nan')
+    mask_closed = df['is_closed'] & df['has_due']
+    df.loc[mask_closed, 'on_time'] = (
+        (df.loc[mask_closed, 'closed_at'] <= df.loc[mask_closed, 'due_date']).astype(float)
+    )
+    df.loc[~df['is_closed'] & df['past_due'], 'on_time'] = 0.0
+
+    df['ym'] = df['created_at'].dt.to_period('M')
+    records = []
+
+    # --- % Closed On Time (created_at month) ---
+    for ym, g in df[df['has_due']].groupby('ym'):
+        pct = g['on_time'].mean()
+        if pd.isna(pct):
+            continue
+        score = round(max(0.0, min(1.0, pct / 0.8)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'Obs % Closed On Time', 'score': score,
+                         'n': len(g), 'note': f"{int(g['is_closed'].sum())}/{len(g)} closed"})
+
+    # --- Time to Close (created_at month; 0 days = 100, 30+ days = 0) ---
+    df_closed = df[df['is_closed']].copy()
+    for ym, g in df_closed.groupby('ym'):
+        if len(g) < 3:
+            continue
+        avg = g['days_to_close'].mean()
+        if pd.isna(avg):
+            continue
+        score = round(max(0.0, min(1.0, (30.0 - avg) / 30.0)) * 100, 1)
+        records.append({'ym': str(ym), 'kpi_name': 'Obs Time to Close', 'score': score,
+                         'n': len(g), 'note': f"avg {avg:.1f} days"})
+
+    return pd.DataFrame(records)
+
+
 def display_trends_page(filtered_data, filters):
-    """Display RFI monthly trend charts."""
+    """Display monthly trend charts — RFI, Submittal, and Observation."""
     st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Trends</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem;'>Company ABC</h2>", unsafe_allow_html=True)
-
-    cfg = {
-        "desc": (
-            "Monthly RFI scores computed directly from raw submission data (May 2023 – present). "
-            "Each KPI uses the methodology that produces the most accurate result for that metric."
-        ),
-        "kpis": ["RFI % On Time", "RFI Lead Time", "RFI Time to Resolution", "RFI Usage Rate", "RFI Documentation Quality"],
-    }
 
     selected_year = st.selectbox(
         "Select Year",
         options=["All Years", "2023", "2024", "2025", "2026"],
         key="trend_year"
     )
-    st.markdown(
-        f"<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>{cfg['desc']}</p>",
-        unsafe_allow_html=True
-    )
 
-
-    # =========================================================
-    # RFI Monthly Trends (raw S3 data, real timestamps)
-    # =========================================================
     project_id_filter = None
     if filters.get('project', 'All Projects') != 'All Projects':
         project_id_filter = filters['project']
 
-    with st.spinner("Loading RFI data..."):
-        rfi_raw = load_rfi_data()
+    tab_rfi, tab_sub, tab_obs = st.tabs(["RFI Trends", "Submittal Trends", "Observation Trends"])
 
-    if rfi_raw.empty:
-        st.warning("RFI data could not be loaded from S3 or local fallback.")
-        return
+    # =========================================================
+    # TAB 1: RFI Trends
+    # =========================================================
+    with tab_rfi:
+        st.markdown(
+            "<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>"
+            "Monthly RFI scores computed from raw submission data (May 2023 – present). "
+            "Each KPI uses the methodology that produces the most accurate result for that metric."
+            "</p>",
+            unsafe_allow_html=True
+        )
+        with st.spinner("Loading RFI data..."):
+            rfi_raw = load_rfi_data()
+        if rfi_raw.empty:
+            st.warning("RFI data could not be loaded from S3 or local fallback.")
+        else:
+            rfi_scores = compute_rfi_monthly_scores(rfi_raw, project_id_filter=project_id_filter)
+            if rfi_scores.empty:
+                st.info("No RFI data available for the selected filters.")
+            else:
+                rfi_scores['year'] = rfi_scores['ym'].str[:4]
+                if selected_year != "All Years":
+                    rfi_scores = rfi_scores[rfi_scores['year'] == selected_year]
+                if rfi_scores.empty:
+                    st.info(f"No RFI data for {selected_year}.")
+                else:
+                    rfi_scores = rfi_scores.sort_values('ym')
+                    x_order = sorted(rfi_scores['ym'].unique())
+                    fig = go.Figure()
+                    RFI_COLORS = {
+                        'RFI % On Time':             '#7c3aed',
+                        'RFI Lead Time':             '#06b6d4',
+                        'RFI Time to Resolution':    '#f97316',
+                        'RFI Usage Rate':            '#10b981',
+                        'RFI Documentation Quality': '#6366f1',
+                    }
+                    RFI_METHOD = {
+                        'RFI % On Time':             'submission month; past-due open = failed',
+                        'RFI Lead Time':             'submission month; all RFIs with due date',
+                        'RFI Time to Resolution':    'resolution month; resolved RFIs only',
+                        'RFI Usage Rate':            'submission month; RFIs per week',
+                        'RFI Documentation Quality': 'submission month; 14-field checklist',
+                    }
+                    for kpi in ["RFI % On Time", "RFI Lead Time", "RFI Time to Resolution", "RFI Usage Rate", "RFI Documentation Quality"]:
+                        kpi_df = rfi_scores[rfi_scores['kpi_name'] == kpi].sort_values('ym')
+                        if kpi_df.empty:
+                            continue
+                        color = RFI_COLORS.get(kpi, '#94a3b8')
+                        method = RFI_METHOD.get(kpi, '')
+                        fig.add_trace(go.Scatter(
+                            x=kpi_df['ym'],
+                            y=kpi_df['score'],
+                            mode='lines+markers',
+                            name=kpi,
+                            line=dict(color=color, width=2.5),
+                            marker=dict(size=7, color=color),
+                            customdata=kpi_df[['n', 'note']].values,
+                            hovertemplate=(
+                                f"<b>{kpi}</b><br>"
+                                "Month: %{x}<br>"
+                                "Score: %{y:.1f}/100<br>"
+                                "n=%{customdata[0]} | %{customdata[1]}<br>"
+                                f"<i style='color:#9ca3af'>{method}</i>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    chart_title = "RFI Monthly Trends" if selected_year == "All Years" else f"RFI Monthly Trends — {selected_year}"
+                    fig.update_layout(
+                        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
+                        xaxis=dict(
+                            title="Month", tickfont=dict(size=11), title_font=dict(size=14),
+                            showgrid=False, categoryorder='array', categoryarray=x_order, tickangle=-45,
+                        ),
+                        yaxis=dict(
+                            title="Score (0-100)", tickfont=dict(size=13), title_font=dict(size=14),
+                            gridcolor='#f3f4f6', range=[0, 105],
+                        ),
+                        legend=dict(orientation='h', yanchor='bottom', y=-0.45, xanchor='center', x=0.5, font=dict(size=12)),
+                        plot_bgcolor='white', paper_bgcolor='white',
+                        margin=dict(t=60, b=120, l=60, r=40), height=500,
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                    st.caption(
+                        "Scoring methods: "
+                        "**% On Time** - submission month, past-due open = failed  |  "
+                        "**Lead Time** - submission month, all RFIs with due date  |  "
+                        "**Time to Resolution** - resolution month, closed RFIs only  |  "
+                        "**Usage Rate** - submission month, RFIs/week  |  "
+                        "**Doc Quality** - submission month, 14-field pipeline checklist"
+                    )
+                    if project_id_filter:
+                        st.caption(f"Filtered to project: {project_id_filter}")
 
-    rfi_scores = compute_rfi_monthly_scores(rfi_raw, project_id_filter=project_id_filter)
+    # =========================================================
+    # TAB 2: Submittal Trends
+    # =========================================================
+    with tab_sub:
+        st.markdown(
+            "<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>"
+            "Monthly Submittal scores from raw submission and approver data (May 2023 – present)."
+            "</p>",
+            unsafe_allow_html=True
+        )
+        with st.spinner("Loading Submittal data..."):
+            sub_raw, app_raw = load_submittal_data()
+        if sub_raw.empty:
+            st.warning("Submittal data could not be loaded.")
+        else:
+            sub_scores = compute_submittal_monthly_scores(sub_raw, app_raw, project_id_filter=project_id_filter)
+            if sub_scores.empty:
+                st.info("No Submittal data available for the selected filters.")
+            else:
+                sub_scores['year'] = sub_scores['ym'].str[:4]
+                if selected_year != "All Years":
+                    sub_scores = sub_scores[sub_scores['year'] == selected_year]
+                if sub_scores.empty:
+                    st.info(f"No Submittal data for {selected_year}.")
+                else:
+                    sub_scores = sub_scores.sort_values('ym')
+                    x_order = sorted(sub_scores['ym'].unique())
+                    fig = go.Figure()
+                    SUB_COLORS = {
+                        'Submittal % On Time':     '#7c3aed',
+                        'Submittal Approval Rate': '#10b981',
+                        'Submittal Revision Rate': '#ef4444',
+                        'Submittal Doc Quality':   '#6366f1',
+                    }
+                    SUB_METHOD = {
+                        'Submittal % On Time':     'submission month; issue_date ≤ submit_by deadline',
+                        'Submittal Approval Rate': 'response month; (Approved + Approved as Noted) / total decisions',
+                        'Submittal Revision Rate': 'submission month; inverted — lower revision % = higher score',
+                        'Submittal Doc Quality':   'submission month; 3-field completeness checklist',
+                    }
+                    for kpi in ["Submittal % On Time", "Submittal Approval Rate", "Submittal Revision Rate", "Submittal Doc Quality"]:
+                        kpi_df = sub_scores[sub_scores['kpi_name'] == kpi].sort_values('ym')
+                        if kpi_df.empty:
+                            continue
+                        color = SUB_COLORS.get(kpi, '#94a3b8')
+                        method = SUB_METHOD.get(kpi, '')
+                        fig.add_trace(go.Scatter(
+                            x=kpi_df['ym'],
+                            y=kpi_df['score'],
+                            mode='lines+markers',
+                            name=kpi,
+                            line=dict(color=color, width=2.5),
+                            marker=dict(size=7, color=color),
+                            customdata=kpi_df[['n', 'note']].values,
+                            hovertemplate=(
+                                f"<b>{kpi}</b><br>"
+                                "Month: %{x}<br>"
+                                "Score: %{y:.1f}/100<br>"
+                                "n=%{customdata[0]} | %{customdata[1]}<br>"
+                                f"<i style='color:#9ca3af'>{method}</i>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    chart_title = "Submittal Monthly Trends" if selected_year == "All Years" else f"Submittal Monthly Trends — {selected_year}"
+                    fig.update_layout(
+                        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
+                        xaxis=dict(
+                            title="Month", tickfont=dict(size=11), title_font=dict(size=14),
+                            showgrid=False, categoryorder='array', categoryarray=x_order, tickangle=-45,
+                        ),
+                        yaxis=dict(
+                            title="Score (0-100)", tickfont=dict(size=13), title_font=dict(size=14),
+                            gridcolor='#f3f4f6', range=[0, 105],
+                        ),
+                        legend=dict(orientation='h', yanchor='bottom', y=-0.45, xanchor='center', x=0.5, font=dict(size=12)),
+                        plot_bgcolor='white', paper_bgcolor='white',
+                        margin=dict(t=60, b=120, l=60, r=40), height=500,
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                    st.caption(
+                        "Scoring methods: "
+                        "**% On Time** - submission month, issue_date ≤ submit_by  |  "
+                        "**Approval Rate** - response month, (Approved + Approved as Noted) / total decisions  |  "
+                        "**Revision Rate** - submission month, inverted: 0% revision = 100, 25%+ = 0  |  "
+                        "**Doc Quality** - submission month, 3-field completeness checklist"
+                    )
+                    if project_id_filter:
+                        st.caption(f"Filtered to project: {project_id_filter}")
 
-    if rfi_scores.empty:
-        st.info("No RFI data available for the selected filters.")
-        return
-
-    rfi_scores['year'] = rfi_scores['ym'].str[:4]
-    if selected_year != "All Years":
-        rfi_scores = rfi_scores[rfi_scores['year'] == selected_year]
-
-    if rfi_scores.empty:
-        st.info(f"No RFI data for {selected_year}.")
-        return
-
-    rfi_scores = rfi_scores.sort_values('ym')
-    x_order = sorted(rfi_scores['ym'].unique())
-
-    fig = go.Figure()
-    KPI_COLORS = {
-        'RFI % On Time':             '#7c3aed',
-        'RFI Lead Time':             '#06b6d4',
-        'RFI Time to Resolution':    '#f97316',
-        'RFI Usage Rate':            '#10b981',
-        'RFI Documentation Quality': '#6366f1',
-    }
-    KPI_METHOD = {
-        'RFI % On Time':             'submission month; past-due open = failed',
-        'RFI Lead Time':             'submission month; all RFIs with due date',
-        'RFI Time to Resolution':    'resolution month; resolved RFIs only',
-        'RFI Usage Rate':            'submission month; RFIs per week',
-        'RFI Documentation Quality': 'submission month; 14-field checklist',
-    }
-
-    for kpi in cfg['kpis']:
-        kpi_df = rfi_scores[rfi_scores['kpi_name'] == kpi].sort_values('ym')
-        if kpi_df.empty:
-            continue
-        color = KPI_COLORS.get(kpi, '#94a3b8')
-        method = KPI_METHOD.get(kpi, '')
-        fig.add_trace(go.Scatter(
-            x=kpi_df['ym'],
-            y=kpi_df['score'],
-            mode='lines+markers',
-            name=kpi,
-            line=dict(color=color, width=2.5),
-            marker=dict(size=7, color=color),
-            customdata=kpi_df[['n', 'note']].values,
-            hovertemplate=(
-                f"<b>{kpi}</b><br>"
-                "Month: %{x}<br>"
-                "Score: %{y:.1f}/100<br>"
-                "n=%{customdata[0]} | %{customdata[1]}<br>"
-                f"<i style='color:#9ca3af'>{method}</i>"
-                "<extra></extra>"
-            )
-        ))
-
-    chart_title = "RFI Monthly Trends" if selected_year == "All Years" else f"RFI Monthly Trends - {selected_year}"
-    fig.update_layout(
-        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-        xaxis=dict(
-            title="Month",
-            tickfont=dict(size=11),
-            title_font=dict(size=14),
-            showgrid=False,
-            categoryorder='array',
-            categoryarray=x_order,
-            tickangle=-45,
-        ),
-        yaxis=dict(
-            title="Score (0-100)",
-            tickfont=dict(size=13),
-            title_font=dict(size=14),
-            gridcolor='#f3f4f6',
-            range=[0, 105],
-        ),
-        legend=dict(
-            orientation='h', yanchor='bottom', y=-0.45,
-            xanchor='center', x=0.5, font=dict(size=12)
-        ),
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        margin=dict(t=60, b=120, l=60, r=40),
-        height=500,
-    )
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.caption(
-        "Scoring methods: "
-        "**% On Time** - submission month, past-due open = failed  |  "
-        "**Lead Time** - submission month, all RFIs with due date  |  "
-        "**Time to Resolution** - resolution month, closed RFIs only  |  "
-        "**Usage Rate** - submission month, RFIs/week  |  "
-        "**Doc Quality** - submission month, 14-field pipeline checklist"
-    )
-    if project_id_filter:
-        st.caption(f"Filtered to project: {project_id_filter}")
+    # =========================================================
+    # TAB 3: Observation Trends
+    # =========================================================
+    with tab_obs:
+        st.markdown(
+            "<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>"
+            "Monthly Observation scores from raw field observation data (Jan 2024 – present)."
+            "</p>",
+            unsafe_allow_html=True
+        )
+        with st.spinner("Loading Observation data..."):
+            obs_raw = load_observation_data()
+        if obs_raw.empty:
+            st.warning("Observation data could not be loaded.")
+        else:
+            obs_scores = compute_observation_monthly_scores(obs_raw, project_id_filter=project_id_filter)
+            if obs_scores.empty:
+                st.info("No Observation data available for the selected filters.")
+            else:
+                obs_scores['year'] = obs_scores['ym'].str[:4]
+                if selected_year != "All Years":
+                    obs_scores = obs_scores[obs_scores['year'] == selected_year]
+                if obs_scores.empty:
+                    st.info(f"No Observation data for {selected_year}.")
+                else:
+                    obs_scores = obs_scores.sort_values('ym')
+                    x_order = sorted(obs_scores['ym'].unique())
+                    fig = go.Figure()
+                    OBS_COLORS = {
+                        'Obs % Closed On Time': '#7c3aed',
+                        'Obs Time to Close':    '#f97316',
+                    }
+                    OBS_METHOD = {
+                        'Obs % Closed On Time': 'creation month; past-due open = failed',
+                        'Obs Time to Close':    'creation month; closed only — 0 days = 100, 30+ days = 0',
+                    }
+                    for kpi in ["Obs % Closed On Time", "Obs Time to Close"]:
+                        kpi_df = obs_scores[obs_scores['kpi_name'] == kpi].sort_values('ym')
+                        if kpi_df.empty:
+                            continue
+                        color = OBS_COLORS.get(kpi, '#94a3b8')
+                        method = OBS_METHOD.get(kpi, '')
+                        fig.add_trace(go.Scatter(
+                            x=kpi_df['ym'],
+                            y=kpi_df['score'],
+                            mode='lines+markers',
+                            name=kpi,
+                            line=dict(color=color, width=2.5),
+                            marker=dict(size=7, color=color),
+                            customdata=kpi_df[['n', 'note']].values,
+                            hovertemplate=(
+                                f"<b>{kpi}</b><br>"
+                                "Month: %{x}<br>"
+                                "Score: %{y:.1f}/100<br>"
+                                "n=%{customdata[0]} | %{customdata[1]}<br>"
+                                f"<i style='color:#9ca3af'>{method}</i>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    chart_title = "Observation Monthly Trends" if selected_year == "All Years" else f"Observation Monthly Trends — {selected_year}"
+                    fig.update_layout(
+                        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
+                        xaxis=dict(
+                            title="Month", tickfont=dict(size=11), title_font=dict(size=14),
+                            showgrid=False, categoryorder='array', categoryarray=x_order, tickangle=-45,
+                        ),
+                        yaxis=dict(
+                            title="Score (0-100)", tickfont=dict(size=13), title_font=dict(size=14),
+                            gridcolor='#f3f4f6', range=[0, 105],
+                        ),
+                        legend=dict(orientation='h', yanchor='bottom', y=-0.30, xanchor='center', x=0.5, font=dict(size=12)),
+                        plot_bgcolor='white', paper_bgcolor='white',
+                        margin=dict(t=60, b=80, l=60, r=40), height=500,
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                    st.caption(
+                        "Scoring methods: "
+                        "**% Closed On Time** - creation month, past-due open = failed  |  "
+                        "**Time to Close** - creation month, closed observations only (0 days = 100, 30+ days = 0)"
+                    )
+                    if project_id_filter:
+                        st.caption(f"Filtered to project: {project_id_filter}")
 
 
 def display_scoreboard(summary_for_impact_calc, data):
