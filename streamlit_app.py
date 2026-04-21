@@ -1438,110 +1438,99 @@ def display_trends_page(filtered_data, filters):
     st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>Trends</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align: center; margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem;'>Company ABC</h2>", unsafe_allow_html=True)
 
-    import datetime as _dt
     _cutoff = (pd.Timestamp.now() - pd.DateOffset(months=12)).to_period('M')
 
     project_id_filter = None
     if filters.get('project', 'All Projects') != 'All Projects':
         project_id_filter = filters['project']
 
-    tab_rfi, tab_sub, tab_obs = st.tabs(["RFI Trends", "Submittal Trends", "Observation Trends"])
+    # ── Metric selector ──────────────────────────────────────
+    METRIC_OPTIONS = ["RFIs", "Submittals", "Observations"]
+    selected_metric = st.selectbox(
+        "Select Metric",
+        options=METRIC_OPTIONS,
+        key="trend_metric_selector",
+    )
 
-    # =========================================================
-    # TAB 1: RFI Trends
-    # =========================================================
-    with tab_rfi:
-        st.markdown(
-            "<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>"
-            "Monthly RFI scores computed from raw submission data (May 2023 – present). "
-            "Each KPI uses the methodology that produces the most accurate result for that metric."
-            "</p>",
-            unsafe_allow_html=True
-        )
+    # ── Helper: render one full-width chart per KPI ──────────
+    def _render_kpi_charts(scores_df, kpi_list):
+        """kpi_list: list of (kpi_name, color, method_note) tuples."""
+        scores_df = scores_df[scores_df['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
+        if scores_df.empty:
+            st.info("No data in the past 12 months.")
+            return
+        scores_df = scores_df.sort_values('ym')
+        x_order = sorted(scores_df['ym'].unique())
+
+        for kpi, color, method in kpi_list:
+            kpi_df = scores_df[scores_df['kpi_name'] == kpi].sort_values('ym')
+            if kpi_df.empty:
+                continue
+            unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
+
+            st.markdown(
+                f"<h3 style='font-size:1.1rem; font-weight:600; color:#111827; "
+                f"margin-top:1.5rem; margin-bottom:0.25rem;'>{kpi}</h3>",
+                unsafe_allow_html=True,
+            )
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(
+                x=kpi_df['ym'],
+                y=kpi_df['value'],
+                mode='lines+markers',
+                name=kpi,
+                showlegend=False,
+                line=dict(color=color, width=2.5),
+                marker=dict(size=7, color=color),
+                customdata=kpi_df[['n', 'note']].values,
+                hovertemplate=(
+                    f"<b>{kpi}</b><br>"
+                    "Month: %{x}<br>"
+                    f"Value: %{{y:.1f}} {unit}<br>"
+                    "n=%{customdata[0]} | %{customdata[1]}<br>"
+                    f"<i style='color:#9ca3af'>{method}</i>"
+                    "<extra></extra>"
+                )
+            ))
+            fig.update_layout(
+                xaxis=dict(
+                    showgrid=False, tickangle=-45, tickfont=dict(size=11),
+                    categoryorder='array', categoryarray=x_order,
+                ),
+                yaxis=dict(
+                    title=unit, gridcolor='#f3f4f6',
+                    tickfont=dict(size=11), title_font=dict(size=12),
+                ),
+                plot_bgcolor='white', paper_bgcolor='white',
+                margin=dict(t=20, b=40, l=60, r=30),
+                height=280,
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+        if project_id_filter:
+            st.caption(f"Filtered to project: {project_id_filter}")
+
+    # ── RFIs ─────────────────────────────────────────────────
+    if selected_metric == "RFIs":
         with st.spinner("Loading RFI data..."):
             rfi_raw = load_rfi_data()
         if rfi_raw.empty:
-            st.warning("RFI data could not be loaded from S3 or local fallback.")
+            st.warning("RFI data could not be loaded.")
         else:
             rfi_scores = compute_rfi_monthly_scores(rfi_raw, project_id_filter=project_id_filter)
             if rfi_scores.empty:
                 st.info("No RFI data available for the selected filters.")
             else:
-                rfi_scores = rfi_scores[rfi_scores['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
-                if rfi_scores.empty:
-                    st.info("No RFI data in the past 12 months.")
-                else:
-                    rfi_scores = rfi_scores.sort_values('ym')
-                    x_order = sorted(rfi_scores['ym'].unique())
-                    RFI_KPIS = [
-                        ('RFI % On Time',             '#7c3aed', 'submission month; past-due open = failed'),
-                        ('RFI Lead Time',             '#06b6d4', 'submission month; all RFIs with due date'),
-                        ('RFI Time to Resolution',    '#f97316', 'resolution month; resolved RFIs only'),
-                        ('RFI Usage Rate',            '#10b981', 'submission month; RFIs per week'),
-                        ('RFI Documentation Quality', '#6366f1', 'submission month; 14-field checklist'),
-                    ]
-                    n_kpis = len(RFI_KPIS)
-                    ncols = 2
-                    nrows = -(-n_kpis // ncols)  # ceiling division
-                    subplot_titles = [k[0] for k in RFI_KPIS]
-                    fig = make_subplots(
-                        rows=nrows, cols=ncols,
-                        subplot_titles=subplot_titles,
-                        vertical_spacing=0.12,
-                        horizontal_spacing=0.10,
-                    )
-                    for idx, (kpi, color, method) in enumerate(RFI_KPIS):
-                        row = idx // ncols + 1
-                        col = idx % ncols + 1
-                        kpi_df = rfi_scores[rfi_scores['kpi_name'] == kpi].sort_values('ym')
-                        if kpi_df.empty:
-                            continue
-                        unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
-                        y_label = unit
-                        fig.add_trace(go.Scatter(
-                            x=kpi_df['ym'],
-                            y=kpi_df['value'],
-                            mode='lines+markers',
-                            name=kpi,
-                            showlegend=False,
-                            line=dict(color=color, width=2.5),
-                            marker=dict(size=7, color=color),
-                            customdata=kpi_df[['n', 'note']].values,
-                            hovertemplate=(
-                                f"<b>{kpi}</b><br>"
-                                "Month: %{x}<br>"
-                                f"Value: %{{y:.1f}} {unit}<br>"
-                                "n=%{customdata[0]} | %{customdata[1]}<br>"
-                                f"<i style='color:#9ca3af'>{method}</i>"
-                                "<extra></extra>"
-                            )
-                        ), row=row, col=col)
-                        fig.update_yaxes(title_text=y_label, row=row, col=col,
-                                         gridcolor='#f3f4f6', tickfont=dict(size=11))
-                        fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
-                                         categoryorder='array', categoryarray=x_order,
-                                         row=row, col=col)
-                    chart_title = "RFI Monthly Trends — Past 12 Months"
-                    fig.update_layout(
-                        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-                        plot_bgcolor='white', paper_bgcolor='white',
-                        margin=dict(t=80, b=40, l=60, r=40),
-                        height=300 * nrows,
-                    )
-                    st.plotly_chart(fig, use_container_width=True)
-                    if project_id_filter:
-                        st.caption(f"Filtered to project: {project_id_filter}")
+                _render_kpi_charts(rfi_scores, [
+                    ('RFI % On Time',             '#7c3aed', 'submission month; past-due open = failed'),
+                    ('RFI Lead Time',             '#06b6d4', 'submission month; all RFIs with due date'),
+                    ('RFI Time to Resolution',    '#f97316', 'resolution month; resolved RFIs only'),
+                    ('RFI Usage Rate',            '#10b981', 'submission month; RFIs per week'),
+                    ('RFI Documentation Quality', '#6366f1', 'submission month; 14-field checklist'),
+                ])
 
-    # =========================================================
-    # TAB 2: Submittal Trends
-    # =========================================================
-    with tab_sub:
-        st.markdown(
-            "<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>"
-            "Monthly Submittal scores from raw submission and approver data (May 2023 – present)."
-            "</p>",
-            unsafe_allow_html=True
-        )
+    # ── Submittals ────────────────────────────────────────────
+    elif selected_metric == "Submittals":
         with st.spinner("Loading Submittal data..."):
             sub_raw, app_raw = load_submittal_data()
         if sub_raw.empty:
@@ -1551,78 +1540,15 @@ def display_trends_page(filtered_data, filters):
             if sub_scores.empty:
                 st.info("No Submittal data available for the selected filters.")
             else:
-                sub_scores = sub_scores[sub_scores['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
-                if sub_scores.empty:
-                    st.info("No Submittal data in the past 12 months.")
-                else:
-                    sub_scores = sub_scores.sort_values('ym')
-                    x_order = sorted(sub_scores['ym'].unique())
-                    SUB_KPIS = [
-                        ('Submittal % On Time',     '#7c3aed', 'submission month; issue_date ≤ submit_by deadline'),
-                        ('Submittal Approval Rate', '#10b981', 'response month; (Approved + Approved as Noted) / total decisions'),
-                        ('Submittal Revision Rate', '#ef4444', 'submission month; % of submittals on revision ≥ 1'),
-                        ('Submittal Doc Quality',   '#6366f1', 'submission month; 3-field completeness checklist'),
-                    ]
-                    n_kpis = len(SUB_KPIS)
-                    ncols = 2
-                    nrows = -(-n_kpis // ncols)
-                    fig = make_subplots(
-                        rows=nrows, cols=ncols,
-                        subplot_titles=[k[0] for k in SUB_KPIS],
-                        vertical_spacing=0.12,
-                        horizontal_spacing=0.10,
-                    )
-                    for idx, (kpi, color, method) in enumerate(SUB_KPIS):
-                        row = idx // ncols + 1
-                        col = idx % ncols + 1
-                        kpi_df = sub_scores[sub_scores['kpi_name'] == kpi].sort_values('ym')
-                        if kpi_df.empty:
-                            continue
-                        unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
-                        fig.add_trace(go.Scatter(
-                            x=kpi_df['ym'],
-                            y=kpi_df['value'],
-                            mode='lines+markers',
-                            name=kpi,
-                            showlegend=False,
-                            line=dict(color=color, width=2.5),
-                            marker=dict(size=7, color=color),
-                            customdata=kpi_df[['n', 'note']].values,
-                            hovertemplate=(
-                                f"<b>{kpi}</b><br>"
-                                "Month: %{x}<br>"
-                                f"Value: %{{y:.1f}} {unit}<br>"
-                                "n=%{customdata[0]} | %{customdata[1]}<br>"
-                                f"<i style='color:#9ca3af'>{method}</i>"
-                                "<extra></extra>"
-                            )
-                        ), row=row, col=col)
-                        fig.update_yaxes(title_text=unit, row=row, col=col,
-                                         gridcolor='#f3f4f6', tickfont=dict(size=11))
-                        fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
-                                         categoryorder='array', categoryarray=x_order,
-                                         row=row, col=col)
-                    chart_title = "Submittal Monthly Trends — Past 12 Months"
-                    fig.update_layout(
-                        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-                        plot_bgcolor='white', paper_bgcolor='white',
-                        margin=dict(t=80, b=40, l=60, r=40),
-                        height=300 * nrows,
-                    )
-                    st.plotly_chart(fig, use_container_width=True)
-                    if project_id_filter:
-                        st.caption(f"Filtered to project: {project_id_filter}")
+                _render_kpi_charts(sub_scores, [
+                    ('Submittal % On Time',     '#7c3aed', 'submission month; issue_date ≤ submit_by deadline'),
+                    ('Submittal Approval Rate', '#10b981', 'response month; (Approved + Approved as Noted) / total decisions'),
+                    ('Submittal Revision Rate', '#ef4444', 'submission month; % of submittals on revision ≥ 1'),
+                    ('Submittal Doc Quality',   '#6366f1', 'submission month; 3-field completeness checklist'),
+                ])
 
-    # =========================================================
-    # TAB 3: Observation Trends
-    # =========================================================
-    with tab_obs:
-        st.markdown(
-            "<p style='text-align:center; color:#4b5563; font-size:1rem; margin-bottom:1.5rem;'>"
-            "Monthly Observation scores from raw field observation data (Jan 2024 – present)."
-            "</p>",
-            unsafe_allow_html=True
-        )
+    # ── Observations ──────────────────────────────────────────
+    elif selected_metric == "Observations":
         with st.spinner("Loading Observation data..."):
             obs_raw = load_observation_data()
         if obs_raw.empty:
@@ -1632,65 +1558,10 @@ def display_trends_page(filtered_data, filters):
             if obs_scores.empty:
                 st.info("No Observation data available for the selected filters.")
             else:
-                obs_scores = obs_scores[obs_scores['ym'].apply(lambda y: pd.Period(y, 'M') >= _cutoff)]
-                if obs_scores.empty:
-                    st.info("No Observation data in the past 12 months.")
-                else:
-                    obs_scores = obs_scores.sort_values('ym')
-                    x_order = sorted(obs_scores['ym'].unique())
-                    OBS_KPIS = [
-                        ('Obs % Closed On Time', '#7c3aed', 'creation month; past-due open = failed'),
-                        ('Obs Time to Close',    '#f97316', 'creation month; closed observations only'),
-                    ]
-                    n_kpis = len(OBS_KPIS)
-                    ncols = 2
-                    nrows = -(-n_kpis // ncols)
-                    fig = make_subplots(
-                        rows=nrows, cols=ncols,
-                        subplot_titles=[k[0] for k in OBS_KPIS],
-                        vertical_spacing=0.12,
-                        horizontal_spacing=0.10,
-                    )
-                    for idx, (kpi, color, method) in enumerate(OBS_KPIS):
-                        row = idx // ncols + 1
-                        col = idx % ncols + 1
-                        kpi_df = obs_scores[obs_scores['kpi_name'] == kpi].sort_values('ym')
-                        if kpi_df.empty:
-                            continue
-                        unit = kpi_df['unit'].iloc[0] if 'unit' in kpi_df.columns else ''
-                        fig.add_trace(go.Scatter(
-                            x=kpi_df['ym'],
-                            y=kpi_df['value'],
-                            mode='lines+markers',
-                            name=kpi,
-                            showlegend=False,
-                            line=dict(color=color, width=2.5),
-                            marker=dict(size=7, color=color),
-                            customdata=kpi_df[['n', 'note']].values,
-                            hovertemplate=(
-                                f"<b>{kpi}</b><br>"
-                                "Month: %{x}<br>"
-                                f"Value: %{{y:.1f}} {unit}<br>"
-                                "n=%{customdata[0]} | %{customdata[1]}<br>"
-                                f"<i style='color:#9ca3af'>{method}</i>"
-                                "<extra></extra>"
-                            )
-                        ), row=row, col=col)
-                        fig.update_yaxes(title_text=unit, row=row, col=col,
-                                         gridcolor='#f3f4f6', tickfont=dict(size=11))
-                        fig.update_xaxes(showgrid=False, tickangle=-45, tickfont=dict(size=10),
-                                         categoryorder='array', categoryarray=x_order,
-                                         row=row, col=col)
-                    chart_title = "Observation Monthly Trends — Past 12 Months"
-                    fig.update_layout(
-                        title=dict(text=chart_title, x=0.5, font=dict(size=18, color='#111827')),
-                        plot_bgcolor='white', paper_bgcolor='white',
-                        margin=dict(t=80, b=40, l=60, r=40),
-                        height=300 * nrows,
-                    )
-                    st.plotly_chart(fig, use_container_width=True)
-                    if project_id_filter:
-                        st.caption(f"Filtered to project: {project_id_filter}")
+                _render_kpi_charts(obs_scores, [
+                    ('Obs % Closed On Time', '#7c3aed', 'creation month; past-due open = failed'),
+                    ('Obs Time to Close',    '#f97316', 'creation month; closed observations only'),
+                ])
 
 
 def display_scoreboard(summary_for_impact_calc, data):
